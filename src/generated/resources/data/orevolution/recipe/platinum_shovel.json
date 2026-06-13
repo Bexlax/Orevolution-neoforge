@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:ingots/platinum"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "A",
+    "S",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_shovel"
+  }
+}

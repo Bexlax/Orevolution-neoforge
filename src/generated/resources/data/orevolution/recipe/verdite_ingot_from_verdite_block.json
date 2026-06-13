@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "orevolution:verdite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "orevolution:verdite_ingot"
+  }
+}

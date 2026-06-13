@@ -1,0 +1,26 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:primitive_aetherrock"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "chance": 0.75,
+      "id": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.12,
+      "id": "minecraft:end_stone"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:anvil"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:steel_anvil"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

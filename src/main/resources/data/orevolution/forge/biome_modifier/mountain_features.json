@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_badlands",
+  "features": [
+    "orevolution:tin_ore_extra"
+  ],
+  "step": "underground_ores"
+}

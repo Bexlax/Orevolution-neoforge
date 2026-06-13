@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "orevolution:platinum_sword"
+    },
+    {
+      "item": "orevolution:platinum_pickaxe"
+    },
+    {
+      "item": "orevolution:platinum_axe"
+    },
+    {
+      "item": "orevolution:platinum_shovel"
+    },
+    {
+      "item": "orevolution:platinum_hoe"
+    },
+    {
+      "item": "orevolution:platinum_helmet"
+    },
+    {
+      "item": "orevolution:platinum_chestplate"
+    },
+    {
+      "item": "orevolution:platinum_leggings"
+    },
+    {
+      "item": "orevolution:platinum_boots"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_nugget"
+  }
+}

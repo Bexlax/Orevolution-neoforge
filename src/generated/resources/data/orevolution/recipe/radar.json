@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "orevolution:bronze_ingot"
+    },
+    "X": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " A ",
+    "AXA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:radar"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "orevolution:block/limestone"
+      },
+      {
+        "model": "orevolution:block/limestone_alt"
+      }
+    ]
+  }
+}

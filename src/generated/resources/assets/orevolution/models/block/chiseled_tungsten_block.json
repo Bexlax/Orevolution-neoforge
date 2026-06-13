@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "orevolution:block/decorative/polished_tungsten_block",
+    "side": "orevolution:block/decorative/chiseled_tungsten_block"
+  }
+}

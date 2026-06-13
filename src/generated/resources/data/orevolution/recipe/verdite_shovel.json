@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "c:ingots/verdite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "A",
+    "S",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:verdite_shovel"
+  }
+}

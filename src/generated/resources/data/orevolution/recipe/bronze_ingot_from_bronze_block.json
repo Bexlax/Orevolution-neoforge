@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "orevolution:bronze_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "orevolution:bronze_ingot"
+  }
+}

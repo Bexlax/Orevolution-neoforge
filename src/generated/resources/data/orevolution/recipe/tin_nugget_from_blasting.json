@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "orevolution:tin_sword"
+    },
+    {
+      "item": "orevolution:tin_pickaxe"
+    },
+    {
+      "item": "orevolution:tin_axe"
+    },
+    {
+      "item": "orevolution:tin_shovel"
+    },
+    {
+      "item": "orevolution:tin_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:tin_nugget"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_aetherrock_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_aetherrock"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_aetherrock_slab_top"
+    }
+  }
+}

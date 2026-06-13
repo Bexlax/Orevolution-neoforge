@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "orevolution:platinum_nugget"
+    },
+    "X": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AXA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_berries"
+  }
+}

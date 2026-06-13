@@ -1,0 +1,18 @@
+{
+  "type": "orevolution:experience_ore_feature",
+  "config": {
+    "discard_chance_on_air_exposure": 0.8,
+    "size": 9,
+    "targets": [
+      {
+        "state": {
+          "Name": "orevolution:end_experience_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "c:end_stones"
+        }
+      }
+    ]
+  }
+}

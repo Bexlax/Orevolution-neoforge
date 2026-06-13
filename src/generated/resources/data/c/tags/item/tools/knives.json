@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "orevolution:tin_knife",
+      "required": false
+    },
+    {
+      "id": "orevolution:platinum_knife",
+      "required": false
+    },
+    {
+      "id": "orevolution:aethersteel_knife",
+      "required": false
+    },
+    {
+      "id": "orevolution:livingstone_knife",
+      "required": false
+    },
+    {
+      "id": "orevolution:verdite_knife",
+      "required": false
+    }
+  ]
+}

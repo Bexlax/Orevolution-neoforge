@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "orevolution:block/livingstone_crop_stage_0"
+    },
+    "age=1": {
+      "model": "orevolution:block/livingstone_crop_stage_1"
+    },
+    "age=2": {
+      "model": "orevolution:block/livingstone_crop_stage_2"
+    },
+    "age=3": {
+      "model": "orevolution:block/livingstone_crop_stage_3"
+    },
+    "age=4": {
+      "model": "orevolution:block/livingstone_crop_stage_4"
+    }
+  }
+}

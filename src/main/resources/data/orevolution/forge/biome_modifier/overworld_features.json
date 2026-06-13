@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "orevolution:tin_ore",
+    "orevolution:platinum_ore"
+  ],
+  "step": "underground_ores"
+}

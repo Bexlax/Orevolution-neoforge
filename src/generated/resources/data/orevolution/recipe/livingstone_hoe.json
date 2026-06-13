@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "orevolution:livingstone_block"
+    },
+    "S": {
+      "item": "orevolution:livingstone_shard"
+    }
+  },
+  "pattern": [
+    "AA",
+    " S",
+    " S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:livingstone_hoe"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": [
+    "orevolution:end_experience_ore"
+  ],
+  "step": "underground_ores"
+}

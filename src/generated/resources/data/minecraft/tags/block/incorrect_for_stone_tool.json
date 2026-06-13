@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:iron_block",
+    "minecraft:iron_ore",
+    "minecraft:deepslate_iron_ore",
+    "minecraft:raw_iron_block",
+    "minecraft:iron_bars",
+    "minecraft:iron_door",
+    "minecraft:iron_trapdoor",
+    "minecraft:hopper",
+    "#minecraft:anvil",
+    "#c:incorrect_for_tin_tool"
+  ]
+}

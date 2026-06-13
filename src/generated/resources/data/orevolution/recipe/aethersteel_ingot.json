@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:aethersteel_ingot"
+  }
+}

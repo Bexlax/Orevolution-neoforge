@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "orevolution:aethersteel_smithing_template"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 9
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "orevolution:chests/orevolution_end_city_treasure"
+}

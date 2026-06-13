@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_aetherrock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:aetherrock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:aetherrock_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_aetherrock"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:aetherrock_bricks"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": {
+      "item": "orevolution:steel_ingot"
+    }
+  },
+  "pattern": [
+    "AA",
+    "AA",
+    "AA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:steel_door"
+  }
+}

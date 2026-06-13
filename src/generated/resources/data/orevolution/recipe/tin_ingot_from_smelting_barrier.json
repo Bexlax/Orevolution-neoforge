@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.4,
+  "group": "orevolution:tin_ingot",
+  "ingredient": {
+    "tag": "c:ores/tin"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tin_ingot"
+  }
+}

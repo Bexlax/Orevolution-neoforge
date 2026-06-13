@@ -1,0 +1,75 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "orevolution:verdite_crop",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "6"
+                  }
+                }
+              ],
+              "name": "orevolution:verdite_nugget"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "orevolution:dead_seed"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "orevolution:verdite_crop",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "6"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:fortune",
+                      "levels": {
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "name": "orevolution:dead_seed"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "orevolution:blocks/verdite_crop"
+}

@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:diamond_block",
+    "minecraft:diamond_ore",
+    "minecraft:deepslate_diamond_ore",
+    "minecraft:redstone_block",
+    "minecraft:redstone_ore",
+    "minecraft:deepslate_redstone_ore",
+    "#c:incorrect_for_platinum_tool"
+  ]
+}

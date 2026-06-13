@@ -1,0 +1,12 @@
+{
+  "values": [
+    "orevolution:verdite_block",
+    "orevolution:platinum_ore",
+    "orevolution:deepslate_platinum_ore",
+    "orevolution:raw_platinum_block",
+    "orevolution:nether_experience_ore",
+    "orevolution:steel_block",
+    "orevolution:platinum_block",
+    "#minecraft:incorrect_for_iron_tool"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#c:storage_blocks",
+    "#minecraft:anvil",
+    "#minecraft:crops",
+    "minecraft:enchanting_table",
+    "minecraft:ender_chest"
+  ]
+}

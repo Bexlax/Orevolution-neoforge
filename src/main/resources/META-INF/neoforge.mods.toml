@@ -1,0 +1,39 @@
+modLoader="javafml" #mandatory
+loaderVersion="${loader_version_range}" #mandatory
+license="${mod_license}"
+
+[[mods]] #mandatory
+modId="${mod_id}" #mandatory
+version="${mod_version}" #mandatory
+displayName="${mod_name}" #mandatory
+logoFile="logo.png"
+logoBlur=false
+itemIcon="orevolution:platinum_ingot"
+authors="BexLa"
+description='''
+Orevolution focuses on adding more value to the mining aspect of minecraft, doing so by adding new ores, rebalancing tools and implementing new mechanics for them.
+'''
+
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+[[dependencies.${mod_id}]] #optional
+    modId="neoforge" #mandatory
+    type="required" #mandatory
+    versionRange="[${neo_version},)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="blueprint"
+    type="required"
+    versionRange="[8.1.0,)"
+    ordering="NONE"
+    side="BOTH"

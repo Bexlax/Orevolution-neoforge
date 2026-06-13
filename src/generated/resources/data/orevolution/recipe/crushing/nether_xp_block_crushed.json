@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:nether_experience_ore"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 2,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.65,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.25,
+      "count": 2,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.12,
+      "id": "minecraft:netherrack"
+    }
+  ]
+}

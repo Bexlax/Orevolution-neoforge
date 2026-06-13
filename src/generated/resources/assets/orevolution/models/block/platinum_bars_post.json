@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/iron_bars_post",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bars": "orevolution:block/decorative/bar/platinum_bars",
+    "particle": "orevolution:block/decorative/bar/platinum_bars"
+  }
+}

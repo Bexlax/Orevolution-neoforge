@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_hoe"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:steel_scythe"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

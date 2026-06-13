@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:ores/tungsten",
+    "orevolution:tungsten_block",
+    "orevolution:raw_tungsten_block",
+    "orevolution:polished_tungsten_block",
+    "orevolution:chiseled_tungsten_block",
+    "orevolution:cut_tungsten_block"
+  ]
+}

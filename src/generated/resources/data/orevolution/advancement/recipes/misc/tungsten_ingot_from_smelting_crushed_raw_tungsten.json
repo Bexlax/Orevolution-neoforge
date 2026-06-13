@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crushed_raw_tungsten": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:crushed_raw_tungsten"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:tungsten_ingot_from_smelting_crushed_raw_tungsten"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crushed_raw_tungsten"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:tungsten_ingot_from_smelting_crushed_raw_tungsten"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:tin_knife"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tin_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:ingots/tin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tin_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:tin_knife"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:storage_blocks/tin",
+    "#c:storage_blocks/platinum",
+    "#c:storage_blocks/tungsten",
+    "#c:storage_blocks/verdite",
+    "#c:storage_blocks/enderite",
+    "#c:storage_blocks/livingstone"
+  ]
+}

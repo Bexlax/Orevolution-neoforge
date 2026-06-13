@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "orevolution:block/decorative/bar/tungsten_bars"
+  }
+}

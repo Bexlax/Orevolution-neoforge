@@ -1,0 +1,28 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:end_experience_ore"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 3,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.35,
+      "count": 2,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.12,
+      "id": "minecraft:end_stone"
+    }
+  ]
+}

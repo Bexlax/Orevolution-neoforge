@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "orevolution:block/steel_anvil",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "orevolution:block/steel_anvil",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "orevolution:block/steel_anvil"
+    },
+    "facing=west": {
+      "model": "orevolution:block/steel_anvil",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "tag": "c:ingots/platinum"
+    },
+    {
+      "item": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "item": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "item": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "item": "orevolution:crushed_raw_aethersteel"
+    }
+  ],
+  "results": [
+    {
+      "id": "orevolution:aethersteel_ingot"
+    }
+  ]
+}

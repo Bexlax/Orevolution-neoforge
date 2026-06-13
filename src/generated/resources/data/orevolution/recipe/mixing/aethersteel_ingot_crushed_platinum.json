@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_platinum"
+    },
+    {
+      "item": "create:crushed_raw_platinum"
+    },
+    {
+      "item": "create:crushed_raw_platinum"
+    },
+    {
+      "item": "create:crushed_raw_platinum"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    },
+    {
+      "item": "orevolution:aethersteel_chunk"
+    }
+  ],
+  "results": [
+    {
+      "id": "orevolution:aethersteel_ingot"
+    }
+  ]
+}

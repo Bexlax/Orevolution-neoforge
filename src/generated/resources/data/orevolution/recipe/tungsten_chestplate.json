@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:tungsten_ingot"
+  },
+  "base": {
+    "item": "orevolution:bronze_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tungsten_chestplate"
+  },
+  "template": {
+    "item": "orevolution:reinforced_smithing_template"
+  }
+}

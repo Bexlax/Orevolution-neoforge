@@ -1,0 +1,18 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:raw_tungsten"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "orevolution:crushed_raw_tungsten"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    }
+  ]
+}

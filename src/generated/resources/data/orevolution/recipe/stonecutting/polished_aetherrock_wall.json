@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "orevolution:polished_aetherrock"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:polished_aetherrock_wall"
+  }
+}

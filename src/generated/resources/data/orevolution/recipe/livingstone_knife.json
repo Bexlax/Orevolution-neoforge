@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "orevolution:livingstone_block"
+    },
+    "S": {
+      "item": "orevolution:livingstone_shard"
+    }
+  },
+  "pattern": [
+    "A",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:livingstone_knife"
+  }
+}

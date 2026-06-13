@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "orevolution:platinum_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "orevolution:platinum_nugget"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "orevolution:block/decorative/polished_tungsten_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:tungsten_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:reinforced_netherite_helmet"
+  },
+  "template": {
+    "item": "orevolution:reinforced_smithing_template"
+  }
+}

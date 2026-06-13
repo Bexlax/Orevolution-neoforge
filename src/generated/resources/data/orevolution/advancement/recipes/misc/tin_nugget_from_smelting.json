@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:tin_nugget_from_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tin_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:tin_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tin_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:tin_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tin_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:tin_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tin_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:tin_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tin_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:tin_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tin_pickaxe",
+      "has_tin_shovel",
+      "has_tin_axe",
+      "has_tin_hoe",
+      "has_tin_sword"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:tin_nugget_from_smelting"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/iron_bars_cap",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bars": "orevolution:block/decorative/bar/steel_bars",
+    "edge": "orevolution:block/decorative/bar/steel_bars",
+    "particle": "orevolution:block/decorative/bar/steel_bars"
+  }
+}

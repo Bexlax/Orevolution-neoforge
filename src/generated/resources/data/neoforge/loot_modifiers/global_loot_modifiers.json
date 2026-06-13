@@ -1,0 +1,18 @@
+{
+  "entries": [
+    "orevolution:add_loot_abandoned_mineshaft",
+    "orevolution:add_loot_bastion_hoglin_stable",
+    "orevolution:add_loot_bastion_treasure",
+    "orevolution:add_loot_end_city_treasure",
+    "orevolution:add_loot_pillager_outpost",
+    "orevolution:add_loot_ruined_portal",
+    "orevolution:add_loot_shipwreck_supply",
+    "orevolution:add_loot_simple_dungeon",
+    "orevolution:add_loot_village_desert_house",
+    "orevolution:add_loot_village_plains_house",
+    "orevolution:add_loot_village_savanna_house",
+    "orevolution:add_loot_village_snowy_house",
+    "orevolution:add_loot_village_taiga_house"
+  ],
+  "replace": false
+}

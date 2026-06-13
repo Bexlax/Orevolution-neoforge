@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "orevolution:block/decorative/steel_pillar_top",
+    "side": "orevolution:block/decorative/steel_pillar_side"
+  }
+}

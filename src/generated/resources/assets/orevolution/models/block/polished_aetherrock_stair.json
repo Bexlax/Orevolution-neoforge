@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "orevolution:block/decorative/polished_aetherrock",
+    "side": "orevolution:block/decorative/polished_aetherrock",
+    "top": "orevolution:block/decorative/polished_aetherrock"
+  }
+}

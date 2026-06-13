@@ -1,0 +1,23 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:aetherrock"
+    }
+  ],
+  "processing_time": 300,
+  "results": [
+    {
+      "chance": 0.3,
+      "id": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "chance": 0.15,
+      "id": "orevolution:crushed_raw_aethersteel"
+    },
+    {
+      "chance": 0.1,
+      "id": "create:experience_nugget"
+    }
+  ]
+}

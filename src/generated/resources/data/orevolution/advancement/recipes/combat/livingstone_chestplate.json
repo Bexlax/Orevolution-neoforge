@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_livingstone_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:storage_blocks/livingstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:livingstone_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_livingstone_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:livingstone_chestplate"
+    ]
+  }
+}

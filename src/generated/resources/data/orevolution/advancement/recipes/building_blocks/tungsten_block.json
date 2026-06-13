@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chiseled_tungsten_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:chiseled_tungsten_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:tungsten_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chiseled_tungsten_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:tungsten_block"
+    ]
+  }
+}
