@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "orevolution:chert_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:chert_bricks_stair"
+  }
+}

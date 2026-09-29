@@ -1,0 +1,62 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "orevolution:block/rhyolite",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "orevolution:block/rhyolite_mirrored",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "orevolution:block/rhyolite",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "orevolution:block/rhyolite_mirrored",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "orevolution:block/rhyolite"
+      },
+      {
+        "model": "orevolution:block/rhyolite_mirrored"
+      },
+      {
+        "model": "orevolution:block/rhyolite",
+        "y": 180
+      },
+      {
+        "model": "orevolution:block/rhyolite_mirrored",
+        "y": 180
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "orevolution:block/rhyolite",
+        "x": 90
+      },
+      {
+        "model": "orevolution:block/rhyolite_mirrored",
+        "x": 90
+      },
+      {
+        "model": "orevolution:block/rhyolite",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "orevolution:block/rhyolite_mirrored",
+        "x": 90,
+        "y": 180
+      }
+    ]
+  }
+}

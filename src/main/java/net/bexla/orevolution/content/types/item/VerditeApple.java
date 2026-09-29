@@ -20,6 +20,8 @@ public class VerditeApple extends Item {
 
         if (entity instanceof Player player) {
             player.getFoodData().eat(this.getFoodProperties(stack, entity));
+            player.getCooldowns().addCooldown(stack.getItem(), 60);
+            player.stopUsingItem();
         }
 
         return stack;

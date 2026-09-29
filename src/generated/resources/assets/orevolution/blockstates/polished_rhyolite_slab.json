@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_rhyolite_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_rhyolite"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_rhyolite_slab_top"
+    }
+  }
+}

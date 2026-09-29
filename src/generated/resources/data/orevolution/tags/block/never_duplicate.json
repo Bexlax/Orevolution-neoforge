@@ -1,5 +1,11 @@
 {
   "values": [
-    "#c:chests"
+    "#c:chests",
+    "#minecraft:shulker_boxes",
+    "#c:barrels",
+    "orevolution:aethersteel_block",
+    "minecraft:beacon",
+    "minecraft:conduit",
+    "minecraft:respawn_anchor"
   ]
 }

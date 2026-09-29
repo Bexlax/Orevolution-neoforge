@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quartz_chip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:quartz_chip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:quartz_from_quartz_chip"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quartz_chip"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:quartz_from_quartz_chip"
+    ]
+  }
+}

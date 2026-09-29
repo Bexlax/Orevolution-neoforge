@@ -1,0 +1,76 @@
+{
+  "values": {
+    "orevolution:dead_seed": {
+      "chance": 0.35
+    },
+    "orevolution:livingstone_axe": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_block": {
+      "chance": 0.8
+    },
+    "orevolution:livingstone_boots": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_chestplate": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_helmet": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_hoe": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_leggings": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_pickaxe": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_shard": {
+      "chance": 0.45
+    },
+    "orevolution:livingstone_shovel": {
+      "chance": 0.6
+    },
+    "orevolution:livingstone_sword": {
+      "chance": 0.6
+    },
+    "orevolution:petrified_seed": {
+      "chance": 0.3
+    },
+    "orevolution:verdite_axe": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_block": {
+      "chance": 0.9
+    },
+    "orevolution:verdite_boots": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_chestplate": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_helmet": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_hoe": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_leggings": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_nugget": {
+      "chance": 0.5
+    },
+    "orevolution:verdite_pickaxe": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_shovel": {
+      "chance": 0.65
+    },
+    "orevolution:verdite_sword": {
+      "chance": 0.65
+    }
+  }
+}

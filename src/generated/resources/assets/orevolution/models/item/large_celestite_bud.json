@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "orevolution:block/ore/large_celestite_bud"
+  }
+}

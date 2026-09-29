@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "orevolution:block/rhyolite_encrusted_moonstone",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "orevolution:block/rhyolite_encrusted_moonstone",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "orevolution:block/rhyolite_encrusted_moonstone",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "orevolution:block/rhyolite_encrusted_moonstone",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "orevolution:block/rhyolite_encrusted_moonstone"
+    },
+    "facing=west": {
+      "model": "orevolution:block/rhyolite_encrusted_moonstone",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

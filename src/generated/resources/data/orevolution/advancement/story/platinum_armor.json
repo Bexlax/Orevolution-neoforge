@@ -1,0 +1,42 @@
+{
+  "parent": "orevolution:story/obtain_platinum",
+  "criteria": {
+    "has_all_platinum_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:platinum_helmet"
+          },
+          {
+            "items": "orevolution:platinum_chestplate"
+          },
+          {
+            "items": "orevolution:platinum_leggings"
+          },
+          {
+            "items": "orevolution:platinum_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.platinum_armor.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "orevolution:platinum_chestplate"
+    },
+    "title": {
+      "translate": "advancements.orevolution.platinum_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_all_platinum_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

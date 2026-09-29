@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:spring_feature",
+  "config": {
+    "hole_count": 4,
+    "requires_block_below": false,
+    "rock_count": 1,
+    "state": {
+      "Name": "minecraft:empty"
+    },
+    "valid_blocks": [
+      "minecraft:stone",
+      "minecraft:granite",
+      "minecraft:diorite",
+      "minecraft:andesite",
+      "minecraft:deepslate",
+      "minecraft:tuff",
+      "minecraft:calcite",
+      "minecraft:dirt",
+      "orevolution:rhyolite"
+    ]
+  }
+}

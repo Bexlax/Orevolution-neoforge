@@ -1,0 +1,36 @@
+{
+  "parent": "orevolution:nether/obtain_tungsten",
+  "criteria": {
+    "has_reinforced": {
+      "conditions": {
+        "items": [
+          {
+            "components": {
+              "orevolution:reinforced": true
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.reinforcement.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "orevolution:reinforced_smithing_template"
+    },
+    "title": {
+      "translate": "advancements.orevolution.reinforcement.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_reinforced"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

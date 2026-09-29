@@ -1,11 +1,11 @@
 package net.bexla.orevolution.content.types.menu;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.bexla.orevolution.init.RegBlocks;
 import net.bexla.orevolution.init.RegMenus;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.StringUtil;
 import net.minecraft.world.Container;
@@ -19,14 +19,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
-import net.minecraft.world.level.block.AnvilBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AnvilUpdateEvent;
 
 import javax.annotation.Nullable;
-
-import static net.neoforged.neoforge.common.CommonHooks.onAnvilRepair;
 
 public class SteelAnvilMenu extends ItemCombinerMenu {
     public int repairItemCountCost;
@@ -54,7 +51,7 @@ public class SteelAnvilMenu extends ItemCombinerMenu {
 
     @Override
     protected boolean isValidBlock(BlockState state) {
-        return state.is(BlockTags.ANVIL);
+        return state.is(RegBlocks.STEEL_ANVIL);
     }
 
     @Override
@@ -67,8 +64,6 @@ public class SteelAnvilMenu extends ItemCombinerMenu {
         if (!player.getAbilities().instabuild) {
             player.giveExperienceLevels(-this.cost.get());
         }
-
-        float breakChance = onAnvilRepair(player, stack, SteelAnvilMenu.this.inputSlots.getItem(0), SteelAnvilMenu.this.inputSlots.getItem(1));
 
         this.inputSlots.setItem(0, ItemStack.EMPTY);
         if (this.repairItemCountCost > 0) {
@@ -84,21 +79,7 @@ public class SteelAnvilMenu extends ItemCombinerMenu {
         }
 
         this.cost.set(0);
-        this.access.execute((p_150479_, p_150480_) -> {
-            BlockState blockstate = p_150479_.getBlockState(p_150480_);
-            if (!player.getAbilities().instabuild && blockstate.is(BlockTags.ANVIL) && player.getRandom().nextFloat() < breakChance) {
-                BlockState blockstate1 = AnvilBlock.damage(blockstate);
-                if (blockstate1 == null) {
-                    p_150479_.removeBlock(p_150480_, false);
-                    p_150479_.levelEvent(1029, p_150480_, 0);
-                } else {
-                    p_150479_.setBlock(p_150480_, blockstate1, 2);
-                    p_150479_.levelEvent(1030, p_150480_, 0);
-                }
-            } else {
-                p_150479_.levelEvent(1030, p_150480_, 0);
-            }
-        });
+        this.access.execute((level, state) -> level.levelEvent(1030, state, 0));
     }
 
     public static boolean onAnvilChange(SteelAnvilMenu container, ItemStack left, ItemStack right, Container outputSlot, String name, long baseCost, Player player) {
@@ -258,14 +239,6 @@ public class SteelAnvilMenu extends ItemCombinerMenu {
                 itemstack1 = ItemStack.EMPTY;
             }
 
-            if (k == i && k > 0 && this.cost.get() >= 40) {
-                this.cost.set(39);
-            }
-
-            if (this.cost.get() >= 40 && !this.player.getAbilities().instabuild) {
-                itemstack1 = ItemStack.EMPTY;
-            }
-
             if (!itemstack1.isEmpty()) {
                 int i3 = itemstack1.getOrDefault(DataComponents.REPAIR_COST, Integer.valueOf(0));
                 if (i3 < itemstack2.getOrDefault(DataComponents.REPAIR_COST, Integer.valueOf(0))) {
@@ -289,7 +262,7 @@ public class SteelAnvilMenu extends ItemCombinerMenu {
     }
 
     public static int calculateIncreasedRepairCost(int oldRepairCost) {
-        return (int)Math.min((long)oldRepairCost * 2L + 1L, 2147483647L);
+        return oldRepairCost + 1;
     }
 
     public boolean setItemName(String itemName) {
@@ -315,7 +288,7 @@ public class SteelAnvilMenu extends ItemCombinerMenu {
     @Nullable
     private static String validateName(String itemName) {
         String s = StringUtil.filterText(itemName);
-        return s.length() <= 50 ? s : null;
+        return s.length() <= 300 ? s : null;
     }
 
     public int getCost() {

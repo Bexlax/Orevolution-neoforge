@@ -1,0 +1,9 @@
+{
+  "asset_name": "orevolution_tin",
+  "description": {
+    "color": "#FFFF55",
+    "translate": "trim_material.orevolution.tin"
+  },
+  "ingredient": "orevolution:tin_ingot",
+  "item_model_index": -1.0
+}

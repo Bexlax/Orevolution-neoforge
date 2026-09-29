@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coating_template": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:coating_smithing_template"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:reinforced_template_from_coating_template"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coating_template"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:reinforced_template_from_coating_template"
+    ]
+  }
+}

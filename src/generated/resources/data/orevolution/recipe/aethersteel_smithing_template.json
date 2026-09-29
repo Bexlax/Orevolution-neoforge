@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "orevolution:aetherrock"
+      "item": "minecraft:end_stone"
     },
     "B": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:netherite_scrap"
     },
     "C": {
       "item": "orevolution:aethersteel_smithing_template"

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "orevolution:steel_heavywork_shovel"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_shovel"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

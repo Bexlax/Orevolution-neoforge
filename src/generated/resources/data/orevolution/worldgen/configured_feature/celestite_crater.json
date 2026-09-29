@@ -1,0 +1,107 @@
+{
+  "type": "orevolution:geode_crater",
+  "config": {
+    "cluster_chance": 0.15,
+    "clusters": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:small_celestite_bud",
+          "Properties": {
+            "facing": "up",
+            "glow": "0",
+            "mode": "normal",
+            "phase": "up",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:medium_celestite_bud",
+          "Properties": {
+            "facing": "up",
+            "glow": "0",
+            "mode": "normal",
+            "phase": "up",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:large_celestite_bud",
+          "Properties": {
+            "facing": "up",
+            "glow": "0",
+            "mode": "normal",
+            "phase": "up",
+            "waterlogged": "false"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:celestite_cluster",
+          "Properties": {
+            "facing": "up",
+            "glow": "0",
+            "mode": "normal",
+            "phase": "up",
+            "waterlogged": "false"
+          }
+        }
+      }
+    ],
+    "depth": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 6,
+      "min_inclusive": 4
+    },
+    "innerChance": 1.0,
+    "inner_layer": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:celestite_block",
+          "Properties": {
+            "glow": "0",
+            "mode": "normal",
+            "phase": "up"
+          }
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:pyrite_block"
+        }
+      }
+    ],
+    "irregularity": 0.95,
+    "middle_layer": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:diorite"
+      }
+    },
+    "outer_layer": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:tuff"
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 11,
+      "min_inclusive": 4
+    },
+    "replaceable": {
+      "predicate_type": "minecraft:tag_match",
+      "tag": "orevolution:crater_placement_blacklist"
+    }
+  }
+}

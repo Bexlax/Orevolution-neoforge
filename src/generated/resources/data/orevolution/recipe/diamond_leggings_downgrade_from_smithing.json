@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:platinum_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_leggings"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

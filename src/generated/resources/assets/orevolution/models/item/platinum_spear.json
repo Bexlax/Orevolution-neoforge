@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "orevolution:item/platinum_spear_in_hand",
+      "predicate": {
+        "spears:in_gui": 0.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "orevolution:item/compat/spears/platinum_spear"
+  }
+}

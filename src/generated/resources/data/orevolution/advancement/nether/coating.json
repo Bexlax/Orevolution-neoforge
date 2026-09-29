@@ -1,0 +1,36 @@
+{
+  "parent": "orevolution:nether/obtain_tungsten",
+  "criteria": {
+    "has_coat": {
+      "conditions": {
+        "items": [
+          {
+            "components": {
+              "orevolution:coated": true
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.coating.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "orevolution:coating_smithing_template"
+    },
+    "title": {
+      "translate": "advancements.orevolution.coating.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_coat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "orevolution:block/decorative/polished_celestite",
+    "side": "orevolution:block/decorative/polished_celestite",
+    "top": "orevolution:block/decorative/polished_celestite"
+  }
+}

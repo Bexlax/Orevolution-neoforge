@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        "orevolution_aethersteel": "orevolution:trims/color_palettes/aethersteel",
+        "orevolution_livingstone": "orevolution:trims/color_palettes/livingstone",
+        "orevolution_platinum": "orevolution:trims/color_palettes/platinum",
+        "orevolution_tin": "orevolution:trims/color_palettes/tin",
+        "orevolution_tungsten": "orevolution:trims/color_palettes/tungsten",
+        "orevolution_verdite": "orevolution:trims/color_palettes/verdite"
+      },
+      "textures": [
+        "minecraft:trims/items/helmet_trim",
+        "minecraft:trims/items/chestplate_trim",
+        "minecraft:trims/items/leggings_trim",
+        "minecraft:trims/items/boots_trim"
+      ]
+    }
+  ]
+}

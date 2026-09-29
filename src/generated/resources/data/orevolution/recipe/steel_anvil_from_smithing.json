@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:iron_ingot"
+    "item": "orevolution:steel_ingot"
   },
   "base": {
     "item": "minecraft:anvil"

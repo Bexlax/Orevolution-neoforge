@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "orevolution:bronze_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:leather_boots"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

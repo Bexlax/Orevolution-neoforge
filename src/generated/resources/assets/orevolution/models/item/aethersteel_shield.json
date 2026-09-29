@@ -1,0 +1,16 @@
+{
+  "parent": "orevolution:item/big_shield",
+  "gui_light": "front",
+  "overrides": [
+    {
+      "model": "orevolution:item/aethersteel_shield_blocking",
+      "predicate": {
+        "minecraft:blocking": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "1": "orevolution:item/compat/shieldexp/aethersteel_shield",
+    "particle": "orevolution:item/compat/shieldexp/aethersteel_shield"
+  }
+}

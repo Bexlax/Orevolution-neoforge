@@ -1,0 +1,20 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:rhyolite"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "chance": 0.85,
+      "count": 2,
+      "id": "orevolution:quartz_chip"
+    },
+    {
+      "chance": 0.3,
+      "id": "minecraft:emerald"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:story/iron_tools",
+  "criteria": {
+    "has_platinum_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:ingots/platinum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.obtain_platinum.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "orevolution:platinum_ingot"
+    },
+    "title": {
+      "translate": "advancements.orevolution.obtain_platinum.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_platinum_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

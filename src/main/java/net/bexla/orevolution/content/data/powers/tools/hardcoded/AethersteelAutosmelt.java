@@ -1,7 +1,7 @@
 package net.bexla.orevolution.content.data.powers.tools.hardcoded;
 
-import net.bexla.orevolution.content.data.Conditionals;
 import net.bexla.orevolution.content.data.utility.OrevolutionTags;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.tool.OrevolutionToolPower;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -10,13 +10,11 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -31,7 +29,6 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.Tags;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,50 +36,64 @@ import java.util.List;
 import static net.bexla.orevolution.content.data.utility.OrevolutionUtils.simulateBlockBreaking;
 
 public class AethersteelAutosmelt extends OrevolutionToolPower {
-    private final double baseChance = 0.4;
+    private final double baseChance = 0.3;
 
     public AethersteelAutosmelt() {
-        super("", Conditionals.always());
-    }
-
-    @Override
-    public @NotNull Object addTooltipValue() {
-        return (int)(baseChance * 100) + "%";
+        super("", IConditional.always());
     }
 
     @Override
     public List<Component> appendTooltip(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        Object tooltipval = addTooltipValue();
         List<Component> tips = new ArrayList<>();
 
-
-        tips.add(Component.translatable("tooltip.orevolution.duplication", tooltipval).withStyle(ChatFormatting.GREEN));
-
-        if(Screen.hasControlDown()) {
-            tips.add(Component.translatable("tooltip.orevolution.duplication_explanation").withStyle(ChatFormatting.DARK_GRAY));
-        }
-        else {
-            tips.add(Component.translatable("tooltip.orevolution.press_key", Component.translatable("key.keyboard.left.control").getString()).withStyle(ChatFormatting.DARK_GRAY));
-        }
-        tips.add(Component.literal(""));
-
-
-        tips.add(Component.translatable("tooltip.orevolution.autosmelt", tooltipval).withStyle(ChatFormatting.GREEN));
+        tips.add(Component.translatable("power.orevolution.duplication", displayChance(0.1), displayChance(2)).withStyle(ChatFormatting.GREEN));
 
         if(Screen.hasControlDown()) {
-            tips.add(Component.translatable("tooltip.orevolution.autosmelt_explanation").withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.duplication").withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.double_chance", displayChance(2)).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.normal_chance", displayChance(1)).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.uncommon_chance", displayChance(0.5)).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.ore_chance", displayChance(0.2)).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.rare_chance", displayChance(0.1)).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.explanation.no_chance").withStyle(ChatFormatting.DARK_GRAY));
         }
         else {
-            tips.add(Component.translatable("tooltip.orevolution.press_key", Component.translatable("key.keyboard.left.control").getString()).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.press_key", Component.translatable("key.keyboard.left.control").getString()).withStyle(ChatFormatting.DARK_GRAY));
         }
-        tips.add(Component.literal(""));
+
+        tips.add(Component.empty());
+
+        tips.add(Component.translatable("power.orevolution.autosmelt").withStyle(ChatFormatting.GREEN));
+
+        if(Screen.hasControlDown()) {
+            tips.add(Component.translatable("power.orevolution.explanation.autosmelt").withStyle(ChatFormatting.DARK_GRAY));
+        }
+        else {
+            tips.add(Component.translatable("power.orevolution.press_key", Component.translatable("key.keyboard.left.control").getString()).withStyle(ChatFormatting.DARK_GRAY));
+        }
 
         return tips;
+    }
+
+    private Object displayChance(double op) {
+        double val = baseChance * 100;
+        return (int)(val * op) + "%";
     }
 
     protected ItemStack getSmeltStack(Level level, ItemStack stack) {
         return level.getRecipeManager().getRecipeFor(
                 RecipeType.SMELTING,
+                new SingleRecipeInput(stack),
+                level
+        ).map(recipe -> recipe.value().assemble(
+                new SingleRecipeInput(stack),
+                level.registryAccess()
+        )).orElse(getBlastedStack(level, stack));
+    }
+
+    protected ItemStack getBlastedStack(Level level, ItemStack stack) {
+        return level.getRecipeManager().getRecipeFor(
+                RecipeType.BLASTING,
                 new SingleRecipeInput(stack),
                 level
         ).map(recipe -> recipe.value().assemble(
@@ -94,11 +105,9 @@ public class AethersteelAutosmelt extends OrevolutionToolPower {
     @Override
     public boolean onMineBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity entity, BlockState state) {
         if(!(entity instanceof Player player)) return super.onMineBlock(stack, level, pos, entity, state);
-        if(!getCBoolean(stack, state, level, player, null)) return super.onMineBlock(stack, level, pos, entity, state);
         if(player.isCreative()) return super.onMineBlock(stack, level, pos, entity, state);
 
         double chance = baseChance;
-        Item item = stack.getItem();
 
         BlockEntity blockEntity = level.getBlockEntity(pos);
 
@@ -112,24 +121,18 @@ public class AethersteelAutosmelt extends OrevolutionToolPower {
 
         boolean smeltedAnything = false;
 
-        if (item instanceof TieredItem tieredItem && stack.isCorrectToolForDrops(state)) {
-            if(state.is(OrevolutionTags.Blocks.alwaysDuplicateChance)) {
-                chance = 1;
-            }
-            else if(state.is(OrevolutionTags.Blocks.neverDuplicateChance)) {
+        if (!state.requiresCorrectToolForDrops() || stack.isCorrectToolForDrops(state)) {
+            if(state.is(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)) {
+                chance = baseChance * 2;
+            } else if(state.is(OrevolutionTags.Blocks.NEVER_DUPLICATE_CHANCE)) {
                 chance = 0;
-            }
-            else if(state.is(OrevolutionTags.Blocks.uncommonDuplicateChance)) {
+            } else if(state.is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {
                 chance = baseChance / 2;
-            }
-            else if(state.is(Tags.Blocks.ORES)) {
+            } else if(state.is(Tags.Blocks.ORES)) {
                 chance = baseChance / 5;
-            }
-            else if(state.is(OrevolutionTags.Blocks.rareDuplicateChance)) {
+            } else if(state.is(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)) {
                 chance = baseChance / 8;
             }
-
-            boolean oneOfThese = state.is(Tags.Blocks.ORES) || state.is(Tags.Blocks.SANDS) || state.is(BlockTags.LOGS_THAT_BURN) || state.is(BlockTags.CROPS);
 
             Holder<Enchantment> silkTouch = level.registryAccess()
                     .registryOrThrow(Registries.ENCHANTMENT)
@@ -138,7 +141,7 @@ public class AethersteelAutosmelt extends OrevolutionToolPower {
             for(ItemStack drop : drops) {
                 ItemStack smelted = getSmeltStack(level, drop);
 
-                if(!player.isShiftKeyDown() && oneOfThese && !(EnchantmentHelper.getTagEnchantmentLevel(silkTouch, stack) > 0)) {
+                if((player.isShiftKeyDown() != state.is(OrevolutionTags.Blocks.AUTOSMELT)) && !(EnchantmentHelper.getTagEnchantmentLevel(silkTouch, stack) > 0)) {
                     smelted.setCount(drop.getCount());
 
                     level.removeBlock(pos, false);

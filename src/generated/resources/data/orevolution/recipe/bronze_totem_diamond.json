@@ -3,10 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "orevolution:bronze_totem"
+      "item": "minecraft:diamond"
     },
     {
       "item": "minecraft:diamond"
+    },
+    {
+      "item": "orevolution:bronze_totem"
     },
     {
       "item": "minecraft:diamond"
@@ -16,7 +19,10 @@
     }
   ],
   "result": {
+    "components": {
+      "orevolution:diamond_totem": {}
+    },
     "count": 1,
-    "id": "orevolution:bronze_totem_diamond"
+    "id": "orevolution:bronze_totem"
   }
 }

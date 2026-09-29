@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#minecraft:iron_ores",
+    "#minecraft:needs_iron_tool",
+    "#minecraft:incorrect_for_iron_tool",
+    "#orevolution:incorrect_for_tin_tool"
+  ]
+}

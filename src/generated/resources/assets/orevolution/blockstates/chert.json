@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "orevolution:block/chert"
+      },
+      {
+        "model": "orevolution:block/chert_alt",
+        "weight": 3
+      }
+    ]
+  }
+}

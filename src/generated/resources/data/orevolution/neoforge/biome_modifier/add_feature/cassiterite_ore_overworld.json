@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "generate_tin"
+    }
+  ],
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "orevolution:cassiterite_ore_overworld",
+  "step": "underground_ores"
+}

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "allow_steel"
+    }
+  ],
   "type": "create:mixing",
   "heat_requirement": "heated",
   "ingredients": [

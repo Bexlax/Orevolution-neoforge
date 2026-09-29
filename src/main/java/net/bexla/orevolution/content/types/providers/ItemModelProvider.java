@@ -28,7 +28,7 @@ public abstract class ItemModelProvider extends BlueprintItemModelProvider {
     }
 
     public void trapdoorItem(DeferredHolder<Block, ? extends Block> block) {
-        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(),
+        withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(),
                 modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath() + "_bottom"));
     }
 
@@ -64,10 +64,11 @@ public abstract class ItemModelProvider extends BlueprintItemModelProvider {
     @SafeVarargs
     public final void trimArmorItem(DeferredItem<? extends ItemLike>... items) {
         for(DeferredItem<? extends ItemLike> item : items) {
-            Item var7 = ((ItemLike)item.get()).asItem();
+            Item var7 = item.asItem();
             if (var7 instanceof ArmorItem armor) {
                 ResourceLocation location = BuiltInRegistries.ITEM.getKey(armor);
-                ItemModelBuilder itemModel = this.withExistingParent(name((ItemLike)item.get()), "item/generated").texture("layer0", ResourceLocation.fromNamespaceAndPath(this.modid, "item/armor/" + name(armor)));
+                ItemModelBuilder itemModel = withExistingParent(name(item.get()), "item/generated")
+                        .texture("layer0", ResourceLocation.fromNamespaceAndPath(modid, "item/armor/" + name(armor)));
                 int trimType = 1;
 
                 for(String trim : new String[]{"quartz", "iron", "netherite", "redstone", "copper", "gold", "emerald", "diamond", "lapis", "amethyst"}) {
@@ -77,12 +78,63 @@ public abstract class ItemModelProvider extends BlueprintItemModelProvider {
                     itemModel.override().model(new ModelFile.UncheckedModelFile(name)).predicate(ResourceLocation.withDefaultNamespace("trim_type"), (float)((double)trimType / (double)10.0F));
                     var10002 = armor.getType().getName();
                     ResourceLocation texture = ResourceLocation.withDefaultNamespace("trims/items/" + var10002 + "_trim_" + trim);
-                    this.existingFileHelper.trackGenerated(texture, PackType.CLIENT_RESOURCES, ".png", "textures");
-                    ((ItemModelBuilder)((ItemModelBuilder)this.withExistingParent(name.getPath(), "item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(this.modid, "item/armor/" + location.getPath()))).texture("layer1", texture);
+                    existingFileHelper.trackGenerated(texture, PackType.CLIENT_RESOURCES, ".png", "textures");
+                    withExistingParent(name.getPath(), "item/generated").texture("layer0", ResourceLocation.fromNamespaceAndPath(modid, "item/armor/" + location.getPath())).texture("layer1", texture);
                     ++trimType;
                 }
             }
         }
+    }
+
+    @SafeVarargs
+    public final void trimArmorItemDyeable(DeferredItem<? extends ItemLike>... items) {
+        for(DeferredItem<? extends ItemLike> item : items) {
+            Item var7 = item.asItem();
+            if (var7 instanceof ArmorItem armor) {
+                ResourceLocation location = BuiltInRegistries.ITEM.getKey(armor);
+                ItemModelBuilder itemModel =
+                        withExistingParent(name(item.get()), "item/generated")
+                                .texture(
+                                        "layer0",
+                                        ResourceLocation.fromNamespaceAndPath(modid, "item/armor/" + name(armor)))
+                                .texture(
+                                        "layer1",
+                                        ResourceLocation.fromNamespaceAndPath(modid, "item/armor/" + name(armor) + "_overlay"));
+                int trimType = 1;
+
+                for(String trim : new String[]{"quartz", "iron", "netherite", "redstone", "copper", "gold", "emerald", "diamond", "lapis", "amethyst"}) {
+                    String var10002 = location.getNamespace();
+                    String var10003 = location.getPath();
+                    ResourceLocation name = ResourceLocation.fromNamespaceAndPath(var10002, "item/armor/" + var10003 + "_" + trim + "_trim");
+                    itemModel.override().model(new ModelFile.UncheckedModelFile(name)).predicate(ResourceLocation.withDefaultNamespace("trim_type"), (float)((double)trimType / (double)10.0F));
+                    var10002 = armor.getType().getName();
+                    ResourceLocation texture = ResourceLocation.withDefaultNamespace("trims/items/" + var10002 + "_trim_" + trim);
+                    existingFileHelper.trackGenerated(texture, PackType.CLIENT_RESOURCES, ".png", "textures");
+                    withExistingParent(name.getPath(), "item/generated")
+                            .texture("layer0", ResourceLocation.fromNamespaceAndPath(modid, "item/armor/" + location.getPath()))
+                            .texture("layer1", ResourceLocation.fromNamespaceAndPath(modid, "item/armor/" + name(armor) + "_overlay"))
+                            .texture("layer2", texture);
+                    ++trimType;
+                }
+            }
+        }
+    }
+
+    public ItemModelBuilder spearItem(Supplier<? extends Item> item) {
+        String name = name(item.get());
+
+        ResourceLocation guiTexture = itemTex(item.get(), "compat/spears");
+        ResourceLocation handTexture = modLoc("item/compat/spears/" + name + "_in_hand");
+
+        ItemModelBuilder inHand = withExistingParent(name + "_in_hand", mcLoc("item/spear_in_hand"))
+                .texture("layer0", handTexture);
+
+        return withExistingParent(name, mcLoc("item/generated"))
+                .texture("layer0", guiTexture)
+                .override()
+                .predicate(ResourceLocation.fromNamespaceAndPath("spears", "in_gui"), 0)
+                .model(inHand)
+                .end();
     }
 
     public ItemModelBuilder generated(Supplier<? extends ItemLike> itemLike, ResourceLocation texture) {

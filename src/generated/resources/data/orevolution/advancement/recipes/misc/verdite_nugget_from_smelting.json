@@ -1,0 +1,120 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:verdite_nugget_from_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_verdite_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_verdite_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:verdite_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_verdite_pickaxe",
+      "has_verdite_shovel",
+      "has_verdite_axe",
+      "has_verdite_hoe",
+      "has_verdite_sword",
+      "has_verdite_helmet",
+      "has_verdite_chestplate",
+      "has_verdite_leggings",
+      "has_verdite_boots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:verdite_nugget_from_smelting"
+    ]
+  }
+}

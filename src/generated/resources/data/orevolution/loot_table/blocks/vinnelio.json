@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "orevolution:vinnelio",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "fruit": "true"
+                  }
+                }
+              ],
+              "name": "orevolution:ancient_fruit"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "orevolution:vinnelio_vines"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "orevolution:blocks/vinnelio"
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#minecraft:swords",
+    {
+      "id": "#minecraft:spears",
+      "required": false
+    }
+  ]
+}

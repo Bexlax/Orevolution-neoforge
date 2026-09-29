@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "criteria": {
+    "has_tin_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:tin_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.tin_upgrade.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "orevolution:tin_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.orevolution.tin_upgrade.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_tin_pickaxe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

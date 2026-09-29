@@ -6,6 +6,21 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "orevolution:fools_apple"
+        },
+        {
+          "type": "minecraft:item",
           "name": "orevolution:tungsten_nugget"
         },
         {

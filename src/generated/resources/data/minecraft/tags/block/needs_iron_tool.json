@@ -9,6 +9,13 @@
     "orevolution:platinum_tiles",
     "orevolution:raw_platinum_block",
     "orevolution:platinum_block",
-    "orevolution:steel_anvil"
+    "orevolution:steel_anvil",
+    "orevolution:verdite_block",
+    "orevolution:nether_experience_ore",
+    "orevolution:cassiterite_block",
+    "orevolution:cassiterite_ore",
+    "orevolution:deepslate_cassiterite_ore",
+    "orevolution:nether_cassiterite_ore",
+    "orevolution:raw_cassiterite_block"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "asset_id": "orevolution:livingstone",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.orevolution.livingstone"
+  },
+  "template_item": "orevolution:livingstone_shard"
+}

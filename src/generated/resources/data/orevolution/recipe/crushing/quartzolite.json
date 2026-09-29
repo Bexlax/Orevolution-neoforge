@@ -1,0 +1,26 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:quartzolite"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "orevolution:quartz_chip"
+    },
+    {
+      "chance": 0.75,
+      "id": "orevolution:quartz_chip"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.12,
+      "id": "minecraft:diorite"
+    }
+  ]
+}

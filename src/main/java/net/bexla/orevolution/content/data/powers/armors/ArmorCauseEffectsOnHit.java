@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.ArmorPowerMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
@@ -23,7 +23,7 @@ public class ArmorCauseEffectsOnHit extends ArmorPowerMobEffects {
 
     @Override
     public void onAttackTarget(LivingEntity wearer, LivingEntity target) {
-        if(!getCBoolean(null, wearer.level(), wearer, target)) return;
+        if(!condition(null, wearer.level(), wearer, target)) return;
 
         if(!this.effectsMob.isEmpty()) {
             for(Holder<MobEffect> p : this.effectsMob) {

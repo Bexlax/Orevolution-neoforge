@@ -4,12 +4,26 @@
   "package": "net.bexla.orevolution.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ComposterBlockMixin",
+    "HuskMixin",
+    "IItemStackExtensionMixin",
     "ItemMixin",
-    "ItemstackMixin",
-    "ServerGamePacketListenerImplMixin"
+    "ItemStackMixin",
+    "LevelRendererAccessor",
+    "LevelRendererMixin",
+    "LivingEntityMixin",
+    "PiglinAiMixin",
+    "PiglinBruteMixin",
+    "PlayerMixin",
+    "ServerGamePacketListenerImplMixin",
+    "ZombieMixin"
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "BlockEntityWithoutLevelRendererMixin",
+    "HumanoidArmorLayerMixin"
+  ]
 }

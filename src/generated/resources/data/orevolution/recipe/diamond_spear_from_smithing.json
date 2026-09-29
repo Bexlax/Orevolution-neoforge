@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "orevolution:platinum_spear"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:diamond_spear"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

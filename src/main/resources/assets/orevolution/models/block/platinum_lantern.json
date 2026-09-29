@@ -1,0 +1,57 @@
+{
+	"format_version": "1.9.0",
+    "render_type": "minecraft:cutout",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "#lantern",
+		"lantern": "orevolution:block/decorative/platinum_lantern"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 8, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 1, 1]},
+			"faces": {
+				"north": {"uv": [0, 2, 8, 9], "texture": "#lantern"},
+				"east": {"uv": [0, 2, 8, 9], "texture": "#lantern"},
+				"south": {"uv": [0, 2, 8, 9], "texture": "#lantern"},
+				"west": {"uv": [0, 2, 8, 9], "texture": "#lantern"},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#lantern"},
+				"down": {"uv": [8, 0, 16, 8], "texture": "#lantern", "cullface": "down"}
+			}
+		},
+		{
+			"from": [5, 8, 5],
+			"to": [11, 10, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 1, 0]},
+			"faces": {
+				"north": {"uv": [1, 0, 7, 2], "texture": "#lantern"},
+				"east": {"uv": [1, 0, 7, 2], "texture": "#lantern"},
+				"south": {"uv": [1, 0, 7, 2], "texture": "#lantern"},
+				"west": {"uv": [1, 0, 7, 2], "texture": "#lantern"},
+				"up": {"uv": [9, 1, 15, 7], "texture": "#lantern"}
+			}
+		},
+		{
+			"from": [6.5, 10, 8],
+			"to": [9.5, 12, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"north": {"uv": [6, 13, 3, 15], "texture": "#lantern"},
+				"south": {"uv": [3, 13, 6, 15], "texture": "#lantern"}
+			}
+		},
+		{
+			"from": [8, 10, 6.5],
+			"to": [8, 12, 9.5],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 9, 8]},
+			"faces": {
+				"east": {"uv": [3, 13, 6, 15], "texture": "#lantern"},
+				"west": {"uv": [6, 13, 3, 15], "texture": "#lantern"}
+			}
+		}
+	]
+}

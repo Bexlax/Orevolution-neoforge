@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "orevolution:block/storage/livingstone_block",
+    "side": "orevolution:block/storage/livingstone_block",
+    "top": "orevolution:block/storage/livingstone_block"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "pack_format": 18,
+    "description": "Retextures some vanilla items to match orevolution's style",
+    "supported_formats": {
+       "min_inclusive": 18,
+       "max_inclusive": 85
+    }
+  }
+}

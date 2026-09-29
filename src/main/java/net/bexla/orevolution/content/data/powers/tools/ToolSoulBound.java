@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.tools;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.tool.OrevolutionToolPower;
 import net.bexla.orevolution.init.RegDataComponents;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +16,7 @@ public class ToolSoulBound extends OrevolutionToolPower {
 
     @Override
     public void onInventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
-        if(!getCBoolean(stack, null, level, (LivingEntity) entity, null)) {
+        if(!getCondition(stack, null, level, (LivingEntity) entity, null)) {
             stack.set(RegDataComponents.SOUL_BOUND, false);
             return;
         }

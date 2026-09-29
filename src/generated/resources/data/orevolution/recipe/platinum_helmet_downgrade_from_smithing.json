@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "orevolution:platinum_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_helmet"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

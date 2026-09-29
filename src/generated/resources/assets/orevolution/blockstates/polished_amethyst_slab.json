@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_amethyst_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_amethyst"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_amethyst_slab_top"
+    }
+  }
+}

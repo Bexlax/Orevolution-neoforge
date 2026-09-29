@@ -3,10 +3,10 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "minecraft:blackstone"
+      "item": "minecraft:gold_ingot"
     },
     "B": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:blackstone"
     },
     "C": {
       "item": "orevolution:reinforced_smithing_template"

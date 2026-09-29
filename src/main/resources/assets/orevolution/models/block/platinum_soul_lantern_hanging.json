@@ -1,0 +1,7 @@
+{
+	"parent": "orevolution:block/platinum_lantern_hanging",
+	"textures": {
+		"particle": "#lantern",
+		"lantern": "orevolution:block/decorative/platinum_soul_lantern"
+	}
+}

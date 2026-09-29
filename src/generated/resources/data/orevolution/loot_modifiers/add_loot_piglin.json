@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "integrate_entity_loot"
+    }
+  ],
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/piglin"
+    }
+  ],
+  "table": "orevolution:entities/orevolution_piglin"
+}

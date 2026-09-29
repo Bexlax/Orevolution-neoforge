@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "orevolution:item/armor/bronze_helmet",
+    "layer1": "orevolution:item/armor/bronze_helmet_overlay",
+    "layer2": "minecraft:trims/items/helmet_trim_lapis"
+  }
+}

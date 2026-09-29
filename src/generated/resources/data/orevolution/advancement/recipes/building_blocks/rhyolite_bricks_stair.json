@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rhyolite_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:rhyolite_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:rhyolite_bricks_stair"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rhyolite_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:rhyolite_bricks_stair"
+    ]
+  }
+}

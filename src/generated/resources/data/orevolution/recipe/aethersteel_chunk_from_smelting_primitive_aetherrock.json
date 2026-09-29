@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 1.6,
+  "group": "orevolution:tungsten_ingot",
+  "ingredient": {
+    "item": "orevolution:primitive_aetherrock"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:aethersteel_chunk"
+  }
+}

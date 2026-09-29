@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "generate_xp"
+    }
+  ],
   "feature": "orevolution:end_experience_ore",
   "placement": [
     {
@@ -16,7 +22,7 @@
           "absolute": 60
         },
         "min_inclusive": {
-          "absolute": -40
+          "absolute": 0
         }
       }
     },

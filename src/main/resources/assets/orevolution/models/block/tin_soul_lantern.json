@@ -1,0 +1,6 @@
+{
+	"parent": "orevolution:block/tin_lantern",
+	"textures": {
+		"lantern": "orevolution:block/decorative/tin_soul_lantern"
+	}
+}

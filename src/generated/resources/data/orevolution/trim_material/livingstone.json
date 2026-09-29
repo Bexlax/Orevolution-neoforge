@@ -1,0 +1,9 @@
+{
+  "asset_name": "orevolution_livingstone",
+  "description": {
+    "color": "#AAAAAA",
+    "translate": "trim_material.orevolution.livingstone"
+  },
+  "ingredient": "orevolution:livingstone_shard",
+  "item_model_index": -1.0
+}

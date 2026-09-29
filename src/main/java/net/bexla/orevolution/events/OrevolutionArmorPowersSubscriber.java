@@ -1,10 +1,11 @@
 package net.bexla.orevolution.events;
 
-import com.mojang.logging.LogUtils;
 import net.bexla.orevolution.Orevolution;
 import net.bexla.orevolution.OrevolutionConfig;
+import net.bexla.orevolution.content.data.utility.OrevolutionUtils;
+import net.bexla.orevolution.content.interfaces.IArmorPower;
 import net.bexla.orevolution.content.types.ArmorPowerRegistry;
-import net.bexla.orevolution.content.types.interfaces.IArmorPower;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
@@ -25,7 +27,6 @@ import net.neoforged.neoforge.event.entity.living.LivingKnockBackEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import org.slf4j.Logger;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -35,8 +36,6 @@ import static net.bexla.orevolution.content.data.utility.OrevolutionUtils.isWear
 
 @EventBusSubscriber(modid = Orevolution.MODID)
 public class OrevolutionArmorPowersSubscriber {
-    private static final Logger LOGGER = LogUtils.getLogger();
-
     private static final Map<UUID, Holder<ArmorMaterial>> LAST_SET = new HashMap<>();
 
     private static void withArmorPower(LivingEntity entity, Consumer<IArmorPower> action) {
@@ -95,15 +94,24 @@ public class OrevolutionArmorPowersSubscriber {
         } else {
             LAST_SET.remove(player.getUUID());
         }
+
+//        if(player.getRemainingFireTicks() > -20)
+//            OrevolutionUtils.displayDebug(player, "fire time: " + player.getRemainingFireTicks());
     }
 
     @SubscribeEvent
     public static void onLivingHurt(LivingDamageEvent.Pre event) {
+        if(event.getNewDamage() < 0f) return;
+
         withArmorPower(event.getEntity(), power -> {
-                float newdmg = power.onDamaged(event.getEntity(), event.getSource(), event.getOriginalDamage());
-                event.setNewDamage(event.getOriginalDamage() * newdmg);
+                float damage = power.onDamaged(event.getEntity(), event.getSource(), event.getNewDamage());
+                if(damage != event.getNewDamage())
+                    event.setNewDamage(damage);
             }
         );
+
+        if(event.getEntity() instanceof Player player)
+            OrevolutionUtils.displayDebug(player, "new damage: " + event.getNewDamage() + ", og damage: " + event.getOriginalDamage());
     }
 
     @SubscribeEvent
@@ -136,35 +144,61 @@ public class OrevolutionArmorPowersSubscriber {
     }
 
     @OnlyIn(Dist.CLIENT)
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onItemTooltip(ItemTooltipEvent event) {
-        if(!OrevolutionConfig.CLIENT.armorsPowersTip.get()) return;
-
-        List<Component> tip = new ArrayList<>();
+        if (!OrevolutionConfig.COMMON.armorsPowers.get()) return;
 
         LivingEntity entity = event.getEntity();
-
         if (entity == null) return;
 
-        List<Component> tooltip = event.getToolTip();
         ItemStack stack = event.getItemStack();
 
-        if(!(stack.getItem() instanceof ArmorItem item)) return;
+        if (!(stack.getItem() instanceof ArmorItem item)) return;
+
+        ArmorItem.Type type = item.getType();
+
+        if (type != ArmorItem.Type.HELMET && type != ArmorItem.Type.CHESTPLATE
+                && type != ArmorItem.Type.LEGGINGS && type != ArmorItem.Type.BOOTS) return;
 
         Holder<ArmorMaterial> material = item.getMaterial();
 
-        if (!(item.getType() == ArmorItem.Type.HELMET
-                || item.getType() == ArmorItem.Type.CHESTPLATE
-                || item.getType() == ArmorItem.Type.LEGGINGS
-                || item.getType() == ArmorItem.Type.BOOTS)) return;
-
         IArmorPower power = ArmorPowerRegistry.getPower(material);
 
-        if(power != IArmorPower.EMPTY) {
-            tip.add(0, Component.translatable("tooltip.orevolution.full_set_bonus"));
-            tip.addAll(power.appendTooltip(stack, entity.level(), tooltip));
+        if (power.equals(IArmorPower.EMPTY)) return;
+
+        List<Component> tooltip = event.getToolTip();
+        List<Component> tooltipComponents = new ArrayList<>();
+
+        int matchingPieces = 0;
+
+        for (ItemStack armorStack : entity.getArmorSlots()) {
+            if (armorStack.getItem() instanceof ArmorItem armorItem
+                    && armorItem.getMaterial().equals(material)) {
+                matchingPieces++;
+            }
         }
 
-        tooltip.addAll(1, tip);
+        boolean fullSet = matchingPieces >= 4;
+
+        tooltipComponents.addFirst(
+                Component.translatable(
+                        "power.orevolution.full_set_bonus",
+                        Component.translatable("power.orevolution.equipped_set", matchingPieces).withStyle(!fullSet? ChatFormatting.DARK_GRAY : ChatFormatting.BLUE)
+                )
+        );
+
+        tooltipComponents.addAll(power.appendTooltip(stack, entity.level(), tooltip));
+
+        if (!fullSet) {
+            tooltipComponents.replaceAll(component -> component.copy().withStyle(ChatFormatting.DARK_GRAY));
+        }
+
+        tooltip.addAll(1, tooltipComponents);
+
+        int index = 1 + tooltipComponents.size() - 1;
+        if (index + 1 >= tooltip.size()
+                || !tooltip.get(index + 1).equals(Component.empty())) {
+            tooltip.add(index + 1, Component.empty());
+        }
     }
 }

@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.OrevolutionArmorPower;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,8 +23,10 @@ public class ArmorExtendPickUp extends OrevolutionArmorPower {
     }
 
     @Override
-    public Object addTooltipValue() {
-        return "+" + (int)reach;
+    public Object[] addTooltipValue() {
+        return new Object[] {
+                "+" + (int)reach
+        };
     }
 
     @Override
@@ -34,6 +36,7 @@ public class ArmorExtendPickUp extends OrevolutionArmorPower {
         Level level = player.level();
 
         if (level.isClientSide) return;
+        if (!condition(stack, level, wearer, null)) return;
 
         AABB area = player.getBoundingBox().inflate(reach);
 
@@ -41,8 +44,12 @@ public class ArmorExtendPickUp extends OrevolutionArmorPower {
 
         for (ItemEntity item : items) {
             if (!item.isAlive()) continue;
-
             if (item.hasPickUpDelay()) continue;
+
+            if (!player.isCreative()
+                    && player.getInventory().getSlotWithRemainingSpace(item.getItem()) == -1) {
+                continue;
+            }
 
             Vec3 motion = player.position()
                     .add(0, 0.75D, 0)

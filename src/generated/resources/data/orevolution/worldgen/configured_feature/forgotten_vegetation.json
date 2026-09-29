@@ -1,0 +1,73 @@
+{
+  "type": "orevolution:random_floor_placement",
+  "config": {
+    "placement_count": 7,
+    "state_provider": {
+      "entries": [
+        {
+          "data": {
+            "Name": "orevolution:emerald_cluster",
+            "Properties": {
+              "vertical_direction": "up",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "Name": "orevolution:prismarine_cluster",
+            "Properties": {
+              "vertical_direction": "up",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "Name": "orevolution:corelio"
+          },
+          "weight": 85
+        },
+        {
+          "data": {
+            "Name": "orevolution:unknown_roots"
+          },
+          "weight": 54
+        },
+        {
+          "data": {
+            "Name": "orevolution:unknown_roots_block",
+            "Properties": {
+              "waterlogged": "false"
+            }
+          },
+          "weight": 4
+        },
+        {
+          "data": {
+            "Name": "orevolution:large_corelio",
+            "Properties": {
+              "half": "lower"
+            }
+          },
+          "weight": 18
+        },
+        {
+          "data": {
+            "Name": "minecraft:air"
+          },
+          "weight": 9
+        }
+      ]
+    },
+    "tries": 15,
+    "valid_floor_blocks": [
+      "orevolution:rhyolite",
+      "orevolution:chert"
+    ],
+    "xz_radius": 4,
+    "y_height": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "orevolution:block/golden_lantern"
+    },
+    "hanging=true": {
+      "model": "orevolution:block/golden_lantern_hanging"
+    }
+  }
+}

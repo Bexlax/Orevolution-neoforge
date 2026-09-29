@@ -1,0 +1,8 @@
+{
+  "asset_id": "orevolution:bronze",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.orevolution.bronze"
+  },
+  "template_item": "orevolution:bronze_ingot"
+}

@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.types.power.armor;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -31,21 +31,22 @@ public class ArmorPowerMobEffects extends OrevolutionArmorPower {
     @Override
     public List<Component> appendTooltip(ItemStack stack, Level level, List<Component> lines) {
         List<Component> tips = new ArrayList<>();
+        Object[] objects = addTooltipValue();
         if(!this.effectsMob.isEmpty()) {
-            tips.add(Component.translatable("tooltip.orevolution." + getTooltipID()).withStyle(ChatFormatting.GREEN));
+            tips.add(Component.translatable("power.orevolution." + getTooltipID(), objects).withStyle(ChatFormatting.GREEN));
             for (Holder<MobEffect> p : this.effectsMob) {
                 tips.add(Component.literal(" - " + p.value().getDisplayName().getString() + (this.amplifier > 0 ? " " + Component.translatable("potion.potency." + this.amplifier).getString() : "")).withStyle(ChatFormatting.AQUA));
             }
-            tips.add(Component.empty());
         }
         if(!this.effectsPlayer.isEmpty()) {
-            tips.add(Component.translatable("tooltip.orevolution." + tooltip_wearer_id).withStyle(ChatFormatting.GREEN));
+            tips.add(Component.translatable("power.orevolution." + tooltip_wearer_id, objects).withStyle(ChatFormatting.GREEN));
             for (Holder<MobEffect> p : this.effectsPlayer) {
                 tips.add(Component.literal(" - " + p.value().getDisplayName().getString() + (this.amplifier > 0 ? " " + Component.translatable("potion.potency." + this.amplifier).getString() : "")).withStyle(ChatFormatting.AQUA));
             }
-            tips.add(Component.empty());
         }
 
         return tips;
     }
+
+
 }

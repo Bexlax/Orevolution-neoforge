@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "orevolution:platinum_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_sword"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

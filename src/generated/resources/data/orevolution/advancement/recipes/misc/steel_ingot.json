@@ -1,8 +1,15 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:mod_loaded",
-      "modid": "create"
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "create"
+      }
+    },
+    {
+      "type": "orevolution:config",
+      "value": "allow_steel"
     }
   ],
   "parent": "minecraft:recipes/root",

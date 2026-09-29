@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "generate_tin"
+    }
+  ],
+  "feature": "orevolution:tin_ore",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 25
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:trapezoid",
+        "max_inclusive": {
+          "absolute": 192
+        },
+        "min_inclusive": {
+          "absolute": 0
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

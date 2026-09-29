@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.OrevolutionArmorPower;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -30,19 +30,17 @@ public class ArmorGrantImmunityEffects extends OrevolutionArmorPower {
     @Override
     public List<Component> appendTooltip(ItemStack stack, Level level, List<Component> lines) {
         List<Component> tips = new ArrayList<>();
-        tips.add(Component.translatable("tooltip.orevolution." + getTooltipID()).withStyle(ChatFormatting.GREEN));
+        tips.add(Component.translatable("power.orevolution." + getTooltipID()).withStyle(ChatFormatting.GREEN));
         for (Holder<MobEffect> p : this.effects) {
             tips.add(Component.literal(" - " + p.value().getDisplayName().getString()).withStyle(ChatFormatting.AQUA));
         }
-
-        tips.add(Component.empty());
 
         return tips;
     }
 
     @Override
     public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
-        if(!getCBoolean(stack, wearer.level(), wearer, null)) return;
+        if(!condition(stack, wearer.level(), wearer, null)) return;
 
         for(Holder<MobEffect> p : this.effects) {
             wearer.removeEffect(p);

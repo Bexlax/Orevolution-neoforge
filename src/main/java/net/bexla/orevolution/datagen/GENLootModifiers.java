@@ -1,10 +1,13 @@
 package net.bexla.orevolution.datagen;
 
 import net.bexla.orevolution.Orevolution;
-import net.bexla.orevolution.content.data.utility.OrevolutionUtils;
+import net.bexla.orevolution.content.data.utility.OrevolutionKeys;
+import net.bexla.orevolution.init.RegConditionSerializer;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -21,19 +24,23 @@ public class GENLootModifiers extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        this.add("add_loot_abandoned_mineshaft", this.addNewLootPool(BuiltInLootTables.ABANDONED_MINESHAFT, OrevolutionUtils.LTKeys.ABANDONED_MINESHAFT));
-        this.add("add_loot_bastion_hoglin_stable", this.addNewLootPool(BuiltInLootTables.BASTION_HOGLIN_STABLE, OrevolutionUtils.LTKeys.BASTION_HOGLIN_STABLE));
-        this.add("add_loot_bastion_treasure", this.addNewLootPool(BuiltInLootTables.BASTION_TREASURE, OrevolutionUtils.LTKeys.BASTION_TREASURE));
-        this.add("add_loot_end_city_treasure", this.addNewLootPool(BuiltInLootTables.END_CITY_TREASURE, OrevolutionUtils.LTKeys.END_CITY));
-        this.add("add_loot_pillager_outpost", this.addNewLootPool(BuiltInLootTables.PILLAGER_OUTPOST, OrevolutionUtils.LTKeys.PILLAGER_OUTPOST));
-        this.add("add_loot_ruined_portal", this.addNewLootPool(BuiltInLootTables.RUINED_PORTAL, OrevolutionUtils.LTKeys.RUINED_PORTAL));
-        this.add("add_loot_shipwreck_supply", this.addNewLootPool(BuiltInLootTables.SHIPWRECK_SUPPLY, OrevolutionUtils.LTKeys.SHIPWRECK_SUPPLY));
-        this.add("add_loot_simple_dungeon", this.addNewLootPool(BuiltInLootTables.SIMPLE_DUNGEON, OrevolutionUtils.LTKeys.SIMPLE_DUNGEON));
-        this.add("add_loot_village_desert_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_DESERT_HOUSE, OrevolutionUtils.LTKeys.VILLAGE_DESERT_HOUSE));
-        this.add("add_loot_village_plains_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_PLAINS_HOUSE, OrevolutionUtils.LTKeys.VILLAGE_PLAINS_HOUSE));
-        this.add("add_loot_village_savanna_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_SAVANNA_HOUSE, OrevolutionUtils.LTKeys.VILLAGE_SAVANNA_HOUSE));
-        this.add("add_loot_village_snowy_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_SNOWY_HOUSE, OrevolutionUtils.LTKeys.VILLAGE_SNOWY_HOUSE));
-        this.add("add_loot_village_taiga_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_TAIGA_HOUSE, OrevolutionUtils.LTKeys.VILLAGE_TAIGA_HOUSE));
+        this.add("add_loot_piglin", this.addNewLootPool(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("entities/piglin")), OrevolutionKeys.LootTables.PIGLIN), RegConditionSerializer.Conditions.ENTITY_LOOT);
+        this.add("add_loot_brute_piglin", this.addNewLootPool(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.withDefaultNamespace("entities/piglin_brute")), OrevolutionKeys.LootTables.BRUTE_PIGLIN), RegConditionSerializer.Conditions.ENTITY_LOOT);
+
+        this.add("add_loot_abandoned_mineshaft", this.addNewLootPool(BuiltInLootTables.ABANDONED_MINESHAFT, OrevolutionKeys.LootTables.ABANDONED_MINESHAFT), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_bastion_hoglin_stable", this.addNewLootPool(BuiltInLootTables.BASTION_HOGLIN_STABLE, OrevolutionKeys.LootTables.BASTION_HOGLIN_STABLE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_bastion_treasure", this.addNewLootPool(BuiltInLootTables.BASTION_TREASURE, OrevolutionKeys.LootTables.BASTION_TREASURE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_end_city_treasure", this.addNewLootPool(BuiltInLootTables.END_CITY_TREASURE, OrevolutionKeys.LootTables.END_CITY), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_pillager_outpost", this.addNewLootPool(BuiltInLootTables.PILLAGER_OUTPOST, OrevolutionKeys.LootTables.PILLAGER_OUTPOST), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_ruined_portal", this.addNewLootPool(BuiltInLootTables.RUINED_PORTAL, OrevolutionKeys.LootTables.RUINED_PORTAL), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_shipwreck_supply", this.addNewLootPool(BuiltInLootTables.SHIPWRECK_SUPPLY, OrevolutionKeys.LootTables.SHIPWRECK_SUPPLY), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_simple_dungeon", this.addNewLootPool(BuiltInLootTables.SIMPLE_DUNGEON, OrevolutionKeys.LootTables.SIMPLE_DUNGEON), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_village_desert_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_DESERT_HOUSE, OrevolutionKeys.LootTables.VILLAGE_DESERT_HOUSE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_village_plains_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_PLAINS_HOUSE, OrevolutionKeys.LootTables.VILLAGE_PLAINS_HOUSE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_village_savanna_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_SAVANNA_HOUSE, OrevolutionKeys.LootTables.VILLAGE_SAVANNA_HOUSE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_village_snowy_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_SNOWY_HOUSE, OrevolutionKeys.LootTables.VILLAGE_SNOWY_HOUSE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_village_taiga_house", this.addNewLootPool(BuiltInLootTables.VILLAGE_TAIGA_HOUSE, OrevolutionKeys.LootTables.VILLAGE_TAIGA_HOUSE), RegConditionSerializer.Conditions.CHEST_LOOT);
+        this.add("add_loot_nether_bridge", this.addNewLootPool(BuiltInLootTables.NETHER_BRIDGE, OrevolutionKeys.LootTables.NETHER_BRIDGE), RegConditionSerializer.Conditions.CHEST_LOOT);
     }
 
     private AddTableLootModifier addNewLootPool(ResourceKey<LootTable> lootToAddTo, ResourceKey<LootTable> newPool) {

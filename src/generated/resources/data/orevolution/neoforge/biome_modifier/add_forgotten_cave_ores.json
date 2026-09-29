@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "orevolution:forgotten_cave",
+  "features": [
+    "orevolution:chert_disk",
+    "orevolution:chert_patch",
+    "orevolution:quartzolite_disk"
+  ],
+  "step": "underground_ores"
+}

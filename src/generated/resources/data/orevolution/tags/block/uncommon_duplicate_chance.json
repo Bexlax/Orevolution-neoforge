@@ -3,12 +3,22 @@
     "#minecraft:needs_stone_tool",
     "#minecraft:needs_iron_tool",
     "#c:gravels",
+    "orevolution:quartzolite",
     "minecraft:crafting_table",
     "minecraft:furnace",
     "minecraft:smithing_table",
     "minecraft:blast_furnace",
     "minecraft:smoker",
     "minecraft:stonecutter",
-    "minecraft:bookshelf"
+    "minecraft:bookshelf",
+    "minecraft:grindstone",
+    "minecraft:loom",
+    "minecraft:cartography_table",
+    "minecraft:fletching_table",
+    "minecraft:composter",
+    "minecraft:lectern",
+    "minecraft:cauldron",
+    "minecraft:decorated_pot",
+    "minecraft:crafter"
   ]
 }

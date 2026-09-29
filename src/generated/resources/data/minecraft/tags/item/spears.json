@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "orevolution:tin_spear",
+      "required": false
+    },
+    {
+      "id": "orevolution:platinum_spear",
+      "required": false
+    },
+    {
+      "id": "orevolution:aethersteel_spear",
+      "required": false
+    },
+    {
+      "id": "orevolution:livingstone_spear",
+      "required": false
+    },
+    {
+      "id": "orevolution:verdite_spear",
+      "required": false
+    },
+    {
+      "id": "orevolution:moonstone_spear",
+      "required": false
+    }
+  ]
+}

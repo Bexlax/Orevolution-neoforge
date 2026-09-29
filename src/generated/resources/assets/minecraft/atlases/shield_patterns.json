@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "orevolution:entity/tungsten_reinforced_shield"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "orevolution:entity/tungsten_coated_shield"
+    }
+  ]
+}

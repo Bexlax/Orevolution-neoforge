@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "orevolution:block/decorative/celestite_bricks",
+    "side": "orevolution:block/decorative/celestite_bricks",
+    "top": "orevolution:block/decorative/celestite_bricks"
+  }
+}

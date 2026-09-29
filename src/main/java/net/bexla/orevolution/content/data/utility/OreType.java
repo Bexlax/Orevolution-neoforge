@@ -5,30 +5,30 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.neoforged.neoforge.common.Tags;
 
+import java.util.Arrays;
 import java.util.List;
 
-public enum OreType {
-    OVERWORLD(List.of(
+public record OreType(List<RuleTest> targets) {
+    public static final OreType OVERWORLD = new OreType(List.of(
             new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES),
             new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
-    )),
-    NETHER(List.of(
-            new TagMatchTest(Tags.Blocks.NETHERRACKS)
-    )),
-    END(List.of(
-            new TagMatchTest(Tags.Blocks.END_STONES)
-    )),
-    STONE(List.of(
-            new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES)
     ));
 
-    private final List<? extends RuleTest> targets;
+    public static final OreType NETHER = new OreType(List.of(
+            new TagMatchTest(Tags.Blocks.NETHERRACKS)
+    ));
 
-    OreType(List<? extends RuleTest> targets) {
-        this.targets = targets;
+    public static final OreType END = new OreType(List.of(
+            new TagMatchTest(Tags.Blocks.END_STONES)
+    ));
+
+    public OreType(List<RuleTest> targets) {
+        this.targets = List.copyOf(targets);
     }
 
-    public List<? extends RuleTest> getTargets() {
-        return targets;
+    public OreType(OreType... types) {
+        this(Arrays.stream(types)
+                .flatMap(type -> type.targets.stream())
+                .toList());
     }
 }

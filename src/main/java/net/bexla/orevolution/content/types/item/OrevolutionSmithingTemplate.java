@@ -31,17 +31,29 @@ public class OrevolutionSmithingTemplate extends SmithingTemplateItem {
     private static final Component AETHERSTEEL_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.aethersteel_upgrade.base_slot_description")));
     private static final Component AETHERSTEEL_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.aethersteel_upgrade.additions_slot_description")));
     
-    private static final Component TUNGSTEN_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade", lc("tungsten_upgrade"))).withStyle(TITLE_FORMAT);
-    private static final Component TUNGSTEN_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.tungsten_upgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
-    private static final Component TUNGSTEN_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.tungsten_upgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
-    private static final Component TUNGSTEN_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.tungsten_upgrade.base_slot_description")));
-    private static final Component TUNGSTEN_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.tungsten_upgrade.additions_slot_description")));
-    
+    private static final Component REINFORCED_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade", lc("reinforced_upgrade"))).withStyle(TITLE_FORMAT);
+    private static final Component REINFORCED_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.reinforced_upgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component REINFORCED_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.reinforced_upgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component REINFORCED_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.reinforced_upgrade.base_slot_description")));
+    private static final Component REINFORCED_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.reinforced_upgrade.additions_slot_description")));
+
+    private static final Component COATING_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade", lc("coating_upgrade"))).withStyle(TITLE_FORMAT);
+    private static final Component COATING_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.coating_upgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component COATING_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.coating_upgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component COATING_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.coating_upgrade.base_slot_description")));
+    private static final Component COATING_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.coating_upgrade.additions_slot_description")));
+
     private static final Component BASIC_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade", lc("basic_upgrade"))).withStyle(TITLE_FORMAT);
     private static final Component BASIC_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.basic_upgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
     private static final Component BASIC_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.basic_upgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
     private static final Component BASIC_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.basic_upgrade.base_slot_description")));
     private static final Component BASIC_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.basic_upgrade.additions_slot_description")));
+
+    private static final Component DOWNGRADE = Component.translatable(Util.makeDescriptionId("upgrade", lc("downgrade"))).withStyle(TITLE_FORMAT);
+    private static final Component DOWNGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.downgrade.applies_to"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component DOWNGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.downgrade.ingredients"))).withStyle(DESCRIPTION_FORMAT);
+    private static final Component DOWNGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.downgrade.base_slot_description")));
+    private static final Component DOWNGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", lc("smithing_template.downgrade.additions_slot_description")));
 
     public OrevolutionSmithingTemplate(Component applies_to, Component ingredients, Component title_description, Component base_slot_description, Component additions_slot_description, List<ResourceLocation> armor_icon_list, List<ResourceLocation> material_icon_list) {
         super(applies_to, ingredients, title_description, base_slot_description, additions_slot_description, armor_icon_list, material_icon_list);
@@ -52,11 +64,19 @@ public class OrevolutionSmithingTemplate extends SmithingTemplateItem {
     }
 
     public static SmithingTemplateItem createReinforcedUpgradeTemplate() {
-        return new SmithingTemplateItem(TUNGSTEN_UPGRADE_APPLIES_TO, TUNGSTEN_UPGRADE_INGREDIENTS, TUNGSTEN_UPGRADE, TUNGSTEN_UPGRADE_BASE_SLOT_DESCRIPTION, TUNGSTEN_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createUpgradeIconList(), createUpgradeMaterialList());
+        return new SmithingTemplateItem(REINFORCED_UPGRADE_APPLIES_TO, REINFORCED_UPGRADE_INGREDIENTS, REINFORCED_UPGRADE, REINFORCED_UPGRADE_BASE_SLOT_DESCRIPTION, REINFORCED_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createUpgradeIconList(), createUpgradeMaterialList());
+    }
+
+    public static SmithingTemplateItem createCoatingUpgradeTemplate() {
+        return new SmithingTemplateItem(COATING_UPGRADE_APPLIES_TO, COATING_UPGRADE_INGREDIENTS, COATING_UPGRADE, COATING_UPGRADE_BASE_SLOT_DESCRIPTION, COATING_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createUpgradeIconList(), createUpgradeMaterialList());
     }
 
     public static SmithingTemplateItem createBasicUpgradeTemplate() {
         return new SmithingTemplateItem(BASIC_UPGRADE_APPLIES_TO, BASIC_UPGRADE_INGREDIENTS, BASIC_UPGRADE, BASIC_UPGRADE_BASE_SLOT_DESCRIPTION, BASIC_UPGRADE_ADDITIONS_SLOT_DESCRIPTION, createArmorlessIconList(), createUpgradeMaterialList());
+    }
+
+    public static SmithingTemplateItem createDowngradeTemplate() {
+        return new SmithingTemplateItem(DOWNGRADE_APPLIES_TO, DOWNGRADE_INGREDIENTS, DOWNGRADE, DOWNGRADE_BASE_SLOT_DESCRIPTION, DOWNGRADE_ADDITIONS_SLOT_DESCRIPTION, createArmorlessIconList(), createUpgradeMaterialList());
     }
 
     protected static List<ResourceLocation> createUpgradeIconList() {

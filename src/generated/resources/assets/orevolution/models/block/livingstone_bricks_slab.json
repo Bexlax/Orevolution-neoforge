@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "orevolution:block/decorative/livingstone_bricks",
+    "side": "orevolution:block/decorative/livingstone_bricks",
+    "top": "orevolution:block/decorative/livingstone_bricks"
+  }
+}

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "allow_bronze"
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
     "has_the_recipe": {

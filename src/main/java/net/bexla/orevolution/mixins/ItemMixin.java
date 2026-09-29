@@ -1,13 +1,18 @@
 package net.bexla.orevolution.mixins;
 
 import net.bexla.orevolution.OrevolutionConfig;
-import net.bexla.orevolution.content.types.ToolPowerRegistry;
-import net.bexla.orevolution.content.types.interfaces.IToolPower;
+import net.bexla.orevolution.content.data.utility.OrevolutionTags;
+import net.bexla.orevolution.content.interfaces.IToolPower;
+import net.bexla.orevolution.content.types.ItemPowerRegistry;
+import net.bexla.orevolution.init.RegDataComponents;
+import net.bexla.orevolution.init.RegItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,128 +21,53 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Mixin(Item.class)
 public class ItemMixin {
-    private static final Component HARVEST_TIER = Component.translatable("tooltip.orevolution.harvest_tier");
 
-    @Inject(method = "appendHoverText", at = @At("TAIL"))
-    private void orevolution$injectPowerTooltip(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag, CallbackInfo ci) {
-        if(stack.getItem() instanceof TieredItem tieredItem) {
-            Tier tier = tieredItem.getTier();
-//
-//            String return_string = TierProgressRegistry.isTierSorted(tier) ? TierProgressRegistry.getName(tier).getPath() : isCorrectTierVanilla(tier);
-//
-//            if(TierProgressRegistry.getAssociatedTierFromSecondary(tier) != null) {
-//                return_string = TierProgressRegistry.getName(TierProgressRegistry.getAssociatedTierFromSecondary(tier)).getPath();
-//            }
-//
-//            if ((stack.is(OrevolutionTags.Items.tinProgFollow) && !(stack.is(OrevolutionTags.Items.tinProgExcept))) && !OrevolutionConfig.CLIENT.tinProgTip.get()) {
-//                return_string = "tin";
-//            }
-//            else if ((stack.is(OrevolutionTags.Items.platProgFollow) && !(stack.is(OrevolutionTags.Items.platProgExcept))) && !OrevolutionConfig.CLIENT.platProgTip.get()) {
-//                return_string = "platinum";
-//            }
+    @Inject(method = "getName", at = @At("RETURN"), cancellable = true)
+    private void orevolution$tungstenName(ItemStack stack, CallbackInfoReturnable<Component> cir) {
+        boolean isReinforced = stack.getOrDefault(RegDataComponents.REINFORCED.get(), false);
+        boolean isCoated = stack.getOrDefault(RegDataComponents.COATED.get(), false);
 
-            List<Component> tip = new ArrayList<>();
+        if (!isReinforced && !isCoated) return;
 
-            if (tieredItem instanceof SwordItem && OrevolutionConfig.CLIENT.weaponsPowersTip.get()) {
-                IToolPower power = ToolPowerRegistry.getWeaponPower(tier);
-                if (power != null) {
-                    tip.addAll(power.appendTooltip(stack, context, tooltipComponents, tooltipFlag));
-                }
-            } else if (tieredItem instanceof DiggerItem && OrevolutionConfig.CLIENT.weaponsPowersTip.get()) {
-                IToolPower power = ToolPowerRegistry.getToolPower(tier);
-                if (power != null) {
-                    tip.addAll(power.appendTooltip(stack, context, tooltipComponents, tooltipFlag));
-                }
-            }
-//
-//            if (OrevolutionConfig.CLIENT.harvestTip.get() && !return_string.isEmpty()) {
-//                tip.add(HARVEST_TIER);
-//                tip.add(Component.literal(" - " + Component.translatable("tiers.orevolution." + return_string.toLowerCase()).getString()).withStyle(ChatFormatting.YELLOW));
-//            }
+        Component og = cir.getReturnValue();
+        String key = isReinforced ? "item.orevolution.reinforced" : "item.orevolution.coated";
 
-            tooltipComponents.addAll(1, tip);
-        }
+        cir.setReturnValue(Component.translatable(key, og));
     }
-
-//    private static String isCorrectTierVanilla(Tier tier)
-//    {
-//        int i = tier.getLevel();
-//        return switch (i) {
-//            case 0 -> "wood";
-//            case 1 -> "tin";
-//            case 2 -> "platinum";
-//            case 3 -> "diamond";
-//            default -> "netherite";
-//        };
-//    }
 
     @Inject(method = "inventoryTick", at = @At("HEAD"))
     private void orevolution$injectInventoryTick(ItemStack stack, Level level, Entity entity, int slotIndex, boolean selectedIndex, CallbackInfo cir) {
-        if(stack.getItem() instanceof TieredItem tieredItem) {
+        if(stack.getItem() instanceof TieredItem) {
+            IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
+            if (power.equals(IToolPower.EMPTY)) return;
 
-            Tier tier = tieredItem.getTier();
-            
-            if (tieredItem instanceof SwordItem) {
-                if (!OrevolutionConfig.COMMON.weaponsPowers.get()) return;
-
-                IToolPower power = ToolPowerRegistry.getWeaponPower(tier);
-                power.onInventoryTick(stack, level, entity, slotIndex, selectedIndex);
-            }
-            if(stack.getItem() instanceof DiggerItem) {
-                if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-                IToolPower power = ToolPowerRegistry.getToolPower(tier);
-                power.onInventoryTick(stack, level, entity, slotIndex, selectedIndex);
-            }
+            power.onInventoryTick(stack, level, entity, slotIndex, selectedIndex);
         }
     }
 
-    @Inject(method = "mineBlock", at = @At("HEAD"))
+    @Inject(method = "mineBlock", at = @At("HEAD"), cancellable = true)
     private void orevolution$injectPowerMining(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miningEntity, CallbackInfoReturnable<Boolean> cir) {
-        if(stack.getItem() instanceof DiggerItem tieredItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-            IToolPower power = ToolPowerRegistry.getToolPower(tieredItem.getTier());
-            if(power != null && power.onUseOverride(stack, level, miningEntity) && cir.isCancellable()) {
+        if(stack.getItem() instanceof TieredItem) {
+            IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
+            if(power != IToolPower.EMPTY && power.onUseOverride(stack, level, miningEntity))
                 cir.setReturnValue(true);
-                cir.cancel();
-            }
-        }
-        else if(stack.getItem() instanceof SwordItem tieredItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-            IToolPower power = ToolPowerRegistry.getWeaponPower(tieredItem.getTier());
-            if(power != null && power.onUseOverride(stack, level, miningEntity) && cir.isCancellable()) {
-                cir.setReturnValue(true);
-                cir.cancel();
-            }
         }
     }
 
-    @Inject(method = "hurtEnemy", at = @At("HEAD"))
+    @Inject(method = "hurtEnemy", at = @At("HEAD"), cancellable = true)
     private void orevolution$injectPowerAttackEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfoReturnable<Boolean> cir) {
-        if(stack.getItem() instanceof DiggerItem tieredItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-            IToolPower power = ToolPowerRegistry.getToolPower(tieredItem.getTier());
-            if(power != null && power.onUseOverride(stack, attacker.level(), attacker) && cir.isCancellable()) {
+        if(stack.getItem() instanceof TieredItem) {
+            IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
+            if(!power.equals(IToolPower.EMPTY) && power.onUseOverride(stack, attacker.level(), attacker))
                 cir.setReturnValue(true);
-                cir.cancel();
-            }
         }
-        else if(stack.getItem() instanceof SwordItem tieredItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
+    }
 
-            IToolPower power = ToolPowerRegistry.getWeaponPower(tieredItem.getTier());
-            if(power != null && power.onUseOverride(stack, attacker.level(), attacker) && cir.isCancellable()) {
-                cir.setReturnValue(true);
-                cir.cancel();
-            }
-        }
+    @Inject(at = @At("RETURN"), method = "isValidRepairItem", cancellable = true)
+    private void isValidRepairItem(ItemStack item, ItemStack repairIngredient, CallbackInfoReturnable<Boolean> cir) {
+        if (repairIngredient.is(RegItems.TUNGSTEN_INGOT) && !item.is(OrevolutionTags.Items.TUNGSTEN_REPAIR_BLACKLIST) && OrevolutionConfig.COMMON.tungstenUniversalRepair.get())
+            cir.setReturnValue(true);
     }
 }

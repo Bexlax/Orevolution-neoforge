@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#orevolution:is_basalt_biome",
+  "features": "orevolution:moonstone_pillar_nether",
+  "step": "underground_decoration"
+}

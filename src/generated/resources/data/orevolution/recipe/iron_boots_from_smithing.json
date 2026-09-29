@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:chainmail_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_boots"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

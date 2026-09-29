@@ -1,6 +1,7 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.data.Conditionals;
+import net.bexla.orevolution.content.interfaces.IArmorPower;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.OrevolutionArmorPower;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -18,7 +19,7 @@ public class ArmorMultiPower extends OrevolutionArmorPower {
     private final List<OrevolutionArmorPower> powers;
 
     public ArmorMultiPower(List<OrevolutionArmorPower> powers) {
-        super("", Conditionals.always());
+        super("", IConditional.always());
         this.powers = powers;
     }
 
@@ -26,12 +27,19 @@ public class ArmorMultiPower extends OrevolutionArmorPower {
     public List<Component> appendTooltip(ItemStack stack, Level level, List<Component> lines) {
         List<Component> tips = new ArrayList<>();
         if(Screen.hasAltDown()) {
-            for (OrevolutionArmorPower p : this.powers) {
-                tips.addAll(p.appendTooltip(stack, level, lines));
+            for (int i = 0; i < this.powers.size(); i++) {
+                IArmorPower p = this.powers.get(i);
+                List<Component> powerTips = p.appendTooltip(stack, level, lines);
+
+                if(i != this.powers.size() - 1) {
+                    powerTips.addLast(Component.empty());
+                }
+
+                tips.addAll(powerTips);
             }
         }
         else {
-            tips.add(Component.translatable("tooltip.orevolution.press_key", Component.translatable("key.keyboard.left.alt").getString()).withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(Component.translatable("power.orevolution.press_key_power", Component.translatable("key.keyboard.left.alt").getString()).withStyle(ChatFormatting.DARK_GRAY));
         }
         return tips;
     }

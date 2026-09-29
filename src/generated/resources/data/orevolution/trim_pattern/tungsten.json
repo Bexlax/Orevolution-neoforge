@@ -1,0 +1,8 @@
+{
+  "asset_id": "orevolution:tungsten",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.orevolution.tungsten"
+  },
+  "template_item": "orevolution:tungsten_ingot"
+}

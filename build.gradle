@@ -24,6 +24,12 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+configurations {
+    datagenRuntime
+
+    runtimeClasspath.extendsFrom localRuntime
+}
+
 runs {
     configureEach {
         systemProperty 'forge.logging.markers', 'REGISTRIES'
@@ -48,12 +54,12 @@ runs {
     }
 
     data {
-        arguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
-    }
-}
+        arguments.addAll '--mod', project.mod_id, '--all',
+                '--output', file('src/generated/resources/').getAbsolutePath(),
+                '--existing', file('src/main/resources/').getAbsolutePath()
 
-configurations {
-    runtimeClasspath.extendsFrom localRuntime
+        runtimeClasspath.from(configurations.datagenRuntime)
+    }
 }
 
 repositories {
@@ -80,27 +86,56 @@ repositories {
             includeGroup("com.possible-triangle")
         }
     }
+
+    maven {url = "https://maven.caffeinemc.net/releases"}
+    maven {url = "https://maven.blamejared.com/"}
+    maven {url = "https://modmaven.dev"}
 }
 
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "curse.maven:blueprint-${blueprint_id}"
+    implementation "curse.maven:biolith-${biolith_id}"
+    implementation "curse.maven:terrablender-neoforge-${terrablender_id}"
+    implementation "curse.maven:geckolib-${geckolib_id}"
 
     implementation "maven.modrinth:oreganized:${oreganized_ver}"
-    implementation "maven.modrinth:farmers-delight:${farmersdelight_ver}"
-    implementation "maven.modrinth:backport-copper-age:JEPUV1lF"
 
-    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-    implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    compileOnly "maven.modrinth:shield-expansion:${shieldexp_id}"
+    datagenRuntime "maven.modrinth:shield-expansion:${shieldexp_id}"
+
+    implementation "curse.maven:copper-age-backport-1386823:7283478"
+    implementation "curse.maven:copper-age-backport-duplicate-armor-material-fix-1664466:8710995"
+
+    implementation "maven.modrinth:farmers-delight:${farmersdelight_ver}"
+    implementation "curse.maven:backported-spears-1385191:7725067"
+
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
-    runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
-    implementation("com.tterrag.registrate:Registrate:${registrate_version}")
+    compileOnly("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    compileOnly("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    compileOnly("com.tterrag.registrate:Registrate:${registrate_version}")
+
+    datagenRuntime("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
+    datagenRuntime("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    datagenRuntime("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    datagenRuntime("com.tterrag.registrate:Registrate:${registrate_version}")
 
     implementation "com.possible-triangle:multikulti-core-neoforge:1.21.1-2.0.1"
     implementation "com.possible-triangle:multikulti-datagen-neoforge:1.21.1-2.0.1"
 
-    runtimeOnly "maven.modrinth:sodium:${sodium_ver}"
-    runtimeOnly "maven.modrinth:jei:YAcQ6elZ"
+    implementation "maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge"
+
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:19.21.0.247")
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:19.21.0.247")
+
+    runtimeOnly "curse.maven:shadow-drop-1490601:8491920"
+
+    // runtimeOnly "curse.maven:create-328085:7963363"
+
+    // implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    // implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    // runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
+    // implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 }
 
 tasks.withType(ProcessResources).configureEach {

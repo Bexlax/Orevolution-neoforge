@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "orevolution:bronze_totem"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "result": {
+    "components": {
+      "orevolution:quartz_totem": {}
+    },
+    "count": 1,
+    "id": "orevolution:bronze_totem"
+  }
+}

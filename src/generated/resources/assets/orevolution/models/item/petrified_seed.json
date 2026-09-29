@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "orevolution:item/blockitem/petrified_seed"
+    "layer0": "orevolution:item/misc/blockitem/petrified_seed"
   }
 }

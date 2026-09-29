@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "orevolution:polished_amethyst"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:polished_amethyst_wall"
+  }
+}

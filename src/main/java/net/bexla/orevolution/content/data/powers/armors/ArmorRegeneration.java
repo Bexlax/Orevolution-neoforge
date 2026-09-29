@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.OrevolutionArmorPower;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,8 +20,10 @@ public class ArmorRegeneration extends OrevolutionArmorPower {
     }
 
     @Override
-    public Object addTooltipValue() {
-        return tickCooldown / 20;
+    public Object[] addTooltipValue() {
+        return new Object[] {
+                tickCooldown / 20
+        };
     }
 
     @Override
@@ -30,7 +32,7 @@ public class ArmorRegeneration extends OrevolutionArmorPower {
 
         Level level = player.level();
 
-        if (!getCBoolean(stack, level, player, null) || level.isClientSide()) return;
+        if (!condition(stack, level, player, null) || level.isClientSide()) return;
 
         if (level.getGameTime() % tickCooldown != 0) return;
 

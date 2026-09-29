@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:husbandry/obtain_netherite_hoe",
+  "criteria": {
+    "has_all_aethersteel_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:aethersteel_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.obtain_aethersteel_hoe.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "orevolution:aethersteel_hoe"
+    },
+    "title": {
+      "translate": "advancements.orevolution.obtain_aethersteel_hoe.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_all_aethersteel_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.OrevolutionArmorPower;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -9,49 +9,47 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.TooltipFlag;
 import org.jetbrains.annotations.NotNull;
 
 public class ArmorModifyAttribute extends OrevolutionArmorPower {
     private final Holder<Attribute> attributeToModify;
-    private final ResourceLocation location;
-    private final double amount;
-    private final AttributeModifier.Operation operation;
+    private final AttributeModifier modifier;
 
-
-    public ArmorModifyAttribute(String tooltipId, @NotNull IConditional conditional, Holder<Attribute> attributeToModify, ResourceLocation location, double amount, AttributeModifier.Operation operation) {
+    public ArmorModifyAttribute(String tooltipId, @NotNull IConditional conditional, Holder<Attribute> attributeToModify, ResourceLocation id, double amount, AttributeModifier.Operation operation) {
         super(tooltipId, conditional);
         this.attributeToModify = attributeToModify;
-        this.location = location;
-        this.amount = amount;
-        this.operation = operation;
+        this.modifier = new AttributeModifier(id, amount, operation);
     }
 
     @Override
-    public Object addTooltipValue() {
-        return "+" + (int)amount;
+    public Object[] addTooltipValue() {
+        return new Object[] {
+                attributeToModify.value().toComponent(modifier, TooltipFlag.NORMAL).getString(),
+        };
     }
 
     @Override
     public void onEquip(LivingEntity wearer) {
         if (!(wearer instanceof Player player)) return;
 
-        AttributeInstance reach = player.getAttribute(attributeToModify);
+        AttributeInstance attribute = player.getAttribute(attributeToModify);
 
-        if (reach == null) return;
+        if (attribute == null) return;
 
-        if(reach.hasModifier(location)) return;
+        if(attribute.hasModifier(modifier.id())) return;
 
-        reach.addTransientModifier(new AttributeModifier(location, amount, operation));
+        attribute.addTransientModifier(new AttributeModifier(modifier.id(), modifier.amount(), modifier.operation()));
     }
 
     @Override
     public void onUnequip(LivingEntity wearer) {
         if (!(wearer instanceof Player player)) return;
 
-        AttributeInstance reach = player.getAttribute(attributeToModify);
+        AttributeInstance attribute = player.getAttribute(attributeToModify);
 
-        if (reach == null) return;
+        if (attribute == null) return;
 
-        reach.removeModifier(location);
+        attribute.removeModifier(modifier.id());
     }
 }

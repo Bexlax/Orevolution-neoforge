@@ -1,5 +1,6 @@
 package net.bexla.orevolution.content.types.mobeffect;
 
+import net.bexla.orevolution.content.data.utility.Color;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -10,7 +11,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class PetrifiedEffect extends MobEffect {
 
     public PetrifiedEffect() {
-        super(MobEffectCategory.HARMFUL, 0x4B8B3B);
+        super(MobEffectCategory.HARMFUL, Color.ofRGB(110, 100, 115).getColorInt());
 
         this.addAttributeModifier(
                 Attributes.MOVEMENT_SPEED,

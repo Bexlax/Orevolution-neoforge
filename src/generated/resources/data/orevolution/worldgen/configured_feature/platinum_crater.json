@@ -1,0 +1,48 @@
+{
+  "type": "orevolution:geode_crater",
+  "config": {
+    "cluster_chance": 0.0,
+    "depth": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 5,
+      "min_inclusive": 2
+    },
+    "innerChance": 0.15,
+    "inner_layer": [
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:raw_platinum_block"
+        }
+      },
+      {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "orevolution:platinum_ore"
+        }
+      }
+    ],
+    "irregularity": 0.56,
+    "middle_layer": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:blackstone"
+      }
+    },
+    "outer_layer": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:diorite"
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 8,
+      "min_inclusive": 5
+    },
+    "replaceable": {
+      "predicate_type": "minecraft:tag_match",
+      "tag": "orevolution:crater_placement_blacklist"
+    }
+  }
+}

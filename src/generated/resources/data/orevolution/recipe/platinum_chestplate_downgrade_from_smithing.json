@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "orevolution:platinum_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_chestplate"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

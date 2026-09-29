@@ -1,0 +1,44 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "orevolution:item/misc/geoscanner"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "orevolution:scan_level": 1
+      },
+      "model": "orevolution:item/geoscanner_1"
+    },
+    {
+      "predicate": {
+        "orevolution:scan_level": 2
+      },
+      "model": "orevolution:item/geoscanner_2"
+    },
+    {
+      "predicate": {
+        "orevolution:scan_level": 3
+      },
+      "model": "orevolution:item/geoscanner_3"
+    },
+    {
+      "predicate": {
+        "orevolution:scan_level": 4
+      },
+      "model": "orevolution:item/geoscanner_4"
+    },
+    {
+      "predicate": {
+        "orevolution:scan_level": 5
+      },
+      "model": "orevolution:item/geoscanner_5"
+    },
+    {
+      "predicate": {
+        "orevolution:scan_level": 6
+      },
+      "model": "orevolution:item/geoscanner_6"
+    }
+  ]
+}

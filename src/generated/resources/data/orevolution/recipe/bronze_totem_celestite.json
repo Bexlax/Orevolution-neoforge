@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "orevolution:celestite_shard"
+    },
+    {
+      "item": "orevolution:bronze_totem"
+    }
+  ],
+  "result": {
+    "components": {
+      "orevolution:celestite_totem": {}
+    },
+    "count": 1,
+    "id": "orevolution:bronze_totem"
+  }
+}

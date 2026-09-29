@@ -1,0 +1,44 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "orevolution:item/misc/bronze_totem"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "orevolution:socket_type": 0
+      },
+      "model": "orevolution:item/bronze_totem_amethyst"
+    },
+    {
+      "predicate": {
+        "orevolution:socket_type": 1
+      },
+      "model": "orevolution:item/bronze_totem_celestite"
+    },
+    {
+      "predicate": {
+        "orevolution:socket_type": 2
+      },
+      "model": "orevolution:item/bronze_totem_emerald"
+    },
+    {
+      "predicate": {
+        "orevolution:socket_type": 3
+      },
+      "model": "orevolution:item/bronze_totem_quartz"
+    },
+    {
+      "predicate": {
+        "orevolution:socket_type": 4
+      },
+      "model": "orevolution:item/bronze_totem_lapis"
+    },
+    {
+      "predicate": {
+        "orevolution:socket_type": 5
+      },
+      "model": "orevolution:item/bronze_totem_diamond"
+    }
+  ]
+}

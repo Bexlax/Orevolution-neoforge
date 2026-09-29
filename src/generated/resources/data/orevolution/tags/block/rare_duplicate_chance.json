@@ -3,7 +3,12 @@
     "#c:storage_blocks",
     "#minecraft:anvil",
     "#minecraft:crops",
+    "orevolution:steel_anvil",
     "minecraft:enchanting_table",
-    "minecraft:ender_chest"
+    "minecraft:brewing_stand",
+    "minecraft:lodestone",
+    "minecraft:hopper",
+    "minecraft:dropper",
+    "minecraft:dispenser"
   ]
 }

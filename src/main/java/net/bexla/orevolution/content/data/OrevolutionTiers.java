@@ -3,11 +3,13 @@ package net.bexla.orevolution.content.data;
 import com.teamabnormals.blueprint.core.api.BlueprintItemTier;
 import net.bexla.orevolution.Orevolution;
 import net.bexla.orevolution.content.data.utility.OrevolutionTags;
+import net.bexla.orevolution.init.RegBlocks;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ArmorMaterial;
@@ -30,53 +32,68 @@ public class OrevolutionTiers {
         public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, Orevolution.MODID);
 
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BRONZE = register("bronze",
-                defense(1, 3, 5, 1, 8),
+                defense(1, 3, 4, 1, 4),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
                 0.0F    ,
                 0.0F,
-                () -> Ingredient.of(OrevolutionTags.Items.platIngots)
+                () -> Ingredient.of(OrevolutionTags.Items.BRONZE_INGOTS),
+                true
+        );
+        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> STEEL = register("steel",
+                defense(2, 5, 6, 2, 12),
+                6, SoundEvents.ARMOR_EQUIP_NETHERITE,
+                0F,
+                1F,
+                () -> Ingredient.of(OrevolutionTags.Items.STEEL_INGOTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> TUNGSTEN = register("tungsten",
-                defense(2, 4, 5, 2, 8),
-                17, SoundEvents.ARMOR_EQUIP_DIAMOND,
-                0.0F,
-                0.0F,
-                () -> Ingredient.of(OrevolutionTags.Items.platIngots)
+                defense(2, 4, 5, 2, 17),
+                8, SoundEvents.ARMOR_EQUIP_DIAMOND,
+                0.1F,
+                0.3F,
+                () -> Ingredient.of(OrevolutionTags.Items.TUNGSTEN_INGOTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> LIVINGSTONE = register("livingstone",
-                defense(1, 3, 5, 1, 8),
+                defense(1, 3, 5, 1, 4),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
+                0.05F,
                 0.0F,
-                0.0F,
-                () -> Ingredient.of(OrevolutionTags.Items.platIngots)
+                () -> Ingredient.of(OrevolutionTags.Items.LIVINGSTONE_FRAGMENTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> VERDITE = register("verdite",
-                defense(2, 5, 6, 2, 8),
+                defense(2, 5, 6, 2, 7),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
+                0.1F,
                 0.0F,
-                0.0F,
-                () -> Ingredient.of(OrevolutionTags.Items.platIngots)
+                () -> Ingredient.of(OrevolutionTags.Items.VERDITE_INGOTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> PLATINUM = register("platinum",
                 defense(2, 5, 6, 2, 8),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
+                0.5F,
                 0.0F,
-                0.0F,
-                () -> Ingredient.of(OrevolutionTags.Items.platIngots)
+                () -> Ingredient.of(OrevolutionTags.Items.PLATINUM_INGOTS)
+        );
+        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> MOONSTONE = register("moonstone",
+                defense(2, 5, 6, 2, 7),
+                17, SoundEvents.ARMOR_EQUIP_CHAIN,
+                4F,
+                0.1F,
+                () -> Ingredient.of(RegBlocks.MOONSTONE)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> REINFORCED_NT = register("reinforced_netherite",
-                defense(3, 6, 8, 3, 11),
-                17, SoundEvents.ARMOR_EQUIP_DIAMOND,
-                0.0F,
-                0.0F,
+                defense(3, 6, 8, 3, 15),
+                13, SoundEvents.ARMOR_EQUIP_DIAMOND,
+                4.5F,
+                0.2F,
                 () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> AETHERSTEEL = register("aethersteel",
-                defense(4, 7, 8, 4, 12),
+                defense(4, 7, 8, 4, 20),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
-                0.0F,
-                0.0F,
-                () -> Ingredient.of(OrevolutionTags.Items.enderiteIngots)
+                4.5F,
+                0.2F,
+                () -> Ingredient.of(OrevolutionTags.Items.ENDERITE_ADJACENT)
         );
 
         public static EnumMap<Type, Integer> defense(int boots, int leggings, int chestplate, int helmet, int body) {
@@ -115,11 +132,58 @@ public class OrevolutionTiers {
     }
 
     public static class ToolTiers {
-        public static final Tier TIN = new BlueprintItemTier(OrevolutionTags.Blocks.incorrectForTin, 256, 5.0F, 1.0F, 7 , () -> Ingredient.of(OrevolutionTags.Items.tinIngots));
-        public static final Tier PLATINUM = new BlueprintItemTier(OrevolutionTags.Blocks.incorrectForPlatinum, 768, 7.0F, 2.0F, 18, () -> Ingredient.of(OrevolutionTags.Items.platIngots));
-        public static final Tier AETHERSTEEL = new BlueprintItemTier(OrevolutionTags.Blocks.incorrectForAethersteel, 3520, 10.0F, 5.0F, 15, () -> Ingredient.of(OrevolutionTags.Items.enderiteIngots));
-        public static final Tier LIVINGSTONE = new BlueprintItemTier(OrevolutionTags.Blocks.incorrectForTin, 192, 4.0F, 1.0F, 8, () -> Ingredient.of(OrevolutionTags.Items.livingstoneFragments));
-        public static final Tier VERDITE = new BlueprintItemTier(OrevolutionTags.Blocks.incorrectForPlatinum, 448, 6.0F, 2.0F, 16, () -> Ingredient.of(OrevolutionTags.Items.verditeIngots));
-        public static final Tier STEEL = new BlueprintItemTier(OrevolutionTags.Blocks.incorrectForPlatinum, 1152, 3.0F, 4.0F, 12, () -> Ingredient.of(OrevolutionTags.Items.platIngots));
+        public static final Tier TIN =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL,
+                        256, 5.0F, 1.0F, 7 ,
+                        () -> Ingredient.of(OrevolutionTags.Items.TIN_INGOTS)
+                );
+        public static final Tier CASSITERITE =
+                new BlueprintItemTier(
+                        BlockTags.INCORRECT_FOR_IRON_TOOL,
+                        512, 6.0F, 2.0F, 8,
+                        () -> Ingredient.of(OrevolutionTags.Items.CASSITERITE_INGOTS)
+                );
+        public static final Tier TUNGSTEN =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL,
+                        256, 13.0F, 1.0F, 23,
+                        () -> Ingredient.of(OrevolutionTags.Items.TUNGSTEN_INGOTS)
+                );
+        public static final Tier PLATINUM =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL,
+                        768, 7.0F, 2.0F, 18,
+                        () -> Ingredient.of(OrevolutionTags.Items.PLATINUM_INGOTS));
+        public static final Tier MOONSTONE =
+                new BlueprintItemTier(
+                        BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+                        1536, 6.0F, 2.0F, 12,
+                        () -> Ingredient.of(RegBlocks.MOONSTONE)
+                );
+        public static final Tier AETHERSTEEL =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_AETHERSTEEL_TOOL,
+                        3520, 10.0F, 5.0F, 15,
+                        () -> Ingredient.of(OrevolutionTags.Items.ENDERITE_ADJACENT)
+                );
+        public static final Tier LIVINGSTONE =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL,
+                        192, 4.0F, 1.0F, 8,
+                        () -> Ingredient.of(OrevolutionTags.Items.LIVINGSTONE_FRAGMENTS)
+                );
+        public static final Tier VERDITE =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL,
+                        448, 6.0F, 2.0F, 16,
+                        () -> Ingredient.of(OrevolutionTags.Items.VERDITE_INGOTS)
+                );
+        public static final Tier STEEL =
+                new BlueprintItemTier(
+                        OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL,
+                        896, 3.0F, 4.0F, 12,
+                        () -> Ingredient.of(OrevolutionTags.Items.STEEL_INGOTS)
+                );
     }
 }

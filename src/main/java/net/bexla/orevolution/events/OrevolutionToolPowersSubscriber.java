@@ -1,102 +1,124 @@
 package net.bexla.orevolution.events;
 
 import net.bexla.orevolution.Orevolution;
-import net.bexla.orevolution.OrevolutionConfig;
-import net.bexla.orevolution.content.types.ToolPowerRegistry;
-import net.bexla.orevolution.content.types.interfaces.IToolPower;
-import net.minecraft.world.damagesource.DamageSource;
+import net.bexla.orevolution.content.data.utility.OrevolutionUtils;
+import net.bexla.orevolution.content.interfaces.IToolPower;
+import net.bexla.orevolution.content.types.ItemPowerRegistry;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TieredItem;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
+import java.util.List;
+
 @EventBusSubscriber(modid = Orevolution.MODID)
 public class OrevolutionToolPowersSubscriber {
+    private static IToolPower getPower(ItemStack stack) {
+        if (!(stack.getItem() instanceof TieredItem tieredItem)) return IToolPower.EMPTY;
+
+        return tieredItem instanceof TieredItem ? ItemPowerRegistry.getPowerForItem(stack) : IToolPower.EMPTY;
+    }
+
     @SubscribeEvent
-    public static void onBlockBreak(BlockDropsEvent evt) {
-        if(!(evt.getBreaker() instanceof Player player)) return;
+    public static void onBlockDrops(BlockDropsEvent evt) {
+        if (!(evt.getBreaker() instanceof Player player)) return;
+        if(player.isCreative()) return;
 
-        ItemStack stack = player.getMainHandItem();
+        IToolPower power = getPower(player.getMainHandItem());
 
-        if (!(stack.getItem() instanceof TieredItem tieredItem)) return;
-
-        IToolPower power = null;
-
-        if (tieredItem instanceof SwordItem) {
-            if (!OrevolutionConfig.COMMON.weaponsPowers.get()) return;
-
-            power = ToolPowerRegistry.getWeaponPower(tieredItem.getTier());
-        }
-        else if (tieredItem instanceof DiggerItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-            power = ToolPowerRegistry.getToolPower(tieredItem.getTier());
-        }
-
-        if (power != null) {
-            evt.setCanceled(power.onDropXPBlock(stack, player.level(), evt.getPos(), player, evt.getState(), evt.getDroppedExperience()));
+        if (power != IToolPower.EMPTY) {
+            evt.setCanceled(power.onDropXPBlock(
+                    player.getMainHandItem(),
+                    player.level(), evt.getPos(), player,
+                    evt.getState(), evt.getDroppedExperience()
+            ));
         }
     }
 
     @SubscribeEvent
-    public static void onBlockBreak(BlockEvent.BreakEvent evt) {
+    public static void onBlockDrops(BlockEvent.BreakEvent evt) {
         Player player = evt.getPlayer();
-        ItemStack stack = player.getMainHandItem();
+        if(player.isCreative()) return;
 
-        if (!(stack.getItem() instanceof TieredItem tieredItem)) return;
+        IToolPower power = getPower(player.getMainHandItem());
 
-        IToolPower power = null;
-
-        if (tieredItem instanceof SwordItem) {
-            if (!OrevolutionConfig.COMMON.weaponsPowers.get()) return;
-
-            power = ToolPowerRegistry.getWeaponPower(tieredItem.getTier());
-        }
-        else if (tieredItem instanceof DiggerItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-            power = ToolPowerRegistry.getToolPower(tieredItem.getTier());
-        }
-
-        if (power != null) {
-            evt.setCanceled(power.onMineBlock(stack, player.level(), evt.getPos(), player, evt.getState()));
+        if (power != IToolPower.EMPTY) {
+            evt.setCanceled(power.onMineBlock(
+                    player.getMainHandItem(), player.level(),
+                    evt.getPos(), player, evt.getState()
+            ));
         }
     }
 
     @SubscribeEvent
     public static void onLivingDamaged(LivingDamageEvent.Pre evt) {
-        DamageSource source = evt.getSource();
-
-        if (!(source.getEntity() instanceof Player player)) return;
+        if (!(evt.getSource().getEntity() instanceof Player player)) {
+            return;
+        }
 
         LivingEntity target = evt.getEntity();
-        ItemStack stack = player.getMainHandItem();
 
-        if (!(stack.getItem() instanceof TieredItem tieredItem)) return;
+        IToolPower power = getPower(player.getMainHandItem());
 
-        IToolPower power = null;
-
-        if (tieredItem instanceof SwordItem) {
-            if (!OrevolutionConfig.COMMON.weaponsPowers.get()) return;
-
-            power = ToolPowerRegistry.getWeaponPower(tieredItem.getTier());
-        }
-        else if (tieredItem instanceof DiggerItem) {
-            if (!OrevolutionConfig.COMMON.toolsPowers.get()) return;
-
-            power = ToolPowerRegistry.getToolPower(tieredItem.getTier());
+        if (power != IToolPower.EMPTY) {
+            evt.setNewDamage(power.onHitEntity(
+                    player.getMainHandItem(),
+                    target, player, evt.getSource(),
+                    evt.getOriginalDamage()
+            ));
         }
 
-        if (power != null) {
-            float powerVal = power.onHitEntity(stack, target, player, source, evt.getOriginalDamage());
-            evt.setNewDamage(powerVal);
+        OrevolutionUtils.displayDebug(player, "new damage: " + evt.getNewDamage() + ", og damage: " + evt.getOriginalDamage());
+    }
+
+    @SubscribeEvent
+    public static void onLivingDamaged(CriticalHitEvent evt) {
+        if(!(evt.getTarget() instanceof LivingEntity target)) return;
+
+        Player player = evt.getEntity();
+
+        IToolPower power = getPower(player.getMainHandItem());
+
+        if (power != IToolPower.EMPTY) {
+            evt.setDamageMultiplier(power.onCriticalHit(
+                    player.getMainHandItem(),
+                    target, player, evt.getDamageMultiplier(),
+                    evt.isCriticalHit()
+            ));
+        }
+
+        OrevolutionUtils.displayDebug(player, "new crit: " + evt.getDamageMultiplier() + ", vanilla crit: " + evt.getVanillaMultiplier());
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+    public static void onItemTooltip(ItemTooltipEvent event) {
+        List<Component> tooltip = event.getToolTip();
+        ItemStack stack = event.getItemStack();
+
+        if(!(stack.getItem() instanceof TieredItem)) return;
+
+        IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
+        if (power.equals(IToolPower.EMPTY)) return;
+
+        List<Component> tooltipComponents = power.appendTooltip(stack, event.getContext(), tooltip, event.getFlags());
+
+        tooltip.addAll(1, tooltipComponents);
+
+        int index = 1 + tooltipComponents.size() - 1;
+
+        if (index + 1 >= tooltip.size() || !tooltip.get(index + 1).equals(Component.empty())) {
+            tooltip.add(index + 1, Component.empty());
         }
     }
 }

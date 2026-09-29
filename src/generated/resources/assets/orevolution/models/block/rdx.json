@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "orevolution:block/functional/rdx_bottom",
+    "side": "orevolution:block/functional/rdx_side",
+    "top": "orevolution:block/functional/rdx_top"
+  }
+}

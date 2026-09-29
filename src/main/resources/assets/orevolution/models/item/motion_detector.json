@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "orevolution:item/misc/motion_detector"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "orevolution:motion_state": 1
+      },
+      "model": "orevolution:item/motion_detector_motion"
+    },
+    {
+      "predicate": {
+        "orevolution:motion_state": 2
+      },
+      "model": "orevolution:item/motion_detector_danger"
+    }
+  ]
+}

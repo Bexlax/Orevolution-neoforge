@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "orevolution:forgotten_cave",
+  "features": [
+    "orevolution:boulder",
+    "orevolution:large_chert"
+  ],
+  "step": "raw_generation"
+}

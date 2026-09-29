@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:tin_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tin_axe"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

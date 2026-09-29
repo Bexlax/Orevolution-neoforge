@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "orevolution:platinum_ingot"
+    },
+    "B": {
+      "item": "minecraft:basalt"
+    },
+    "C": {
+      "item": "orevolution:reinforced_smithing_template"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:coating_smithing_template"
+  }
+}

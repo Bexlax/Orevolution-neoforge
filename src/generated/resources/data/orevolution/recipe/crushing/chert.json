@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "orevolution:chert"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 2,
+      "id": "orevolution:quartz_chip"
+    },
+    {
+      "chance": 0.45,
+      "id": "orevolution:tin_nugget"
+    }
+  ]
+}

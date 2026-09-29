@@ -1,6 +1,10 @@
 {
   "values": [
     "orevolution:polished_aetherrock_wall",
-    "orevolution:polished_limestone_wall"
+    "orevolution:polished_chert_wall",
+    "orevolution:celestite_bricks_wall",
+    "orevolution:polished_celestite_wall",
+    "orevolution:amethyst_bricks_wall",
+    "orevolution:polished_amethyst_wall"
   ]
 }

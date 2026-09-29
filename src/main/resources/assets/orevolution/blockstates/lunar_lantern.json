@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "orevolution:block/lunar_lantern"
+    },
+    "hanging=true": {
+      "model": "orevolution:block/lunar_lantern_hanging"
+    }
+  }
+}

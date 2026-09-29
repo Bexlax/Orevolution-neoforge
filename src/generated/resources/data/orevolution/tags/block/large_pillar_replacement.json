@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#c:ores",
+    "#c:stones",
+    "minecraft:granite",
+    "minecraft:andesite",
+    "minecraft:diorite",
+    "minecraft:tuff",
+    "minecraft:blackstone",
+    "minecraft:deepslate",
+    "minecraft:stone",
+    "orevolution:rhyolite",
+    "orevolution:chert"
+  ]
+}

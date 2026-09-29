@@ -1,0 +1,9 @@
+{
+  "asset_name": "orevolution_tungsten",
+  "description": {
+    "color": "#00AA00",
+    "translate": "trim_material.orevolution.tungsten"
+  },
+  "ingredient": "orevolution:tungsten_ingot",
+  "item_model_index": -1.0
+}

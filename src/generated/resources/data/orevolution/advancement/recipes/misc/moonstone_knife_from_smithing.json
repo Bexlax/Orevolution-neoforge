@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_moonstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:moonstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:moonstone_knife_from_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_moonstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:moonstone_knife_from_smithing"
+    ]
+  }
+}

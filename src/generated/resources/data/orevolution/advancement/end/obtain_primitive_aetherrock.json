@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:end/root",
+  "criteria": {
+    "has_primitive_aetherrock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:primitive_aetherrock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.obtain_primitive_aetherrock.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "orevolution:primitive_aetherrock"
+    },
+    "title": {
+      "translate": "advancements.orevolution.obtain_primitive_aetherrock.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_primitive_aetherrock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

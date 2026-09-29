@@ -1,0 +1,9 @@
+{
+  "asset_name": "orevolution_platinum",
+  "description": {
+    "color": "#55FFFF",
+    "translate": "trim_material.orevolution.platinum"
+  },
+  "ingredient": "orevolution:platinum_ingot",
+  "item_model_index": -1.0
+}

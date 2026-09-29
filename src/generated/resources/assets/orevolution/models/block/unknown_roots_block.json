@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/mangrove_roots",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "side": "orevolution:block/decorative/unknown_roots_block_side",
+    "top": "orevolution:block/decorative/unknown_roots_block_top"
+  }
+}

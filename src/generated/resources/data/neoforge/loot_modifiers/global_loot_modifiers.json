@@ -1,5 +1,7 @@
 {
   "entries": [
+    "orevolution:add_loot_piglin",
+    "orevolution:add_loot_brute_piglin",
     "orevolution:add_loot_abandoned_mineshaft",
     "orevolution:add_loot_bastion_hoglin_stable",
     "orevolution:add_loot_bastion_treasure",
@@ -12,7 +14,8 @@
     "orevolution:add_loot_village_plains_house",
     "orevolution:add_loot_village_savanna_house",
     "orevolution:add_loot_village_snowy_house",
-    "orevolution:add_loot_village_taiga_house"
+    "orevolution:add_loot_village_taiga_house",
+    "orevolution:add_loot_nether_bridge"
   ],
   "replace": false
 }

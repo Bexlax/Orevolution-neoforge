@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_celestite_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_celestite"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_celestite_slab_top"
+    }
+  }
+}

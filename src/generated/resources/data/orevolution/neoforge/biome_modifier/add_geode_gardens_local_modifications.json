@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "orevolution:geode_gardens",
+  "features": [
+    "orevolution:celestite_crater",
+    "orevolution:amethyst_crater",
+    "orevolution:gold_crater",
+    "orevolution:platinum_crater"
+  ],
+  "step": "local_modifications"
+}

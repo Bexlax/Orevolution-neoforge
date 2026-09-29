@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": {
+      "item": "minecraft:gold_ingot"
+    },
+    "I": {
+      "item": "minecraft:soul_torch"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AIA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:golden_soul_lantern"
+  }
+}

@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.armors;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.ArmorPowerMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
@@ -22,14 +22,16 @@ public class ArmorGrantEffects extends ArmorPowerMobEffects {
 
     @Override
     public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
-        if(!getCBoolean(stack, wearer.level(), wearer, null)) return;
+        if(!condition(stack, wearer.level(), wearer, null)) return;
 
         for(Holder<MobEffect> p : this.effectsPlayer) {
+            MobEffectInstance instance = new MobEffectInstance(p, this.duration, this.amplifier);
+
             if(wearer.hasEffect(p)) {
-                wearer.getEffect(p).update(new MobEffectInstance(p, this.duration, this.amplifier));
+                wearer.getEffect(p).update(instance);
             }
             else {
-                wearer.addEffect(new MobEffectInstance(p, this.duration, this.amplifier));
+                wearer.addEffect(instance);
             }
         }
     }

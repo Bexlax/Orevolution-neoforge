@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_chert_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_chert"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_chert_slab_top"
+    }
+  }
+}

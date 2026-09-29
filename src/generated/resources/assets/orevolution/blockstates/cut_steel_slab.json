@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/cut_steel_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/cut_steel_block"
+    },
+    "type=top": {
+      "model": "orevolution:block/cut_steel_slab_top"
+    }
+  }
+}

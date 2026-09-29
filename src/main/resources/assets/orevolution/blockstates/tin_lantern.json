@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "orevolution:block/tin_lantern"
+    },
+    "hanging=true": {
+      "model": "orevolution:block/tin_lantern_hanging"
+    }
+  }
+}

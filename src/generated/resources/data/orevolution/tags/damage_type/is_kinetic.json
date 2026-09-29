@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:fall",
+    "minecraft:falling_anvil",
+    "minecraft:falling_stalactite",
+    "minecraft:falling_block",
+    "minecraft:explosion",
+    "minecraft:player_explosion"
+  ]
+}

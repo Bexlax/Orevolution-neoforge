@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "orevolution:platinum_ingot"
+    },
+    "B": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "orevolution:celestite_shard"
+    }
+  },
+  "pattern": [
+    "CAC",
+    "ABA",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:motion_detector"
+  }
+}

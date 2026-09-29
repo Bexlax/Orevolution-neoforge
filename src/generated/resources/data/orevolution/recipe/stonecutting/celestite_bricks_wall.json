@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "orevolution:celestite_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:celestite_bricks_wall"
+  }
+}

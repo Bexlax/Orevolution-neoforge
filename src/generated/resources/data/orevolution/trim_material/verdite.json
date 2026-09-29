@@ -1,0 +1,9 @@
+{
+  "asset_name": "orevolution_verdite",
+  "description": {
+    "color": "#55FF55",
+    "translate": "trim_material.orevolution.verdite"
+  },
+  "ingredient": "orevolution:verdite_ingot",
+  "item_model_index": -1.0
+}

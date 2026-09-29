@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.types;
 
-import net.bexla.orevolution.content.types.interfaces.IArmorPower;
+import net.bexla.orevolution.content.interfaces.IArmorPower;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.ArmorMaterial;
 import net.neoforged.neoforge.common.ModConfigSpec;

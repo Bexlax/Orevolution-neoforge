@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/rhyolite_bricks_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/rhyolite_bricks"
+    },
+    "type=top": {
+      "model": "orevolution:block/rhyolite_bricks_slab_top"
+    }
+  }
+}

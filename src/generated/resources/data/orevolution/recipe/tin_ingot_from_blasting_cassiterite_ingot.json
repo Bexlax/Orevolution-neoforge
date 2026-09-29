@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.4,
+  "group": "orevolution:tin_ingot",
+  "ingredient": {
+    "item": "orevolution:cassiterite_ingot"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tin_ingot"
+  }
+}

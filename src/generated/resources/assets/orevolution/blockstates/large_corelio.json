@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "orevolution:block/large_corelio_bottom"
+    },
+    "half=upper": {
+      "model": "orevolution:block/large_corelio_top"
+    }
+  }
+}

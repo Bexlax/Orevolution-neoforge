@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "has_tungsten_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:ingots/tungsten"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.obtain_tungsten.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "orevolution:tungsten_ingot"
+    },
+    "title": {
+      "translate": "advancements.orevolution.obtain_tungsten.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_tungsten_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

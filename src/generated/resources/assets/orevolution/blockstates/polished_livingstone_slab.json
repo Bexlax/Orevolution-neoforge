@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_livingstone_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_livingstone"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_livingstone_slab_top"
+    }
+  }
+}

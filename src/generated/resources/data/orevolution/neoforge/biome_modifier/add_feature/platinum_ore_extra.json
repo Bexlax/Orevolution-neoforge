@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "generate_platinum"
+    }
+  ],
   "type": "neoforge:add_features",
   "biomes": "#minecraft:is_badlands",
   "features": "orevolution:platinum_ore_extra",

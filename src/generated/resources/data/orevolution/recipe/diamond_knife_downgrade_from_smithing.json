@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:platinum_ingot"
+  },
+  "base": {
+    "item": "farmersdelight:diamond_knife"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_knife"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

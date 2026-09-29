@@ -1,0 +1,8 @@
+{
+  "asset_id": "orevolution:aethersteel",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.orevolution.aethersteel"
+  },
+  "template_item": "orevolution:aethersteel_ingot"
+}

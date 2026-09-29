@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:chainmail_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_helmet"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

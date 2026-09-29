@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/aetherrock_bricks_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/aetherrock_bricks"
+    },
+    "type=top": {
+      "model": "orevolution:block/aetherrock_bricks_slab_top"
+    }
+  }
+}

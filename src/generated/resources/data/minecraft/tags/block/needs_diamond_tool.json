@@ -5,6 +5,9 @@
     "orevolution:raw_tungsten_block",
     "orevolution:polished_tungsten_block",
     "orevolution:chiseled_tungsten_block",
-    "orevolution:cut_tungsten_block"
+    "orevolution:cut_tungsten_block",
+    "orevolution:moonstone",
+    "orevolution:rhyolite_encrusted_moonstone",
+    "orevolution:end_experience_ore"
   ]
 }

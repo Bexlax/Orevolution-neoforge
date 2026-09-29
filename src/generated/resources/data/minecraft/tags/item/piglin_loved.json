@@ -1,0 +1,16 @@
+{
+  "values": [
+    "orevolution:tungsten_ingot",
+    "orevolution:tungsten_helmet",
+    "orevolution:tungsten_chestplate",
+    "orevolution:tungsten_leggings",
+    "orevolution:tungsten_boots",
+    "orevolution:tungsten_sword",
+    "orevolution:tungsten_pickaxe",
+    "orevolution:tungsten_axe",
+    "orevolution:tungsten_shovel",
+    "orevolution:tungsten_hoe",
+    "#c:storage_blocks/tungsten",
+    "#c:ores/tungsten"
+  ]
+}

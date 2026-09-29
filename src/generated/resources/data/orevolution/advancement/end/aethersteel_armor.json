@@ -1,0 +1,43 @@
+{
+  "parent": "orevolution:end/obtain_primitive_aetherrock",
+  "criteria": {
+    "has_all_aethersteel_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:aethersteel_helmet"
+          },
+          {
+            "items": "orevolution:aethersteel_chestplate"
+          },
+          {
+            "items": "orevolution:aethersteel_leggings"
+          },
+          {
+            "items": "orevolution:aethersteel_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.orevolution.aethersteel_armor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "orevolution:aethersteel_chestplate"
+    },
+    "title": {
+      "translate": "advancements.orevolution.aethersteel_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_all_aethersteel_armor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

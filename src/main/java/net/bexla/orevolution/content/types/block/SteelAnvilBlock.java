@@ -38,9 +38,9 @@ public class SteelAnvilBlock extends FallingBlock {
 
     private static final VoxelShape BASE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D);
     private static final VoxelShape X_LEG1 = Block.box(4.0D, 4.0D, 6.0D, 12.0D, 9.0D, 10.0D);
-    private static final VoxelShape X_TOP = Block.box(0.0D, 8.0D, 3.0D, 16.0D, 18.0D, 13.0D);
+    private static final VoxelShape X_TOP = Block.box(0.0D, 6.0D, 3.0D, 16.0D, 16.0D, 13.0D);
     private static final VoxelShape Z_LEG1 = Block.box(6.0D, 4.0D, 4.0D, 10.0D, 9.0D, 12.0D);
-    private static final VoxelShape Z_TOP = Block.box(3.0D, 8.0D, 0.0D, 13.0D, 18.0D, 16.0D);
+    private static final VoxelShape Z_TOP = Block.box(3.0D, 6.0D, 0.0D, 13.0D, 16.0D, 16.0D);
 
     private static final VoxelShape X_AXIS_AABB = Shapes.or(BASE, X_LEG1, X_TOP);
     private static final VoxelShape Z_AXIS_AABB = Shapes.or(BASE, Z_LEG1, Z_TOP);
@@ -130,10 +130,7 @@ public class SteelAnvilBlock extends FallingBlock {
     }
 
     @Override
-    protected boolean isPathfindable(
-            BlockState state,
-            PathComputationType pathComputationType
-    ) {
+    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
         return false;
     }
 

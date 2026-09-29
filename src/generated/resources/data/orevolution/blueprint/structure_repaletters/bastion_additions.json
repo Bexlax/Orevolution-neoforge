@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "generate_tungsten"
+    }
+  ],
+  "repaletter": {
+    "type": "orevolution:chance",
+    "chance": 0.1015,
+    "replaces_block": "minecraft:gold_block",
+    "replaces_with": {
+      "Name": "orevolution:tungsten_block"
+    }
+  },
+  "structures": "minecraft:bastion_remnant"
+}

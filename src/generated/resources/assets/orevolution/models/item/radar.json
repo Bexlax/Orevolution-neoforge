@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "orevolution:item/tool/radar"
+    "layer0": "orevolution:item/misc/radar"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "orevolution:config",
+      "value": "generate_pyrite"
+    }
+  ],
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 1.0,
+    "size": 16,
+    "targets": [
+      {
+        "state": {
+          "Name": "orevolution:pyrite_block"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:stone_ore_replaceables"
+        }
+      }
+    ]
+  }
+}

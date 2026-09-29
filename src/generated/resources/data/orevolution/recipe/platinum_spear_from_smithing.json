@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:platinum_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_spear"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_spear"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

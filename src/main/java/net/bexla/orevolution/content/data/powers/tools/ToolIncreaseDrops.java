@@ -1,20 +1,19 @@
 package net.bexla.orevolution.content.data.powers.tools;
 
 import net.bexla.orevolution.content.data.utility.OrevolutionTags;
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.tool.OrevolutionToolPower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.Tags;
-import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class ToolIncreaseDrops extends OrevolutionToolPower {
     private final int extraDrops;
@@ -27,36 +26,46 @@ public class ToolIncreaseDrops extends OrevolutionToolPower {
     }
 
     @Override
-    public @NotNull Object addTooltipValue() {
-        return (int)(baseChance * 100) + "%";
+    public Object[] addTooltipValue() {
+        return new Object[] {
+                displayChance(0.1),
+                displayChance(2)
+        };
     }
 
     @Override
-    public MutableComponent ctrlTooltip() {
-        return Component.translatable("tooltip.orevolution.duplication_explanation");
+    public List<MutableComponent> ctrlTooltip() {
+        return List.of(
+                Component.translatable("power.orevolution.explanation.duplication"),
+                Component.translatable("power.orevolution.explanation.double_chance", displayChance(2)),
+                Component.translatable("power.orevolution.explanation.normal_chance", displayChance(1)),
+                Component.translatable("power.orevolution.explanation.uncommon_chance", displayChance(0.5)),
+                Component.translatable("power.orevolution.explanation.ore_chance", displayChance(0.2)),
+                Component.translatable("power.orevolution.explanation.rare_chance", displayChance(0.1)),
+                Component.translatable("power.orevolution.explanation.no_chance")
+        );
+    }
+
+    private Object displayChance(double op) {
+        return (int)(baseChance * 100 * op) + "%";
     }
 
     @Override
     public boolean onMineBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity player, BlockState state) {
-        if(!getCBoolean(stack, state, level, player, null)) return super.onMineBlock(stack, level, pos, player, state);
+        if(!getCondition(stack, state, level, player, null)) return super.onMineBlock(stack, level, pos, player, state);
 
         double chance = baseChance;
-        Item item = stack.getItem();
 
-        if (item instanceof TieredItem && stack.isCorrectToolForDrops(state)) {
-            if(state.is(OrevolutionTags.Blocks.alwaysDuplicateChance)) {
-                chance = 1;
-            }
-            else if(state.is(OrevolutionTags.Blocks.neverDuplicateChance)) {
+        if (!state.requiresCorrectToolForDrops() || stack.isCorrectToolForDrops(state)) {
+            if(state.is(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)) {
+                chance = baseChance * 2;
+            } else if(state.is(OrevolutionTags.Blocks.NEVER_DUPLICATE_CHANCE)) {
                 chance = 0;
-            }
-            else if(state.is(OrevolutionTags.Blocks.uncommonDuplicateChance)) {
+            } else if(state.is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {
                 chance = baseChance / 2;
-            }
-            else if(state.is(Tags.Blocks.ORES)) {
+            } else if(state.is(Tags.Blocks.ORES)) {
                 chance = baseChance / 5;
-            }
-            else if(state.is(OrevolutionTags.Blocks.rareDuplicateChance)) {
+            } else if(state.is(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)) {
                 chance = baseChance / 10;
             }
 

@@ -1,0 +1,8 @@
+{
+  "parent": "orevolution:item/medium_shield_blocking",
+  "gui_light": "front",
+  "textures": {
+    "1": "orevolution:item/compat/shieldexp/verdite_shield",
+    "particle": "orevolution:item/compat/shieldexp/verdite_shield"
+  }
+}

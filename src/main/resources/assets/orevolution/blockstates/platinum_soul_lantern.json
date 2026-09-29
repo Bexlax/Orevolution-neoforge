@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "orevolution:block/platinum_soul_lantern"
+    },
+    "hanging=true": {
+      "model": "orevolution:block/platinum_soul_lantern_hanging"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parent": "orevolution:item/medium_shield",
+  "gui_light": "front",
+  "overrides": [
+    {
+      "model": "orevolution:item/verdite_shield_blocking",
+      "predicate": {
+        "minecraft:blocking": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "1": "orevolution:item/compat/shieldexp/verdite_shield",
+    "particle": "orevolution:item/compat/shieldexp/verdite_shield"
+  }
+}

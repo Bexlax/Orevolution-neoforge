@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "orevolution:verdite_sword"
+    },
+    {
+      "item": "orevolution:verdite_pickaxe"
+    },
+    {
+      "item": "orevolution:verdite_axe"
+    },
+    {
+      "item": "orevolution:verdite_shovel"
+    },
+    {
+      "item": "orevolution:verdite_hoe"
+    },
+    {
+      "item": "orevolution:verdite_helmet"
+    },
+    {
+      "item": "orevolution:verdite_chestplate"
+    },
+    {
+      "item": "orevolution:verdite_leggings"
+    },
+    {
+      "item": "orevolution:verdite_boots"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:verdite_nugget"
+  }
+}

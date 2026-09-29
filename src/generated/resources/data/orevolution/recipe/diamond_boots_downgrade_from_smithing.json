@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:platinum_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:platinum_boots"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

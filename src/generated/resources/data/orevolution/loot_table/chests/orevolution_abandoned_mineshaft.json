@@ -25,7 +25,7 @@
         },
         {
           "type": "minecraft:empty",
-          "weight": 6
+          "weight": 9
         }
       ],
       "rolls": 1.0
@@ -55,6 +55,21 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "orevolution:fools_apple"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
                 "max": 3.0,
                 "min": 1.0
               },
@@ -65,7 +80,7 @@
         },
         {
           "type": "minecraft:empty",
-          "weight": 2
+          "weight": 4
         }
       ],
       "rolls": {

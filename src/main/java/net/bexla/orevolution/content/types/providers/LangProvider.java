@@ -11,7 +11,6 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 
@@ -81,13 +80,6 @@ public abstract class LangProvider implements DataProvider {
         add(key.getDescriptionId(), name);
     }
 
-    public void addPotion(Supplier<? extends Potion> potion, String name) {
-        add("item.minecraft.potion.effect." + BuiltInRegistries.POTION.getKey(potion.get()).getPath(), "Potion of " + name);
-        add("item.minecraft.splash_potion.effect." + BuiltInRegistries.POTION.getKey(potion.get()).getPath(), "Splash Potion of " + name);
-        add("item.minecraft.lingering_potion.effect." + BuiltInRegistries.POTION.getKey(potion.get()).getPath(), "Lingering Potion of " + name);
-        add("item.minecraft.tipped_arrow.effect." + BuiltInRegistries.POTION.getKey(potion.get()).getPath(), "Arrow of " + name);
-    }
-
     public void addAdvTitle(String advancementTitle, String name) {
         data.putIfAbsent("advancements." + advancementTitle + ".title", name);
     }
@@ -121,10 +113,6 @@ public abstract class LangProvider implements DataProvider {
         add(key.getTranslationKey(), name);
     }
     */
-
-    public void addEffect(Supplier<? extends MobEffect> key, String name) {
-        add(key.get(), name);
-    }
 
     public void add(MobEffect key, String name) {
         add(key.getDescriptionId(), name);

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "orevolution:cassiterite_sword"
+    },
+    {
+      "item": "orevolution:cassiterite_pickaxe"
+    },
+    {
+      "item": "orevolution:cassiterite_axe"
+    },
+    {
+      "item": "orevolution:cassiterite_shovel"
+    },
+    {
+      "item": "orevolution:cassiterite_hoe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "orevolution:cassiterite_nugget"
+  }
+}

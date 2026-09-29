@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "orevolution:block/bronze_lantern"
+    },
+    "hanging=true": {
+      "model": "orevolution:block/bronze_lantern_hanging"
+    }
+  }
+}

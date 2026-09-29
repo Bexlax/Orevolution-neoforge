@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "orevolution:forgotten_cave",
+  "features": [
+    "orevolution:rhyolite_pillar",
+    "orevolution:forgotten_vegetation",
+    "orevolution:blackstone_pillar",
+    "orevolution:vinnelio_vines",
+    "orevolution:moonstone_pillar",
+    "orevolution:moonstone_pillar_liquid"
+  ],
+  "step": "vegetal_decoration"
+}

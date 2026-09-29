@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "orevolution:pyrite"
+    },
+    "B": {
+      "item": "orevolution:celestite_block"
+    },
+    "X": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BXB",
+    "ABA"
+  ],
+  "result": {
+    "count": 4,
+    "id": "orevolution:rdx"
+  }
+}

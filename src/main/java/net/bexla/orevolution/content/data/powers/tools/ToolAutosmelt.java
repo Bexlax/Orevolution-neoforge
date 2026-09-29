@@ -1,6 +1,6 @@
 package net.bexla.orevolution.content.data.powers.tools;
 
-import net.bexla.orevolution.content.types.interfaces.IConditional;
+import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.tool.OrevolutionToolPower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -47,8 +47,8 @@ public class ToolAutosmelt extends OrevolutionToolPower {
     }
 
     @Override
-    public MutableComponent ctrlTooltip() {
-        return Component.translatable("tooltip.orevolution.autosmelt_explanation");
+    public List<MutableComponent> ctrlTooltip() {
+        return List.of(Component.translatable("power.orevolution.explanation.autosmelt"));
     }
 
     @Override
@@ -58,9 +58,8 @@ public class ToolAutosmelt extends OrevolutionToolPower {
                 .getHolderOrThrow(Enchantments.SILK_TOUCH);
 
         if(!(entity instanceof Player player)) return super.onMineBlock(stack, level, pos, entity, state);
-        if(!getCBoolean(stack, state, level, entity, null)) return super.onMineBlock(stack, level, pos, entity, state);
+        if(player.isShiftKeyDown() == getCondition(stack, state, level, entity, null)) return super.onMineBlock(stack, level, pos, entity, state);
         if(EnchantmentHelper.getTagEnchantmentLevel(silkTouch, stack) > 0) return super.onMineBlock(stack, level, pos, entity, state);
-        if(player.isShiftKeyDown()) return super.onMineBlock(stack, level, pos, entity, state);
         if(player.isCreative()) return super.onMineBlock(stack, level, pos, entity, state);
         if(stack.getItem() instanceof TieredItem && !stack.isCorrectToolForDrops(state)) return super.onMineBlock(stack, level, pos, entity, state);
 

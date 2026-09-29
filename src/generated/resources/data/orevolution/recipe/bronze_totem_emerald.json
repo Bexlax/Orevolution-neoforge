@@ -3,20 +3,20 @@
   "category": "misc",
   "ingredients": [
     {
+      "item": "minecraft:emerald"
+    },
+    {
       "item": "orevolution:bronze_totem"
-    },
-    {
-      "item": "minecraft:emerald"
-    },
-    {
-      "item": "minecraft:emerald"
     },
     {
       "item": "minecraft:emerald"
     }
   ],
   "result": {
+    "components": {
+      "orevolution:emerald_totem": {}
+    },
     "count": 1,
-    "id": "orevolution:bronze_totem_emerald"
+    "id": "orevolution:bronze_totem"
   }
 }

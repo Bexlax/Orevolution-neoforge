@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "orevolution:moonstone"
+  },
+  "base": {
+    "item": "orevolution:platinum_pickaxe"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:moonstone_pickaxe"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

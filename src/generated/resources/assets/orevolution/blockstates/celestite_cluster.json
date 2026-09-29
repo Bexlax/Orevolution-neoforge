@@ -1,0 +1,4684 @@
+{
+  "variants": {
+    "facing=down,glow=0,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=0,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=1,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=2,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=3,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=4,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=5,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=6,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=7,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=8,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=down,glow=9,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 180
+    },
+    "facing=east,glow=0,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=0,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=1,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=2,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=3,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=4,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=5,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=6,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=7,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=8,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=east,glow=9,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,glow=0,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=0,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=1,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=2,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=3,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=4,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=5,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=6,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=7,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=8,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=north,glow=9,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90
+    },
+    "facing=south,glow=0,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=0,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=1,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=2,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=3,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=4,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=5,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=6,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=7,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=8,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=south,glow=9,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,glow=0,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=0,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=1,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=2,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=3,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=4,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=5,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=6,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=7,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=8,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=up,glow=9,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster"
+    },
+    "facing=west,glow=0,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=0,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=1,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=2,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=3,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=4,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=5,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=6,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=7,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=8,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=glow_inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=glow_inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=glow_inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=glow_inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=glow_inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=glow_inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=inked,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=inked,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=inked,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=inked,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=inked,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=inked,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=normal,phase=down,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=normal,phase=down,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=normal,phase=hold,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=normal,phase=hold,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=normal,phase=up,waterlogged=false": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=west,glow=9,mode=normal,phase=up,waterlogged=true": {
+      "model": "orevolution:block/celestite_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

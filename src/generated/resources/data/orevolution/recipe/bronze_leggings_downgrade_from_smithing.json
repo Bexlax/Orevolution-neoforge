@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "orevolution:bronze_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:leather_leggings"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

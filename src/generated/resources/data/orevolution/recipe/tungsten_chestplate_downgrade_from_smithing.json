@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "orevolution:tungsten_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:golden_chestplate"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

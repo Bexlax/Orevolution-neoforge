@@ -1,0 +1,23 @@
+{
+  "values": [
+    "#minecraft:iron_ores",
+    "orevolution:steel_anvil",
+    "minecraft:iron_block",
+    "minecraft:raw_iron_block",
+    "minecraft:iron_bars",
+    "minecraft:iron_door",
+    "minecraft:iron_trapdoor",
+    "minecraft:anvil",
+    "minecraft:iron_door",
+    "minecraft:iron_trapdoor",
+    "minecraft:hopper",
+    "orevolution:rhyolite_emerald_ore",
+    "orevolution:rhyolite_emerald_ore_clump",
+    "orevolution:emerald_cluster",
+    "orevolution:prismarine_cluster",
+    "orevolution:aetherrock",
+    "orevolution:polished_aetherrock",
+    "orevolution:aetherrock_bricks",
+    "orevolution:cracked_aetherrock_bricks"
+  ]
+}

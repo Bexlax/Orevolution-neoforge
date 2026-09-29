@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "fruit=false": {
+      "model": "orevolution:block/vinnelio_head"
+    },
+    "fruit=true": {
+      "model": "orevolution:block/vinnelio_head_fruit"
+    }
+  }
+}

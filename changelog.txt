@@ -1,0 +1,319 @@
+"Forgotten Depths" Major Update (6.0.0) (Beta-B):
+
+Main Additions:
+[+] Steel rework:
+	- All steel tools use the same power (3X3 Breaking)
+	- All steel weapons now have higher Crit damage
+	- Steel Heavy-Work Shovel replaces the Steel Digger
+	- Steel Heavy-Work Pickaxe replaces the Steel Hammer
+	- Steel Heavy-Work Axe replaces the Steel broadaxe
+	- Steel Heavy-Work Sword & Steel Heavy-Work Hoe replace the Steel scythe
+
+[+] Bronze Totem Rework:
+	- Bronze totems are now a singular item and all of them have 100 durability points
+	- Bronze totems now work as long as they're in your hotbar
+	- Bronze totems with any gem in them are turned into normal bronze totems when broken as to not have those resources go to waste
+	- Diamond Bronze Totem now increases the time of any added positive effect by x2
+	- Lapis Bronze Totem now decreases the time of any negative effect by 50%
+	- Emerald Bronze Totem now doubles health regeneration
+	- Added Quartz Bronze Totem, stops hunger depletion completely
+	- Added Celestine Bronze Totem, Grants night vision for 2 minutes on use
+	- Added Amethyst Bronze Totem, Grants haste for 2 minutes on use
+
+[+] Tungsten Corrosion (Currently Unobtainable in survival):
+    - Decaying Tungsten Block
+        - Decaying Polished Tungsten Block
+        - Decaying Cut Tungsten
+        - Decaying Tungsten Bricks
+        - Decaying Chiseled Tungsten
+        - Decaying Chiseled Tungsten Bricks
+    - Corroded Tungsten Block
+        - Corroded Polished Tungsten Block
+        - Corroded Cut Tungsten
+        - Corroded Tungsten Bricks
+        - Corroded Chiseled Tungsten
+        - Corroded Chiseled Tungsten Bricks
+
+[+] Cassiterite Ore (Ver rarely found in the Overworld, and commonly found in the nether)
+    - Raw Cassiterite
+    - Cassiterite Ingot (Can be smelted into a Tin Ingot)
+    - Raw Cassiterite Block
+    - Cassiterite Block
+    - Cassiterite Tools (30% chance to duplicate block drops for Tools, guaranteed Poison on hit for Weapons)
+
+Increased pick-up distance no longer attracts item when the inventory is full
+Added Platinum Apple and Enchanted Platinum Apple
+Added compatibility for The Silver Age
+Updated compat for Oreganized 5.3.0
+    - Kinetic attributes are only erased for electrum tools now
+    - Electrum Weapons will now use consecutive hit damage as it's power instead of illager damage
+    - Silver Armor no longer gives Invincibility per armor piece (configurable)
+    - Silver Armor set gives Lesser Purification AOE, and +8 Invincibility
+    - Silver Tools have x3 mining speed, but it decreases depending on their durability
+    - Silver Weapons have x3 attack damage, but it decreases depending on their durability
+Updated neoforge version to v21.1.251
+Bronze radar improvements
+    - Better display lines
+    - Configurable Intervals between each coord update
+    - Added a 'search time' between each player search (configurable)
+Heavy anvils now make all price increases linear (+1 instead of x2)
+    - Increase formula configurable through "heavy_anvil_increase_formula"
+    - Value configurable through "heavy_anvil_linear_value"
+Heavy anvils don't have an xp limit anymore
+    - Configurable through "heavy_anvil_xp_limit"
+Heavy anvils now allow up to 300 characters (configurable)
+    - Configurable through "heavy_anvil_character_limit"
+
+removed Pig Emblem
+
+Fixes and Balance changes:
+[+] All mining-related powers are immediately ignored while on Creative mode
+[+] XP Duplication now only works as long as the used tool can harvest that specific block
+[+] Modded biomes are now enabled by default
+[+] 'Required tool type' display text will now prioritize the main tags first (MINEABLE_WITH_PICKAXE, MINEABLE_WITH_AXE, etc.)
+[+] Netherite & Aethersteel tools now increase their damage by 50% if the targeted entity has 65% or less health left
+[+] Iron weapons now have durability-relative damage
+[+] Aethersteel tools no longer duplicate drops
+[+] Updated more textures
+[+] Moonstone now generates in the Nether
+[+] Tungsten tools and armor are now made with Basic Smithing Templates
+[+] Tungsten tools now have normal names
+[+] Tungsten Armor now gives Haste, Fire Resistance and Resistance
+[+] Reduced tungsten tool's durability down to 128 points
+[+] Reduced steel tool's durability down to 896 points
+[+] Aethersteel is now less common, same goes for the meteorites themselves
+[+] Fixed incorrect attributes when inheriting from a Tungsten-Coated item
+[+] Platinum's Strenght effect time now depends on the amount of damage received
+[+] Items obtained through bartering will now have the 'No piglin pick-up' component until the player picks it up
+[+] Gold armor now only gives Resistance I and Haste I
+[+] Tungsten now has a height and exposure based generation
+[+] Autosmelt's list is now a tag instead of a hard-coded list
+[+] Autosmelt now gets inverted instead of disabled
+[+] Shields can't be tungsten coated anymore
+[+] Verdite apple is now crafted with 8 verdite ingots and a golden apple
+[+] Verdite apple now has a higher use time and a global cooldown of 3 seconds
+[+] Reinforcing and Coating templates now require 7 Gold ingots and 1 Blackstone
+[+] Reinforcing and Coating templates can now be found in Nether Fortresses
+[+] Reinforcing templates can now be transformed into Coating templates (and vice-versa) with 7 Platinum Ingots and 1 Basalt Block
+[+] Plant Ores now require a Hoe to be harvested
+[+] Tweaked tin's generation to increase the vein size
+[+] Tweaked platinum's generation to make it more frequent
+[+] Internal rework of the Power System to work in unison (no idea if that's the correct use of that word) with the Conditional System
+[+] Added the next Tags to DOUBLE_DUPLICATE_CHANCE:
+    - #BASALTS - #BLACKSTONES
+[+] Added plant ores to #ORES
+[+] Added Moonstone to #ORES
+[+] Added pyrite to #STORAGE_BLOCK
+[+] Added celestine to #GEMS
+[+] Fixed Platinum Lantern's Hitbox
+[+] Fixed Soul Platinum Lantern's Hanged state model
+[+] Fixed Golden Lantern's hanging model
+[+] Fixed Golden Soul Lantern's hanging model
+[+] Fixed Brewing recipes that included Moonstone not working properly
+[+] Fixed netherite tool power's not working properly
+[+] Fixed steel tools requiring Platinum ingots as it's repair ingredient
+[+] Fixed Gold tools being unable to break iron-tiered blocks
+[+] Fixed Heavy anvils randomly ceasing to exist
+[+] Fixed generation parameters for the Forgotten Caves and the Geode Gardens
+[+] Fixed duplication bug involving Chiseled Tungsten Bricks
+[+] Fixed the modlist not displaying all the information about Orevolution
+[+] Automated 'MINEABLE_WITH_PICKAXE' tagging to avoid future issues in case i forget to add them myself
+    - Also fixes some issues with the ones that were already untagged like Chert
+
+"Forgotten Depths" Major Update (6.0.0) (Beta-A):
+
+Main Additions:
+[+] Tungsten Rework:
+    - Tungsten ore is less common, and now it can also be obtained from piglins and bastions (brute piglins drop the most tungsten, but piglins are far more common, and bastions sometimes have tungsten blocks in replacement of gold blocks)
+    - Reinforced templates are now used to reinforce any item (That has durability), increasing their durability by 50% (80% if it's an armor piece). additionally:
+        - Reinforced shields can't be disarmed
+        - Reinforced items become fire-resistant
+    - Coating templates are used to coat any item, increasing their attributes (E.g. Damage) by 50%, and decreasing their durability by 30% (15% if it's an armor piece). additionally:
+        - Coated armor pieces gain -40% Burning Time
+        - Coated tools gain +2 mining efficiency (if it already has mining efficiency from another source, then only the +50% effect applies)
+        - Coated weapons gain +0.5 knockback (if it already has knockback from another source, then only the +50% effect applies)
+        - Coated shields deflect 60% of the received damage
+    - You can use Tungsten to barter with piglins for better drops, including a chance to obtain reinforced/coating templates (or items with 'similar' value)
+    - Brute Piglins have a 10% chance to spawn with a Tungsten Hogaxe instead of a Golden Axe (yes they deal more damage with it)
+
+[+] Added 2 new biomes (Disabled by default):
+    (These won't load unless Terrablender/Biolith is installed)
+    - Forgotten Caves
+    - Geode Gardens
+
+[+] new Blocks and Items:
+    - Rhyolite (Incl. Stairs, Slabs and Walls)
+        - Rhyolite Emerald Ore
+        - Rhyolite Emerald Ore Clump
+        - Polished Rhyolite (Incl. Stairs, Slabs and Walls)
+        - Chiseled Rhyolite
+        - Rhyolite Pillar
+
+    - Chert (Incl. Stairs, Slabs and Walls)
+        - Polished Chert (Incl. Stairs, Slabs and Walls)
+        - Chiseled Chert
+        - Chert Pillar
+
+    - Quartzolite
+        - Quartz Chip
+
+    - Moonstone
+        - Moonstone Toolset (Incl. Tool Powers & Farmer's Delight Knife)
+        - Moonstone Armorset (Incl. Armorset Powers)
+        - Spectral Bottle (Glowing Status effect potion)
+        - Fierce Bottle (Strenght Amp. III Status effect potion)
+        - Life Bottle (Regeneration Amp. III Status effect potion)
+        - Lightning Bottle (Swiftness Amp. III Status effect potion)
+
+    - Quickness (status effect)
+        - Potion of Quickness (Incl. Long and Strong potions)
+        - Lingering Potion of Quickness (Incl. Long and Strong potions)
+        - Splash Potion of Quickness (Incl. Long and Strong potions)
+
+    - Emerald Clusters
+    - Prismarine Clusters
+    - Unknown Roots & Unknown Roots Block
+    - Corelio & Large Corelio
+    - Vinnelio
+    - Ancient Fruit
+        - Ancient Stew
+        - Ancient Elixir
+
+    - Celestine
+        - Celestine Shard
+        - Professional Firework Rocket
+            - Higher flight duration depending on the amount of Celestine Shards (max of 4) and the flight duration of the rocket
+            - Base flight duration of 3 & 4 Celestine Shards results in a flight duration of 8
+        - Polished Celestine (Incl. Stairs, Slabs and Walls)
+        - Celestine Bricks (Incl. Stairs, Slabs and Walls)
+
+    - Pyrite (Can be used as fuel)
+        - Fiery Arrow (Ignites mobs for 3 seconds. if the Arrow catches on fire, it will instead explode on contact)
+        - Pyrite Block (Can be used as fuel)
+        - Polished Pyrite
+
+Other Additions:
+[+] New lanterns made out of tin, bronze, platinum and gold
+[+] Aethersteel armor, Bronze diving gear, and Livingstone armor now have proper trims
+[+] Basic upgrade template can now be used to upgrade equipment into the next (E.g. iron to platinum, chainmail to iron, etc.)
+[+] Harvest Warning rework
+    - Now only shows up if the block actually requires a tool to be broken, so stuff like grass or wood won't display the text
+    - Additionally if the incorrect tool type is being used and the block won't drop, a new text will display telling you the correct tool type required (E.g. breaking any stone block without a pickaxe)
+[+] Bronze diving gear can now be dyed
+[+] Purification Effect (Poison for Undead mobs, also used as a replacement for Platinum's poison)
+[+] Modded Progression can now be enabled/disabled again
+    - Added stone_follows_tin, gold_follows_iron and iron_follows_platinum, found inside of orevolution-toolstats.toml
+    - Added electrum_follows_platinum (Oreganized Compat)
+    - Added copper_follows_tin and tin_follows_copper (Copper Age Backported Compat)
+[+] Spear Backport Integration
+    - Tin, Platinum, Moonstone, Aethersteel, Livingstone and Verdite Spears
+[+] Added more Stairs, Slabs and Walls for blocks like the cut steel block that didn't originally have them
+[+] Added Steel Grate and Polished Livingstone
+[+] Added Steel & Bronze Horse armor
+[+] Added 2 new tags to determine which items receive what part of their powers
+    - to be more specific, "tool_powers" and "weapon_powers" will determine whether an item will follow the tool powers or the weapon powers
+    - this means that you can, to list a few examples:
+        - remove all powers from all pickaxes, assign Axes to weapon and tool powers simultaneously or add specific items such as Farmer Delight's knives (they're already included tho)
+    (all of these apply as long as the item is registered as a TieredItem and has a Tier associated with a Power)
+[+] Added 10 new Advancements
+[+] Added an option to disable bronze alloy and steel alloy (recipes)
+[+] Added an option to disable Chest loot modifiers
+[+] Verdite tools and armor can now be smelt for verdite nuggets
+[+] Plant ores can now be composted
+[+] Set Bonus tooltip is now greyed out until the full armor is detected
+[+] Added Built-In Texture Pack: "Orevolution Styled" (Replaces all vanilla ingots with ones that fit orevolution's art-style)
+
+Removed/Missing content (incl Bugs):
+[-] Removed Limestone
+[-] Removed "Copper Tool/Weapon Powers" options
+[-] Removed Reinforced Netherite Armor (should be replaced with Netherite Armor with the new Reinforced component if found in your inventory)
+[-] Removed Tungsten Diving Armor (replaced with the new Tungsten Armor set)
+[!] Professional Rockets don't have JEI integration
+[!] Fiery arrows get bugged when exploding on blocks
+[!] Reinforced/Coated shields won't work properly if Shield Expansion is loaded
+[!] Steel Anvils sometimes cease to exist
+[!] "+x% Durability" tooltip sometimes places itself in the middle of other lines (such as multi-powered tools)
+
+Fixes and Balance changes:
+[+] Reduced tin's base duplicate chance from 20% to 15%
+[+] Reduced tin's base duplicate chance from 40% to 30%
+[+] Iron armor set now affects all projectile damage instead of only arrows
+[+] Increased iron armor set power's chance from 25% to 30%
+[+] Nerfed Aethersteel armor set's power
+[+] Platinum now has a height and exposure based generation
+[+] Steel tools are no longer capable of breaking stronger blocks than the main/targeted one
+[+] Tin now has a height based generation, making it more common on mountains and rarer in the caves
+[+] Bronze Diving Gear now requires leather armor, a basic smithing upgrade and a smithing table to be crafted
+[+] Steel Scythe can now break "MINEABLE_WITH_HOE" tagged blocks
+[+] Experience Ores now drop Experience Nuggets if Create is installed
+[+] Gold can now break iron ore n stuff
+[+] Updated some textures
+[+] Iron can now break Redstone ores again
+[+] 'Always Duplicate' tag now only doubles the chances and has been renamed to DOUBLE_DUPLICATE_CHANCE
+[+] Tagged the next blocks as DOUBLE_DUPLICATE_CHANCE:
+    - #SNOWS, #ICES, #TERRACOTTAS, #GLASS_BLOCKS, CAVE VINE, GLOW LICHEN, MOSS_BLOCK, MOSS_CARPET, SPORE_BLOSSOM
+    - #STAIRS, #SLABS, #WALLS, #ALL_SIGNS, #ALL_HANGING_SIGNS, #BUTTONS, #BEDS, #FLOWERS, #TRAPDOORS, #DOORS,
+    - #FENCES, #FENCE_GATES, #REPLACEABLE, #CHAINS, #SANDS, #PRESSURE_PLATES, #GLAZED_TERRACOTTAS, #WOOL_CARPETS, #CANDLES
+    - #CONCRETE_POWDERs, #CONCRETES
+[+] Tagged the next blocks as UNCOMMON_DUPLICATE_CHANCE:
+    - CRAFTING TABLE, FURNACE, BLAST FURNACE, SMITHING TABLE, SMOKER, STONECUTTER, LECTERN, CRAFTER
+    - BOOKSHELF, GRINDSTONE, LOOM, CARTOGRAPHY_TABLE, FLETCHING_TABLE, COMPOSTER, CAULDRON, DECORATED_POT
+[+] Tagged the next blocks as RARE_DUPLICATE_CHANCE:
+    - STEEL ANVIL, ENCHANTING TABLE, BREWING STAND, ENDER CHEST, LODESTONE, HOPPER, DROPPER, DISPENSER
+[+] Tagged the next blocks as NEVER_DUPLICATE_CHANCE:
+    - #SHULKER BOXES, #BARRELS, CONDUIT, RESPAWN_ANCHOR, BEACON
+[+] Duplication now works with all tools as long as the block drops the item
+[+] Duplication tooltip now displays all possible percentages
+[+] Iron can't break Lapis ores anymore
+[+] Steel tools now call 'on player break block', balancing exhaustion and applying the effects of the broken block
+[+] While wearing the Tungsten Diving Suit, Lava fog will now get stronger the less time of Fire Resistance you have left
+[+] steelEfficiencyNerf is now disabled by default
+[+] Nerfed orevolution's 'monster room' loot
+[+] Fixed Damage reduction powers not applying properly, also damage reduction powers now use Tags instead of hardcoded damage types
+[+] Fixed tungsten items such as tungsten nuggets not being fire resistant
+[+] Fixed durability for modded armors
+[+] Fixed tooltip 'Has a chance to inflict the following effect(s) to targeted undead mobs:'
+[+] Fixed electrum tooltip
+[+] Fixed steel not being required for Steel tools
+[+] Fixed durability modifiers not disabling/enabling properly with equipmentDurability
+[+] Fixed Livingstone not being obtainable
+[+] Fixed Verdite not being obtainable
+[+] Fixed Steel Anvil not sounding like an anvil
+[+] Fixed Steel Anvil being 18px tall instead of 16px
+[+] Fixed Steel Trapdoors and Doors not rendering transparency properly
+[+] Fixed Tin tools being capable of breaking platinum
+[+] Fixed platinum giving XP even if the block didn't drop any
+[+] Fixed some missing tags for blocks
+[+] Fixed missing blocks in creative tabs
+[+] Fixed incorrect materials to repair armors
+[+] Fixed recipes only loading when Create is present
+[+] Fixed Aethersteel Chunk being completely uncraftable (i swear to god i'll end up outsourcing recipes to someone else)
+[+] Fixed Modded armor trims not applying on items
+[+] Fixed double spaces in every single tool with powers
+[+] Fixed Livingstone, Verdite, Platinum, Reinforced Netherite and Aethersteel having no toughness/kbr
+[+] Fixed effects from armor sets not updating
+[+] Renamed "Cut Steel Block" to "Cut Steel"
+[+] Renamed "Cut Tungsten Block" to "Cut Tungsten"
+[+] Renamed all Gold blocks with "Golden"
+[+] debug Logs produced by Orevolution will only load when the new Debug option is enabled
+
+~136 changes including bug fixes
+
+1.20.1:
+
+Fixes and Balance changes:
+[+] Updated some textures
+[+] Fixed durability modifiers not disabling/enabling properly with equipmentDurability
+[+] Fixed Arrows AND bows not working when Archery Expansion isn't installed
+[+] Fixed Steel Anvil not sounding like an anvil
+[+] Fixed Steel Anvil being 18px tall instead of 16px
+[+] Fixed Steel Trapdoors and Doors not rendering transparency properly
+[+] Fixed platinum giving XP even if the block didn't drop any
+[+] Fixed some missing tags for blocks (should also fix issues with Spelunkery)
+[+] Fixed recipes only loading when Create is present
+[+] Fixed Aethersteel Chunk being completely uncraftable
+[+] Fixed Modded armor trims not applying on items
+[+] Fixed double spaces in every single tool with powers
+[+] Renamed "Cut Steel Block" to "Cut Steel"
+[+] Renamed "Cut Tungsten Block" to "Cut Tungsten"
+[+] Renamed all Gold blocks with "Golden"
