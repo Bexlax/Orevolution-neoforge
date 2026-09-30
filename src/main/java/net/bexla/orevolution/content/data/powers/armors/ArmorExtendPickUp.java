@@ -39,32 +39,22 @@ public class ArmorExtendPickUp extends OrevolutionArmorPower {
         if (!condition(stack, level, wearer, null)) return;
 
         AABB area = player.getBoundingBox().inflate(reach);
-
         List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, area);
 
         for (ItemEntity item : items) {
-            if (!item.isAlive()) continue;
-            if (item.hasPickUpDelay()) continue;
+            if(!item.isAlive()) continue;
+            if(item.hasPickUpDelay()) continue;
 
-            if (!player.isCreative()
-                    && player.getInventory().getSlotWithRemainingSpace(item.getItem()) == -1) {
-                continue;
-            }
+            if(!player.canTakeItem(item.getItem())) continue;
 
-            Vec3 motion = player.position()
-                    .add(0, 0.75D, 0)
-                    .subtract(item.position());
-
+            Vec3 motion = player.position().add(0, 0.75D, 0).subtract(item.position());
             double distance = motion.length();
 
             if (distance < 0.001D) continue;
 
             Vec3 velocity = motion.normalize().scale(0.15D);
 
-            item.setDeltaMovement(
-                    item.getDeltaMovement().add(velocity)
-            );
-
+            item.setDeltaMovement(item.getDeltaMovement().add(velocity));
             item.hurtMarked = true;
         }
     }
