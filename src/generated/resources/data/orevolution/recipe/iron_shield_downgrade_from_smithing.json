@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:ingots/iron"
+  },
+  "base": {
+    "item": "shieldexp:iron_shield"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:steel_heavy_shield"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

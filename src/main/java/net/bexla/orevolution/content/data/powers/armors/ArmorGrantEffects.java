@@ -4,7 +4,6 @@ import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.types.power.armor.ArmorPowerMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -13,26 +12,17 @@ import java.util.List;
 
 public class ArmorGrantEffects extends ArmorPowerMobEffects {
     public ArmorGrantEffects(String tooltipId, IConditional conditional, int duration, int amplifier, List<Holder<MobEffect>> effect) {
-        super("", tooltipId, conditional, duration, amplifier, List.of(), effect);
+        super("", tooltipId, conditional, duration, amplifier, null, effect);
     }
 
     public ArmorGrantEffects(String tooltipId, IConditional conditional, int duration, int amplifier, Holder<MobEffect> effect) {
-        super("", tooltipId, conditional, duration, amplifier, List.of(), effect != null? List.of(effect) : List.of());
+        super("", tooltipId, conditional, duration, amplifier, null, effect);
     }
 
     @Override
-    public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
-        if(!condition(stack, wearer.level(), wearer, null)) return;
+    public void onTickWhileWorn(ItemStack helmet, LivingEntity wearer, EquipmentSlot slot) {
+        if(!condition(helmet, wearer.level(), wearer, null)) return;
 
-        for(Holder<MobEffect> p : this.effectsPlayer) {
-            MobEffectInstance instance = new MobEffectInstance(p, this.duration, this.amplifier);
-
-            if(wearer.hasEffect(p)) {
-                wearer.getEffect(p).update(instance);
-            }
-            else {
-                wearer.addEffect(instance);
-            }
-        }
+        applyAllEffects(wearer, null);
     }
 }

@@ -1,8 +1,0 @@
-  {
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_ocean",
-  "features": [
-    "orevolution:limestone_patch"
-  ],
-  "step": "underground_ores"
-}

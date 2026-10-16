@@ -12,6 +12,7 @@
     "LevelRendererAccessor",
     "LevelRendererMixin",
     "LivingEntityMixin",
+    "MobMixin",
     "PiglinAiMixin",
     "PiglinBruteMixin",
     "PlayerMixin",

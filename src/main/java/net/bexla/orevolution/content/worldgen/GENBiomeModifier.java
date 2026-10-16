@@ -90,8 +90,7 @@ public class GENBiomeModifier {
                 getPlacedFeature(
                         context,
                         CHERT_DISK,
-                        CHERT_PATCH,
-                        QUARTZOLITE_DISK
+                        CHERT_PATCH
                 ),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));

@@ -100,15 +100,19 @@ dependencies {
     implementation "curse.maven:geckolib-${geckolib_id}"
 
     implementation "maven.modrinth:oreganized:${oreganized_ver}"
+    implementation "maven.modrinth:shield-expansion:${shieldexp_id}"
 
-    compileOnly "maven.modrinth:shield-expansion:${shieldexp_id}"
-    datagenRuntime "maven.modrinth:shield-expansion:${shieldexp_id}"
-
-    implementation "curse.maven:copper-age-backport-1386823:7283478"
+    implementation "curse.maven:copper-age-backport-${copper_age_backport_id}"
     implementation "curse.maven:copper-age-backport-duplicate-armor-material-fix-1664466:8710995"
 
+    implementation "curse.maven:the-silver-age-${the_silver_age_id}"
+    implementation "curse.maven:architectury-api-419699:8492726"
+
     implementation "maven.modrinth:farmers-delight:${farmersdelight_ver}"
-    implementation "curse.maven:backported-spears-1385191:7725067"
+    implementation "curse.maven:backported-spears-${backported_spears_id}"
+
+    runtimeOnly "maven.modrinth:BVzZfTc1:CfQJbv1u"
+    runtimeOnly "maven.modrinth:4I1XuqiY:bRlX1x4e"
 
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     compileOnly("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
@@ -120,14 +124,13 @@ dependencies {
     datagenRuntime("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
     datagenRuntime("com.tterrag.registrate:Registrate:${registrate_version}")
 
-    implementation "com.possible-triangle:multikulti-core-neoforge:1.21.1-2.0.1"
-    implementation "com.possible-triangle:multikulti-datagen-neoforge:1.21.1-2.0.1"
+    implementation "com.possible-triangle:multikulti-core-neoforge:${minecraft_version}-2.0.1"
+    implementation "com.possible-triangle:multikulti-datagen-neoforge:${minecraft_version}-2.0.1"
 
-    implementation "maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge"
+    implementation "maven.modrinth:sodium:mc${minecraft_version}-0.6.13-neoforge"
 
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:19.21.0.247")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:19.21.0.247")
-
     runtimeOnly "curse.maven:shadow-drop-1490601:8491920"
 
     // runtimeOnly "curse.maven:create-328085:7963363"

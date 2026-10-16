@@ -21,6 +21,7 @@ import net.bexla.orevolution.init.modcompat.SBRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.Item;
@@ -54,15 +55,23 @@ public class GENRecipes extends BlueprintRecipeProvider {
                     RegItems.TIN_PICKAXE.get(),
                     RegItems.TIN_AXE.get(),
                     RegItems.TIN_SHOVEL.get(),
-                    RegItems.TIN_HOE.get()
+                    RegItems.TIN_HOE.get(),
+                    RegItems.TIN_HELMET.get(),
+                    RegItems.TIN_CHESTPLATE.get(),
+                    RegItems.TIN_LEGGINGS.get(),
+                    RegItems.TIN_BOOTS.get()
             );
     protected static final Ingredient CASSITERITE_TOOLS_SMELTABLES = Ingredient.of(
                     RegItems.CASSITERITE_SWORD.get(),
                     RegItems.CASSITERITE_PICKAXE.get(),
                     RegItems.CASSITERITE_AXE.get(),
                     RegItems.CASSITERITE_SHOVEL.get(),
-                    RegItems.CASSITERITE_HOE.get()
-            );
+                    RegItems.CASSITERITE_HOE.get(),
+                    RegItems.CASSITERITE_HELMET.get(),
+                    RegItems.CASSITERITE_CHESTPLATE.get(),
+                    RegItems.CASSITERITE_LEGGINGS.get(),
+                    RegItems.CASSITERITE_BOOTS.get()
+    );
     protected static final Ingredient PLATINUM_TOOLS_SMELTABLES = Ingredient.of(
                     RegItems.PLATINUM_SWORD.get(),
                     RegItems.PLATINUM_PICKAXE.get(),
@@ -140,6 +149,10 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .unlockedBy("has_cassiterite_axe", has(RegItems.CASSITERITE_AXE.get()))
                 .unlockedBy("has_cassiterite_hoe", has(RegItems.CASSITERITE_HOE.get()))
                 .unlockedBy("has_cassiterite_sword", has(RegItems.CASSITERITE_SWORD.get()))
+                .unlockedBy("has_tin_helmet", has(RegItems.TIN_HELMET.get()))
+                .unlockedBy("has_tin_chestplate", has(RegItems.TIN_CHESTPLATE.get()))
+                .unlockedBy("has_tin_leggings", has(RegItems.TIN_LEGGINGS.get()))
+                .unlockedBy("has_tin_boots", has(RegItems.TIN_BOOTS.get()))
                 .save(consumer, lc(getSmeltingRecipeName(RegItems.CASSITERITE_NUGGET.get())));
 
         SimpleCookingRecipeBuilder.blasting(CASSITERITE_TOOLS_SMELTABLES, RecipeCategory.MISC, RegItems.CASSITERITE_NUGGET.get(), 0.1F, 150)
@@ -148,6 +161,10 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .unlockedBy("has_cassiterite_axe", has(RegItems.CASSITERITE_AXE.get()))
                 .unlockedBy("has_cassiterite_hoe", has(RegItems.CASSITERITE_HOE.get()))
                 .unlockedBy("has_cassiterite_sword", has(RegItems.CASSITERITE_SWORD.get()))
+                .unlockedBy("has_cassiterite_helmet", has(RegItems.CASSITERITE_HELMET.get()))
+                .unlockedBy("has_cassiterite_chestplate", has(RegItems.CASSITERITE_CHESTPLATE.get()))
+                .unlockedBy("has_cassiterite_leggings", has(RegItems.CASSITERITE_LEGGINGS.get()))
+                .unlockedBy("has_cassiterite_boots", has(RegItems.CASSITERITE_BOOTS.get()))
                 .save(consumer, lc(getBlastingRecipeName(RegItems.CASSITERITE_NUGGET.get())));
 
         SimpleCookingRecipeBuilder.smelting(PLATINUM_TOOLS_SMELTABLES, RecipeCategory.MISC, RegItems.PLATINUM_NUGGET.get(), 0.1F, 200)
@@ -221,6 +238,8 @@ public class GENRecipes extends BlueprintRecipeProvider {
         autoCompact(RegItems.VERDITE_INGOT.get(), RegItems.VERDITE_NUGGET.get(), consumer);
         autoCompact(Items.QUARTZ, RegItems.QUARTZ_CHIP.get(), consumer);
 
+        autoCompact(Items.COPPER_INGOT, RegItems.COPPER_NUGGET.get(), consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, RegBlocks.CELESTITE_BLOCK)
                 .pattern("AA")
                 .pattern("AA")
@@ -243,8 +262,8 @@ public class GENRecipes extends BlueprintRecipeProvider {
 
         SpecialRecipeBuilder.special(ProfessionalFireworkRocketRecipe::new).save(consumer, lc("professional_firework_rocket"));
 
-        ReinforceRecipeBuilder.smithing(RecipeCategory.TOOLS).unlocks("has_tungsten", has(RegItems.TUNGSTEN_INGOT.get())).save(consumer, lc("reinforce"));
-        CoatRecipeBuilder.smithing(RecipeCategory.TOOLS).unlocks("has_tungsten", has(RegItems.TUNGSTEN_INGOT.get())).save(consumer, lc("coat"));
+        ReinforceRecipeBuilder.smithing(RecipeCategory.TOOLS).unlocks("has_tungsten", has(OrevolutionTags.Items.TUNGSTEN_INGOTS)).save(consumer, lc("reinforce"));
+        CoatRecipeBuilder.smithing(RecipeCategory.TOOLS).unlocks("has_tungsten", has(OrevolutionTags.Items.TUNGSTEN_INGOTS)).save(consumer, lc("coat"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.SPECTRAL_ARROW, 16)
                 .pattern("AAA")
@@ -260,7 +279,7 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .pattern(" A ")
                 .define('C', RegItems.CELESTITE_SHARD)
                 .define('B', Items.REDSTONE)
-                .define('A', RegItems.PLATINUM_INGOT)
+                .define('A', OrevolutionTags.Items.PLATINUM_INGOTS)
                 .unlockedBy("has_celestite_shard", has(RegItems.CELESTITE_SHARD.get())).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegItems.GEO_SCANNER, 1)
@@ -272,15 +291,15 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .define('A', RegItems.TIN_INGOT)
                 .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).save(consumer);
 
-        makeLanternSmall(RegBlocks.TIN_LANTERN.get(), RegItems.TIN_INGOT, false).save(consumer);
-        makeLanternSmall(RegBlocks.BRONZE_LANTERN.get(), RegItems.BRONZE_ALLOY, false).save(consumer);
-        makeLantern(RegBlocks.GOLDEN_LANTERN.get(), Items.GOLD_INGOT, false).save(consumer);
-        makeLantern(RegBlocks.PLATINUM_LANTERN.get(), RegItems.PLATINUM_INGOT, false).save(consumer);
+        makeLanternSmall(RegBlocks.TIN_LANTERN.get(), OrevolutionTags.Items.TIN_INGOTS, "tin", false).save(consumer);
+        makeLanternSmall(RegBlocks.BRONZE_LANTERN.get(), OrevolutionTags.Items.BRONZE_INGOTS, "bronze", false).save(consumer);
+        makeLantern(RegBlocks.GOLDEN_LANTERN.get(), Tags.Items.INGOTS_GOLD, "gold", false).save(consumer);
+        makeLantern(RegBlocks.PLATINUM_LANTERN.get(), OrevolutionTags.Items.PLATINUM_INGOTS, "platinum", false).save(consumer);
 
-        makeLanternSmall(RegBlocks.TIN_SOUL_LANTERN.get(), RegItems.TIN_INGOT, true).save(consumer);
-        makeLanternSmall(RegBlocks.BRONZE_SOUL_LANTERN.get(), RegItems.BRONZE_ALLOY, true).save(consumer);
-        makeLantern(RegBlocks.GOLDEN_SOUL_LANTERN.get(), Items.GOLD_INGOT, true).save(consumer);
-        makeLantern(RegBlocks.PLATINUM_SOUL_LANTERN.get(), RegItems.PLATINUM_INGOT, true).save(consumer);
+        makeLanternSmall(RegBlocks.TIN_SOUL_LANTERN.get(), OrevolutionTags.Items.TIN_INGOTS, "tin", true).save(consumer);
+        makeLanternSmall(RegBlocks.BRONZE_SOUL_LANTERN.get(), OrevolutionTags.Items.BRONZE_INGOTS, "bronze", true).save(consumer);
+        makeLantern(RegBlocks.GOLDEN_SOUL_LANTERN.get(), Tags.Items.INGOTS_GOLD, "gold", true).save(consumer);
+        makeLantern(RegBlocks.PLATINUM_SOUL_LANTERN.get(), OrevolutionTags.Items.PLATINUM_INGOTS, "platinum", true).save(consumer);
 
         makeBlockSets(
                 RegBlocks.AETHERROCK,
@@ -371,6 +390,36 @@ public class GENRecipes extends BlueprintRecipeProvider {
         );
 
         makeBlockSets(
+                RegBlocks.CUT_STEEL_BLOCK,
+                RegBlocks.CUT_STEEL_SLAB,
+                RegBlocks.CUT_STEEL_STAIR,
+                null,
+                consumer
+        );
+
+        makeBlockSets(
+                RegBlocks.POLISHED_TUNGSTEN,
+                RegBlocks.POLISHED_TUNGSTEN_SLAB,
+                RegBlocks.POLISHED_TUNGSTEN_STAIR,
+                null,
+                consumer
+        );
+        makeBlockSets(
+                RegBlocks.TUNGSTEN_BRICKS,
+                RegBlocks.TUNGSTEN_BRICKS_SLAB,
+                RegBlocks.TUNGSTEN_BRICKS_STAIR,
+                null,
+                consumer
+        );
+        makeBlockSets(
+                RegBlocks.CUT_TUNGSTEN_BLOCK,
+                RegBlocks.CUT_TUNGSTEN_SLAB,
+                RegBlocks.CUT_TUNGSTEN_STAIR,
+                null,
+                consumer
+        );
+
+        makeBlockSets(
                 RegBlocks.POLISHED_CELESTITE,
                 RegBlocks.POLISHED_CELESTITE_SLAB,
                 RegBlocks.POLISHED_CELESTITE_STAIR,
@@ -399,7 +448,7 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 RegBlocks.AMETHYST_BRICKS_WALL,
                 consumer
         );
-        
+
         quadTransform(RegBlocks.POLISHED_AETHERROCK, RegBlocks.AETHERROCK).save(consumer);
         quadTransform(RegBlocks.POLISHED_RHYOLITE, RegBlocks.RHYOLITE).save(consumer);
         quadTransform(RegBlocks.POLISHED_LIVINGSTONE, RegBlocks.LIVINGSTONE_BLOCK).save(consumer);
@@ -461,7 +510,13 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 RegItems.TIN_SHIELD.get(),
                 SBRegistry.TIN_SPEAR.get(),
                 OrevolutionTags.Items.TIN_INGOTS, consumer);
-        
+        armorSet("tin_ingot",
+                RegItems.TIN_HELMET.get(),
+                RegItems.TIN_CHESTPLATE.get(),
+                RegItems.TIN_LEGGINGS.get(),
+                RegItems.TIN_BOOTS.get(),
+                OrevolutionTags.Items.TIN_INGOTS, consumer);
+
         toolSet("platinum_ingot",
                 RegItems.PLATINUM_SWORD.get(),
                 RegItems.PLATINUM_PICKAXE.get(),
@@ -512,7 +567,7 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 RegItems.VERDITE_LEGGINGS.get(),
                 RegItems.VERDITE_BOOTS.get(),
                 OrevolutionTags.Items.VERDITE_INGOTS, consumer);
-        
+
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, RegBlocks.STEEL_DOOR.get())
                 .pattern("AA")
                 .pattern("AA")
@@ -522,20 +577,22 @@ public class GENRecipes extends BlueprintRecipeProvider {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegItems.BASIC_TEMPLATE.get())
                 .pattern("ACA")
-                .pattern("ABA")
-                .pattern("AAA")
-                .define('A', Items.COPPER_INGOT)
+                .pattern("DBD")
+                .pattern("DDD")
+                .define('A', Tags.Items.INGOTS_COPPER)
                 .define('B', Items.AMETHYST_SHARD)
-                .define('C', RegItems.TIN_INGOT.get())
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(consumer);
+                .define('C', OrevolutionTags.Items.TIN_INGOTS)
+                .define('D', OrevolutionTags.Items.COPPER_NUGGETS)
+                .unlockedBy("has_copper_ingot", has(Tags.Items.INGOTS_COPPER)).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegItems.DOWNGRADE_TEMPLATE.get())
                 .pattern("ACA")
-                .pattern("ABA")
-                .pattern("AAA")
-                .define('A', RegItems.TIN_INGOT.get())
+                .pattern("DBD")
+                .pattern("DDD")
+                .define('A', OrevolutionTags.Items.TIN_INGOTS)
                 .define('B', RegItems.CELESTITE_SHARD)
-                .define('C', Items.COPPER_INGOT)
+                .define('C', Tags.Items.INGOTS_COPPER)
+                .define('D', OrevolutionTags.Items.TIN_NUGGETS)
                 .unlockedBy("has_celestite_shards", has(RegItems.CELESTITE_SHARD)).save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegItems.AETHERSTEEL_TEMPLATE.get(), 2)
@@ -564,6 +621,8 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .define('C', RegItems.COATING_TEMPLATE.get())
                 .unlockedBy("has_coating_template", has(RegItems.COATING_TEMPLATE.get())).save(consumer);
 
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RegItems.COATING_TEMPLATE.get())
                 .pattern("ACA")
                 .pattern("ABA")
@@ -585,7 +644,7 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .pattern(" A ")
                 .pattern("AXA")
                 .pattern(" A ")
-                .define('A', RegItems.TUNGSTEN_INGOT.get())
+                .define('A', OrevolutionTags.Items.TUNGSTEN_INGOTS)
                 .define('X', Items.SPONGE)
                 .unlockedBy("has_sponge", has(Items.SPONGE)).save(consumer);
 
@@ -625,7 +684,7 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .pattern("AAA")
                 .pattern("AXA")
                 .pattern("AAA")
-                .define('A', RegItems.PLATINUM_INGOT.get())
+                .define('A', OrevolutionTags.Items.PLATINUM_INGOTS)
                 .define('X', Items.APPLE)
                 .unlockedBy("has_apple", has(Items.APPLE)).save(consumer);
 
@@ -643,6 +702,30 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .pattern(" A ")
                 .define('A', RegItems.BRONZE_ALLOY.get())
                 .unlockedBy("has_bronze_alloy", has(RegItems.BRONZE_ALLOY.get())).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RegItems.ANCIENT_STEW)
+                .requires(RegItems.ANCIENT_FRUIT)
+                .requires(RegItems.ANCIENT_FRUIT)
+                .requires(RegItems.ANCIENT_FRUIT)
+                .requires(RegItems.ANCIENT_FRUIT)
+                .requires(Items.BOWL)
+                .unlockedBy("has_ancient_fruit", has(RegItems.ANCIENT_FRUIT))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RegItems.ROTTEN_STEW)
+                .requires(Items.ROTTEN_FLESH)
+                .requires(Items.SPIDER_EYE)
+                .requires(Items.BONE)
+                .requires(Items.BOWL)
+                .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RegItems.ENRICHED_EYE)
+                .requires(Tags.Items.NUGGETS_IRON)
+                .requires(OrevolutionTags.Items.TIN_NUGGETS)
+                .requires(Items.SPIDER_EYE)
+                .unlockedBy("has_bronze_totem", has(RegItems.BRONZE_TOTEM))
+                .save(consumer);
 
         ItemStack diamond = RegItems.BRONZE_TOTEM.toStack();
         diamond.set(RegDataComponents.DIAMOND_TOTEM.get(), Unit.INSTANCE);
@@ -695,7 +778,7 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .requires(RegItems.CELESTITE_SHARD)
                 .requires(RegItems.BRONZE_TOTEM).unlockedBy("has_bronze_totem", has(RegItems.BRONZE_TOTEM))
                 .save(consumer, lc("bronze_totem_celestite"));
-        
+
         ItemStack amethyst = RegItems.BRONZE_TOTEM.toStack();
         amethyst.set(RegDataComponents.AMETHYST_TOTEM.get(), Unit.INSTANCE);
 
@@ -705,88 +788,96 @@ public class GENRecipes extends BlueprintRecipeProvider {
                 .unlockedBy("has_bronze_totem", has(RegItems.BRONZE_TOTEM))
                 .save(consumer, lc("bronze_totem_amethyst"));
 
-        doubleSmithing(Spears.IRON_SPEAR, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, SBRegistry.PLATINUM_SPEAR.get(), consumer);
-        doubleSmithing(ModItems.IRON_KNIFE.get(), RegItems.PLATINUM_INGOT, Items.IRON_INGOT, FDRegistry.PLATINUM_KNIFE.get(), consumer);
-        doubleSmithing(Items.IRON_SWORD, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_SWORD, consumer);
-        doubleSmithing(Items.IRON_PICKAXE, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_PICKAXE, consumer);
-        doubleSmithing(Items.IRON_SHOVEL, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_SHOVEL, consumer);
-        doubleSmithing(Items.IRON_HOE, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_HOE, consumer);
-        doubleSmithing(Items.IRON_AXE, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_AXE, consumer);
-        doubleSmithing(Items.IRON_HELMET, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_HELMET, consumer);
-        doubleSmithing(Items.IRON_CHESTPLATE, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_CHESTPLATE, consumer);
-        doubleSmithing(Items.IRON_LEGGINGS, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_LEGGINGS, consumer);
-        doubleSmithing(Items.IRON_BOOTS, RegItems.PLATINUM_INGOT, Items.IRON_INGOT, RegItems.PLATINUM_BOOTS, consumer);
+        doubleSmithing(Spears.IRON_SPEAR, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, SBRegistry.PLATINUM_SPEAR.get(), "platinum", "iron", consumer);
+        doubleSmithing(ModItems.IRON_KNIFE.get(), OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, FDRegistry.PLATINUM_KNIFE.get(), "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_SWORD, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_SWORD, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_PICKAXE, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_PICKAXE, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_SHOVEL, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_SHOVEL, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_HOE, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_HOE, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_AXE, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_AXE, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_HELMET, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_HELMET, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_CHESTPLATE, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_CHESTPLATE, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_LEGGINGS, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_LEGGINGS, "platinum", "iron", consumer);
+        doubleSmithing(Items.IRON_BOOTS, OrevolutionTags.Items.PLATINUM_INGOTS, Tags.Items.INGOTS_IRON, RegItems.PLATINUM_BOOTS, "platinum", "iron", consumer);
 
-        doubleSmithing(SBRegistry.TIN_SPEAR.get(), Items.IRON_INGOT, RegItems.TIN_INGOT, Spears.IRON_SPEAR, consumer);
-        doubleSmithing(FDRegistry.TIN_KNIFE.get(), Items.IRON_INGOT, RegItems.TIN_INGOT, ModItems.IRON_KNIFE.get(), consumer);
-        doubleSmithing(RegItems.TIN_SWORD, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_SWORD, consumer);
-        doubleSmithing(RegItems.TIN_PICKAXE, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_PICKAXE, consumer);
-        doubleSmithing(RegItems.TIN_SHOVEL, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_SHOVEL, consumer);
-        doubleSmithing(RegItems.TIN_HOE, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_HOE, consumer);
-        doubleSmithing(RegItems.TIN_AXE, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_AXE, consumer);
-        doubleSmithing(Items.CHAINMAIL_HELMET, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_HELMET, consumer);
-        doubleSmithing(Items.CHAINMAIL_CHESTPLATE, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_CHESTPLATE, consumer);
-        doubleSmithing(Items.CHAINMAIL_LEGGINGS, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_LEGGINGS, consumer);
-        doubleSmithing(Items.CHAINMAIL_BOOTS, Items.IRON_INGOT, RegItems.TIN_INGOT, Items.IRON_BOOTS, consumer);
+        doubleSmithing(SBRegistry.TIN_SPEAR.get(), Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Spears.IRON_SPEAR, "iron", "tin", consumer);
+        doubleSmithing(FDRegistry.TIN_KNIFE.get(), Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, ModItems.IRON_KNIFE.get(), "iron", "tin", consumer);
+        doubleSmithing(RegItems.TIN_SWORD, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_SWORD, "iron", "tin", consumer);
+        doubleSmithing(RegItems.TIN_PICKAXE, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_PICKAXE, "iron", "tin", consumer);
+        doubleSmithing(RegItems.TIN_SHOVEL, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_SHOVEL, "iron", "tin", consumer);
+        doubleSmithing(RegItems.TIN_HOE, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_HOE, "iron", "tin", consumer);
+        doubleSmithing(RegItems.TIN_AXE, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_AXE, "iron", "tin", consumer);
+        doubleSmithing(Items.CHAINMAIL_HELMET, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_HELMET, "iron", "tin", consumer);
+        doubleSmithing(Items.CHAINMAIL_CHESTPLATE, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_CHESTPLATE, "iron", "tin", consumer);
+        doubleSmithing(Items.CHAINMAIL_LEGGINGS, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_LEGGINGS, "iron", "tin", consumer);
+        doubleSmithing(Items.CHAINMAIL_BOOTS, Tags.Items.INGOTS_IRON, OrevolutionTags.Items.TIN_INGOTS, Items.IRON_BOOTS, "iron", "tin", consumer);
 
-//        doubleSmithing(SBRegistry.TIN_SPEAR.get(), RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , Spears.IRON_SPEAR, consumer);
-//        doubleSmithing(FDRegistry.TIN_KNIFE.get(), RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , ModItems.IRON_KNIFE.get(), consumer);
-        doubleSmithing(RegItems.TIN_SWORD, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_SWORD, consumer);
-        doubleSmithing(RegItems.TIN_PICKAXE, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_PICKAXE, consumer);
-        doubleSmithing(RegItems.TIN_SHOVEL, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_SHOVEL, consumer);
-        doubleSmithing(RegItems.TIN_HOE, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_HOE, consumer);
-        doubleSmithing(RegItems.TIN_AXE, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_AXE, consumer);
-//        doubleSmithing(Items.CHAINMAIL_HELMET, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_HELMET, consumer);
-//        doubleSmithing(Items.CHAINMAIL_CHESTPLATE, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_CHESTPLATE, consumer);
-//        doubleSmithing(Items.CHAINMAIL_LEGGINGS, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_LEGGINGS, consumer);
-//        doubleSmithing(Items.CHAINMAIL_BOOTS, RegItems.CASSITERITE_INGOT, RegItems.TIN_INGOT , RegItems.CASSITERITE_BOOTS, consumer);
+        doubleSmithing(SBRegistry.TIN_SPEAR.get(), OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS, SBRegistry.CASSITERITE_SPEAR.get(), "cassiterite", "tin", consumer);
+        doubleSmithing(FDRegistry.TIN_KNIFE.get(), OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , FDRegistry.CASSITERITE_KNIFE.get(), "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_SWORD, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_SWORD, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_PICKAXE, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_PICKAXE, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_SHOVEL, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_SHOVEL, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_HOE, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_HOE, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_AXE, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_AXE, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_HELMET, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_HELMET, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_CHESTPLATE, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_CHESTPLATE, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_LEGGINGS, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_LEGGINGS, "cassiterite", "tin", consumer);
+        doubleSmithing(RegItems.TIN_BOOTS, OrevolutionTags.Items.CASSITERITE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.CASSITERITE_BOOTS, "cassiterite", "tin", consumer);
 
-        doubleSmithing(SBRegistry.PLATINUM_SPEAR.get(), Items.DIAMOND, RegItems.PLATINUM_INGOT, Spears.DIAMOND_SPEAR, consumer);
-        doubleSmithing(FDRegistry.PLATINUM_KNIFE.get(), Items.DIAMOND, RegItems.PLATINUM_INGOT, ModItems.DIAMOND_KNIFE.get(), consumer);
-        doubleSmithing(RegItems.PLATINUM_SWORD, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_SWORD, consumer);
-        doubleSmithing(RegItems.PLATINUM_PICKAXE, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_PICKAXE, consumer);
-        doubleSmithing(RegItems.PLATINUM_SHOVEL, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_SHOVEL, consumer);
-        doubleSmithing(RegItems.PLATINUM_HOE, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_HOE, consumer);
-        doubleSmithing(RegItems.PLATINUM_AXE, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_AXE, consumer);
-        doubleSmithing(RegItems.PLATINUM_HELMET, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_HELMET, consumer);
-        doubleSmithing(RegItems.PLATINUM_CHESTPLATE, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_CHESTPLATE, consumer);
-        doubleSmithing(RegItems.PLATINUM_LEGGINGS, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_LEGGINGS, consumer);
-        doubleSmithing(RegItems.PLATINUM_BOOTS, Items.DIAMOND, RegItems.PLATINUM_INGOT, Items.DIAMOND_BOOTS, consumer);
+        doubleSmithing(SBRegistry.PLATINUM_SPEAR.get(), Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Spears.DIAMOND_SPEAR, "platinum", consumer);
+        doubleSmithing(FDRegistry.PLATINUM_KNIFE.get(), Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, ModItems.DIAMOND_KNIFE.get(), "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_SWORD, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_SWORD, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_PICKAXE, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_PICKAXE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_SHOVEL, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_SHOVEL, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_HOE, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_HOE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_AXE, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_AXE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_HELMET, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_HELMET, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_CHESTPLATE, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_CHESTPLATE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_LEGGINGS, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_LEGGINGS, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_BOOTS, Items.DIAMOND, OrevolutionTags.Items.PLATINUM_INGOTS, Items.DIAMOND_BOOTS, "platinum", consumer);
 
-        smithingIntoSteel(Items.IRON_SWORD, Items.IRON_INGOT, RegItems.STEEL_HEAVYWORK_SWORD, consumer);
-        smithingIntoSteel(Items.IRON_PICKAXE, Items.IRON_INGOT, RegItems.STEEL_HEAVYWORK_PICKAXE, consumer);
-        smithingIntoSteel(Items.IRON_AXE, Items.IRON_INGOT, RegItems.STEEL_HEAVYWORK_AXE, consumer);
-        smithingIntoSteel(Items.IRON_SHOVEL, Items.IRON_INGOT, RegItems.STEEL_HEAVYWORK_SHOVEL, consumer);
-        smithingIntoSteel(Items.IRON_HOE, Items.IRON_INGOT, RegItems.STEEL_HEAVYWORK_HOE, consumer);
-        smithingIntoSteel(Items.ANVIL, Items.IRON_INGOT, RegBlocks.STEEL_ANVIL.get().asItem(), consumer);
+        doubleSmithing(RegItems.STEEL_HEAVY_SHIELD, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, ItemsInit.IRON_SHIELD.get(), "steel", "iron", consumer);
+        doubleSmithing(Items.IRON_SWORD, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, RegItems.STEEL_HEAVYWORK_SWORD, "steel", "iron", consumer);
+        doubleSmithing(Items.IRON_PICKAXE, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, RegItems.STEEL_HEAVYWORK_PICKAXE, "steel", "iron", consumer);
+        doubleSmithing(Items.IRON_AXE, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, RegItems.STEEL_HEAVYWORK_AXE, "steel", "iron", consumer);
+        doubleSmithing(Items.IRON_SHOVEL, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, RegItems.STEEL_HEAVYWORK_SHOVEL, "steel", "iron", consumer);
+        doubleSmithing(Items.IRON_HOE, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, RegItems.STEEL_HEAVYWORK_HOE, "steel", "iron", consumer);
+        doubleSmithing(Items.ANVIL, OrevolutionTags.Items.STEEL_INGOTS, Tags.Items.INGOTS_IRON, RegBlocks.STEEL_ANVIL.get().asItem(), "steel", "iron", consumer);
 
-        smithingIntoBronze(Items.LEATHER_HELMET, Items.IRON_INGOT, RegItems.BRONZE_HELMET, consumer);
-        smithingIntoBronze(Items.LEATHER_CHESTPLATE, Items.IRON_INGOT, RegItems.BRONZE_CHESTPLATE, consumer);
-        smithingIntoBronze(Items.LEATHER_LEGGINGS, Items.IRON_INGOT, RegItems.BRONZE_LEGGINGS, consumer);
-        smithingIntoBronze(Items.LEATHER_BOOTS, Items.IRON_INGOT, RegItems.BRONZE_BOOTS, consumer);
+        doubleSmithing(Items.LEATHER_HELMET, OrevolutionTags.Items.BRONZE_INGOTS, Items.LEATHER, RegItems.BRONZE_DIVING_HELMET, "bronze", consumer);
+        doubleSmithing(Items.LEATHER_CHESTPLATE, OrevolutionTags.Items.BRONZE_INGOTS, Items.LEATHER, RegItems.BRONZE_DIVING_CHESTPLATE, "bronze", consumer);
+        doubleSmithing(Items.LEATHER_LEGGINGS, OrevolutionTags.Items.BRONZE_INGOTS, Items.LEATHER, RegItems.BRONZE_DIVING_LEGGINGS, "bronze", consumer);
+        doubleSmithing(Items.LEATHER_BOOTS, OrevolutionTags.Items.BRONZE_INGOTS, Items.LEATHER, RegItems.BRONZE_DIVING_BOOTS, "bronze", consumer);
 
-        smithingIntoMoonstone(SBRegistry.PLATINUM_SPEAR.get(), RegItems.PLATINUM_INGOT, SBRegistry.MOONSTONE_SPEAR.get(), consumer);
-        smithingIntoMoonstone(FDRegistry.PLATINUM_KNIFE.get(), RegItems.PLATINUM_INGOT, FDRegistry.MOONSTONE_KNIFE.get(), consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_SHIELD.get(), RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_SHIELD, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_SWORD, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_SWORD, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_PICKAXE, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_PICKAXE, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_SHOVEL, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_SHOVEL, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_HOE, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_HOE, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_AXE, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_AXE, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_HELMET, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_HELMET, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_CHESTPLATE, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_CHESTPLATE, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_LEGGINGS, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_LEGGINGS, consumer);
-        smithingIntoMoonstone(RegItems.PLATINUM_BOOTS, RegItems.PLATINUM_INGOT, RegItems.MOONSTONE_BOOTS, consumer);
+        doubleSmithing(RegItems.TIN_HELMET, OrevolutionTags.Items.BRONZE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.BRONZE_HELMET, "bronze", "tin", consumer);
+        doubleSmithing(RegItems.TIN_CHESTPLATE, OrevolutionTags.Items.BRONZE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.BRONZE_CHESTPLATE, "bronze", "tin", consumer);
+        doubleSmithing(RegItems.TIN_LEGGINGS, OrevolutionTags.Items.BRONZE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.BRONZE_LEGGINGS, "bronze", "tin", consumer);
+        doubleSmithing(RegItems.TIN_BOOTS, OrevolutionTags.Items.BRONZE_INGOTS, OrevolutionTags.Items.TIN_INGOTS , RegItems.BRONZE_BOOTS, "bronze", "tin", consumer);
 
-        doubleSmithing(Items.GOLDEN_SWORD, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_SWORD, consumer);
-        doubleSmithing(Items.GOLDEN_PICKAXE, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_PICKAXE, consumer);
-        doubleSmithing(Items.GOLDEN_SHOVEL, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_SHOVEL, consumer);
-        doubleSmithing(Items.GOLDEN_HOE, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_HOE, consumer);
-        doubleSmithing(Items.GOLDEN_AXE, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_AXE, consumer);
-        doubleSmithing(Items.GOLDEN_HELMET, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_HELMET, consumer);
-        doubleSmithing(Items.GOLDEN_CHESTPLATE, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_CHESTPLATE, consumer);
-        doubleSmithing(Items.GOLDEN_LEGGINGS, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_LEGGINGS, consumer);
-        doubleSmithing(Items.GOLDEN_BOOTS, RegItems.TUNGSTEN_INGOT, Items.GOLD_INGOT, RegItems.TUNGSTEN_BOOTS, consumer);
+        doubleSmithing(SBRegistry.PLATINUM_SPEAR.get(), RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, SBRegistry.MOONSTONE_SPEAR.get(), "platinum", consumer);
+        doubleSmithing(FDRegistry.PLATINUM_KNIFE.get(), RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, FDRegistry.MOONSTONE_KNIFE.get(), "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_SHIELD.get(), RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_SHIELD, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_SWORD, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_SWORD, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_PICKAXE, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_PICKAXE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_SHOVEL, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_SHOVEL, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_HOE, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_HOE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_AXE, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_AXE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_HELMET, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_HELMET, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_CHESTPLATE, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_CHESTPLATE, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_LEGGINGS, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_LEGGINGS, "platinum", consumer);
+        doubleSmithing(RegItems.PLATINUM_BOOTS, RegBlocks.MOONSTONE, OrevolutionTags.Items.PLATINUM_INGOTS, RegItems.MOONSTONE_BOOTS, "platinum", consumer);
+
+        doubleSmithing(ItemsInit.GOLDEN_SHIELD.get(), OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, SBRegistry.TUNGSTEN_SPEAR.get(), "tungsten", "gold", consumer);
+        doubleSmithing(ModItems.GOLDEN_KNIFE.get(), OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, FDRegistry.TUNGSTEN_KNIFE.get(), "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_SWORD, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_SWORD, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_PICKAXE, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_PICKAXE, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_SHOVEL, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_SHOVEL, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_HOE, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_HOE, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_AXE, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_AXE, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_HELMET, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_HELMET, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_CHESTPLATE, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_CHESTPLATE, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_LEGGINGS, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_LEGGINGS, "tungsten", "gold", consumer);
+        doubleSmithing(Items.GOLDEN_BOOTS, OrevolutionTags.Items.TUNGSTEN_INGOTS, Tags.Items.INGOTS_GOLD, RegItems.TUNGSTEN_BOOTS, "tungsten", "gold", consumer);
 
         smithingAether(ModItems.NETHERITE_KNIFE.get(), FDRegistry.AETHERSTEEL_KNIFE.get()).save(consumer, lc("aethersteel_from_knife"));
         smithingAether(ItemsInit.NETHERITE_SHIELD.get(), RegItems.AETHERSTEEL_SHIELD).save(consumer, lc("aethersteel_from_shield"));
@@ -946,9 +1037,14 @@ public class GENRecipes extends BlueprintRecipeProvider {
     }
 
     public void makeBlockSets(Supplier<? extends Block> blockIn, Supplier<? extends Block> slab, Supplier<? extends Block> stair, Supplier<? extends Block> wall, RecipeOutput consumer) {
-        makeSlabStonecutting(slab, blockIn, consumer);
-        makeStairsStonecutting(stair, blockIn, consumer);
-        makeWallStonecutting(wall, blockIn, consumer);
+        if(slab != null)
+            makeSlabStonecutting(slab, blockIn, consumer);
+
+        if(stair != null)
+            makeStairsStonecutting(stair, blockIn, consumer);
+        
+        if(wall != null)
+            makeWallStonecutting(wall, blockIn, consumer);
     }
 
     public void makeSlabStonecutting(Supplier<? extends Block> blockOut, Supplier<? extends Block> blockIn, RecipeOutput consumer) {
@@ -1042,24 +1138,23 @@ public class GENRecipes extends BlueprintRecipeProvider {
         unCompact(itemIn, itemOut).save(consumer, lc(getItemName(itemIn) + "_from_" + getItemName(itemOut)));
     }
 
-    public ShapedRecipeBuilder makeLantern(ItemLike itemOut, ItemLike itemIn, boolean soul) {
+    public ShapedRecipeBuilder makeLantern(ItemLike itemOut, TagKey<Item> itemIn, String has, boolean soul) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, itemOut)
                 .pattern("AAA")
                 .pattern("AIA")
                 .pattern("AAA")
                 .define('I', soul? Items.SOUL_TORCH : Items.TORCH)
                 .define('A', itemIn)
-                .unlockedBy(getHasName(itemIn), has(itemIn));
+                .unlockedBy("has_" + has, has(itemIn));
     }
 
-    public ShapedRecipeBuilder makeLanternSmall(ItemLike itemOut, ItemLike itemIn, boolean soul) {
+    public ShapedRecipeBuilder makeLanternSmall(ItemLike itemOut, TagKey<Item> itemIn, String has, boolean soul) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, itemOut)
                 .pattern("A")
                 .pattern("I")
-                .pattern("A")
                 .define('I', soul? Items.SOUL_TORCH : Items.TORCH)
                 .define('A', itemIn)
-                .unlockedBy(getHasName(itemIn), has(itemIn));
+                .unlockedBy("has_" + has, has(itemIn));
     }
 
     public ShapedRecipeBuilder compact(Item itemOut, Item itemIn) {
@@ -1151,8 +1246,33 @@ public class GENRecipes extends BlueprintRecipeProvider {
         basicDowngrade(result, downgradeMaterial, input).save(consumer, lc(getItemName(result) + "_downgrade_from_smithing"));
     }
 
+    public void doubleSmithing(ItemLike input, TagKey<Item> material, TagKey<Item> downgradeMaterial, ItemLike result, String has, String hasDowngrade, RecipeOutput consumer) {
+        basicSmithing(input, material, result, has).save(consumer, lc(getItemName(result) + "_from_smithing"));
+        basicDowngrade(result, downgradeMaterial, input, hasDowngrade).save(consumer, lc(getItemName(result) + "_downgrade_from_smithing"));
+    }
+
+    public void doubleSmithing(ItemLike input, ItemLike material, TagKey<Item> downgradeMaterial, ItemLike result, String hasDowngrade, RecipeOutput consumer) {
+        basicSmithing(input, material, result).save(consumer, lc(getItemName(result) + "_from_smithing"));
+        basicDowngrade(result, downgradeMaterial, input, hasDowngrade).save(consumer, lc(getItemName(result) + "_downgrade_from_smithing"));
+    }
+
+    public void doubleSmithing(ItemLike input, TagKey<Item> material, ItemLike downgradeMaterial, ItemLike result, String has, RecipeOutput consumer) {
+        basicSmithing(input, material, result, has).save(consumer, lc(getItemName(result) + "_from_smithing"));
+        basicDowngrade(result, downgradeMaterial, input).save(consumer, lc(getItemName(result) + "_downgrade_from_smithing"));
+    }
+
+    public SmithingTransformRecipeBuilder basicSmithing(ItemLike input, TagKey<Item> material, ItemLike result, String has) {
+        return SmithingTransformRecipeBuilder.smithing(Ingredient.of(RegItems.BASIC_TEMPLATE), Ingredient.of(input), Ingredient.of(material), RecipeCategory.MISC, result.asItem())
+                .unlocks("has_" + has, has(material));
+    }
+
     public SmithingTransformRecipeBuilder basicSmithing(ItemLike input, ItemLike material, ItemLike result) {
         return smithingRecipe(input, material, RegItems.BASIC_TEMPLATE, result);
+    }
+
+    public SmithingTransformRecipeBuilder basicDowngrade(ItemLike input, TagKey<Item> material, ItemLike result, String has) {
+        return SmithingTransformRecipeBuilder.smithing(Ingredient.of(RegItems.DOWNGRADE_TEMPLATE), Ingredient.of(input), Ingredient.of(material), RecipeCategory.MISC, result.asItem())
+                .unlocks("has_" + has, has(material));
     }
 
     public SmithingTransformRecipeBuilder basicDowngrade(ItemLike input, ItemLike material, ItemLike result) {

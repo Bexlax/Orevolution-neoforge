@@ -12,7 +12,7 @@ public class ToolAvoidDurabilityLose extends OrevolutionToolPower {
     }
 
     @Override
-    public boolean onUseOverride(ItemStack stack, Level level, LivingEntity player) {
+    public boolean onUse(ItemStack stack, Level level, LivingEntity player) {
         return getCondition(stack, null, level, player, null);
     }
 }

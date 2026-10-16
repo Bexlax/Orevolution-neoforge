@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "orevolution:block/cassiterite_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "orevolution:block/cassiterite_block"
+    },
+    "axis=z": {
+      "model": "orevolution:block/cassiterite_block_horizontal",
+      "x": 90
     }
   }
 }

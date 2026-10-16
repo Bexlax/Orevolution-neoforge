@@ -84,7 +84,7 @@ public class GENBlockStateModels extends BlockStateModelProvider {
         ore(RegBlocks.DEEPSLATE_CASSITERITE_ORE);
         ore(RegBlocks.NETHER_CASSITERITE_ORE);
         storage(RegBlocks.RAW_CASSITERITE_BLOCK);
-        storage(RegBlocks.CASSITERITE_BLOCK);
+        pillar(RegBlocks.CASSITERITE_BLOCK, "storage");
 
         ore(RegBlocks.PLATINUM_ORE);
         ore(RegBlocks.DEEPSLATE_PLATINUM_ORE);
@@ -162,8 +162,32 @@ public class GENBlockStateModels extends BlockStateModelProvider {
         storage(RegBlocks.RAW_TUNGSTEN_BLOCK);
         storage(RegBlocks.TUNGSTEN_BLOCK);
         decorative(RegBlocks.TUNGSTEN_BRICKS);
+        blockSet(
+                RegBlocks.TUNGSTEN_BRICKS,
+                RegBlocks.TUNGSTEN_BRICKS_SLAB,
+                RegBlocks.TUNGSTEN_BRICKS_STAIR,
+                null,
+                "decorative"
+        );
+
         decorative(RegBlocks.POLISHED_TUNGSTEN);
+        blockSet(
+                RegBlocks.POLISHED_TUNGSTEN,
+                RegBlocks.POLISHED_TUNGSTEN_SLAB,
+                RegBlocks.POLISHED_TUNGSTEN_STAIR,
+                null,
+                "decorative"
+        );
+
         decorative(RegBlocks.CUT_TUNGSTEN_BLOCK);
+        blockSet(
+                RegBlocks.CUT_TUNGSTEN_BLOCK,
+                RegBlocks.CUT_TUNGSTEN_SLAB,
+                RegBlocks.CUT_TUNGSTEN_STAIR,
+                null,
+                "decorative"
+        );
+
         cubeColumnBlock(RegBlocks.CHISELED_TUNGSTEN_BLOCK, RegBlocks.POLISHED_TUNGSTEN);
         cubeColumnBlock(RegBlocks.CHISELED_TUNGSTEN_BRICKS, RegBlocks.TUNGSTEN_BRICKS);
         barsBlock(RegBlocks.TUNGSTEN_BARS);

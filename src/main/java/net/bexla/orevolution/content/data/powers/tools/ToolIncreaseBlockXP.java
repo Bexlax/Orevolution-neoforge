@@ -20,20 +20,18 @@ public class ToolIncreaseBlockXP extends OrevolutionToolPower {
     @Override
     public Object[] addTooltipValue() {
         return new Object[] {
-                xpMultiplier + 1
+                xpMultiplier
         };
     }
 
     @Override
     public boolean onDropXPBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity entity, BlockState state, int xpToDrop) {
         if(xpToDrop > 0 && (stack.isCorrectToolForDrops(state) || !state.requiresCorrectToolForDrops())) {
-            for(int i = 0; i < xpMultiplier; i++) {
+            for(int i = 1; i < xpMultiplier; i++) {
                 entity.level().addFreshEntity(
                         new ExperienceOrb(
                                 entity.level(),
-                                pos.getX(),
-                                pos.getY(),
-                                pos.getZ(),
+                                pos.getX(), pos.getY(), pos.getZ(),
                                 xpToDrop
                         )
                 );

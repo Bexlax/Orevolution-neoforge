@@ -1,11 +1,18 @@
 package net.bexla.orevolution.content.interfaces;
 
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.EffectCure;
+import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -18,11 +25,11 @@ public interface IArmorPower {
 
     /**
      * Called every tick while the armor is equipped.
-     * @param stack The ItemStack of the armor.
+     * @param helmet The ItemStack of the helmet.
      * @param wearer The entity wearing the armor.
      * @param slot The equipment slot where the armor is equipped.
      */
-    default void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {}
+    default void onTickWhileWorn(ItemStack helmet, LivingEntity wearer, EquipmentSlot slot) {}
 
     /**
      * Called when the wearer is attacked.
@@ -63,9 +70,29 @@ public interface IArmorPower {
      */
     default boolean onDeath(LivingEntity wearer, DamageSource source) {return false;}
 
+    /**
+     * Called when the wearer equips the armor, useful for handling Attributes.
+     * @param wearer The entity that equipped the armor.
+     */
     default void onEquip(LivingEntity wearer) {}
 
+    /**
+     * Called when the wearer unequips the armor, useful for handling Attributes.
+     * @param wearer The entity that unequipped the armor.
+     */
     default void onUnequip(LivingEntity wearer) {}
+
+    /**
+     * Called when the wearer receives an effect.
+     * @param wearer The entity that unequipped the armor.
+     */
+    default void onEffectAdded(LivingEntity wearer, MobEffectInstance effect, MobEffectInstance oldEffect, Entity source) {}
+
+    default boolean onEffectRemoved(LivingEntity wearer, Holder<MobEffect> effect, EffectCure cure) {return false;}
+
+    default boolean onEffectExpired(LivingEntity wearer, MobEffectInstance effectInstance) {return false;}
+
+    default MobEffectEvent.Applicable.Result onEffectApplicable(LivingEntity wearer, MobEffectInstance effectInstance, @Nullable Entity source, boolean applicable) {return MobEffectEvent.Applicable.Result.DEFAULT;}
 
     /**
      * Allows adding extra information to the item's tooltip.

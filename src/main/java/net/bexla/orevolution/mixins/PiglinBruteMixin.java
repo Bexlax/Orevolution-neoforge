@@ -20,14 +20,14 @@ public class PiglinBruteMixin {
         PiglinBrute brute = (PiglinBrute)(Object)this;
 
         if (random.nextFloat() < 0.1F && OrevolutionConfig.COMMON.generateTungstenOre.get()) {
-            brute.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RegItems.TUNGSTEN_SWORD.get()));
-            brute.setDropChance(EquipmentSlot.MAINHAND, 0.9F);
+            brute.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(RegItems.TUNGSTEN_AXE.get()));
+            brute.setDropChance(EquipmentSlot.MAINHAND, 0.7F);
         }
     }
 
     @Inject(method = "wantsToPickUp", at = @At("HEAD"), cancellable = true)
     private void orevolution$injectDesiredItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if(stack.is(RegItems.TUNGSTEN_SWORD.get())) {
+        if(stack.is(RegItems.TUNGSTEN_AXE.get())) {
             cir.setReturnValue(true);
         }
     }

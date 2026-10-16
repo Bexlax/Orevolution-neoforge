@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:ingots/gold"
+  },
+  "base": {
+    "item": "orevolution:tungsten_spear"
+  },
+  "result": {
+    "count": 1,
+    "id": "shieldexp:golden_shield"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

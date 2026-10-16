@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:ingots/tin"
+  },
+  "base": {
+    "item": "orevolution:cassiterite_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tin_boots"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

@@ -112,8 +112,9 @@ public class BrewingSubscriber {
     }
 
     public static Ingredient potionIngredient(Holder<Potion> potion) {
+
         return DataComponentIngredient.of(
-                true,
+                false,
                 DataComponents.POTION_CONTENTS,
                 new PotionContents(potion),
                 Items.POTION

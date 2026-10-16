@@ -62,7 +62,7 @@ public abstract class ItemModelProvider extends BlueprintItemModelProvider {
     }
 
     @SafeVarargs
-    public final void trimArmorItem(DeferredItem<? extends ItemLike>... items) {
+    public final void armor(DeferredItem<? extends ItemLike>... items) {
         for(DeferredItem<? extends ItemLike> item : items) {
             Item var7 = item.asItem();
             if (var7 instanceof ArmorItem armor) {
@@ -87,7 +87,7 @@ public abstract class ItemModelProvider extends BlueprintItemModelProvider {
     }
 
     @SafeVarargs
-    public final void trimArmorItemDyeable(DeferredItem<? extends ItemLike>... items) {
+    public final void dyeableArmor(DeferredItem<? extends ItemLike>... items) {
         for(DeferredItem<? extends ItemLike> item : items) {
             Item var7 = item.asItem();
             if (var7 instanceof ArmorItem armor) {

@@ -29,7 +29,7 @@ public class GENLangENUS extends LanguageProvider {
     }
 
     public void addCondition(String tooltipID, String name) {
-        add("condition.orevolution." + tooltipID, name);
+        add("condition.orevolution." + tooltipID, "(" + name + ")");
     }
 
     public void addPower(String tooltipID, String name) {
@@ -83,8 +83,26 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.configuration.data", "Global Data options");
         add("orevolution.configuration.other", "Other options");
 
-        add("orevolution.configuration.oreganized", "Oreganized options");
-        add("orevolution.configuration.copperagebackport", "Copper Age Backport options");
+        add("orevolution.configuration.oreganized", "Oreganized Mod options");
+        add("orevolution.configuration.electrum", "Electrum Tier options");
+        add("orevolution.configuration.silver", "Silver Tier options");
+        add("orevolution.configuration.copper", "Copper Tier options");
+
+        add("orevolution.configuration.wood", "Wood Tier options");
+        add("orevolution.configuration.stone", "Stone Tier options");
+        add("orevolution.configuration.tin", "Tin Tier options");
+        add("orevolution.configuration.cassiterite", "Cassiterite Tier options");
+        add("orevolution.configuration.iron", "Iron Tier options");
+        add("orevolution.configuration.steel", "Steel Tier options");
+        add("orevolution.configuration.gold", "Gold Tier options");
+        add("orevolution.configuration.tungsten", "Tungsten Tier options");
+        add("orevolution.configuration.platinum", "Platinum Tier options");
+        add("orevolution.configuration.moonstone", "Moonstone Tier options");
+        add("orevolution.configuration.diamond", "Diamond Tier options");
+        add("orevolution.configuration.aethersteel", "Aethersteel Tier options");
+        add("orevolution.configuration.livingstone", "Livingstone Tier options");
+        add("orevolution.configuration.verdite", "Verdite Tier options");
+
         add("orevolution.configuration.tooltips", "Tooltip options");
 
         add("orevolution.configuration.weapons", "Weapon options");
@@ -126,6 +144,9 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.config.electrum_tool_powers", "Electrum tool powers");
         add("orevolution.config.gold_tool_powers", "Gold tool powers");
         add("orevolution.config.livingstone_tool_powers", "Livingstone tool powers");
+        add("orevolution.config.cassiterite_tool_powers", "Cassiterite tool powers");
+        add("orevolution.config.silver_tool_powers", "Silver tool powers");
+        add("orevolution.config.tungsten_tool_powers", "Tungsten tool powers");
 
         add("orevolution.config.verdite_weapon_powers", "Verdite weapon powers");
         add("orevolution.config.iron_weapon_powers", "Iron weapon powers");
@@ -141,12 +162,15 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.config.electrum_weapon_powers", "Electrum weapon powers");
         add("orevolution.config.gold_weapon_powers", "Gold weapon powers");
         add("orevolution.config.livingstone_weapon_powers", "Livingstone weapon powers");
+        add("orevolution.config.cassiterite_weapon_powers", "Cassiterite weapon powers");
+        add("orevolution.config.silver_weapon_powers", "Silver weapon powers");
+        add("orevolution.config.tungsten_weapon_powers", "Tungsten weapon powers");
 
         add("orevolution.config.electrum_kinetic_damage", "Enable Kinetic Damage for Electrum");
         add("orevolution.config.electrum_speed_per_armor_piece", "Enable Speed boost per Electrum Armor piece");
 
-        add("orevolution.config.wood_max_uses", "Verdite max uses");
-        add("orevolution.config.stone_max_uses", "Verdite max uses");
+        add("orevolution.config.wood_max_uses", "Wood max uses");
+        add("orevolution.config.stone_max_uses", "Stone max uses");
         add("orevolution.config.verdite_max_uses", "Verdite max uses");
         add("orevolution.config.iron_max_uses", "Iron max uses");
         add("orevolution.config.steel_max_uses", "Steel max uses");
@@ -156,11 +180,31 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.config.moonstone_max_uses", "Moonstone max uses");
         add("orevolution.config.aethersteel_max_uses", "Aethersteel max uses");
         add("orevolution.config.netherite_max_uses", "Netherite max uses");
-        add("orevolution.config.tin_max_uses", "Tungsten max uses");
+        add("orevolution.config.tin_max_uses", "tin max uses");
         add("orevolution.config.copper_max_uses", "Copper max uses");
         add("orevolution.config.electrum_max_uses", "Electrum max uses");
         add("orevolution.config.gold_max_uses", "Gold max uses");
+        add("orevolution.config.tungsten_max_uses", "Tungsten max uses");
+        add("orevolution.config.cassiterite_max_uses", "Cassiterite max uses");
         add("orevolution.config.livingstone_max_uses", "Livingstone max uses");
+
+        add("orevolution.configuration.capability", "Capabilities");
+
+        add("orevolution.config.wooden_harvest_restrictions", "Wooden Harvest Restrictions");
+        add("orevolution.config.stone_harvest_restrictions", "Stone Harvest Restrictions");
+        add("orevolution.config.tin_harvest_restrictions", "Tin Harvest Restrictions");
+        add("orevolution.config.cassiterite_harvest_restrictions", "Cassiterite Harvest Restrictions");
+        add("orevolution.config.iron_harvest_restrictions", "Iron Harvest Restrictions");
+        add("orevolution.config.gold_harvest_restrictions", "Gold Harvest Restrictions");
+        add("orevolution.config.tungsten_harvest_restrictions", "Tungsten Harvest Restrictions");
+        add("orevolution.config.steel_harvest_restrictions", "Steel Harvest Restrictions");
+        add("orevolution.config.platinum_harvest_restrictions", "Platinum Harvest Restrictions");
+        add("orevolution.config.moonstone_harvest_restrictions", "Moonstone Harvest Restrictions");
+        add("orevolution.config.diamond_harvest_restrictions", "Diamond Harvest Restrictions");
+        add("orevolution.config.netherite_harvest_restrictions", "Netherite Harvest Restrictions");
+        add("orevolution.config.aethersteel_harvest_restrictions", "Aethersteel Harvest Restrictions");
+        add("orevolution.config.livingstone_harvest_restrictions", "Livingstone Harvest Restrictions");
+        add("orevolution.config.verdite_harvest_restrictions", "Verdite Harvest Restrictions");
 
         add("orevolution.config.prioritize_terrablender_over_biolith", "Prioritize TerraBlender over Biolith for Biome Gen.");
         add("orevolution.config.generate_forgotten_cave_biome", "Enable Forgotten Cave Biomes");
@@ -201,19 +245,13 @@ public class GENLangENUS extends LanguageProvider {
         addPower("explanation.uncommon_chance", " - Uncommon blocks (E.g. Anvil) -> %s");
         addPower("explanation.ore_chance", " - Any Ore (E.g. Coal Ore) -> %s");
         addPower("explanation.rare_chance", " - Rare blocks (E.g. Iron Block) -> %s");
-        addPower("explanation.no_chance", " - 'Never' blocks (E.g. Aethersteel Block) -> 0%");
+        addPower("explanation.no_chance", " - 'Never' blocks (E.g. Chests) -> 0%");
 
         addPower("duplication_crops", "Has a %s chance to duplicate crops");
         addPower("triplication_crops", "Has a %s chance to triplicate crops");
 
         addPower("on_hit_effect", "Inflicts the following effect(s) to targeted mobs:");
         addPower("attacker_on_hit_effect", "Grants the following effect(s) when attacking mobs:");
-
-        addPower("on_hit_effect_chance", "Has a chance to inflict the following effect(s) to targeted mobs:");
-        addPower("attacker_on_hit_effect_chance", "Has a chance to grant the following effect(s) when attacking:");
-
-        addPower("undead_on_hit", "Inflicts the following effect(s) to targeted Undead mobs:");
-        addPower("monster_on_hit", "Inflicts the following effect(s) to targeted Monsters:");
 
         addPower("xp_increase", "Blocks give %sx the amount of Experience Points");
         addPower("xp_looting", "Mobs give +%s Experience Points after dying");
@@ -236,13 +274,12 @@ public class GENLangENUS extends LanguageProvider {
         addPower("on_hit_armored", "Armored Mobs receive %s damage");
         addPower("hardness_speed", "Mining speed increases depending on the block's hardness");
 
-        addPower("on_hit_weakened", "Targeted mobs receive %s damage");
+        addPower("extra_damage_dealt", "Targeted mobs receive %s damage");
 
         addPower("full_set_bonus", "Full set bonus: %s");
         addPower("equipped_set", "(%s/4)");
 
-        addPower("silver_armor", "Increases Invincibility by %s seconds");
-        addPower("silver_armor_aoe", "Undead mobs at a radius of %s blocks are inflicted with the following effect(s):");
+        addPower("area_of_effect", "Mobs within a radius of %s blocks are inflicted with the following effect(s):");
 
         addPower("gold_armor", "Reduces damage that bypasses armor by %s");
 
@@ -250,27 +287,29 @@ public class GENLangENUS extends LanguageProvider {
         addPower("armor_wearer_grants_daylight", "Grants the following effect(s) while receiving daylight:");
         addPower("armor_wearer_grants_on_hit_wearer_daylight", "Grants the following effect(s) to you when attacking and receiving daylight:");
         addPower("armor_wearer_on_attacked_wearer", "Grants the following effect(s) to you when you receive damage:");
-        addPower("armor_wearer_on_attacked_target", "Causes the following effect(s) to the attacker when you receive damage:");
+        addPower("armor_wearer_on_attacked_target", "Inflicts the following effect(s) to the attacker when you receive damage:");
 
         addPower("armor_wearer_on_hit_wearer", "Grants the following effect(s) to you when attacking:");
-        addPower("armor_wearer_on_hit_target", "Causes the following effect(s) to the target when attacking:");
+        addPower("armor_wearer_on_hit_target", "Inflicts the following effect(s) to the target when attacking:");
 
         addPower("armor_immunity", "Grants immunity to the following effect(s):");
         addPower("armor_immunity_daylight", "Grants immunity to the following effect(s) when receiving daylight:");
 
-        addPower("armor_extended_pickup", "Increases item Pick-Up range by %s blocks");
-        addPower("copper_armor", "Increases Block placement range by %s blocks");
+        addPower("armor_immunity.all_harmful", "Grants immunity to every Harmful effects");
+        addPower("armor_immunity.all_effects", "Grants immunity to every effect");
 
         addPower("netherite_armor", "When your health is below 50%, inflicts the following effect(s) on hit:");
         addPower("reinforced_netherite_armor", "While not submerged in lava, grants the following effect(s):");
-        addPower("iron_armor", "Has a 30% chance to ignore projectile damage");
-        addPower("diamond_armor", "Reduces damage from falling, explosions and falling blocks by %s");
-        addPower("bronze_armor", "Increases Oxygen Time by %s seconds");
-        addPower("tungsten_armor", "Reduces damage from fire sources by %s");
+        addPower("iron_armor", "Ignores all projectile damage");
+        addPower("diamond_armor", "Reduces damage from kinetic sources by %s");
+        addPower("explanation.diamond_armor", "Kinetic sources refers to: Falling anvils/stalactites, Falling, Mob Attacks, Projectiles and Explosions");
 
-        addPower("attribute_increase", "%s");
+        addPower("armor_extended_pickup", "Increases Pick-Up Range by +%s");
 
-        addPower("tool_cause_effect_on_hits", "Each %s hits, causes the following effect(s) to the target:");
+        addPower("attribute_increase", "Increases %s by +%s");
+        addPower("attribute_decrease", "Decreases %s by -%s");
+
+        addPower("tool_cause_effect_on_hits", "Each %s hits, inflicts the following effect(s) to the target:");
         addPower("tool_grant_effect_on_hits", "Each %s hits, grants the following effect(s):");
 
         addPower("autosmelt", "Automatically smelts most ores, sands, logs and crops");
@@ -340,15 +379,19 @@ public class GENLangENUS extends LanguageProvider {
         addPower("press_key", "Hold %s to view more information");
         addPower("press_key_power", "Hold %s to view listed powers");
 
-        addCondition("chance", " - %s Chance to not happen");
+        addCondition("chance", "Applies %s of the time");
 
-        addCondition("target_hp_percent.lower_than", " - Targeted mob's health must be equal or lower than %s");
-        addCondition("target_hp_percent.higher_than", " - Targeted mob's health must be equal or higher than %s");
-        addCondition("target_hp_amount", " - Targeted mob's health must be equal or lower than %s Hearts");
+        addCondition("target_hp_percent.lower_than", "Targeted mob's health must be equal or lower than %s");
+        addCondition("target_hp_percent.higher_than", "Targeted mob's health must be equal or higher than %s");
+        addCondition("target_hp_amount", "Targeted mob's health must be equal or lower than %s Hearts");
 
-        addCondition("player_hp_percent.lower_than", " - Your health must be equal or lower than %s");
-        addCondition("player_hp_percent.higher_than", " - Your health must be equal or higher than %s");
-        addCondition("player_hp_amount", " - Your health must be equal or higher than %s Hearts");
+        addCondition("player_hp_percent.lower_than", "Your health must be equal or lower than %s");
+        addCondition("player_hp_percent.higher_than", "Your health must be equal or higher than %s");
+        addCondition("player_hp_amount", "Your health must be equal or higher than %s Hearts");
+
+        addCondition("target_undead", "Only applies to Undead mobs");
+        addCondition("target_hostile", "Only applies to Hostile mobs");
+        addCondition("target_armored", "Only applies to mobs with Armor attributes");
 
         addAdvTitle("tin_upgrade", "Truly a Tin Pickaxe");
         addAdvDesc("tin_upgrade", "Craft a tin pickaxe");
@@ -441,12 +484,27 @@ public class GENLangENUS extends LanguageProvider {
         addItem(RegItems.TIN_PICKAXE, "Tin Pickaxe");
         addItem(RegItems.TIN_AXE, "Tin Axe");
         addItem(RegItems.TIN_HOE, "Tin Hoe");
+        addItem(RegItems.TIN_HELMET, "Tin Helmet");
+        addItem(RegItems.TIN_CHESTPLATE, "Tin Chestplate");
+        addItem(RegItems.TIN_LEGGINGS, "Tin Leggings");
+        addItem(RegItems.TIN_BOOTS, "Tin Boots");
 
+        addItem(RegItems.BRONZE_HELMET, "Bronze Helmet");
+        addItem(RegItems.BRONZE_CHESTPLATE, "Bronze Chestplate");
+        addItem(RegItems.BRONZE_LEGGINGS, "Bronze Leggings");
+        addItem(RegItems.BRONZE_BOOTS, "Bronze Boots");
+
+        addItem(RegItems.CASSITERITE_SHIELD, "Cassiterite Shield");
+        addItem(FDRegistry.CASSITERITE_KNIFE, "Cassiterite Knife");
         addItem(RegItems.CASSITERITE_SWORD, "Cassiterite Sword");
         addItem(RegItems.CASSITERITE_SHOVEL, "Cassiterite Shovel");
         addItem(RegItems.CASSITERITE_PICKAXE, "Cassiterite Pickaxe");
         addItem(RegItems.CASSITERITE_AXE, "Cassiterite Axe");
         addItem(RegItems.CASSITERITE_HOE, "Cassiterite Hoe");
+        addItem(RegItems.CASSITERITE_HELMET, "Cassiterite Helmet");
+        addItem(RegItems.CASSITERITE_CHESTPLATE, "Cassiterite Chestplate");
+        addItem(RegItems.CASSITERITE_LEGGINGS, "Cassiterite Leggings");
+        addItem(RegItems.CASSITERITE_BOOTS, "Cassiterite Boots");
 
         addItem(RegItems.MOONSTONE_SHIELD, "Moonstone Shield");
         addItem(FDRegistry.MOONSTONE_KNIFE, "Moonstone Knife");
@@ -496,6 +554,7 @@ public class GENLangENUS extends LanguageProvider {
         addItem(RegItems.VERDITE_LEGGINGS, "Verdite Leggings");
         addItem(RegItems.VERDITE_BOOTS, "Verdite Boots");
 
+        addItem(RegItems.STEEL_HEAVY_SHIELD, "Steel Heavy Shield");
         addItem(RegItems.STEEL_HEAVYWORK_SWORD, "Steel Heavy-Work Sword");
         addItem(RegItems.STEEL_HEAVYWORK_PICKAXE, "Steel Heavy-Work Pickaxe");
         addItem(RegItems.STEEL_HEAVYWORK_AXE, "Steel Heavy-Work Axe");
@@ -503,16 +562,19 @@ public class GENLangENUS extends LanguageProvider {
         addItem(RegItems.STEEL_HEAVYWORK_HOE, "Steel Heavy-Work Hoe");
         addBlock(RegBlocks.STEEL_ANVIL, "Heavy Anvil");
 
-        addItem(RegItems.BRONZE_HELMET, "Bronze Diving Mask");
-        addItem(RegItems.BRONZE_CHESTPLATE, "Bronze Diving Chestplate");
-        addItem(RegItems.BRONZE_LEGGINGS, "Bronze Diving Leggings");
-        addItem(RegItems.BRONZE_BOOTS, "Bronze Diving Boots");
+        addItem(RegItems.COPPER_NUGGET, "Copper Nugget");
+
+        addItem(RegItems.BRONZE_DIVING_HELMET, "Bronze Diving Mask");
+        addItem(RegItems.BRONZE_DIVING_CHESTPLATE, "Bronze Diving Chestplate");
+        addItem(RegItems.BRONZE_DIVING_LEGGINGS, "Bronze Diving Leggings");
+        addItem(RegItems.BRONZE_DIVING_BOOTS, "Bronze Diving Boots");
 
         addItem(RegItems.TUNGSTEN_HELMET, "Tungsten Helmet");
         addItem(RegItems.TUNGSTEN_CHESTPLATE, "Tungsten Chestplate");
         addItem(RegItems.TUNGSTEN_LEGGINGS, "Tungsten Leggings");
         addItem(RegItems.TUNGSTEN_BOOTS, "Tungsten Boots");
 
+        addItem(RegItems.TUNGSTEN_SHIELD, "Tungsten Shield");
         addItem(RegItems.TUNGSTEN_SWORD, "Tungsten Sword");
         addItem(RegItems.TUNGSTEN_PICKAXE, "Tungsten Pickaxe");
         addItem(RegItems.TUNGSTEN_AXE, "Tungsten Axe");
@@ -596,6 +658,9 @@ public class GENLangENUS extends LanguageProvider {
         addItem(RegItems.VINNELIO, "Vinnelio");
         addItem(RegItems.ANCIENT_FRUIT, "Ancient Fruit");
         addItem(RegItems.ANCIENT_STEW, "Ancient Stew");
+
+        addItem(RegItems.ROTTEN_STEW, "Rotten Stew");
+        addItem(RegItems.ENRICHED_EYE, "Enriched Eye");
 
         addItem(RegItems.TIN_NUGGET, "Tin Nugget");
         addItem(RegItems.CASSITERITE_NUGGET, "Cassiterite Nugget");
@@ -742,6 +807,15 @@ public class GENLangENUS extends LanguageProvider {
         addBlock(RegBlocks.CUT_STEEL_SLAB, "Cut Steel Slab");
         addBlock(RegBlocks.CUT_STEEL_STAIR, "Cut Steel Stair");
 
+        addBlock(RegBlocks.CUT_TUNGSTEN_SLAB, "Cut Tungsten Slab");
+        addBlock(RegBlocks.CUT_TUNGSTEN_STAIR, "Cut Tungsten Slab");
+
+        addBlock(RegBlocks.TUNGSTEN_BRICKS_SLAB, "Tungsten Bricks Slab");
+        addBlock(RegBlocks.TUNGSTEN_BRICKS_STAIR, "Tungsten Bricks Stair");
+
+        addBlock(RegBlocks.POLISHED_TUNGSTEN_SLAB, "Polished Tungsten Slab");
+        addBlock(RegBlocks.POLISHED_TUNGSTEN_STAIR, "Polished Tungsten Stair");
+
         addBlock(RegBlocks.AMETHYST_BRICKS_WALL, "Amethyst Bricks Wall");
         addBlock(RegBlocks.AMETHYST_BRICKS_STAIR, "Amethyst Bricks Stair");
         addBlock(RegBlocks.AMETHYST_BRICKS_SLAB, "Amethyst Bricks Slab");
@@ -780,9 +854,11 @@ public class GENLangENUS extends LanguageProvider {
         addItem(SBRegistry.PLATINUM_SPEAR, "Platinum Spear");
         addItem(SBRegistry.LIVINGSTONE_SPEAR, "Livingstone Spear");
         addItem(SBRegistry.MOONSTONE_SPEAR, "Moonstone Spear");
+        addItem(SBRegistry.CASSITERITE_SPEAR, "Cassiterite Spear");
+        addItem(SBRegistry.TUNGSTEN_SPEAR, "Tungsten Spear");
 
         add("tooltip.orevolution.lunar_lantern_tooltip",
-                "Causes nearby Monsters to Glow \n" +
+                "Inflicts nearby Monsters to Glow \n" +
                 "Right-click to enable/disable the effect");
 
 //        addItem(RegItemsAE.TIN_ARROW, "Tin-Coated Arrow");

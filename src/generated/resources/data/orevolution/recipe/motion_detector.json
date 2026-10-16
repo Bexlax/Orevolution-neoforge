@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "orevolution:platinum_ingot"
+      "tag": "c:ingots/platinum"
     },
     "B": {
       "item": "minecraft:redstone"

@@ -37,6 +37,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.AnvilUpdateEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerContainerEvent;
@@ -126,8 +127,6 @@ public class MiscSubscriber {
         event.register(RegMenus.STEEL_ANVIL.get(), SteelAnvilScreen::new);
     }
 
-    private static final String SOULBOUND_ITEMS = "SoulboundItems";
-
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onItemAttributes(ItemAttributeModifierEvent event) {
         if(!ModList.get().isLoaded("oreganized")) return;
@@ -173,13 +172,30 @@ public class MiscSubscriber {
         }
     }
 
+    private static final String AETHERSTEEL_ITEMS = "aethersteel_items";
+    private static final String HAS_FULL_AETHERSTEEL_SET = "has_full_aethersteel_set";
+
+    @SubscribeEvent
+    public static void onDeath(LivingDeathEvent event) {
+        if (!OrevolutionConfig.POWERS.aethersteelKeepOnDeath.get()) return;
+        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+
+        player.getPersistentData().putBoolean(
+                HAS_FULL_AETHERSTEEL_SET,
+                hasFullAethersteelSet(player)
+        );
+    }
 
     @SubscribeEvent
     public static void onDrops(LivingDropsEvent event) {
+        if (!OrevolutionConfig.POWERS.aethersteelKeepOnDeath.get()) return;
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
 
-        ListTag stored = new ListTag();
+        boolean hasFullAethersteelSet = player.getPersistentData().getBoolean(
+                HAS_FULL_AETHERSTEEL_SET
+        );
 
+        ListTag stored = new ListTag();
         Level level = player.level();
 
         Iterator<ItemEntity> iterator = event.getDrops().iterator();
@@ -188,21 +204,26 @@ public class MiscSubscriber {
             ItemEntity itemEntity = iterator.next();
             ItemStack stack = itemEntity.getItem();
 
-            if (isSoulbound(stack)) {
+            if (!isAethersteel(stack)) continue;
 
-                HolderLookup.Provider provider = level.registryAccess();
-
-                CompoundTag itemTag = (CompoundTag) stack.save(provider);
-
-                stored.add(itemTag);
-
-                iterator.remove();
+            // Aethersteel armor is only protected when the player
+            // had the complete set when they died.
+            if (isAethersteelArmor(stack) && !hasFullAethersteelSet) {
+                continue;
             }
+
+            HolderLookup.Provider provider = level.registryAccess();
+            CompoundTag itemTag = (CompoundTag) stack.save(provider);
+
+            stored.add(itemTag);
+            iterator.remove();
         }
 
         if (!stored.isEmpty()) {
-            player.getPersistentData().put(SOULBOUND_ITEMS, stored);
+            player.getPersistentData().put(AETHERSTEEL_ITEMS, stored);
         }
+
+        player.getPersistentData().remove(HAS_FULL_AETHERSTEEL_SET);
     }
 
     @SubscribeEvent
@@ -211,10 +232,10 @@ public class MiscSubscriber {
 
         CompoundTag oldData = event.getOriginal().getPersistentData();
 
-        if (oldData.contains(SOULBOUND_ITEMS)) {
+        if (oldData.contains(AETHERSTEEL_ITEMS)) {
             event.getEntity().getPersistentData().put(
-                    SOULBOUND_ITEMS,
-                    oldData.getList(SOULBOUND_ITEMS, Tag.TAG_COMPOUND)
+                    AETHERSTEEL_ITEMS,
+                    oldData.getList(AETHERSTEEL_ITEMS, Tag.TAG_COMPOUND)
             );
         }
     }
@@ -225,28 +246,56 @@ public class MiscSubscriber {
 
         CompoundTag data = player.getPersistentData();
 
-        if (!data.contains(SOULBOUND_ITEMS)) return;
+        if (!data.contains(AETHERSTEEL_ITEMS)) return;
 
         Level level = player.level();
-
-        ListTag list = data.getList(SOULBOUND_ITEMS, Tag.TAG_COMPOUND);
+        ListTag list = data.getList(AETHERSTEEL_ITEMS, Tag.TAG_COMPOUND);
 
         for (Tag tag : list) {
             HolderLookup.Provider provider = level.registryAccess();
 
-            ItemStack stack = ItemStack.parseOptional(provider, (CompoundTag) tag);
+            ItemStack stack = ItemStack.parseOptional(
+                    provider,
+                    (CompoundTag) tag
+            );
 
             if (!player.addItem(stack)) {
                 player.drop(stack, false);
             }
         }
 
-        data.remove(SOULBOUND_ITEMS);
+        data.remove(AETHERSTEEL_ITEMS);
     }
 
-    private static boolean isSoulbound(ItemStack stack) {
-        return (stack.getItem() instanceof TieredItem tool && tool.getTier() == OrevolutionTiers.ToolTiers.AETHERSTEEL)
-                || (stack.getItem() instanceof ArmorItem armor && armor.getMaterial() == OrevolutionTiers.ArmorMats.AETHERSTEEL);
+    private static boolean hasFullAethersteelSet(Player player) {
+        int armorPieces = 0;
+
+        // Main inventory
+        for (ItemStack stack : player.getInventory().items) {
+            if (isAethersteelArmor(stack)) {
+                armorPieces++;
+            }
+        }
+
+        // Armor slots
+        for (ItemStack stack : player.getInventory().armor) {
+            if (isAethersteelArmor(stack)) {
+                armorPieces++;
+            }
+        }
+
+        return armorPieces >= 4;
+    }
+
+    private static boolean isAethersteelArmor(ItemStack stack) {
+        return stack.getItem() instanceof ArmorItem armor
+                && armor.getMaterial() == OrevolutionTiers.ArmorMaterials.AETHERSTEEL;
+    }
+
+    private static boolean isAethersteel(ItemStack stack) {
+        return (stack.getItem() instanceof TieredItem tool
+                && tool.getTier() == OrevolutionTiers.ToolTiers.AETHERSTEEL)
+                || isAethersteelArmor(stack);
     }
 
     @SubscribeEvent
@@ -289,7 +338,7 @@ public class MiscSubscriber {
             if (!(stack.getItem() instanceof ArmorItem armor))
                 return false;
 
-            if (armor.getMaterial() != OrevolutionTiers.ArmorMats.TUNGSTEN)
+            if (armor.getMaterial() != OrevolutionTiers.ArmorMaterials.TUNGSTEN)
                 return false;
         }
 

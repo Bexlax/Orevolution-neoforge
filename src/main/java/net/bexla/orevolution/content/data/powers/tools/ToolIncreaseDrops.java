@@ -36,7 +36,7 @@ public class ToolIncreaseDrops extends OrevolutionToolPower {
     @Override
     public List<MutableComponent> ctrlTooltip() {
         return List.of(
-                Component.translatable("power.orevolution.explanation.duplication"),
+                Component.translatable("power.orevolution.explanation." + tooltip_id),
                 Component.translatable("power.orevolution.explanation.double_chance", displayChance(2)),
                 Component.translatable("power.orevolution.explanation.normal_chance", displayChance(1)),
                 Component.translatable("power.orevolution.explanation.uncommon_chance", displayChance(0.5)),

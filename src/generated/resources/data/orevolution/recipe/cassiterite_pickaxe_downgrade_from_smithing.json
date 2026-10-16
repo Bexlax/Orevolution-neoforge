@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "orevolution:tin_ingot"
+    "tag": "c:ingots/tin"
   },
   "base": {
     "item": "orevolution:cassiterite_pickaxe"

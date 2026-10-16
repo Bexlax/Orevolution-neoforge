@@ -25,10 +25,10 @@ public class ToolAddEffectPerBlockMined extends OrevolutionToolPower {
     private final int effectTime;
     private final int maxAmplifier;
 
-    public ToolAddEffectPerBlockMined(String tooltipId, IConditional conditional, Holder<MobEffect> effect, int minHits, int effectTime, int maxAmplifier) {
+    public ToolAddEffectPerBlockMined(String tooltipId, IConditional conditional, Holder<MobEffect> effect, int minBlocks, int effectTime, int maxAmplifier) {
         super(tooltipId, conditional);
         this.effect = effect;
-        this.minBlocks = minHits;
+        this.minBlocks = minBlocks;
         this.effectTime = effectTime;
         this.maxAmplifier = maxAmplifier;
     }

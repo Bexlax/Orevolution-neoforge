@@ -27,7 +27,7 @@ public class ReinforceSmithingRecipe implements SmithingRecipe {
         ItemStack stack = input.base();
 
         return input.template().is(RegItems.REINFORCED_TEMPLATE.get())
-                && input.addition().is(RegItems.TUNGSTEN_INGOT.get())
+                && input.addition().is(OrevolutionTags.Items.TUNGSTEN_INGOTS)
                 && stack.is(OrevolutionTags.Items.ACCEPTS_REINFORCEMENT)
                 && !stack.is(OrevolutionTags.Items.REINFORCE_BLACKLIST)
                 && !stack.getOrDefault(RegDataComponents.REINFORCED.get(), false)

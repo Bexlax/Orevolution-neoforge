@@ -1,17 +1,21 @@
 modLoader="javafml" #mandatory
 loaderVersion="${loader_version_range}" #mandatory
 license="${mod_license}"
+issueTrackerURL = "https://github.com/Bexlax/Orevolution-neoforge/issues"
 
 [[mods]] #mandatory
 modId="${mod_id}" #mandatory
 version="${mod_version}" #mandatory
 displayName="${mod_name}" #mandatory
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/orevolution"
 logoFile="logo.png"
 logoBlur=false
-itemIcon="orevolution:platinum_ingot"
+itemIcon="orevolution:raw_tin"
 authors="BexLa"
 description='''
-Orevolution focuses on adding more value to the mining aspect of minecraft, doing so by adding new ores, rebalancing tools and implementing new mechanics for them.
+Orevolution expands Minecraft's main progression with four new ores, two (optional) new alloys, and unique abilities for both new and vanilla materials.
+
+Currently adds: Tin, Platinum, Tungsten, Cassiterite, Moonstone, Aethersteel, Steel, Bronze, Livingstone and Verdite
 '''
 
 [[mixins]]
@@ -42,5 +46,12 @@ config="${mod_id}.mixins.json"
     modId="spears"
     type="optional"
     versionRange="[1.6.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="oreganized"
+    type="optional"
+    versionRange="[5.3.0,)"
     ordering="AFTER"
     side="BOTH"

@@ -1,4 +1,7 @@
 {
+  "remove": [
+    "#orevolution:needs_tin_tool"
+  ],
   "values": [
     "#minecraft:needs_iron_tool",
     "#minecraft:incorrect_for_iron_tool"

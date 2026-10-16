@@ -37,6 +37,10 @@ public class ToolCauseEffectOnHit extends ToolPowerMobEffects {
                 MobEffectInstance instance = new MobEffectInstance(p, this.duration, this.amplifier);
 
                 if(target.hasEffect(p)) {
+                    MobEffectInstance effect = target.getEffect(p);
+
+                    if(effect.getDuration() > duration / 3) continue;
+
                     target.getEffect(p).update(instance);
                 }
                 else {
@@ -54,6 +58,10 @@ public class ToolCauseEffectOnHit extends ToolPowerMobEffects {
                 MobEffectInstance instance = new MobEffectInstance(p, this.duration, this.amplifier);
 
                 if(attacker.hasEffect(p)) {
+                    MobEffectInstance effect = attacker.getEffect(p);
+
+                    if(effect.getDuration() > duration / 3) continue;
+
                     target.getEffect(p).update(instance);
                 }
                 else {

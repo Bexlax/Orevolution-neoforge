@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_platinum_ingot": {
+    "has_platinum": {
       "conditions": {
         "items": [
           {
-            "items": "orevolution:platinum_ingot"
+            "items": "#c:ingots/platinum"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_platinum_ingot"
+      "has_platinum"
     ]
   ],
   "rewards": {

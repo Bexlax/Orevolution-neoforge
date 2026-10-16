@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "orevolution:bronze_ingot"
+    "tag": "c:ingots/bronze"
   },
   "base": {
-    "item": "minecraft:leather_boots"
+    "item": "orevolution:tin_boots"
   },
   "result": {
     "count": 1,

@@ -23,6 +23,14 @@
     {
       "id": "orevolution:verdite_knife",
       "required": false
+    },
+    {
+      "id": "orevolution:cassiterite_knife",
+      "required": false
+    },
+    {
+      "id": "orevolution:tungsten_knife",
+      "required": false
     }
   ]
 }

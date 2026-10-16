@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "orevolution:block/polished_tungsten_slab"
+    },
+    "type=double": {
+      "model": "orevolution:block/polished_tungsten_block"
+    },
+    "type=top": {
+      "model": "orevolution:block/polished_tungsten_slab_top"
+    }
+  }
+}

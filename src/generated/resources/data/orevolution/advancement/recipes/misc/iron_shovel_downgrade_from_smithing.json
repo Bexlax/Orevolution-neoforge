@@ -7,11 +7,11 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_tin_ingot": {
+    "has_tin": {
       "conditions": {
         "items": [
           {
-            "items": "orevolution:tin_ingot"
+            "items": "#c:ingots/tin"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_tin_ingot"
+      "has_tin"
     ]
   ],
   "rewards": {

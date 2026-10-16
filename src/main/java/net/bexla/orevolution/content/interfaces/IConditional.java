@@ -1,24 +1,21 @@
 package net.bexla.orevolution.content.interfaces;
 
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import net.neoforged.neoforge.fluids.FluidType;
 
 import java.util.function.Supplier;
 
 @FunctionalInterface
 public interface IConditional {
-    boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity possibleTarget);
+    boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity target);
 
     default MutableComponent value() {
         return null;
@@ -27,13 +24,13 @@ public interface IConditional {
     static IConditional byChance(double chance) {
         return new IConditional() {
             @Override
-            public boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity possibleTarget) {
+            public boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity target) {
                 return level.getRandom().nextDouble() < chance;
             }
 
             @Override
             public MutableComponent value() {
-                return Component.translatable("condition.orevolution.chance", (int)((1 - chance) * 100) + "%");
+                return Component.translatable("condition.orevolution.chance", (int)(chance * 100) + "%");
             }
         };
     }
@@ -43,8 +40,17 @@ public interface IConditional {
     }
 
     static IConditional targetHasArmor() {
-        return (stack, state, level, player, target) ->
-                target != null && target.getArmorValue() > 0;
+        return new IConditional() {
+            @Override
+            public boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity target) {
+                return target != null && target.getArmorValue() > 0;
+            }
+
+            @Override
+            public MutableComponent value() {
+                return Component.translatable("condition.orevolution.target_armored");
+            }
+        };
     }
 
     static IConditional targetHPAmount(float amount, boolean lowerThanAmount) {
@@ -80,58 +86,32 @@ public interface IConditional {
         };
     }
 
-    static IConditional targetMobType(TagKey<EntityType<?>> type) {
-        return (stack, state, level, player, target) ->
-                target != null && target.getType().is(type);
-    }
-
-    static IConditional targetIsHostile() {
-        return (stack, state, level, player, target) ->
-                target != null && !target.getType().getCategory().isFriendly();
-    }
-
-    static IConditional isSubmergedInLiquid(Holder<FluidType> fluidType) {
-        return (stack, state, level, player, target) ->
-                player != null && player.isEyeInFluidType(fluidType.value());
-    }
-
-    static IConditional isTouchingLiquid(Holder<FluidType> fluidType) {
-        return (stack, state, level, player, target) ->
-                player != null && player.isInFluidType(fluidType.value());
-    }
-
-    static IConditional isTouchingLava() {
-        return (stack, state, level, player, target) ->
-                player != null && player.isInLava();
-    }
-
-    static IConditional playerHPPercentage(float percentage, boolean lowerThanPercent) {
+    static IConditional targetMobType(TagKey<EntityType<?>> type, String tooltip) {
         return new IConditional() {
             @Override
             public boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity target) {
-                if (target == null)
-                    return false;
-
-                float hp = target.getHealth() / target.getMaxHealth();
-                return lowerThanPercent ? hp <= percentage : hp >= percentage;
+                return target !=null && target.getType().is(type);
             }
 
             @Override
             public MutableComponent value() {
-                return Component.translatable("condition.orevolution.player_hp_percent."
-                        + (lowerThanPercent? "lower_than" : "higher_than"), (int)(percentage * 100) + "%");
+                return Component.translatable("condition.orevolution.target_" + tooltip);
             }
         };
     }
 
-    static IConditional toolHasEnchantment(Holder<Enchantment> enchantment) {
-        return (stack, state, level, player, target) ->
-                stack.getTagEnchantments().getLevel(enchantment) > 0;
-    }
+    static IConditional targetIsHostile() {
+        return new IConditional() {
+            @Override
+            public boolean shouldActivate(ItemStack stack, BlockState state, Level level, LivingEntity player, LivingEntity target) {
+                return target != null && !target.getType().getCategory().isFriendly();
+            }
 
-    static IConditional toolHasAnyEnchantment() {
-        return (stack, state, level, player, target) ->
-                !stack.getTagEnchantments().isEmpty();
+            @Override
+            public MutableComponent value() {
+                return Component.translatable("condition.orevolution.target_hostile");
+            }
+        };
     }
 
     static IConditional playerHPAmount(float amount) {
@@ -156,23 +136,6 @@ public interface IConditional {
     static IConditional isBlockstateTaggedAs(TagKey<Block> blockTag) {
         return (stack, state, level, player, target) ->
                 state != null && state.is(blockTag);
-    }
-
-    static IConditional isBlockstateTaggedAs(Supplier<Block> block) {
-        return (stack, state, level, player, target) ->
-                state != null && state.is(block.get());
-    }
-
-    static IConditional and(IConditional a, IConditional b) {
-        return (stack, state, level, player, target) ->
-                a.shouldActivate(stack, state, level, player, target)
-                        && b.shouldActivate(stack, state, level, player, target);
-    }
-
-    static IConditional or(IConditional a, IConditional b) {
-        return (stack, state, level, player, target) ->
-                a.shouldActivate(stack, state, level, player, target)
-                        || b.shouldActivate(stack, state, level, player, target);
     }
 
     static IConditional oneOf(IConditional... conditionals) {

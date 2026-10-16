@@ -4,10 +4,10 @@ import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.bexla.orevolution.Orevolution;
 import net.bexla.orevolution.content.data.OrevolutionTiers;
 import net.bexla.orevolution.content.types.item.*;
-import net.bexla.orevolution.content.types.item.modeled.AethersteelArmor;
-import net.bexla.orevolution.content.types.item.modeled.BronzeArmor;
-import net.bexla.orevolution.content.types.item.modeled.LivingstoneArmor;
-import net.bexla.orevolution.content.types.item.modeled.TungstenArmor;
+import net.bexla.orevolution.content.types.item.modeled.AethersteelChestplateItem;
+import net.bexla.orevolution.content.types.item.modeled.BronzeDivingChestplateItem;
+import net.bexla.orevolution.content.types.item.modeled.LivingstoneChestplateItem;
+import net.bexla.orevolution.content.types.item.modeled.TungstenHelmetItem;
 import net.bexla.orevolution.init.modcompat.FDRegistry;
 import net.bexla.orevolution.init.modcompat.SBRegistry;
 import net.minecraft.core.Holder;
@@ -83,6 +83,8 @@ public class RegItems {
     public static final DeferredItem<Item> VERDITE_NUGGET = normalItem("verdite_nugget");
     public static final DeferredItem<Item> LIVINGSTONE_SHARD = normalItem("livingstone_shard");
     public static final DeferredItem<Item> QUARTZ_CHIP = normalItem("quartz_chip");
+
+    public static final DeferredItem<Item> COPPER_NUGGET = normalItem("copper_nugget");
     /*Others*/
     public static final DeferredItem<Item> PROFESSIONAL_FIREWORK_ROCKET = HELPER.createItem("professional_firework_rocket", () -> new FireworkRocketItem(new Item.Properties().component(DataComponents.FIREWORKS, new Fireworks(3, List.of()))));
     public static final DeferredItem<Item> PYRITE = normalItem("pyrite");
@@ -133,8 +135,8 @@ public class RegItems {
     public static final DeferredItem<Item> LIGHTNING_BOTTLE = HELPER.createItem("lightning_bottle", () -> new SpecialBottleItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(0.1F).build()),
             2, 1400, MobEffects.MOVEMENT_SPEED));
 
-    public static final DeferredItem<Item> BRONZE_HORSE_ARMOR = HELPER.createItem("bronze_horse_armor", () -> new AnimalArmorItem(OrevolutionTiers.ArmorMats.BRONZE, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> STEEL_HORSE_ARMOR = HELPER.createItem("steel_horse_armor", () -> new AnimalArmorItem(OrevolutionTiers.ArmorMats.STEEL, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_HORSE_ARMOR = HELPER.createItem("bronze_horse_armor", () -> new AnimalArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_SOFT, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> STEEL_HORSE_ARMOR = HELPER.createItem("steel_horse_armor", () -> new AnimalArmorItem(OrevolutionTiers.ArmorMaterials.STEEL, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
 
     //~//~~Armors, Tools and Weapons~~//~//
     public static final DeferredItem<Item> TIN_SHIELD = HELPER.createItem("tin_shield", () -> new ShieldItem(new Item.Properties().durability(98)));
@@ -143,18 +145,42 @@ public class RegItems {
     public static final DeferredItem<Item> TIN_AXE = registerAxe("tin", OrevolutionTiers.ToolTiers.TIN, 7f, new Item.Properties());
     public static final DeferredItem<Item> TIN_SHOVEL = registerShovel("tin", OrevolutionTiers.ToolTiers.TIN, new Item.Properties());
     public static final DeferredItem<Item> TIN_HOE = registerHoe("tin", OrevolutionTiers.ToolTiers.TIN, new Item.Properties());
+
+    public static final DeferredItem<Item> TIN_HELMET = HELPER.createItem("tin_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.TIN, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(8)).stacksTo(1)));
+    public static final DeferredItem<Item> TIN_CHESTPLATE = HELPER.createItem("tin_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.TIN, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(8)).stacksTo(1)));
+    public static final DeferredItem<Item> TIN_LEGGINGS = HELPER.createItem("tin_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.TIN, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(8)).stacksTo(1)));
+    public static final DeferredItem<Item> TIN_BOOTS = HELPER.createItem("tin_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.TIN, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(8)).stacksTo(1)));
+
+    public static final DeferredItem<Item> BRONZE_HELMET = HELPER.createItem("bronze_helmet", () -> new BronzeArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_HARD, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(15)).stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_CHESTPLATE = HELPER.createItem("bronze_chestplate", () -> new BronzeArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_HARD, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(15)).stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_LEGGINGS = HELPER.createItem("bronze_leggings", () -> new BronzeArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_HARD, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(15)).stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_BOOTS = HELPER.createItem("bronze_boots", () -> new BronzeArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_HARD, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(15)).stacksTo(1)));
+
     public static final DeferredItem<Item> GEO_SCANNER = HELPER.createItem("geoscanner", () -> new GeoScannerItem(new Item.Properties()));
 
+    public static final DeferredItem<Item> CASSITERITE_SHIELD = HELPER.createItem("cassiterite_shield", () -> new ShieldItem(new Item.Properties().durability(196)));
     public static final DeferredItem<Item> CASSITERITE_SWORD = registerSword("cassiterite", OrevolutionTiers.ToolTiers.CASSITERITE, new Item.Properties());
     public static final DeferredItem<Item> CASSITERITE_PICKAXE = registerPickaxe("cassiterite", OrevolutionTiers.ToolTiers.CASSITERITE, new Item.Properties());
     public static final DeferredItem<Item> CASSITERITE_AXE = registerAxe("cassiterite", OrevolutionTiers.ToolTiers.CASSITERITE, 7f, new Item.Properties());
     public static final DeferredItem<Item> CASSITERITE_SHOVEL = registerShovel("cassiterite", OrevolutionTiers.ToolTiers.CASSITERITE, new Item.Properties());
     public static final DeferredItem<Item> CASSITERITE_HOE = registerHoe("cassiterite", OrevolutionTiers.ToolTiers.CASSITERITE, new Item.Properties());
 
-    public static final DeferredItem<Item> PLATINUM_HELMET = HELPER.createItem("platinum_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMats.PLATINUM, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(26)).stacksTo(1)));
-    public static final DeferredItem<Item> PLATINUM_CHESTPLATE = HELPER.createItem("platinum_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMats.PLATINUM, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(26)).stacksTo(1)));
-    public static final DeferredItem<Item> PLATINUM_LEGGINGS = HELPER.createItem("platinum_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMats.PLATINUM, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(26)).stacksTo(1)));
-    public static final DeferredItem<Item> PLATINUM_BOOTS = HELPER.createItem("platinum_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMats.PLATINUM, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(26)).stacksTo(1)));
+    public static final DeferredItem<Item> CASSITERITE_HELMET = HELPER.createItem("cassiterite_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.CASSITERITE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(8)).stacksTo(1)));
+    public static final DeferredItem<Item> CASSITERITE_CHESTPLATE = HELPER.createItem("cassiterite_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.CASSITERITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(8)).stacksTo(1)));
+    public static final DeferredItem<Item> CASSITERITE_LEGGINGS = HELPER.createItem("cassiterite_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.CASSITERITE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(8)).stacksTo(1)));
+    public static final DeferredItem<Item> CASSITERITE_BOOTS = HELPER.createItem("cassiterite_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.CASSITERITE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(8)).stacksTo(1)));
+
+    public static final DeferredItem<Item> STEEL_HEAVY_SHIELD = HELPER.createItem("steel_heavy_shield", () -> new ShieldItem(new Item.Properties().durability(330)));
+    public static final DeferredItem<Item> STEEL_HEAVYWORK_SWORD = registerSword("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -3.2f, new Item.Properties());
+    public static final DeferredItem<Item> STEEL_HEAVYWORK_PICKAXE = registerPickaxe("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -3.6f, new Item.Properties());
+    public static final DeferredItem<Item> STEEL_HEAVYWORK_AXE = registerAxe("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, 6f, -3.8f, new Item.Properties());
+    public static final DeferredItem<Item> STEEL_HEAVYWORK_SHOVEL = registerShovel("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -3.4f, new Item.Properties());
+    public static final DeferredItem<Item> STEEL_HEAVYWORK_HOE = registerHoe("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -3.4f, new Item.Properties());
+
+    public static final DeferredItem<Item> PLATINUM_HELMET = HELPER.createItem("platinum_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.PLATINUM, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(26)).stacksTo(1)));
+    public static final DeferredItem<Item> PLATINUM_CHESTPLATE = HELPER.createItem("platinum_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.PLATINUM, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(26)).stacksTo(1)));
+    public static final DeferredItem<Item> PLATINUM_LEGGINGS = HELPER.createItem("platinum_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.PLATINUM, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(26)).stacksTo(1)));
+    public static final DeferredItem<Item> PLATINUM_BOOTS = HELPER.createItem("platinum_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.PLATINUM, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(26)).stacksTo(1)));
 
     public static final DeferredItem<Item> PLATINUM_SHIELD = HELPER.createItem("platinum_shield", () -> new ShieldItem(new Item.Properties().durability(229)));
     public static final DeferredItem<Item> PLATINUM_SWORD = registerSword("platinum", OrevolutionTiers.ToolTiers.PLATINUM, new Item.Properties());
@@ -164,22 +190,10 @@ public class RegItems {
     public static final DeferredItem<Item> PLATINUM_HOE = registerHoe("platinum", OrevolutionTiers.ToolTiers.PLATINUM, new Item.Properties());
     public static final DeferredItem<Item> MOTION_DETECTOR = HELPER.createItem("motion_detector", () -> new MotionDetectorItem(new Item.Properties()));
 
-    public static final DeferredItem<Item> AETHERSTEEL_HELMET = HELPER.createItem("aethersteel_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMats.AETHERSTEEL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42)).stacksTo(1)));
-    public static final DeferredItem<Item> AETHERSTEEL_CHESTPLATE = HELPER.createItem("aethersteel_chestplate", () -> new AethersteelArmor(OrevolutionTiers.ArmorMats.AETHERSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42)).stacksTo(1)));
-    public static final DeferredItem<Item> AETHERSTEEL_LEGGINGS = HELPER.createItem("aethersteel_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMats.AETHERSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(42)).stacksTo(1)));
-    public static final DeferredItem<Item> AETHERSTEEL_BOOTS = HELPER.createItem("aethersteel_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMats.AETHERSTEEL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42)).stacksTo(1)));
-
-    public static final DeferredItem<Item> AETHERSTEEL_SHIELD = HELPER.createItem("aethersteel_shield", () -> new ShieldItem(new Item.Properties().durability(841)));
-    public static final DeferredItem<Item> AETHERSTEEL_SWORD = registerSword("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
-    public static final DeferredItem<Item> AETHERSTEEL_PICKAXE = registerPickaxe("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
-    public static final DeferredItem<Item> AETHERSTEEL_AXE = registerAxe("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, 5F, new Item.Properties());
-    public static final DeferredItem<Item> AETHERSTEEL_SHOVEL = registerShovel("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
-    public static final DeferredItem<Item> AETHERSTEEL_HOE = registerHoe("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
-
-    public static final DeferredItem<Item> MOONSTONE_HELMET = HELPER.createItem("moonstone_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMats.MOONSTONE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(21)).stacksTo(1)));
-    public static final DeferredItem<Item> MOONSTONE_CHESTPLATE = HELPER.createItem("moonstone_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMats.MOONSTONE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(21)).stacksTo(1)));
-    public static final DeferredItem<Item> MOONSTONE_LEGGINGS = HELPER.createItem("moonstone_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMats.MOONSTONE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(21)).stacksTo(1)));
-    public static final DeferredItem<Item> MOONSTONE_BOOTS = HELPER.createItem("moonstone_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMats.MOONSTONE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(21)).stacksTo(1)));
+    public static final DeferredItem<Item> MOONSTONE_HELMET = HELPER.createItem("moonstone_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.MOONSTONE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(29)).stacksTo(1)));
+    public static final DeferredItem<Item> MOONSTONE_CHESTPLATE = HELPER.createItem("moonstone_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.MOONSTONE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(29)).stacksTo(1)));
+    public static final DeferredItem<Item> MOONSTONE_LEGGINGS = HELPER.createItem("moonstone_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.MOONSTONE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(29)).stacksTo(1)));
+    public static final DeferredItem<Item> MOONSTONE_BOOTS = HELPER.createItem("moonstone_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.MOONSTONE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(29)).stacksTo(1)));
 
     public static final DeferredItem<Item> MOONSTONE_SHIELD = HELPER.createItem("moonstone_shield", () -> new ShieldItem(new Item.Properties().durability(633)));
     public static final DeferredItem<Item> MOONSTONE_SWORD = registerSword("moonstone", OrevolutionTiers.ToolTiers.MOONSTONE, new Item.Properties());
@@ -188,10 +202,34 @@ public class RegItems {
     public static final DeferredItem<Item> MOONSTONE_SHOVEL = registerShovel("moonstone", OrevolutionTiers.ToolTiers.MOONSTONE, new Item.Properties());
     public static final DeferredItem<Item> MOONSTONE_HOE = registerHoe("moonstone", OrevolutionTiers.ToolTiers.MOONSTONE, new Item.Properties());
 
-    public static final DeferredItem<Item> LIVINGSTONE_HELMET = HELPER.createItem("livingstone_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMats.LIVINGSTONE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(13)).stacksTo(1)));
-    public static final DeferredItem<Item> LIVINGSTONE_CHESTPLATE = HELPER.createItem("livingstone_chestplate", () -> new LivingstoneArmor(OrevolutionTiers.ArmorMats.LIVINGSTONE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(13)).stacksTo(1)));
-    public static final DeferredItem<Item> LIVINGSTONE_LEGGINGS = HELPER.createItem("livingstone_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMats.LIVINGSTONE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(13)).stacksTo(1)));
-    public static final DeferredItem<Item> LIVINGSTONE_BOOTS = HELPER.createItem("livingstone_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMats.LIVINGSTONE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(13)).stacksTo(1)));
+    public static final DeferredItem<Item> TUNGSTEN_HELMET = HELPER.createItem("tungsten_helmet", () -> new TungstenHelmetItem(OrevolutionTiers.ArmorMaterials.TUNGSTEN, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(14)).stacksTo(1).fireResistant()));
+    public static final DeferredItem<Item> TUNGSTEN_CHESTPLATE = HELPER.createItem("tungsten_chestplate", () -> new TungstenHelmetItem(OrevolutionTiers.ArmorMaterials.TUNGSTEN, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(14)).stacksTo(1).fireResistant()));
+    public static final DeferredItem<Item> TUNGSTEN_LEGGINGS = HELPER.createItem("tungsten_leggings", () -> new TungstenHelmetItem(OrevolutionTiers.ArmorMaterials.TUNGSTEN, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(14)).stacksTo(1).fireResistant()));
+    public static final DeferredItem<Item> TUNGSTEN_BOOTS = HELPER.createItem("tungsten_boots", () -> new TungstenHelmetItem(OrevolutionTiers.ArmorMaterials.TUNGSTEN, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(14)).stacksTo(1).fireResistant()));
+
+    public static final DeferredItem<Item> TUNGSTEN_SHIELD = HELPER.createItem("tungsten_shield", () -> new ShieldItem(new Item.Properties().durability(64)));
+    public static final DeferredItem<Item> TUNGSTEN_SWORD = registerSword("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> TUNGSTEN_PICKAXE = registerPickaxe("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> TUNGSTEN_AXE = registerAxe("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, 6F, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> TUNGSTEN_SHOVEL = registerShovel("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> TUNGSTEN_HOE = registerHoe("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
+
+    public static final DeferredItem<Item> AETHERSTEEL_HELMET = HELPER.createItem("aethersteel_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.AETHERSTEEL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(42)).stacksTo(1)));
+    public static final DeferredItem<Item> AETHERSTEEL_CHESTPLATE = HELPER.createItem("aethersteel_chestplate", () -> new AethersteelChestplateItem(OrevolutionTiers.ArmorMaterials.AETHERSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(42)).stacksTo(1)));
+    public static final DeferredItem<Item> AETHERSTEEL_LEGGINGS = HELPER.createItem("aethersteel_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.AETHERSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(42)).stacksTo(1)));
+    public static final DeferredItem<Item> AETHERSTEEL_BOOTS = HELPER.createItem("aethersteel_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.AETHERSTEEL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(42)).stacksTo(1)));
+
+    public static final DeferredItem<Item> AETHERSTEEL_SHIELD = HELPER.createItem("aethersteel_shield", () -> new ShieldItem(new Item.Properties().durability(841)));
+    public static final DeferredItem<Item> AETHERSTEEL_SWORD = registerSword("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
+    public static final DeferredItem<Item> AETHERSTEEL_PICKAXE = registerPickaxe("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
+    public static final DeferredItem<Item> AETHERSTEEL_AXE = registerAxe("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, 5F, new Item.Properties());
+    public static final DeferredItem<Item> AETHERSTEEL_SHOVEL = registerShovel("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
+    public static final DeferredItem<Item> AETHERSTEEL_HOE = registerHoe("aethersteel", OrevolutionTiers.ToolTiers.AETHERSTEEL, new Item.Properties());
+    
+    public static final DeferredItem<Item> LIVINGSTONE_HELMET = HELPER.createItem("livingstone_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.LIVINGSTONE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(13)).stacksTo(1)));
+    public static final DeferredItem<Item> LIVINGSTONE_CHESTPLATE = HELPER.createItem("livingstone_chestplate", () -> new LivingstoneChestplateItem(OrevolutionTiers.ArmorMaterials.LIVINGSTONE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(13)).stacksTo(1)));
+    public static final DeferredItem<Item> LIVINGSTONE_LEGGINGS = HELPER.createItem("livingstone_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.LIVINGSTONE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(13)).stacksTo(1)));
+    public static final DeferredItem<Item> LIVINGSTONE_BOOTS = HELPER.createItem("livingstone_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.LIVINGSTONE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(13)).stacksTo(1)));
 
     public static final DeferredItem<Item> LIVINGSTONE_SHIELD = HELPER.createItem("livingstone_shield", () -> new ShieldItem(new Item.Properties().durability(98)));
     public static final DeferredItem<Item> LIVINGSTONE_SWORD = registerSword("livingstone", OrevolutionTiers.ToolTiers.LIVINGSTONE, new Item.Properties());
@@ -200,10 +238,10 @@ public class RegItems {
     public static final DeferredItem<Item> LIVINGSTONE_SHOVEL = registerShovel("livingstone", OrevolutionTiers.ToolTiers.LIVINGSTONE, new Item.Properties());
     public static final DeferredItem<Item> LIVINGSTONE_HOE = registerHoe("livingstone", OrevolutionTiers.ToolTiers.LIVINGSTONE, new Item.Properties());
 
-    public static final DeferredItem<Item> VERDITE_HELMET = HELPER.createItem("verdite_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMats.VERDITE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(24)).stacksTo(1)));
-    public static final DeferredItem<Item> VERDITE_CHESTPLATE = HELPER.createItem("verdite_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMats.VERDITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(24)).stacksTo(1)));
-    public static final DeferredItem<Item> VERDITE_LEGGINGS = HELPER.createItem("verdite_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMats.VERDITE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(24)).stacksTo(1)));
-    public static final DeferredItem<Item> VERDITE_BOOTS = HELPER.createItem("verdite_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMats.VERDITE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(24)).stacksTo(1)));
+    public static final DeferredItem<Item> VERDITE_HELMET = HELPER.createItem("verdite_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.VERDITE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(24)).stacksTo(1)));
+    public static final DeferredItem<Item> VERDITE_CHESTPLATE = HELPER.createItem("verdite_chestplate", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.VERDITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(24)).stacksTo(1)));
+    public static final DeferredItem<Item> VERDITE_LEGGINGS = HELPER.createItem("verdite_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.VERDITE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(24)).stacksTo(1)));
+    public static final DeferredItem<Item> VERDITE_BOOTS = HELPER.createItem("verdite_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.VERDITE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(24)).stacksTo(1)));
 
     public static final DeferredItem<Item> VERDITE_SHIELD = HELPER.createItem("verdite_shield", () -> new ShieldItem(new Item.Properties().durability(153)));
     public static final DeferredItem<Item> VERDITE_SWORD = registerSword("verdite", OrevolutionTiers.ToolTiers.VERDITE, new Item.Properties());
@@ -212,45 +250,35 @@ public class RegItems {
     public static final DeferredItem<Item> VERDITE_SHOVEL = registerShovel("verdite", OrevolutionTiers.ToolTiers.VERDITE, new Item.Properties());
     public static final DeferredItem<Item> VERDITE_HOE = registerHoe("verdite", OrevolutionTiers.ToolTiers.VERDITE, new Item.Properties());
 
-    /*Bronze set*/
     public static final DeferredItem<Item> BRONZE_TOTEM = HELPER.createItem("bronze_totem",
             () -> new BronzeTotemItem(new Item.Properties().durability(100)));
 
     public static final DeferredItem<Item> BRONZE_RADAR = HELPER.createItem("radar", () -> new BronzeRadarItem(new Item.Properties()));
 
-    public static final DeferredItem<Item> BRONZE_HELMET = HELPER.createItem("bronze_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMats.BRONZE, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(11)).stacksTo(1)));
-    public static final DeferredItem<Item> BRONZE_CHESTPLATE = HELPER.createItem("bronze_chestplate", () -> new BronzeArmor(OrevolutionTiers.ArmorMats.BRONZE, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(11)).stacksTo(1)));
-    public static final DeferredItem<Item> BRONZE_LEGGINGS = HELPER.createItem("bronze_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMats.BRONZE, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(11)).stacksTo(1)));
-    public static final DeferredItem<Item> BRONZE_BOOTS = HELPER.createItem("bronze_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMats.BRONZE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11)).stacksTo(1)));
-
-    /*Steel set*/
-    public static final DeferredItem<Item> STEEL_HEAVYWORK_SWORD = registerSword("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -2.8f, new Item.Properties());
-    public static final DeferredItem<Item> STEEL_HEAVYWORK_PICKAXE = registerPickaxe("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -3.2f, new Item.Properties());
-    public static final DeferredItem<Item> STEEL_HEAVYWORK_AXE = registerAxe("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, 6f, -3.6f, new Item.Properties());
-    public static final DeferredItem<Item> STEEL_HEAVYWORK_SHOVEL = registerShovel("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -3.4f, new Item.Properties());
-    public static final DeferredItem<Item> STEEL_HEAVYWORK_HOE = registerHoe("steel_heavywork", OrevolutionTiers.ToolTiers.STEEL, -2.4f, new Item.Properties());
-
-    /*Tungsten set*/
-    public static final DeferredItem<Item> TUNGSTEN_HELMET = HELPER.createItem("tungsten_helmet", () -> new TungstenArmor(OrevolutionTiers.ArmorMats.TUNGSTEN, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(41)).stacksTo(1).fireResistant()));
-    public static final DeferredItem<Item> TUNGSTEN_CHESTPLATE = HELPER.createItem("tungsten_chestplate", () -> new TungstenArmor(OrevolutionTiers.ArmorMats.TUNGSTEN, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(41)).stacksTo(1).fireResistant()));
-    public static final DeferredItem<Item> TUNGSTEN_LEGGINGS = HELPER.createItem("tungsten_leggings", () -> new TungstenArmor(OrevolutionTiers.ArmorMats.TUNGSTEN, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(41)).stacksTo(1).fireResistant()));
-    public static final DeferredItem<Item> TUNGSTEN_BOOTS = HELPER.createItem("tungsten_boots", () -> new TungstenArmor(OrevolutionTiers.ArmorMats.TUNGSTEN, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(41)).stacksTo(1).fireResistant()));
-
-    public static final DeferredItem<Item> TUNGSTEN_SWORD = registerSword("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> TUNGSTEN_PICKAXE = registerPickaxe("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> TUNGSTEN_AXE = registerAxe("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, 6F, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> TUNGSTEN_SHOVEL = registerShovel("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> TUNGSTEN_HOE = registerHoe("tungsten", OrevolutionTiers.ToolTiers.TUNGSTEN, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> BRONZE_DIVING_HELMET = HELPER.createItem("bronze_diving_helmet", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_SOFT, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(11)).stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_DIVING_CHESTPLATE = HELPER.createItem("bronze_diving_chestplate", () -> new BronzeDivingChestplateItem(OrevolutionTiers.ArmorMaterials.BRONZE_SOFT, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(11)).stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_DIVING_LEGGINGS = HELPER.createItem("bronze_diving_leggings", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_SOFT, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(11)).stacksTo(1)));
+    public static final DeferredItem<Item> BRONZE_DIVING_BOOTS = HELPER.createItem("bronze_diving_boots", () -> new ArmorItem(OrevolutionTiers.ArmorMaterials.BRONZE_SOFT, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11)).stacksTo(1)));
 
     //~//~~Consumables~~//~//
+    public static final DeferredItem<Item> ENCHANTED_PLATINUM_APPLE = HELPER.createItem("enchanted_platinum_apple", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)
+            .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
+            .food((new FoodProperties.Builder()).nutrition(2).saturationModifier(1.6F)
+                    .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1700, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1400, 1), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1100, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.JUMP, 900, 0), 1.0F)
+                    .alwaysEdible()
+                    .build())));
+
     public static final DeferredItem<Item> PLATINUM_APPLE = HELPER.createItem("platinum_apple", () -> new Item(new Item.Properties().rarity(Rarity.RARE)
             .food((new FoodProperties.Builder()).nutrition(2).saturationModifier(1.6F)
-                    .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 2000, 0), 1.0F)
+                    .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1700, 0), 1.0F)
                     .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1400, 0), 1.0F)
                     .alwaysEdible()
             .build())));
 
-    public static final DeferredItem<Item> VERDITE_APPLE = HELPER.createItem("verdite_apple", () -> new VerditeApple(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> VERDITE_APPLE = HELPER.createItem("verdite_apple", () -> new VerditeApple(new Item.Properties().rarity(Rarity.EPIC).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true).stacksTo(1)));
     public static final DeferredItem<Item> VERDITE_SPIDER_EYE = HELPER.createItem("verdite_spider_eye", () -> new Item(new Item.Properties()
             .food((new FoodProperties.Builder()).nutrition(2).saturationModifier(0.8F)
                     .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 80, 0), 1.0F)
@@ -271,16 +299,27 @@ public class RegItems {
                     .effect(() -> new MobEffectInstance(MobEffects.INVISIBILITY, 1520, 0), 1.0F)
             .build())));
 
+    public static final DeferredItem<Item> ROTTEN_STEW = HELPER.createItem("rotten_stew", () -> new Item(new Item.Properties().stacksTo(1)
+            .food((new FoodProperties.Builder()).nutrition(6).saturationModifier(0.97F)
+                    .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 900, 0), 1f)
+                    .effect(() -> new MobEffectInstance(MobEffects.POISON, 250, 0), 1f)
+                    .build())));
+
+    public static final DeferredItem<Item> ENRICHED_EYE = HELPER.createItem("enriched_eye", () -> new Item(new Item.Properties()
+            .food((new FoodProperties.Builder()).nutrition(3).saturationModifier(0.83F)
+                    .effect(() -> new MobEffectInstance(MobEffects.POISON, 80, 0), 0.35F)
+                    .build())));
+
+
     public static final DeferredItem<Item> FOOLS_APPLE = HELPER.createItem("fools_apple", () -> new Item(new Item.Properties()
             .food((new FoodProperties.Builder()).nutrition(5).saturationModifier(0.35F)
-                    .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 300, 0), 1.0F)
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 160, 1), 1.0F)
                     .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 80, 1), 0.75F)
             .build())));
     public static final DeferredItem<Item> FOOLS_CARROT = HELPER.createItem("fools_carrot", () -> new Item(new Item.Properties()
             .food((new FoodProperties.Builder()).nutrition(4).saturationModifier(0.65F)
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 160, 1), 1.0F)
-                    .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 80, 1), 0.75F)
+                    .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 80, 1), 0.45F)
             .build())));
 
     public static final DeferredItem<Item> PETRIFIED_SEED = HELPER.createItem("petrified_seed", () -> new ItemNameBlockItem(RegBlocks.LIVINGSTONE_CROP.get(), new Item.Properties()));

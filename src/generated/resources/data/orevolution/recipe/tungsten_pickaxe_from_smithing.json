@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "orevolution:tungsten_ingot"
+    "tag": "c:ingots/tungsten"
   },
   "base": {
     "item": "minecraft:golden_pickaxe"

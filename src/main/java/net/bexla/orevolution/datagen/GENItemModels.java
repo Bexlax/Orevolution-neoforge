@@ -55,6 +55,8 @@ public class GENItemModels extends ItemModelProvider {
 //        bowItem(RegItemsAE.AETHERSTEEL_BOW);
 
         spearItem(SBRegistry.TIN_SPEAR);
+        spearItem(SBRegistry.CASSITERITE_SPEAR);
+        spearItem(SBRegistry.TUNGSTEN_SPEAR);
         spearItem(SBRegistry.PLATINUM_SPEAR);
         spearItem(SBRegistry.MOONSTONE_SPEAR);
         spearItem(SBRegistry.AETHERSTEEL_SPEAR);
@@ -102,6 +104,7 @@ public class GENItemModels extends ItemModelProvider {
         ingredient(RegItems.VERDITE_NUGGET);
         ingredient(RegItems.LIVINGSTONE_SHARD);
         ingredient(RegItems.QUARTZ_CHIP);
+        ingredient(RegItems.COPPER_NUGGET);
 
         consumable(RegItems.PROFESSIONAL_FIREWORK_ROCKET);
 
@@ -123,7 +126,13 @@ public class GENItemModels extends ItemModelProvider {
         consumable(RegItems.LIGHTNING_BOTTLE);
         consumable(RegItems.FOOLS_APPLE);
         consumable(RegItems.FOOLS_CARROT);
+        consumable(RegItems.ROTTEN_STEW);
+        consumable(RegItems.ENRICHED_EYE);
 
+        armor(RegItems.TIN_HELMET);
+        armor(RegItems.TIN_CHESTPLATE);
+        armor(RegItems.TIN_LEGGINGS);
+        armor(RegItems.TIN_BOOTS);
         toolItem(RegItems.TIN_SWORD);
         toolItem(RegItems.TIN_PICKAXE);
         toolItem(RegItems.TIN_AXE);
@@ -131,16 +140,26 @@ public class GENItemModels extends ItemModelProvider {
         toolItem(RegItems.TIN_HOE);
         compat(fd, FDRegistry.TIN_KNIFE);
 
+        dyeableArmor(RegItems.BRONZE_HELMET);
+        dyeableArmor(RegItems.BRONZE_CHESTPLATE);
+        dyeableArmor(RegItems.BRONZE_LEGGINGS);
+        dyeableArmor(RegItems.BRONZE_BOOTS);
+
+        armor(RegItems.CASSITERITE_HELMET);
+        armor(RegItems.CASSITERITE_CHESTPLATE);
+        armor(RegItems.CASSITERITE_LEGGINGS);
+        armor(RegItems.CASSITERITE_BOOTS);
         toolItem(RegItems.CASSITERITE_SWORD);
         toolItem(RegItems.CASSITERITE_PICKAXE);
         toolItem(RegItems.CASSITERITE_AXE);
         toolItem(RegItems.CASSITERITE_SHOVEL);
         toolItem(RegItems.CASSITERITE_HOE);
+        compat(fd, FDRegistry.CASSITERITE_KNIFE);
 
-        trimArmorItem(RegItems.PLATINUM_HELMET);
-        trimArmorItem(RegItems.PLATINUM_CHESTPLATE);
-        trimArmorItem(RegItems.PLATINUM_LEGGINGS);
-        trimArmorItem(RegItems.PLATINUM_BOOTS);
+        armor(RegItems.PLATINUM_HELMET);
+        armor(RegItems.PLATINUM_CHESTPLATE);
+        armor(RegItems.PLATINUM_LEGGINGS);
+        armor(RegItems.PLATINUM_BOOTS);
         toolItem(RegItems.PLATINUM_SWORD);
         toolItem(RegItems.PLATINUM_PICKAXE);
         toolItem(RegItems.PLATINUM_AXE);
@@ -148,10 +167,10 @@ public class GENItemModels extends ItemModelProvider {
         toolItem(RegItems.PLATINUM_HOE);
         compat(fd, FDRegistry.PLATINUM_KNIFE);
 
-        trimArmorItem(RegItems.MOONSTONE_HELMET);
-        trimArmorItem(RegItems.MOONSTONE_CHESTPLATE);
-        trimArmorItem(RegItems.MOONSTONE_LEGGINGS);
-        trimArmorItem(RegItems.MOONSTONE_BOOTS);
+        armor(RegItems.MOONSTONE_HELMET);
+        armor(RegItems.MOONSTONE_CHESTPLATE);
+        armor(RegItems.MOONSTONE_LEGGINGS);
+        armor(RegItems.MOONSTONE_BOOTS);
         toolItem(RegItems.MOONSTONE_SWORD);
         toolItem(RegItems.MOONSTONE_PICKAXE);
         toolItem(RegItems.MOONSTONE_AXE);
@@ -159,10 +178,10 @@ public class GENItemModels extends ItemModelProvider {
         toolItem(RegItems.MOONSTONE_HOE);
         compat(fd, FDRegistry.MOONSTONE_KNIFE);
 
-        trimArmorItem(RegItems.AETHERSTEEL_HELMET);
-        trimArmorItem(RegItems.AETHERSTEEL_CHESTPLATE);
-        trimArmorItem(RegItems.AETHERSTEEL_LEGGINGS);
-        trimArmorItem(RegItems.AETHERSTEEL_BOOTS);
+        armor(RegItems.AETHERSTEEL_HELMET);
+        armor(RegItems.AETHERSTEEL_CHESTPLATE);
+        armor(RegItems.AETHERSTEEL_LEGGINGS);
+        armor(RegItems.AETHERSTEEL_BOOTS);
         toolItem(RegItems.AETHERSTEEL_SWORD);
         toolItem(RegItems.AETHERSTEEL_PICKAXE);
         toolItem(RegItems.AETHERSTEEL_AXE);
@@ -170,10 +189,10 @@ public class GENItemModels extends ItemModelProvider {
         toolItem(RegItems.AETHERSTEEL_HOE);
         compat(fd, FDRegistry.AETHERSTEEL_KNIFE);
 
-        trimArmorItem(RegItems.LIVINGSTONE_HELMET);
-        trimArmorItem(RegItems.LIVINGSTONE_CHESTPLATE);
-        trimArmorItem(RegItems.LIVINGSTONE_LEGGINGS);
-        trimArmorItem(RegItems.LIVINGSTONE_BOOTS);
+        armor(RegItems.LIVINGSTONE_HELMET);
+        armor(RegItems.LIVINGSTONE_CHESTPLATE);
+        armor(RegItems.LIVINGSTONE_LEGGINGS);
+        armor(RegItems.LIVINGSTONE_BOOTS);
         toolItem(RegItems.LIVINGSTONE_SWORD);
         toolItem(RegItems.LIVINGSTONE_PICKAXE);
         toolItem(RegItems.LIVINGSTONE_AXE);
@@ -181,10 +200,10 @@ public class GENItemModels extends ItemModelProvider {
         toolItem(RegItems.LIVINGSTONE_HOE);
         compat(fd, FDRegistry.LIVINGSTONE_KNIFE);
 
-        trimArmorItem(RegItems.VERDITE_HELMET);
-        trimArmorItem(RegItems.VERDITE_CHESTPLATE);
-        trimArmorItem(RegItems.VERDITE_LEGGINGS);
-        trimArmorItem(RegItems.VERDITE_BOOTS);
+        armor(RegItems.VERDITE_HELMET);
+        armor(RegItems.VERDITE_CHESTPLATE);
+        armor(RegItems.VERDITE_LEGGINGS);
+        armor(RegItems.VERDITE_BOOTS);
         toolItem(RegItems.VERDITE_SWORD);
         toolItem(RegItems.VERDITE_PICKAXE);
         toolItem(RegItems.VERDITE_AXE);
@@ -198,21 +217,22 @@ public class GENItemModels extends ItemModelProvider {
         toolItem(RegItems.STEEL_HEAVYWORK_SHOVEL);
         toolItem(RegItems.STEEL_HEAVYWORK_HOE);
 
-        trimArmorItemDyeable(RegItems.BRONZE_HELMET);
-        trimArmorItemDyeable(RegItems.BRONZE_CHESTPLATE);
-        trimArmorItemDyeable(RegItems.BRONZE_LEGGINGS);
-        trimArmorItemDyeable(RegItems.BRONZE_BOOTS);
+        dyeableArmor(RegItems.BRONZE_DIVING_HELMET);
+        dyeableArmor(RegItems.BRONZE_DIVING_CHESTPLATE);
+        dyeableArmor(RegItems.BRONZE_DIVING_LEGGINGS);
+        dyeableArmor(RegItems.BRONZE_DIVING_BOOTS);
         misc(RegItems.BRONZE_RADAR);
 
-        trimArmorItem(RegItems.TUNGSTEN_HELMET);
-        trimArmorItem(RegItems.TUNGSTEN_CHESTPLATE);
-        trimArmorItem(RegItems.TUNGSTEN_LEGGINGS);
-        trimArmorItem(RegItems.TUNGSTEN_BOOTS);
+        armor(RegItems.TUNGSTEN_HELMET);
+        armor(RegItems.TUNGSTEN_CHESTPLATE);
+        armor(RegItems.TUNGSTEN_LEGGINGS);
+        armor(RegItems.TUNGSTEN_BOOTS);
         toolItem(RegItems.TUNGSTEN_SWORD);
         toolItem(RegItems.TUNGSTEN_PICKAXE);
         toolItem(RegItems.TUNGSTEN_AXE);
         toolItem(RegItems.TUNGSTEN_SHOVEL);
         toolItem(RegItems.TUNGSTEN_HOE);
+        compat(fd, FDRegistry.TUNGSTEN_KNIFE);
 
         misc(RegItems.BRONZE_HORSE_ARMOR);
         misc(RegItems.STEEL_HORSE_ARMOR);
@@ -227,6 +247,8 @@ public class GENItemModels extends ItemModelProvider {
         shieldItem(RegItems.VERDITE_SHIELD, "medium");
         shieldItem(RegItems.MOONSTONE_SHIELD, "medium");
         shieldItem(RegItems.AETHERSTEEL_SHIELD, "big");
+        shieldItem(RegItems.TUNGSTEN_SHIELD, "small");
+        shieldItem(RegItems.CASSITERITE_SHIELD, "small");
 
         block(RegBlocks.RAW_CASSITERITE_BLOCK);
         block(RegBlocks.CASSITERITE_ORE);
@@ -268,10 +290,16 @@ public class GENItemModels extends ItemModelProvider {
         
         block(RegBlocks.TUNGSTEN_BLOCK);
         block(RegBlocks.POLISHED_TUNGSTEN);
+        block(RegBlocks.POLISHED_TUNGSTEN_SLAB);
+        block(RegBlocks.POLISHED_TUNGSTEN_STAIR);
         block(RegBlocks.CUT_TUNGSTEN_BLOCK);
+        block(RegBlocks.CUT_TUNGSTEN_SLAB);
+        block(RegBlocks.CUT_TUNGSTEN_STAIR);
         block(RegBlocks.CHISELED_TUNGSTEN_BRICKS);
         block(RegBlocks.CHISELED_TUNGSTEN_BLOCK);
         block(RegBlocks.TUNGSTEN_BRICKS);
+        block(RegBlocks.TUNGSTEN_BRICKS_SLAB);
+        block(RegBlocks.TUNGSTEN_BRICKS_STAIR);
 
         block(RegBlocks.DECAYING_TUNGSTEN_BLOCK);
         block(RegBlocks.POLISHED_DECAYING_TUNGSTEN);

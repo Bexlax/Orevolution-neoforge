@@ -3,19 +3,22 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "orevolution:tin_ingot"
+      "tag": "c:ingots/tin"
     },
     "B": {
       "item": "orevolution:celestite_shard"
     },
     "C": {
-      "item": "minecraft:copper_ingot"
+      "tag": "c:ingots/copper"
+    },
+    "D": {
+      "tag": "c:nuggets/tin"
     }
   },
   "pattern": [
     "ACA",
-    "ABA",
-    "AAA"
+    "DBD",
+    "DDD"
   ],
   "result": {
     "count": 1,

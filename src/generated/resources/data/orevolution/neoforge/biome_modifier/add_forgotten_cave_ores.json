@@ -3,8 +3,7 @@
   "biomes": "orevolution:forgotten_cave",
   "features": [
     "orevolution:chert_disk",
-    "orevolution:chert_patch",
-    "orevolution:quartzolite_disk"
+    "orevolution:chert_patch"
   ],
   "step": "underground_ores"
 }

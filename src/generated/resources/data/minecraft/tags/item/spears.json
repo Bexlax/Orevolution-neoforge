@@ -23,6 +23,14 @@
     {
       "id": "orevolution:moonstone_spear",
       "required": false
+    },
+    {
+      "id": "orevolution:cassiterite_spear",
+      "required": false
+    },
+    {
+      "id": "orevolution:tungsten_spear",
+      "required": false
     }
   ]
 }

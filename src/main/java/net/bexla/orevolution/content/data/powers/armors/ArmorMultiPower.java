@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArmorMultiPower extends OrevolutionArmorPower {
-    private final List<OrevolutionArmorPower> powers;
+    private final List<IArmorPower> powers;
 
-    public ArmorMultiPower(List<OrevolutionArmorPower> powers) {
+    public ArmorMultiPower(List<IArmorPower> powers) {
         super("", IConditional.always());
         this.powers = powers;
     }
@@ -44,14 +44,14 @@ public class ArmorMultiPower extends OrevolutionArmorPower {
         return tips;
     }
 
-    public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
-        for(OrevolutionArmorPower p : this.powers) {
-            p.onTickWhileWorn(stack, wearer, slot);
+    public void onTickWhileWorn(ItemStack helmet, LivingEntity wearer, EquipmentSlot slot) {
+        for(IArmorPower p : this.powers) {
+            p.onTickWhileWorn(helmet, wearer, slot);
         }
     }
 
     public float onDamaged(LivingEntity wearer, DamageSource source, float amount) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             return p.onDamaged(wearer, source, amount);
         }
         return super.onDamaged(wearer, source, amount);
@@ -59,14 +59,14 @@ public class ArmorMultiPower extends OrevolutionArmorPower {
 
     @Override
     public void onAttackTarget(LivingEntity wearer, LivingEntity target) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             p.onAttackTarget(wearer, target);
         }
     }
 
     @Override
     public boolean onDeath(LivingEntity wearer, DamageSource source) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             return p.onDeath(wearer, source);
         }
         return false;
@@ -74,7 +74,7 @@ public class ArmorMultiPower extends OrevolutionArmorPower {
 
     @Override
     public boolean onFall(LivingEntity wearer, float distance, float damageMultiplier) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             return p.onFall(wearer, distance, damageMultiplier);
         }
         return false;
@@ -82,21 +82,21 @@ public class ArmorMultiPower extends OrevolutionArmorPower {
 
     @Override
     public void onKnockback(LivingEntity wearer, float strength, double ratioX, double ratioZ) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             p.onKnockback(wearer, strength, ratioX, ratioZ);
         }
     }
 
     @Override
     public void onEquip(LivingEntity wearer) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             p.onEquip(wearer);
         }
     }
 
     @Override
     public void onUnequip(LivingEntity wearer) {
-        for(OrevolutionArmorPower p : this.powers) {
+        for(IArmorPower p : this.powers) {
             p.onUnequip(wearer);
         }
     }

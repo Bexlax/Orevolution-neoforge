@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ancient_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:ancient_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:ancient_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ancient_fruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:ancient_stew"
+    ]
+  }
+}

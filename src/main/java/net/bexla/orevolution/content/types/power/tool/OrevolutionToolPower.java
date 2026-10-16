@@ -4,6 +4,7 @@ import net.bexla.orevolution.content.interfaces.IConditional;
 import net.bexla.orevolution.content.interfaces.IToolPower;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.LivingEntity;
@@ -34,7 +35,7 @@ public class OrevolutionToolPower implements IToolPower {
         Object[] objects = addTooltipValue();
         tips.add(Component.translatable("power.orevolution." + this.tooltip_id, objects).withStyle(ChatFormatting.GREEN));
         if(condition != null) {
-            tips.add(condition.withStyle(ChatFormatting.DARK_GRAY));
+            tips.add(CommonComponents.space().append(condition.withStyle(ChatFormatting.DARK_GRAY)));
         }
 
         if (Screen.hasControlDown()) {
@@ -56,6 +57,11 @@ public class OrevolutionToolPower implements IToolPower {
     }
 
     public List<MutableComponent> ctrlTooltip() {
+        String path = "power.orevolution.explanation." + this.tooltip_id;
+        MutableComponent ctrlTip = Component.translatable(path);
+
+        if(!ctrlTip.getString().equals(path))
+            return List.of(ctrlTip);
         return null;
     }
 

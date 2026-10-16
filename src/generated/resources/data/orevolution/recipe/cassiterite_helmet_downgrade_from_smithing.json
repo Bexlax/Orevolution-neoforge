@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:ingots/tin"
+  },
+  "base": {
+    "item": "orevolution:cassiterite_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tin_helmet"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

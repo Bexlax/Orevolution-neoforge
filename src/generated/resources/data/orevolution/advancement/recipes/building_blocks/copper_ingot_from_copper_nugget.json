@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:copper_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "orevolution:copper_ingot_from_copper_nugget"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "orevolution:copper_ingot_from_copper_nugget"
+    ]
+  }
+}

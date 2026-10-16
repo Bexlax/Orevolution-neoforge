@@ -32,6 +32,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
@@ -123,6 +124,12 @@ public class OrevolutionClient {
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
         event.register(
                 (stack, i) -> i > 0 ? -1 : DyedItemColor.getOrDefault(stack, -6265536),
+                RegItems.BRONZE_DIVING_HELMET.get(), RegItems.BRONZE_DIVING_CHESTPLATE.get(), RegItems.BRONZE_DIVING_LEGGINGS.get(), RegItems.BRONZE_DIVING_BOOTS.get(),
+                RegItems.BRONZE_HELMET.get(), RegItems.BRONZE_CHESTPLATE.get(), RegItems.BRONZE_LEGGINGS.get(), RegItems.BRONZE_BOOTS.get()
+        );
+
+        event.register(
+                (stack, i) -> i > 0 ? -1 : DyedItemColor.getOrDefault(stack, FastColor.ARGB32.color(58, 179, 218)),
                 RegItems.BRONZE_HELMET.get(), RegItems.BRONZE_CHESTPLATE.get(), RegItems.BRONZE_LEGGINGS.get(), RegItems.BRONZE_BOOTS.get()
         );
     }
@@ -254,6 +261,27 @@ public class OrevolutionClient {
     public static void setup(FMLClientSetupEvent event) {
         ItemProperties.register(
                 RegItems.TIN_SHIELD.get(),
+                ResourceLocation.withDefaultNamespace("blocking"),
+                (stack, level, user, i) ->
+                        user != null && user.isUsingItem() && user.getUseItem() == stack ? 1.0F : 0.0F
+        );
+
+        ItemProperties.register(
+                RegItems.CASSITERITE_SHIELD.get(),
+                ResourceLocation.withDefaultNamespace("blocking"),
+                (stack, level, user, i) ->
+                        user != null && user.isUsingItem() && user.getUseItem() == stack ? 1.0F : 0.0F
+        );
+
+        ItemProperties.register(
+                RegItems.TUNGSTEN_SHIELD.get(),
+                ResourceLocation.withDefaultNamespace("blocking"),
+                (stack, level, user, i) ->
+                        user != null && user.isUsingItem() && user.getUseItem() == stack ? 1.0F : 0.0F
+        );
+
+        ItemProperties.register(
+                RegItems.STEEL_HEAVY_SHIELD.get(),
                 ResourceLocation.withDefaultNamespace("blocking"),
                 (stack, level, user, i) ->
                         user != null && user.isUsingItem() && user.getUseItem() == stack ? 1.0F : 0.0F

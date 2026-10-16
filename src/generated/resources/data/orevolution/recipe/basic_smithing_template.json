@@ -3,19 +3,22 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "minecraft:copper_ingot"
+      "tag": "c:ingots/copper"
     },
     "B": {
       "item": "minecraft:amethyst_shard"
     },
     "C": {
-      "item": "orevolution:tin_ingot"
+      "tag": "c:ingots/tin"
+    },
+    "D": {
+      "tag": "c:nuggets/copper"
     }
   },
   "pattern": [
     "ACA",
-    "ABA",
-    "AAA"
+    "DBD",
+    "DDD"
   ],
   "result": {
     "count": 1,

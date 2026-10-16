@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "c:ingots/tungsten"
+  },
+  "base": {
+    "item": "farmersdelight:golden_knife"
+  },
+  "result": {
+    "count": 1,
+    "id": "orevolution:tungsten_knife"
+  },
+  "template": {
+    "item": "orevolution:basic_smithing_template"
+  }
+}

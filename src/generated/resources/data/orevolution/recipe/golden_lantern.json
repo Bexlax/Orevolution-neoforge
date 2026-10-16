@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "A": {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     },
     "I": {
       "item": "minecraft:torch"

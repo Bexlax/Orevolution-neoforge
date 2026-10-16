@@ -81,7 +81,7 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
 
     @Unique
     private static ResourceKey<TrimPattern> getPattern(ItemStack stack) {
-        if (stack.is(RegItems.BRONZE_CHESTPLATE)) return TrimArmorPatterns.BRONZE;
+        if (stack.is(RegItems.BRONZE_DIVING_CHESTPLATE)) return TrimArmorPatterns.BRONZE;
 
         if (stack.is(RegItems.AETHERSTEEL_CHESTPLATE)) return TrimArmorPatterns.AETHERSTEEL;
 

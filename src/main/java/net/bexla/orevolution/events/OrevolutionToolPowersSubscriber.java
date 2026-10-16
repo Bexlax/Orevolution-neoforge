@@ -16,6 +16,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
@@ -82,7 +83,7 @@ public class OrevolutionToolPowersSubscriber {
     }
 
     @SubscribeEvent
-    public static void onLivingDamaged(CriticalHitEvent evt) {
+    public static void onCriticalHit(CriticalHitEvent evt) {
         if(!(evt.getTarget() instanceof LivingEntity target)) return;
 
         Player player = evt.getEntity();
@@ -98,6 +99,19 @@ public class OrevolutionToolPowersSubscriber {
         }
 
         OrevolutionUtils.displayDebug(player, "new crit: " + evt.getDamageMultiplier() + ", vanilla crit: " + evt.getVanillaMultiplier());
+    }
+
+    @SubscribeEvent
+    public static void onRightClickUse(PlayerInteractEvent.RightClickBlock evt) {
+        Player player = evt.getEntity();
+
+        IToolPower power = getPower(player.getMainHandItem());
+
+        if (power != IToolPower.EMPTY) {
+            evt.setCancellationResult(
+                    power.useOnContext(evt.getItemStack(), player, evt.getHand(), evt.getHitVec(), evt.getCancellationResult())
+            );
+        }
     }
 
     @OnlyIn(Dist.CLIENT)

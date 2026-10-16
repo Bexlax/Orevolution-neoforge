@@ -20,29 +20,21 @@ public class PurificationMobEffect extends MobEffect {
 
         double radius = 1.0D + amplifier * 2.0D;
 
-        List<LivingEntity> nearby = entity.level().getEntitiesOfClass(
-                LivingEntity.class,
-                entity.getBoundingBox().inflate(radius),
-                target -> target != entity && target.getType().is(EntityTypeTags.UNDEAD)
-        );
+        List<LivingEntity> nearby = entity.level().getEntitiesOfClass(LivingEntity.class, entity.getBoundingBox().inflate(radius),
+                target -> target != entity && amplifier > 0? !target.getType().getCategory().isFriendly() : entity.getType().is(EntityTypeTags.UNDEAD));
 
         for (LivingEntity target : nearby) {
+            if(amplifier < 1 && !entity.getType().is(EntityTypeTags.UNDEAD)) continue;
             MobEffectInstance current = target.getEffect(RegMobEffects.PURIFICATION);
 
-            if (current == null || current.getDuration() < 40 || current.getAmplifier() < amplifier) {
-                target.addEffect(new MobEffectInstance(
-                        RegMobEffects.PURIFICATION,
-                        100,
-                        amplifier,
-                        false,
-                        true,
-                        true
-                ));
-            }
+            if (current == null || current.getDuration() < 40 || current.getAmplifier() < amplifier)
+                target.addEffect(new MobEffectInstance(RegMobEffects.PURIFICATION, 100, amplifier));
         }
 
-        if (entity.getType().is(EntityTypeTags.UNDEAD)) {
+        if (amplifier > 0? !entity.getType().getCategory().isFriendly() : entity.getType().is(EntityTypeTags.UNDEAD)) {
             entity.hurt(entity.damageSources().magic(), (amplifier + 1.0F) * 0.5F);
+        } else {
+            entity.heal((amplifier + 1.0F) * 0.5F);
         }
 
         return true;
@@ -50,7 +42,7 @@ public class PurificationMobEffect extends MobEffect {
 
     @Override
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
-        int i = 25 >> amplifier;
+        int i = 20 >> amplifier;
         return i == 0 || duration % i == 0;
     }
 }

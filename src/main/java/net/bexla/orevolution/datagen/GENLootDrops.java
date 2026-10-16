@@ -8,6 +8,7 @@ import net.bexla.orevolution.content.interfaces.IVinnelio;
 import net.bexla.orevolution.content.types.ModLoadedLootConditionBuilder;
 import net.bexla.orevolution.content.types.block.TallCorelioBlock;
 import net.bexla.orevolution.init.RegBlocks;
+import net.bexla.orevolution.init.RegDataComponents;
 import net.bexla.orevolution.init.RegItems;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
@@ -202,6 +203,15 @@ public class GENLootDrops extends LootTableProvider {
 
             dropSelf(RegBlocks.CUT_STEEL_STAIR.get());
             slab(RegBlocks.CUT_STEEL_SLAB);
+
+            dropSelf(RegBlocks.TUNGSTEN_BRICKS_STAIR.get());
+            slab(RegBlocks.TUNGSTEN_BRICKS_SLAB);
+
+            dropSelf(RegBlocks.POLISHED_TUNGSTEN_STAIR.get());
+            slab(RegBlocks.POLISHED_TUNGSTEN_SLAB);
+
+            dropSelf(RegBlocks.CUT_TUNGSTEN_STAIR.get());
+            slab(RegBlocks.CUT_TUNGSTEN_SLAB);
 
             dropSelf(RegBlocks.MOONSTONE.get());
             dropSelf(RegBlocks.PLATINUM_TILES.get());
@@ -402,11 +412,16 @@ public class GENLootDrops extends LootTableProvider {
 
         @Override
             public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> consumer) {
-                consumer.accept(OrevolutionKeys.LootTables.END_CITY, LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(RegItems.AETHERSTEEL_TEMPLATE.get()))
-                                .add(EmptyLootItem.emptyItem().setWeight(9))));
+            consumer.accept(OrevolutionKeys.LootTables.END_CITY, LootTable.lootTable()
+                    .withPool(LootPool.lootPool()
+                            .setRolls(UniformGenerator.between(1.0F, 3.0F))
+                            .add(LootItem.lootTableItem(RegItems.AETHERSTEEL_TEMPLATE.get()).setWeight(1))
+                            .add(platinumItem(RegItems.PLATINUM_SWORD.get(), registries))
+                            .add(platinumItem(RegItems.PLATINUM_PICKAXE.get(), registries))
+                            .add(platinumItem(RegItems.PLATINUM_AXE.get(), registries))
+                            .add(platinumItem(RegItems.PLATINUM_SHOVEL.get(), registries))
+                            .add(platinumItem(RegItems.PLATINUM_HOE.get(), registries))
+                            .add(EmptyLootItem.emptyItem().setWeight(5))));
 
                 consumer.accept(OrevolutionKeys.LootTables.ABANDONED_MINESHAFT, LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -560,6 +575,17 @@ public class GENLootDrops extends LootTableProvider {
                             .add(EmptyLootItem.emptyItem().setWeight(9))
                     ));
             }
+
+            private static LootItem.Builder platinumItem(Item item, HolderLookup.Provider registries) {
+                return LootItem.lootTableItem(item)
+                        .setWeight(2)
+                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(registries))
+                        .when(LootItemRandomChanceCondition.randomChance(0.2F))
+                        .apply(SetComponentsFunction.setComponent(
+                                RegDataComponents.REINFORCED.get(), true))
+                        .apply(SetComponentsFunction.setComponent(
+                                RegDataComponents.MAX_DAMAGE_MULTIPLIER.get(), 1.5D));
+            }
         }
 
     private static class EntityLoot extends EntityLootSubProvider {
@@ -603,104 +629,136 @@ public class GENLootDrops extends LootTableProvider {
                     .withPool(LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1.0F))
                             .add(LootItem.lootTableItem(Items.COOKED_PORKCHOP)
-                                    .setWeight(9)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
+                                    .setWeight(8)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 6.0F))))
                             .add(LootItem.lootTableItem(Items.ENDER_PEARL)
                                     .setWeight(8)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F))))
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
                             .add(LootItem.lootTableItem(Items.POTION)
-                                    .setWeight(7)
-                                    .apply(SetPotionFunction.setPotion(Potions.FIRE_RESISTANCE)))
-                            .add(LootItem.lootTableItem(Items.BONE_BLOCK)
                                     .setWeight(6)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
-                            .add(LootItem.lootTableItem(Items.CROSSBOW)
+                                    .apply(SetPotionFunction.setPotion(Potions.FIRE_RESISTANCE)))
+                            .add(LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                     .setWeight(5)
-                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.1F, 0.9F)))
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
+                            .add(LootItem.lootTableItem(Items.BONE_BLOCK)
+                                    .setWeight(4)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))))
+                            .add(LootItem.lootTableItem(Items.QUARTZ)
+                                    .setWeight(7)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
+                            .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
+                                    .setWeight(5)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(6.0F, 12.0F))))
+                            .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
+                                    .setWeight(4)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 4.0F))))
+                            .add(LootItem.lootTableItem(Items.CROSSBOW)
+                                    .setWeight(3)
+                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.25F, 0.85F)))
                                     .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
                                             registrylookup.getOrThrow(Enchantments.QUICK_CHARGE),
                                             registrylookup.getOrThrow(Enchantments.UNBREAKING)))))
                             .add(LootItem.lootTableItem(Items.SPECTRAL_ARROW)
-                                    .setWeight(6)
+                                    .setWeight(5)
                                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
                             .add(LootItem.lootTableItem(RegItems.FIERY_ARROW)
-                                    .setWeight(6)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 8.0F))))
-                            .add(LootItem.lootTableItem(Items.QUARTZ)
-                                    .setWeight(8)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 20.0F))))
-                            .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
-                                    .setWeight(6)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(8.0F, 16.0F))))
-                            .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
-                                    .setWeight(5)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 6.0F))))
+                                    .setWeight(4)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 6.0F))))
                             .add(LootItem.lootTableItem(Items.GOLDEN_SWORD)
-                                    .setWeight(5)
+                                    .setWeight(2)
                                     .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.45F)))
                                     .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
                                             registrylookup.getOrThrow(Enchantments.LOOTING),
                                             registrylookup.getOrThrow(Enchantments.KNOCKBACK),
-                                            registrylookup.getOrThrow(Enchantments.MENDING)))))
+                                            registrylookup.getOrThrow(Enchantments.FIRE_ASPECT),
+                                            registrylookup.getOrThrow(Enchantments.UNBREAKING)))))
                             .add(LootItem.lootTableItem(Items.IRON_SWORD)
-                                    .setWeight(4)
-                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.10F, 0.80F)))
+                                    .setWeight(2)
+                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.65F)))
                                     .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
                                             registrylookup.getOrThrow(Enchantments.SHARPNESS),
                                             registrylookup.getOrThrow(Enchantments.SMITE),
+                                            registrylookup.getOrThrow(Enchantments.BANE_OF_ARTHROPODS),
+                                            registrylookup.getOrThrow(Enchantments.KNOCKBACK),
                                             registrylookup.getOrThrow(Enchantments.SWEEPING_EDGE)))))
-                            .add(LootItem.lootTableItem(Items.BOOK)
-                                    .setWeight(3)
-                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(registrylookup.getOrThrow(Enchantments.SOUL_SPEED))))
-                            .add(LootItem.lootTableItem(Items.IRON_BOOTS)
-                                    .setWeight(4)
-                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(registrylookup.getOrThrow(Enchantments.SOUL_SPEED))))
-                            .add(LootItem.lootTableItem(Items.IRON_LEGGINGS)
-                                    .setWeight(4)
-                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(registrylookup.getOrThrow(Enchantments.VANISHING_CURSE)))
-                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.45F))))
-                            .add(LootItem.lootTableItem(Items.GOLDEN_CHESTPLATE)
-                                    .setWeight(4)
-                                    .apply(new EnchantRandomlyFunction.Builder()
-                                            .withOneOf(HolderSet.direct(
-                                                    registrylookup.getOrThrow(Enchantments.THORNS),
-                                                    registrylookup.getOrThrow(Enchantments.UNBREAKING))))
-                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.45F))))
-                            .add(LootItem.lootTableItem(Items.GOLDEN_HELMET)
-                                    .setWeight(3)
-                                    .apply(new EnchantRandomlyFunction.Builder() .withOneOf(HolderSet.direct(
-                                            registrylookup.getOrThrow(Enchantments.MENDING),
-                                            registrylookup.getOrThrow(Enchantments.RESPIRATION)))))
-                            .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR)
-                                    .setWeight(3)))
-                    .withPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.65F))
-                            .setRolls(ConstantValue.exactly(1.0F))
-                            .add(LootItem.lootTableItem(RegItems.REINFORCED_TEMPLATE.get())
-                                    .setWeight(5))
-                            .add(LootItem.lootTableItem(RegItems.COATING_TEMPLATE.get())
-                                    .setWeight(5))
-                            .add(LootItem.lootTableItem(Items.DIAMOND)
-                                    .setWeight(1)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 7.0F))))
                             .add(LootItem.lootTableItem(Items.GOLDEN_PICKAXE)
-                                    .setWeight(2)
+                                    .setWeight(3)
                                     .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.45F)))
-                                    .apply(new EnchantRandomlyFunction.Builder()
-                                            .withOneOf(HolderSet.direct(
-                                                    registrylookup.getOrThrow(Enchantments.EFFICIENCY),
-                                                    registrylookup.getOrThrow(Enchantments.SILK_TOUCH),
-                                                    registrylookup.getOrThrow(Enchantments.UNBREAKING)))))
-                            .add(LootItem.lootTableItem(Items.GOLDEN_APPLE)
-                                    .setWeight(10)
-                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                            .add(LootItem.lootTableItem(RegItems.STEEL_HORSE_ARMOR)
-                                    .setWeight(10))
+                                    .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
+                                            registrylookup.getOrThrow(Enchantments.EFFICIENCY),
+                                            registrylookup.getOrThrow(Enchantments.SILK_TOUCH),
+                                            registrylookup.getOrThrow(Enchantments.UNBREAKING),
+                                            registrylookup.getOrThrow(Enchantments.FORTUNE)))))
+                            .add(LootItem.lootTableItem(Items.IRON_BOOTS)
+                                    .setWeight(2)
+                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.55F)))
+                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(
+                                            registrylookup.getOrThrow(Enchantments.SOUL_SPEED))))
+                            .add(LootItem.lootTableItem(Items.IRON_LEGGINGS)
+                                    .setWeight(2)
+                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.55F)))
+                                    .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
+                                            registrylookup.getOrThrow(Enchantments.PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.BLAST_PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.PROJECTILE_PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.VANISHING_CURSE)))))
+                            .add(LootItem.lootTableItem(Items.GOLDEN_CHESTPLATE)
+                                    .setWeight(2)
+                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.55F)))
+                                    .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
+                                            registrylookup.getOrThrow(Enchantments.THORNS),
+                                            registrylookup.getOrThrow(Enchantments.UNBREAKING),
+                                            registrylookup.getOrThrow(Enchantments.PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.FIRE_PROTECTION)))))
+                            .add(LootItem.lootTableItem(Items.GOLDEN_HELMET)
+                                    .setWeight(2)
+                                    .apply(SetItemDamageFunction.setDamage(UniformGenerator.between(0.15F, 0.55F)))
+                                    .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
+                                            registrylookup.getOrThrow(Enchantments.RESPIRATION),
+                                            registrylookup.getOrThrow(Enchantments.AQUA_AFFINITY),
+                                            registrylookup.getOrThrow(Enchantments.PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.UNBREAKING)))))
+                            .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR)
+                                    .setWeight(2))
+                            .add(LootItem.lootTableItem(RegItems.STEEL_HORSE_ARMOR.get())
+                                    .setWeight(4))
                             .add(LootItem.lootTableItem(Items.BOOK)
-                                    .setWeight(5)
-                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(registrylookup.getOrThrow(Enchantments.SWEEPING_EDGE))))
+                                    .setWeight(8)
+                                    .apply(new EnchantRandomlyFunction.Builder().withOneOf(HolderSet.direct(
+                                            registrylookup.getOrThrow(Enchantments.AQUA_AFFINITY),
+                                            registrylookup.getOrThrow(Enchantments.BANE_OF_ARTHROPODS),
+                                            registrylookup.getOrThrow(Enchantments.BLAST_PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.BREACH),
+                                            registrylookup.getOrThrow(Enchantments.EFFICIENCY),
+                                            registrylookup.getOrThrow(Enchantments.FEATHER_FALLING),
+                                            registrylookup.getOrThrow(Enchantments.FIRE_ASPECT),
+                                            registrylookup.getOrThrow(Enchantments.FIRE_PROTECTION),
+                                            registrylookup.getOrThrow(Enchantments.INFINITY),
+                                            registrylookup.getOrThrow(Enchantments.KNOCKBACK),
+                                            registrylookup.getOrThrow(Enchantments.LOOTING),
+                                            registrylookup.getOrThrow(Enchantments.LOYALTY),
+                                            registrylookup.getOrThrow(Enchantments.LUCK_OF_THE_SEA),
+                                            registrylookup.getOrThrow(Enchantments.LURE),
+                                            registrylookup.getOrThrow(Enchantments.MULTISHOT),
+                                            registrylookup.getOrThrow(Enchantments.PIERCING),
+                                            registrylookup.getOrThrow(Enchantments.POWER),
+                                            registrylookup.getOrThrow(Enchantments.THORNS),
+                                            registrylookup.getOrThrow(Enchantments.UNBREAKING),
+                                            registrylookup.getOrThrow(Enchantments.VANISHING_CURSE),
+                                            registrylookup.getOrThrow(Enchantments.BINDING_CURSE),
+                                            registrylookup.getOrThrow(Enchantments.WIND_BURST)))))
                             .add(LootItem.lootTableItem(Items.BOOK)
                                     .setWeight(1)
-                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(registrylookup.getOrThrow(Enchantments.MENDING))))
+                                    .apply(new EnchantRandomlyFunction.Builder().withEnchantment(
+                                            registrylookup.getOrThrow(Enchantments.MENDING))))
+                            .add(LootItem.lootTableItem(RegItems.REINFORCED_TEMPLATE.get())
+                                    .setWeight(2))
+                            .add(LootItem.lootTableItem(RegItems.COATING_TEMPLATE.get())
+                                    .setWeight(2))
+                            .add(LootItem.lootTableItem(Items.DIAMOND)
+                                    .setWeight(2)
+                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))
+                            )
                     ));
         }
     }

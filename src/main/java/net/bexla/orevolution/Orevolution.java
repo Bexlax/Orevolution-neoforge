@@ -36,7 +36,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static net.bexla.orevolution.content.data.OrevolutionTiers.ArmorMats.ARMOR_MATERIALS;
+import static net.bexla.orevolution.content.data.OrevolutionTiers.ArmorMaterials.ARMOR_MATERIALS;
 
 @Mod(Orevolution.MODID)
 public class Orevolution {
@@ -82,12 +82,16 @@ public class Orevolution {
         boolean hasNone = !hasBiolith && !hasTerrablender;
 
         event.enqueueWork(() -> {
-            RegOthers.miscRegister();
+            RegTierCapabilities.miscRegister();
 
             FireBlock fire = (FireBlock) Blocks.FIRE;
             fire.setFlammable(RegBlocks.RDX.get(), 15, 100);
 
             List<DeferredItem<Item>> bronze = List.of(
+                    RegItems.BRONZE_DIVING_BOOTS,
+                    RegItems.BRONZE_DIVING_CHESTPLATE,
+                    RegItems.BRONZE_DIVING_LEGGINGS,
+                    RegItems.BRONZE_DIVING_HELMET,
                     RegItems.BRONZE_BOOTS,
                     RegItems.BRONZE_CHESTPLATE,
                     RegItems.BRONZE_LEGGINGS,

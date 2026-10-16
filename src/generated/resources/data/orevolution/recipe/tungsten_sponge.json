@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "orevolution:tungsten_ingot"
+      "tag": "c:ingots/tungsten"
     },
     "X": {
       "item": "minecraft:sponge"

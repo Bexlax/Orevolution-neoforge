@@ -1,17 +1,14 @@
 package net.bexla.orevolution.content.data.utility;
 
-import com.google.common.collect.ImmutableList;
 import com.mojang.logging.LogUtils;
 import net.bexla.orevolution.OrevolutionConfig;
 import net.bexla.orevolution.init.RegItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
@@ -23,11 +20,9 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
@@ -39,19 +34,17 @@ import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
-import java.util.List;
 
 import static net.bexla.orevolution.Orevolution.lc;
 
 public class OrevolutionUtils {
-    public static float durabilityPercentage(ItemStack stack) {
-        float durabilityPercent = 1.0F - ((float) stack.getDamageValue() / stack.getMaxDamage());
+    public static final SoundType MOONSTONE = new SoundType(
+            1.0F, 1.0F, SoundEvents.COPPER_BULB_BREAK, SoundEvents.TUFF_BRICKS_STEP, SoundEvents.VAULT_PLACE, SoundEvents.VAULT_HIT, SoundEvents.COPPER_BULB_HIT
+    );
 
-        float missingDurability = 1.0F - durabilityPercent;
-
-        return 1.0F + (float)Math.pow(missingDurability, 1.5F) * 3F;
-    }
-
+    public static final SoundType CELESTITE_BLOCK = new SoundType(
+            1.0F, 1.65F, SoundEvents.CHAIN_BREAK, SoundEvents.VAULT_STEP, SoundEvents.AMETHYST_BLOCK_PLACE, SoundEvents.ANCIENT_DEBRIS_HIT, SoundEvents.CHAIN_FALL
+    );
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public static void displayDebug(Player player, String message, Object... args) {
@@ -85,13 +78,11 @@ public class OrevolutionUtils {
         }
     }
 
-    public static final SoundType MOONSTONE = new SoundType(
-            1.0F, 1.0F, SoundEvents.COPPER_BULB_BREAK, SoundEvents.TUFF_BRICKS_STEP, SoundEvents.VAULT_PLACE, SoundEvents.VAULT_HIT, SoundEvents.COPPER_BULB_HIT
-    );
-
-    public static final SoundType CELESTITE_BLOCK = new SoundType(
-            1.0F, 1.65F, SoundEvents.CHAIN_BREAK, SoundEvents.VAULT_STEP, SoundEvents.AMETHYST_BLOCK_PLACE, SoundEvents.ANCIENT_DEBRIS_HIT, SoundEvents.CHAIN_FALL
-    );
+    public static float durabilityPercentage(ItemStack stack, float minValue, float maxValue, float exponent) {
+        float durabilityPercent = 1.0F - ((float) stack.getDamageValue() / stack.getMaxDamage());
+        float missingDurability = 1.0F - durabilityPercent;
+        return minValue + (maxValue - minValue) * (float) Math.pow(missingDurability, exponent);
+    }
 
     public static @Nullable TagKey<Block> getToolTag(ItemStack stack) {
         Tool tool = stack.get(DataComponents.TOOL);
@@ -108,21 +99,6 @@ public class OrevolutionUtils {
         }
 
         return null;
-    }
-
-    public static int searchForItem(Inventory inventory, ItemStack stack) {
-        final List<NonNullList<ItemStack>> compartments = ImmutableList.of(inventory.items, inventory.armor, inventory.offhand);
-
-        for (NonNullList<ItemStack> lists : compartments) {
-            for (int i = 0; i < lists.size(); i++) {
-                if (!inventory.items.get(i).isEmpty() && ItemStack.isSameItemSameComponents(stack, inventory.items.get(i))) {
-                    displayDebug(inventory.player, "found item in slot: " + i);
-                    return i;
-                }
-            }
-        }
-
-        return -1;
     }
 
     public static ItemStack totemInHotbar(Player player, DataComponentType<Unit> component) {
@@ -161,11 +137,21 @@ public class OrevolutionUtils {
         if (state.is(BlockTags.MINEABLE_WITH_HOE))
             return BlockTags.MINEABLE_WITH_HOE;
 
+        String hoe = BlockTags.MINEABLE_WITH_HOE.location().getPath();
+        String shovel = BlockTags.MINEABLE_WITH_SHOVEL.location().getPath();
+        String axe = BlockTags.MINEABLE_WITH_AXE.location().getPath();
+        String pickaxe = BlockTags.MINEABLE_WITH_PICKAXE.location().getPath();
+
         return state.getTags()
-                .filter(tag -> tag.location().getPath().startsWith("mineable/"))
+                .filter(tag -> {
+                    String path = tag.location().getPath();
+
+                    return path.startsWith("mineable/") && !(path.contains(hoe) || path.contains(shovel) || path.contains(axe) || path.contains(pickaxe));
+                })
                 .findFirst()
                 .orElse(null);
     }
+
     public static boolean isWearingFullSet(LivingEntity entity, Holder<ArmorMaterial> material) {
         return entity.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ArmorItem head &&
                 entity.getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof ArmorItem chest &&
@@ -177,15 +163,8 @@ public class OrevolutionUtils {
                 feet.getMaterial().value() == material.value();
     }
 
-    public static boolean isFullArmorTagged(LivingEntity entity, TagKey<Item> tag) {
-        return entity.getItemBySlot(EquipmentSlot.HEAD).is(tag) &&
-                entity.getItemBySlot(EquipmentSlot.CHEST).is(tag) &&
-                        entity.getItemBySlot(EquipmentSlot.LEGS).is(tag) &&
-                        entity.getItemBySlot(EquipmentSlot.FEET).is(tag);
-    }
-
     @Nullable
-    public static Holder<ArmorMaterial> getCurrentFullSet(LivingEntity entity) {
+    public static Holder<ArmorMaterial> getFullSetMaterial(LivingEntity entity) {
         ItemStack helmet = entity.getItemBySlot(EquipmentSlot.HEAD);
 
         if (!(helmet.getItem() instanceof ArmorItem armorItem))
@@ -196,19 +175,6 @@ public class OrevolutionUtils {
         return isWearingFullSet(entity, material)
                 ? material
                 : null;
-    }
-
-    private static int findComponent(List<Component> tooltip, String translationKey) {
-        for (int i = 0; i < tooltip.size(); i++) {
-            Component component = tooltip.get(i);
-
-            if (component.getContents() instanceof TranslatableContents contents &&
-                    contents.getKey().equals(translationKey)) {
-                return i;
-            }
-        }
-
-        return -1;
     }
 
     public static void simulateBlockBreaking(Player player, ItemStack stack, BlockPos pos, BlockState state, ItemStack itemToDrop, Level level) {

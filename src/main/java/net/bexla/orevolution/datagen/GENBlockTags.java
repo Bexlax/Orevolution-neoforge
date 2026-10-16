@@ -317,50 +317,48 @@ public class GENBlockTags extends BlockTagsProvider {
 
         tag(OrevolutionTags.Blocks.NEEDS_AETHERSTEEL_TOOL);
 
-        tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+        tag(OrevolutionTags.Blocks.WOOD_HARVEST_RESTRICTION_DEFAULTS).addTags(
+                BlockTags.INCORRECT_FOR_WOODEN_TOOL
+        );
+
+        tag(OrevolutionTags.Blocks.STONE_HARVEST_RESTRICTION_DEFAULTS)
                 .addTags(
                         BlockTags.ANVIL,
+                        BlockTags.INCORRECT_FOR_STONE_TOOL,
                         OrevolutionTags.Blocks.NEEDS_TIN_TOOL,
-                        OrevolutionTags.Blocks.NEEDS_PLATINUM_TOOL,
-                        OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL
+                        OrevolutionTags.Blocks.NEEDS_PLATINUM_TOOL
                 );
 
-        tag(OrevolutionTags.Blocks.INCORRECT_FOR_TIN_ALT)
-                .addTags(
-                        BlockTags.IRON_ORES,
-                        BlockTags.NEEDS_IRON_TOOL,
-                        BlockTags.INCORRECT_FOR_IRON_TOOL,
-                        OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL
-                );
+        tag(OrevolutionTags.Blocks.TIN_HARVEST_RESTRICTION_DEFAULTS)
+                .addTags(OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL);
 
         tag(OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL)
                 .addTags(
                         BlockTags.NEEDS_IRON_TOOL,
                         BlockTags.INCORRECT_FOR_IRON_TOOL
-                );
+                ).remove(OrevolutionTags.Blocks.NEEDS_TIN_TOOL);
 
-        tag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+
+        tag(OrevolutionTags.Blocks.IRON_HARVEST_RESTRICTION_DEFAULTS)
                 .addTags(
+                        BlockTags.INCORRECT_FOR_IRON_TOOL,
                         OrevolutionTags.Blocks.NEEDS_PLATINUM_TOOL,
                         OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL
                 );
 
-        tag(OrevolutionTags.Blocks.INCORRECT_FOR_MOONSTONE_TOOL)
-                .addTags(
-                        OrevolutionTags.Blocks.NEEDS_PLATINUM_TOOL,
-                        BlockTags.INCORRECT_FOR_DIAMOND_TOOL
-                );
+        tag(OrevolutionTags.Blocks.GOLD_HARVEST_RESTRICTION_DEFAULTS).addTags(OrevolutionTags.Blocks.IRON_HARVEST_RESTRICTION_DEFAULTS);
+
+        tag(OrevolutionTags.Blocks.PLATINUM_HARVEST_RESTRICTION_DEFAULTS).addTags(OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL);
 
         tag(OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL)
-                .addTags(
-                        BlockTags.INCORRECT_FOR_DIAMOND_TOOL
-                );
+                .addTags(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, BlockTags.NEEDS_DIAMOND_TOOL).remove(OrevolutionTags.Blocks.NEEDS_PLATINUM_TOOL);
 
-        tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
-                .add(
-                        RegBlocks.PRIMITIVE_AETHERROCK.get(),
-                        RegBlocks.AETHERSTEEL_BLOCK.get()
-                );
+        tag(OrevolutionTags.Blocks.DIAMOND_HARVEST_RESTRICTION_DEFAULTS).addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .add(RegBlocks.PRIMITIVE_AETHERROCK.get(), RegBlocks.AETHERSTEEL_BLOCK.get());
+
+        tag(OrevolutionTags.Blocks.NETHERITE_HARVEST_RESTRICTION_DEFAULTS).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL);
+        tag(OrevolutionTags.Blocks.INCORRECT_FOR_AETHERSTEEL_TOOL);
+        tag(OrevolutionTags.Blocks.AETHERSTEEL_HARVEST_RESTRICTION_DEFAULTS).addTag(OrevolutionTags.Blocks.INCORRECT_FOR_AETHERSTEEL_TOOL);
 
         tag(OrevolutionTags.Blocks.AUTOSMELT).addTags(
                 Tags.Blocks.ORES,

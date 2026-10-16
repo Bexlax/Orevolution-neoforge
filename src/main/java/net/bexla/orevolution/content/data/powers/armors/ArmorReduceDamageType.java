@@ -9,9 +9,9 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class ArmorReduceDamageType extends OrevolutionArmorPower {
     final TagKey<DamageType> damagetype;
-    final float damagePercentage;
+    final double damagePercentage;
 
-    public ArmorReduceDamageType(String tooltipId, IConditional conditional, TagKey<DamageType> damagetype, float damagePercentage) {
+    public ArmorReduceDamageType(String tooltipId, IConditional conditional, TagKey<DamageType> damagetype, double damagePercentage) {
         super(tooltipId, conditional);
         this.damagetype = damagetype;
         this.damagePercentage = damagePercentage;
@@ -28,6 +28,6 @@ public class ArmorReduceDamageType extends OrevolutionArmorPower {
     public float onDamaged(LivingEntity wearer, DamageSource source, float amount) {
         if(!condition(null, wearer.level(), wearer, source.getEntity() instanceof LivingEntity livingEntity? livingEntity : null)) return amount;
 
-        return source.is(damagetype)? amount * damagePercentage : amount;
+        return source.is(damagetype)? (float)(amount * damagePercentage) : amount;
     }
 }

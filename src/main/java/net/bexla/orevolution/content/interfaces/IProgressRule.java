@@ -1,11 +1,16 @@
 package net.bexla.orevolution.content.interfaces;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.TriState;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiPredicate;
 import java.util.function.Supplier;
 
@@ -13,32 +18,57 @@ import java.util.function.Supplier;
 public interface IProgressRule {
     TriState evaluate(ItemStack stack, BlockState state);
 
-    static IProgressRule configDisabled(Supplier<Boolean> enabled, TagKey<Block> tag) {
-        return (stack, state) -> !enabled.get() && state.is(tag) ? TriState.TRUE : TriState.DEFAULT;
+    static IProgressRule tag(Boolean enabled, TagKey<Block> tag) {
+        return (stack, state) -> enabled && state.is(tag) ? TriState.TRUE : TriState.DEFAULT;
     }
 
-    static IProgressRule configEnabled(Supplier<Boolean> enabled, TagKey<Block> tag) {
-        return (stack, state) -> enabled.get() && state.is(tag) ? TriState.TRUE : TriState.DEFAULT;
+    static IProgressRule incorrectList(Supplier<? extends List<? extends String>> entries) {
+        return new IProgressRule() {
+
+            private List<? extends String> cachedEntries;
+            private List<Restriction> restrictions = List.of();
+
+            @Override
+            public TriState evaluate(ItemStack stack, BlockState state) {
+                List<? extends String> currentEntries = entries.get();
+
+                if (currentEntries != cachedEntries) {
+                    cachedEntries = currentEntries;
+                    restrictions = parseRestrictions(currentEntries);
+                }
+
+                for (Restriction restriction : restrictions) {
+                    if (restriction.matches(state)) {
+                        return TriState.FALSE;
+                    }
+                }
+
+                return TriState.TRUE;
+            }
+
+        };
     }
 
-    static IProgressRule incorrectTag(Supplier<Boolean> enabled, TagKey<Block> tag) {
-        return (stack, state) -> enabled.get() && !state.is(tag) ? TriState.TRUE : TriState.DEFAULT;
+    private static List<Restriction> parseRestrictions(List<? extends String> entries) {
+        List<Restriction> restrictions = new ArrayList<>();
+
+        for (String entry : entries) {
+            if (entry == null || entry.isBlank()) continue;
+
+            if (entry.startsWith("#")) {
+                ResourceLocation id = ResourceLocation.parse(entry.substring(1));
+
+                restrictions.add(new TagRestriction(TagKey.create(Registries.BLOCK, id)));
+            } else {
+                restrictions.add(new BlockRestriction(ResourceLocation.parse(entry)));
+            }
+        }
+
+        return List.copyOf(restrictions);
     }
 
     static IProgressRule predicate(BiPredicate<ItemStack, BlockState> predicate) {
         return (stack, state) -> predicate.test(stack, state) ? TriState.TRUE : TriState.DEFAULT;
-    }
-
-    default IProgressRule not() {
-        return (stack, state) -> {
-            TriState result = evaluate(stack, state);
-
-            return switch (result) {
-                case TRUE -> TriState.FALSE;
-                case FALSE -> TriState.TRUE;
-                default -> TriState.DEFAULT;
-            };
-        };
     }
 
     default IProgressRule or(IProgressRule other) {
@@ -73,5 +103,23 @@ public interface IProgressRule {
 
             return TriState.DEFAULT;
         };
+    }
+
+    interface Restriction {
+        boolean matches(BlockState state);
+    }
+
+    record BlockRestriction(ResourceLocation id) implements Restriction {
+        @Override
+        public boolean matches(BlockState state) {
+            return BuiltInRegistries.BLOCK.getKey(state.getBlock()).equals(id);
+        }
+    }
+
+    record TagRestriction(TagKey<Block> tag) implements Restriction {
+        @Override
+        public boolean matches(BlockState state) {
+            return state.is(tag);
+        }
     }
 }

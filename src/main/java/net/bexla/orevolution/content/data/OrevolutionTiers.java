@@ -16,7 +16,6 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorMaterial.Layer;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -28,26 +27,48 @@ import static net.bexla.orevolution.Orevolution.lc;
 
 public class OrevolutionTiers {
 
-    public static class ArmorMats {
+    public static class ArmorMaterials {
         public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, Orevolution.MODID);
 
-        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BRONZE = register("bronze",
-                defense(1, 3, 4, 1, 4),
+        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> TIN = register("tin",
+                defense(1, 2, 3, 1, 2),
+                1, SoundEvents.ARMOR_EQUIP_CHAIN,
+                0.0F,
+                0.0F,
+                () -> Ingredient.of(OrevolutionTags.Items.TIN_INGOTS)
+        );
+        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CASSITERITE = register("cassiterite",
+                defense(1, 3, 4, 3, 2),
+                1, SoundEvents.ARMOR_EQUIP_CHAIN,
+                0.0F,
+                0.0F,
+                () -> Ingredient.of(OrevolutionTags.Items.TIN_INGOTS)
+        );
+        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BRONZE_SOFT = register("bronze_soft",
+                defense(1, 3, 4, 2, 4),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
-                0.0F    ,
+                0.0F,
+                0.0F,
+                () -> Ingredient.of(OrevolutionTags.Items.BRONZE_INGOTS),
+                true
+        );
+        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> BRONZE_HARD = register("bronze_hard",
+                defense(2, 4, 5, 3, 5),
+                14, SoundEvents.ARMOR_EQUIP_DIAMOND,
+                0.1F,
                 0.0F,
                 () -> Ingredient.of(OrevolutionTags.Items.BRONZE_INGOTS),
                 true
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> STEEL = register("steel",
-                defense(2, 5, 6, 2, 12),
+                defense(2, 5, 6, 3, 12),
                 6, SoundEvents.ARMOR_EQUIP_NETHERITE,
                 0F,
                 1F,
                 () -> Ingredient.of(OrevolutionTags.Items.STEEL_INGOTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> TUNGSTEN = register("tungsten",
-                defense(2, 4, 5, 2, 17),
+                defense(2, 4, 5, 3, 17),
                 8, SoundEvents.ARMOR_EQUIP_DIAMOND,
                 0.1F,
                 0.3F,
@@ -61,39 +82,32 @@ public class OrevolutionTiers {
                 () -> Ingredient.of(OrevolutionTags.Items.LIVINGSTONE_FRAGMENTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> VERDITE = register("verdite",
-                defense(2, 5, 6, 2, 7),
+                defense(2, 5, 6, 3, 7),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
                 0.1F,
                 0.0F,
                 () -> Ingredient.of(OrevolutionTags.Items.VERDITE_INGOTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> PLATINUM = register("platinum",
-                defense(2, 5, 6, 2, 8),
+                defense(2, 5, 6, 3, 8),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
                 0.5F,
                 0.0F,
                 () -> Ingredient.of(OrevolutionTags.Items.PLATINUM_INGOTS)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> MOONSTONE = register("moonstone",
-                defense(2, 5, 6, 2, 7),
+                defense(2, 5, 6, 3, 7),
                 17, SoundEvents.ARMOR_EQUIP_CHAIN,
                 4F,
                 0.1F,
                 () -> Ingredient.of(RegBlocks.MOONSTONE)
-        );
-        public static final DeferredHolder<ArmorMaterial, ArmorMaterial> REINFORCED_NT = register("reinforced_netherite",
-                defense(3, 6, 8, 3, 15),
-                13, SoundEvents.ARMOR_EQUIP_DIAMOND,
-                4.5F,
-                0.2F,
-                () -> Ingredient.of(Tags.Items.INGOTS_NETHERITE)
         );
         public static final DeferredHolder<ArmorMaterial, ArmorMaterial> AETHERSTEEL = register("aethersteel",
                 defense(4, 7, 8, 4, 20),
                 17, SoundEvents.ARMOR_EQUIP_DIAMOND,
                 4.5F,
                 0.2F,
-                () -> Ingredient.of(OrevolutionTags.Items.ENDERITE_ADJACENT)
+                () -> Ingredient.of(OrevolutionTags.Items.AETHERSTEEL_OR_ENDERITE)
         );
 
         public static EnumMap<Type, Integer> defense(int boots, int leggings, int chestplate, int helmet, int body) {
@@ -135,19 +149,19 @@ public class OrevolutionTiers {
         public static final Tier TIN =
                 new BlueprintItemTier(
                         OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL,
-                        256, 5.0F, 1.0F, 7 ,
+                        256, 5.0F, 1.0F, 7,
                         () -> Ingredient.of(OrevolutionTags.Items.TIN_INGOTS)
                 );
         public static final Tier CASSITERITE =
                 new BlueprintItemTier(
                         BlockTags.INCORRECT_FOR_IRON_TOOL,
-                        512, 6.0F, 2.0F, 8,
+                        512, 5.0F, 1.0F, 7,
                         () -> Ingredient.of(OrevolutionTags.Items.CASSITERITE_INGOTS)
                 );
         public static final Tier TUNGSTEN =
                 new BlueprintItemTier(
                         OrevolutionTags.Blocks.INCORRECT_FOR_TIN_TOOL,
-                        256, 13.0F, 1.0F, 23,
+                        256, 12.0F, 0.0F, 22,
                         () -> Ingredient.of(OrevolutionTags.Items.TUNGSTEN_INGOTS)
                 );
         public static final Tier PLATINUM =
@@ -158,14 +172,14 @@ public class OrevolutionTiers {
         public static final Tier MOONSTONE =
                 new BlueprintItemTier(
                         BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
-                        1536, 6.0F, 2.0F, 12,
+                        1536, 7.0F, 2.0F, 18,
                         () -> Ingredient.of(RegBlocks.MOONSTONE)
                 );
         public static final Tier AETHERSTEEL =
                 new BlueprintItemTier(
                         OrevolutionTags.Blocks.INCORRECT_FOR_AETHERSTEEL_TOOL,
                         3520, 10.0F, 5.0F, 15,
-                        () -> Ingredient.of(OrevolutionTags.Items.ENDERITE_ADJACENT)
+                        () -> Ingredient.of(OrevolutionTags.Items.AETHERSTEEL_OR_ENDERITE)
                 );
         public static final Tier LIVINGSTONE =
                 new BlueprintItemTier(
@@ -182,7 +196,7 @@ public class OrevolutionTiers {
         public static final Tier STEEL =
                 new BlueprintItemTier(
                         OrevolutionTags.Blocks.INCORRECT_FOR_PLATINUM_TOOL,
-                        896, 3.0F, 4.0F, 12,
+                        896, 6.0F, 2.0F, 14,
                         () -> Ingredient.of(OrevolutionTags.Items.STEEL_INGOTS)
                 );
     }

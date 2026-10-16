@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:leather"
+  },
+  "base": {
+    "item": "orevolution:bronze_diving_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:leather_boots"
+  },
+  "template": {
+    "item": "orevolution:downgrade_smithing_template"
+  }
+}

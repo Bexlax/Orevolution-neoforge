@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "A": {
-      "item": "orevolution:bronze_ingot"
+      "tag": "c:ingots/bronze"
     },
     "I": {
       "item": "minecraft:torch"
@@ -11,8 +11,7 @@
   },
   "pattern": [
     "A",
-    "I",
-    "A"
+    "I"
   ],
   "result": {
     "count": 1,

@@ -48,8 +48,8 @@ public class RegBlocks {
         return cropSize(16.0D, height, 16.0D);
     }
 
-    public static final DeferredBlock<Block> NETHER_XP_ORE = reg("nether_experience_ore", () -> new DropExperienceBlock(ModList.get().isLoaded("create") ? ConstantInt.of(0) : UniformInt.of(4, 12), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)));
-    public static final DeferredBlock<Block> END_XP_ORE = reg("end_experience_ore", () -> new DropExperienceBlock(ModList.get().isLoaded("create") ? ConstantInt.of(0) : UniformInt.of(12, 25), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE).sound(SoundType.STONE).strength(5.0F, 4.0F)));
+    public static final DeferredBlock<Block> NETHER_XP_ORE = reg("nether_experience_ore", () -> new DropExperienceBlock(ModList.get().isLoaded("create") ? ConstantInt.of(0) : UniformInt.of(5, 12), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)));
+    public static final DeferredBlock<Block> END_XP_ORE = reg("end_experience_ore", () -> new DropExperienceBlock(ModList.get().isLoaded("create") ? ConstantInt.of(0) : UniformInt.of(12, 30), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE).sound(SoundType.STONE).strength(5.0F, 4.0F)));
 
     public static final DeferredBlock<Block> RHYOLITE_EMERALD_ORE = reg("rhyolite_emerald_ore", () -> new DropExperienceBlock(UniformInt.of(3, 7), BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)));
     public static final DeferredBlock<Block> RHYOLITE_EMERALD_ORE_CLUMP = reg("rhyolite_emerald_ore_clump", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).strength(7.0F, 2.0F)));
@@ -73,33 +73,25 @@ public class RegBlocks {
 
     static VoxelShape tin = SizableLanternBlock.createLanternShape(
             new double[]{5, 0, 5, 11, 5, 11},
-            new double[]{6, 5, 6, 10, 6, 10}
-    );
+            new double[]{6, 5, 6, 10, 6, 10});
     static VoxelShape tin_hanging = SizableLanternBlock.createLanternShape(
             new double[]{5, 3, 5, 11, 8, 11},
-            new double[]{6, 8, 6, 10, 10, 10}
-    );
+            new double[]{6, 8, 6, 10, 10, 10});
 
-    public static final DeferredBlock<Block> TIN_LANTERN = reg("tin_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN),
-            tin, tin_hanging
-    ));
-    public static final DeferredBlock<Block> TIN_SOUL_LANTERN = reg("tin_soul_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN),
-            tin, tin_hanging
-    ));
+    public static final DeferredBlock<Block> TIN_LANTERN = reg("tin_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), tin, tin_hanging));
+    public static final DeferredBlock<Block> TIN_SOUL_LANTERN = reg("tin_soul_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), tin, tin_hanging));
 
     // Cassiterite
     public static final DeferredBlock<Block> CASSITERITE_ORE = reg("cassiterite_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)));
     public static final DeferredBlock<Block> DEEPSLATE_CASSITERITE_ORE = reg("deepslate_cassiterite_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)));
     public static final DeferredBlock<Block> NETHER_CASSITERITE_ORE = reg("nether_cassiterite_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE).sound(SoundType.NETHER_ORE).mapColor(MapColor.NETHER)));
 
-    public static final DeferredBlock<Block> CASSITERITE_BLOCK = reg("cassiterite_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
+    public static final DeferredBlock<Block> CASSITERITE_BLOCK = reg("cassiterite_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
     public static final DeferredBlock<Block> RAW_CASSITERITE_BLOCK = reg("raw_cassiterite_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)));
 
     // Platnum
     public static final DeferredBlock<Block> PLATINUM_ORE = reg("platinum_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_ORE)));
     public static final DeferredBlock<Block> DEEPSLATE_PLATINUM_ORE = reg("deepslate_platinum_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_GOLD_ORE)));
-
-
 
     public static final DeferredBlock<Block> PLATINUM_BLOCK = reg("platinum_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(4.5F)));
     public static final DeferredBlock<Block> RAW_PLATINUM_BLOCK = reg("raw_platinum_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(4.5F)));
@@ -109,19 +101,13 @@ public class RegBlocks {
 
     static VoxelShape platinum = SizableLanternBlock.createLanternShape(
             new double[]{4, 0, 4, 12, 8, 12},
-            new double[]{5, 8, 5, 11, 10, 11}
-    );
+            new double[]{5, 8, 5, 11, 10, 11});
     static VoxelShape platinum_hanging = SizableLanternBlock.createLanternShape(
             new double[]{4, 1, 4, 12, 9, 12},
-            new double[]{5, 9, 5, 11, 11, 11}
-    );
+            new double[]{5, 9, 5, 11, 11, 11});
 
-    public static final DeferredBlock<Block> PLATINUM_LANTERN = reg("platinum_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN),
-            platinum, platinum_hanging
-    ));
-    public static final DeferredBlock<Block> PLATINUM_SOUL_LANTERN = reg("platinum_soul_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN),
-            platinum, platinum_hanging
-    ));
+    public static final DeferredBlock<Block> PLATINUM_LANTERN = reg("platinum_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), platinum, platinum_hanging));
+    public static final DeferredBlock<Block> PLATINUM_SOUL_LANTERN = reg("platinum_soul_lantern", () -> new SizableLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), platinum, platinum_hanging));
 
     // Tungsten
     public static final DeferredBlock<Block> NETHER_TUNGSTEN_ORE = reg("nether_tungsten_ore", () -> new DropExperienceBlock(ConstantInt.of(0), BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)));
@@ -134,6 +120,12 @@ public class RegBlocks {
     public static final DeferredBlock<Block> CHISELED_TUNGSTEN_BLOCK = reg("chiseled_tungsten_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(TUNGSTEN_BLOCK.get())));
     public static final DeferredBlock<Block> CHISELED_TUNGSTEN_BRICKS = reg("chiseled_tungsten_bricks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(TUNGSTEN_BLOCK.get())));
     public static final DeferredBlock<Block> TUNGSTEN_BARS = reg("tungsten_bars", () -> new IronBarsBlock(BlockBehaviour.Properties.ofFullCopy(TUNGSTEN_BLOCK.get()).noOcclusion()));
+    public static final DeferredBlock<Block> POLISHED_TUNGSTEN_STAIR = reg("polished_tungsten_stair", () -> new StairBlock(POLISHED_TUNGSTEN.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(POLISHED_TUNGSTEN.get())));
+    public static final DeferredBlock<Block> POLISHED_TUNGSTEN_SLAB = reg("polished_tungsten_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(POLISHED_TUNGSTEN.get())));
+    public static final DeferredBlock<Block> CUT_TUNGSTEN_STAIR = reg("cut_tungsten_stair", () -> new StairBlock(CUT_TUNGSTEN_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(CUT_TUNGSTEN_BLOCK.get())));
+    public static final DeferredBlock<Block> CUT_TUNGSTEN_SLAB = reg("cut_tungsten_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(CUT_TUNGSTEN_BLOCK.get())));
+    public static final DeferredBlock<Block> TUNGSTEN_BRICKS_STAIR = reg("tungsten_bricks_stair", () -> new StairBlock(TUNGSTEN_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(TUNGSTEN_BRICKS.get())));
+    public static final DeferredBlock<Block> TUNGSTEN_BRICKS_SLAB = reg("tungsten_bricks_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(TUNGSTEN_BRICKS.get())));
 
     public static final DeferredBlock<Block> DECAYING_TUNGSTEN_BLOCK = reg("decaying_tungsten_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK)));
     public static final DeferredBlock<Block> POLISHED_DECAYING_TUNGSTEN = reg("decaying_polished_tungsten_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(DECAYING_TUNGSTEN_BLOCK.get())));

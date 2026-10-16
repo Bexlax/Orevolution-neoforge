@@ -82,16 +82,34 @@ public class BuildTabSubscriber {
                     RegItems.VERDITE_BOOTS);
 
             putAfter(event, Items.LEATHER_BOOTS,
-                    RegItems.BRONZE_HELMET,
-                    RegItems.BRONZE_CHESTPLATE,
-                    RegItems.BRONZE_LEGGINGS,
-                    RegItems.BRONZE_BOOTS);
+                    RegItems.BRONZE_DIVING_HELMET,
+                    RegItems.BRONZE_DIVING_CHESTPLATE,
+                    RegItems.BRONZE_DIVING_LEGGINGS,
+                    RegItems.BRONZE_DIVING_BOOTS);
 
             putAfter(event, Items.IRON_BOOTS,
                     RegItems.PLATINUM_HELMET,
                     RegItems.PLATINUM_CHESTPLATE,
                     RegItems.PLATINUM_LEGGINGS,
                     RegItems.PLATINUM_BOOTS);
+
+            putBefore(event, Items.IRON_HELMET,
+                    RegItems.TIN_HELMET,
+                    RegItems.TIN_CHESTPLATE,
+                    RegItems.TIN_LEGGINGS,
+                    RegItems.TIN_BOOTS);
+
+            putAfter(event, RegItems.TIN_BOOTS,
+                    RegItems.CASSITERITE_HELMET,
+                    RegItems.CASSITERITE_CHESTPLATE,
+                    RegItems.CASSITERITE_LEGGINGS,
+                    RegItems.CASSITERITE_BOOTS);
+
+            putAfter(event, RegItems.TIN_BOOTS,
+                    RegItems.BRONZE_HELMET,
+                    RegItems.BRONZE_CHESTPLATE,
+                    RegItems.BRONZE_LEGGINGS,
+                    RegItems.BRONZE_BOOTS);
 
             putAfter(event, RegItems.PLATINUM_BOOTS,
                     RegItems.MOONSTONE_HELMET,
@@ -115,7 +133,11 @@ public class BuildTabSubscriber {
                 putAfter(event, ItemsInit.NETHERITE_SHIELD.get(), RegItems.AETHERSTEEL_SHIELD);
                 putBefore(event, ItemsInit.DIAMOND_SHIELD.get(), RegItems.PLATINUM_SHIELD);
                 putAfter(event, ItemsInit.WOODEN_SHIELD.get(), RegItems.TIN_SHIELD);
+                putAfter(event, RegItems.TIN_SHIELD, RegItems.CASSITERITE_SHIELD);
                 putBefore(event, RegItems.PLATINUM_SHIELD, RegItems.MOONSTONE_SHIELD);
+                putAfter(event, ItemsInit.GOLDEN_SHIELD.get(), RegItems.TUNGSTEN_SHIELD);
+
+                putAfter(event, ItemsInit.IRON_SHIELD.get(), RegItems.STEEL_HEAVY_SHIELD);
 
                 putBefore(event, ItemsInit.WOODEN_SHIELD.get(), RegItems.LIVINGSTONE_SHIELD);
                 putAfter(event, RegItems.LIVINGSTONE_SHIELD, RegItems.VERDITE_SHIELD);
@@ -125,6 +147,9 @@ public class BuildTabSubscriber {
                 putBefore(event, Spears.IRON_SPEAR, SBRegistry.PLATINUM_SPEAR);
                 putAfter(event, SBRegistry.PLATINUM_SPEAR.get(), SBRegistry.MOONSTONE_SPEAR);
                 putAfter(event, Spears.NETHERITE_SPEAR, SBRegistry.AETHERSTEEL_SPEAR);
+
+                putAfter(event, SBRegistry.TIN_SPEAR.get(), SBRegistry.CASSITERITE_SPEAR);
+                putAfter(event, Spears.GOLDEN_SPEAR, SBRegistry.TUNGSTEN_SPEAR);
 
                 putBefore(event, Spears.WOODEN_SPEAR, SBRegistry.LIVINGSTONE_SPEAR);
                 putAfter(event, SBRegistry.LIVINGSTONE_SPEAR.get(), SBRegistry.VERDITE_SPEAR);
@@ -258,12 +283,11 @@ public class BuildTabSubscriber {
             putBefore(event, Items.AMETHYST_SHARD, RegItems.CELESTITE_SHARD);
             putBefore(event, RegItems.CELESTITE_SHARD, RegItems.PYRITE);
 
-            putBefore(event, Items.IRON_NUGGET, RegItems.TIN_NUGGET);
+            putBefore(event, Items.IRON_NUGGET, RegItems.COPPER_NUGGET, RegItems.TIN_NUGGET);
             putAfter(event, RegItems.TIN_NUGGET, RegItems.CASSITERITE_NUGGET);
             putAfter(event, Items.IRON_NUGGET, RegItems.PLATINUM_NUGGET);
             putAfter(event, Items.GOLD_NUGGET, RegItems.TUNGSTEN_NUGGET);
             putBefore(event, Items.GOLD_NUGGET, RegItems.VERDITE_NUGGET);
-            putAfter(event, Items.GOLD_NUGGET, RegItems.QUARTZ_CHIP);
 
             putAfter(event, Items.EXPERIENCE_BOTTLE, RegItems.BRONZE_TOTEM);
 
@@ -342,7 +366,19 @@ public class BuildTabSubscriber {
                     RegBlocks.AETHERROCK_BRICKS_WALL,
                     RegBlocks.CRACKED_AETHERROCK_BRICKS,
                     RegBlocks.AETHERROCK_TILES);
-            putAfter(event, RegBlocks.TUNGSTEN_BLOCK, RegBlocks.POLISHED_TUNGSTEN, RegBlocks.TUNGSTEN_BRICKS, RegBlocks.CUT_TUNGSTEN_BLOCK, RegBlocks.CHISELED_TUNGSTEN_BLOCK, RegBlocks.CHISELED_TUNGSTEN_BRICKS, RegBlocks.TUNGSTEN_BARS);
+            putAfter(event, RegBlocks.TUNGSTEN_BLOCK, RegBlocks.POLISHED_TUNGSTEN,
+                    RegBlocks.POLISHED_TUNGSTEN_STAIR,
+                    RegBlocks.POLISHED_TUNGSTEN_SLAB,
+
+                    RegBlocks.TUNGSTEN_BRICKS,
+                    RegBlocks.TUNGSTEN_BRICKS_STAIR,
+                    RegBlocks.TUNGSTEN_BRICKS_SLAB,
+
+                    RegBlocks.CUT_TUNGSTEN_BLOCK,
+                    RegBlocks.CUT_TUNGSTEN_STAIR,
+                    RegBlocks.CUT_TUNGSTEN_SLAB,
+
+                    RegBlocks.CHISELED_TUNGSTEN_BLOCK, RegBlocks.CHISELED_TUNGSTEN_BRICKS, RegBlocks.TUNGSTEN_BARS);
             putAfter(event, RegBlocks.STEEL_BLOCK,
                     RegBlocks.CUT_STEEL_BLOCK,
                     RegBlocks.CUT_STEEL_STAIR,
@@ -384,6 +420,8 @@ public class BuildTabSubscriber {
             putAfter(event, RegBlocks.RHYOLITE_BRICKS_WALL, RegBlocks.RHYOLITE_PILLAR);
         }
         else if(tab == CreativeModeTabs.NATURAL_BLOCKS) {
+            putBefore(event, Items.END_STONE, RegBlocks.AETHERROCK);
+
             putAfter(event, Items.WHEAT_SEEDS, RegItems.PETRIFIED_SEED);
             putAfter(event, RegItems.PETRIFIED_SEED, RegItems.DEAD_SEED);
 
@@ -394,8 +432,7 @@ public class BuildTabSubscriber {
             putAfter(event, RegBlocks.DEEPSLATE_TIN_ORE, RegBlocks.CASSITERITE_ORE, RegBlocks.DEEPSLATE_CASSITERITE_ORE, RegBlocks.NETHER_CASSITERITE_ORE);
             putBefore(event, Items.DIAMOND_ORE, RegBlocks.PLATINUM_ORE, RegBlocks.DEEPSLATE_PLATINUM_ORE);
             putBefore(event, Items.COAL_ORE, RegBlocks.NETHER_XP_ORE);
-            putAfter(event, Items.COAL_ORE, RegBlocks.QUARTZOLITE);
-            putAfter(event, RegBlocks.QUARTZOLITE, RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE, RegBlocks.BASALT_ENCRUSTED_MOONSTONE);
+            putAfter(event, Items.COAL_ORE, RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE, RegBlocks.BASALT_ENCRUSTED_MOONSTONE);
             putAfter(event, RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE, RegBlocks.MOONSTONE);
             putBefore(event, RegBlocks.NETHER_XP_ORE, RegBlocks.END_XP_ORE);
             putAfter(event, Items.NETHER_QUARTZ_ORE, RegBlocks.NETHER_TUNGSTEN_ORE);
@@ -442,13 +479,17 @@ public class BuildTabSubscriber {
 
             putAfter(event, Items.GLOW_BERRIES, RegItems.ANCIENT_FRUIT);
             putAfter(event, Items.MUSHROOM_STEW, RegItems.ANCIENT_STEW);
+            putAfter(event, Items.BEETROOT_SOUP, RegItems.ROTTEN_STEW);
+            putAfter(event, Items.SPIDER_EYE, RegItems.ENRICHED_EYE);
         }
 
         if (ModList.get().isLoaded("farmersdelight") && tab.location().equals(FD_TAB)) {
             putAfter(event, ModItems.FLINT_KNIFE.get(), FDRegistry.TIN_KNIFE);
             putAfter(event, FDRegistry.TIN_KNIFE.get(), FDRegistry.LIVINGSTONE_KNIFE);
+            putAfter(event, FDRegistry.TIN_KNIFE.get(), FDRegistry.CASSITERITE_KNIFE);
             putAfter(event, FDRegistry.LIVINGSTONE_KNIFE.get(), FDRegistry.VERDITE_KNIFE);
             putAfter(event, ModItems.IRON_KNIFE.get(), FDRegistry.PLATINUM_KNIFE);
+            putAfter(event, ModItems.GOLDEN_KNIFE.get(), FDRegistry.TUNGSTEN_KNIFE);
             putAfter(event, FDRegistry.PLATINUM_KNIFE.get(), FDRegistry.MOONSTONE_KNIFE);
             putAfter(event, ModItems.NETHERITE_KNIFE.get(), FDRegistry.AETHERSTEEL_KNIFE);
         }

@@ -140,14 +140,14 @@ public final class RegFeatures {
             registerOre(ctx, CASSITERITE_ORE_SMALL, OreType.OVERWORLD, CASSITERITE_ORES, 2, 0F);
             registerOre(ctx, CASSITERITE_ORE_EXTRA, OreType.OVERWORLD, CASSITERITE_ORES, 5, 0.2F);
 
-            registerOre(ctx, PLATINUM_ORE_EXTRA, OreType.OVERWORLD, PLATINUM_ORES, 5, 0.4F);
+            registerOre(ctx, PLATINUM_ORE_EXTRA, OreType.OVERWORLD, PLATINUM_ORES, 5, 0.44F);
 
-            registerOre(ctx, PLATINUM_ORE_SMALL, OreType.OVERWORLD, PLATINUM_ORES, 6, 0.1F);
-            registerOre(ctx, PLATINUM_ORE_MEDIUM, OreType.OVERWORLD, PLATINUM_ORES, 8, 0.15F);
-            registerOre(ctx, PLATINUM_ORE_LARGE, OreType.OVERWORLD, PLATINUM_ORES, 15, 0.46F);
-            registerOre(ctx, PLATINUM_ORE_BURIED, OreType.OVERWORLD, PLATINUM_ORES, 8, 1.0F);
+            registerOre(ctx, PLATINUM_ORE_SMALL, OreType.OVERWORLD, PLATINUM_ORES, 4, 0.3F);
+            registerOre(ctx, PLATINUM_ORE_MEDIUM, OreType.OVERWORLD, PLATINUM_ORES, 7, 0.35F);
+            registerOre(ctx, PLATINUM_ORE_LARGE, OreType.OVERWORLD, PLATINUM_ORES, 13, 0.70F);
+            registerOre(ctx, PLATINUM_ORE_BURIED, OreType.OVERWORLD, PLATINUM_ORES, 7, 1.0F);
 
-            registerOre(ctx, TUNGSTEN_ORE, OreType.NETHER, List.of(RegBlocks.NETHER_TUNGSTEN_ORE.get()), 8, 0.9F);
+            registerOre(ctx, TUNGSTEN_ORE, OreType.NETHER, List.of(RegBlocks.NETHER_TUNGSTEN_ORE.get()), 7, 0.9F);
             registerOre(ctx, TUNGSTEN_ORE_SMALL, OreType.NETHER, List.of(RegBlocks.NETHER_TUNGSTEN_ORE.get()), 3, 0.3F);
             registerOre(ctx, TUNGSTEN_ORE_EXTRA, OreType.NETHER, List.of(RegBlocks.NETHER_TUNGSTEN_ORE.get()), 5, 0.42F);
 
@@ -578,7 +578,6 @@ public final class RegFeatures {
 
         public static ResourceKey<PlacedFeature> TUNGSTEN_ORE_HIGHER = create("tungsten_ore_higher");
         public static ResourceKey<PlacedFeature> TUNGSTEN_ORE_LOWER = create("tungsten_ore_lower");
-        public static ResourceKey<PlacedFeature> TUNGSTEN_ORE_SMALL = create("tungsten_ore_small");
 
         public static ResourceKey<PlacedFeature> NETHER_EXPERIENCE_ORE = create("nether_experience_ore");
         public static ResourceKey<PlacedFeature> END_EXPERIENCE_ORE = create("end_experience_ore");
@@ -607,15 +606,15 @@ public final class RegFeatures {
             registerRareOrePlacement(ctx, features, PLATINUM_ORE_LARGE, 16, VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80));
             registerOrePlacement(ctx, features, PLATINUM_ORE_BURIED, 6, VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80), false);
 
-            registerOrePlacement(ctx, features, Configured.TUNGSTEN_ORE, TUNGSTEN_ORE_LOWER, 13, 0, 32);
+            registerOrePlacement(ctx, features, Configured.TUNGSTEN_ORE, TUNGSTEN_ORE_LOWER, 7, 0, 32);
             registerOrePlacement(ctx, features, Configured.TUNGSTEN_ORE, TUNGSTEN_ORE_HIGHER, 1, 80, 128);
             registerOrePlacement(ctx, features, TUNGSTEN_ORE_EXTRA, 4, 0, 128);
 
-            registerOrePlacement(ctx, features, NETHER_EXPERIENCE_ORE, 7, 0, 30);
-            registerOrePlacement(ctx, features, END_EXPERIENCE_ORE, 9, 0, 60);
+            registerOrePlacement(ctx, features, NETHER_EXPERIENCE_ORE, 5, 0, 30);
+            registerOrePlacement(ctx, features, END_EXPERIENCE_ORE, 12, 0, 60);
 
-            registerMeteoritePlacementTop(ctx, features, "meteorite_high", 120, 180);
-            registerMeteoritePlacementRange(ctx, features, "meteorite_low", 210, 95, 140);
+            registerMeteoritePlacementTop(ctx, features, "meteorite_high", 316, 180);
+            registerMeteoritePlacementRange(ctx, features, "meteorite_low", 640, 135, 170);
 
             PlacementUtils.register(ctx, LARGE_CHERT, features.getOrThrow(Configured.LARGE_CHERT),
                     CountPlacement.of(UniformInt.of(10, 48)),
@@ -843,7 +842,7 @@ public final class RegFeatures {
                                     rarity,
                                     HeightRangePlacement.triangle(
                                             VerticalAnchor.absolute(minY),
-                                            VerticalAnchor.top()
+                                            VerticalAnchor.absolute(319)
                                     )
                             )
                     )

@@ -18,8 +18,6 @@ public class ItemPowerRegistry {
     private static final Map<Tier, ToolPowerPair> tierTagMap = new HashMap<>();
 
     public record ToolPowerPair(ModConfigSpec.ConfigValue<Boolean> toolsEnabled, ModConfigSpec.ConfigValue<Boolean> swordsEnabled, IToolPower toolPower, IToolPower swordPower) {
-        private static final IToolPower EMPTY = IToolPower.EMPTY;
-
         public IToolPower combinedPower() {
             return new ToolMultiPower(List.of(swordPower, toolPower));
         }

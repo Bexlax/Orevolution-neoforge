@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "orevolution:platinum_ingot"
+    "tag": "c:ingots/platinum"
   },
   "base": {
     "item": "minecraft:diamond_leggings"

@@ -30,13 +30,13 @@ public class ArmorExtendPickUp extends OrevolutionArmorPower {
     }
 
     @Override
-    public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
+    public void onTickWhileWorn(ItemStack helmet, LivingEntity wearer, EquipmentSlot slot) {
         if (!(wearer instanceof Player player)) return;
 
         Level level = player.level();
 
         if (level.isClientSide) return;
-        if (!condition(stack, level, wearer, null)) return;
+        if (!condition(helmet, level, wearer, null)) return;
 
         AABB area = player.getBoundingBox().inflate(reach);
         List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, area);
@@ -45,7 +45,7 @@ public class ArmorExtendPickUp extends OrevolutionArmorPower {
             if(!item.isAlive()) continue;
             if(item.hasPickUpDelay()) continue;
 
-            if(!player.canTakeItem(item.getItem())) continue;
+            if(!player.canTakeItem(item.getItem()) && player.getInventory().getSlotWithRemainingSpace(item.getItem()) == -1) continue;
 
             Vec3 motion = player.position().add(0, 0.75D, 0).subtract(item.position());
             double distance = motion.length();

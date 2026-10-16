@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -29,12 +30,16 @@ public class GENDamageTypeTags extends TagsProvider<DamageType> {
          tag(OrevolutionTags.Misc.IS_KINETIC)
                  .add(
                          DamageTypes.FALL,
+                         DamageTypes.FLY_INTO_WALL,
+                         DamageTypes.MOB_ATTACK,
+                         DamageTypes.MOB_PROJECTILE,
+                         DamageTypes.MOB_ATTACK_NO_AGGRO,
                          DamageTypes.FALLING_ANVIL,
                          DamageTypes.FALLING_STALACTITE,
                          DamageTypes.FALLING_BLOCK,
                          DamageTypes.EXPLOSION,
                          DamageTypes.PLAYER_EXPLOSION
-                 );
+                 ).addTags(DamageTypeTags.IS_PROJECTILE);
 
     }
 }

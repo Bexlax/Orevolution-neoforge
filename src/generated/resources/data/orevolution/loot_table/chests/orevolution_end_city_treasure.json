@@ -9,11 +9,160 @@
           "name": "orevolution:aethersteel_smithing_template"
         },
         {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "components": {
+                "orevolution:reinforced": true
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "orevolution:max_damage_multiplier": 1.5
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "orevolution:platinum_sword",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "components": {
+                "orevolution:reinforced": true
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "orevolution:max_damage_multiplier": 1.5
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "orevolution:platinum_pickaxe",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "components": {
+                "orevolution:reinforced": true
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "orevolution:max_damage_multiplier": 1.5
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "orevolution:platinum_axe",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "components": {
+                "orevolution:reinforced": true
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "orevolution:max_damage_multiplier": 1.5
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "orevolution:platinum_shovel",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#minecraft:on_random_loot"
+            },
+            {
+              "components": {
+                "orevolution:reinforced": true
+              },
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "orevolution:max_damage_multiplier": 1.5
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "orevolution:platinum_hoe",
+          "weight": 2
+        },
+        {
           "type": "minecraft:empty",
-          "weight": 9
+          "weight": 5
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
     }
   ],
   "random_sequence": "orevolution:chests/orevolution_end_city_treasure"

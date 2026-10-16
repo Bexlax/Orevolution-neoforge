@@ -11,11 +11,51 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_cassiterite_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:cassiterite_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cassiterite_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:cassiterite_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cassiterite_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:cassiterite_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_cassiterite_hoe": {
       "conditions": {
         "items": [
           {
             "items": "orevolution:cassiterite_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cassiterite_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "orevolution:cassiterite_leggings"
           }
         ]
       },
@@ -65,7 +105,11 @@
       "has_cassiterite_shovel",
       "has_cassiterite_axe",
       "has_cassiterite_hoe",
-      "has_cassiterite_sword"
+      "has_cassiterite_sword",
+      "has_cassiterite_helmet",
+      "has_cassiterite_chestplate",
+      "has_cassiterite_leggings",
+      "has_cassiterite_boots"
     ]
   ],
   "rewards": {

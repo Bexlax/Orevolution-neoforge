@@ -52,37 +52,21 @@ public class GENItemTags extends BlueprintItemTagsProvider {
 
         tag(ItemTags.DYEABLE)
                 .add(
+                        RegItems.BRONZE_DIVING_HELMET.get(),
+                        RegItems.BRONZE_DIVING_CHESTPLATE.get(),
+                        RegItems.BRONZE_DIVING_LEGGINGS.get(),
+                        RegItems.BRONZE_DIVING_BOOTS.get(),
                         RegItems.BRONZE_HELMET.get(),
                         RegItems.BRONZE_CHESTPLATE.get(),
                         RegItems.BRONZE_LEGGINGS.get(),
                         RegItems.BRONZE_BOOTS.get()
                 );
 
-        tag(OrevolutionTags.Items.REINFORCE_BLACKLIST)
-                .add(
-                        RegItems.TUNGSTEN_HELMET.get(),
-                        RegItems.TUNGSTEN_CHESTPLATE.get(),
-                        RegItems.TUNGSTEN_LEGGINGS.get(),
-                        RegItems.TUNGSTEN_BOOTS.get(),
-                        RegItems.TUNGSTEN_SWORD.get(),
-                        RegItems.TUNGSTEN_PICKAXE.get(),
-                        RegItems.TUNGSTEN_AXE.get(),
-                        RegItems.TUNGSTEN_SHOVEL.get(),
-                        RegItems.TUNGSTEN_HOE.get()
-                );
+        tag(OrevolutionTags.Items.REINFORCE_BLACKLIST);
+        tag(OrevolutionTags.Items.COAT_BLACKLIST);
 
-        tag(OrevolutionTags.Items.COAT_BLACKLIST)
-                .add(
-                        RegItems.TUNGSTEN_HELMET.get(),
-                        RegItems.TUNGSTEN_CHESTPLATE.get(),
-                        RegItems.TUNGSTEN_LEGGINGS.get(),
-                        RegItems.TUNGSTEN_BOOTS.get(),
-                        RegItems.TUNGSTEN_SWORD.get(),
-                        RegItems.TUNGSTEN_PICKAXE.get(),
-                        RegItems.TUNGSTEN_AXE.get(),
-                        RegItems.TUNGSTEN_SHOVEL.get(),
-                        RegItems.TUNGSTEN_HOE.get()
-                );
+        tag(OrevolutionTags.Items.COPPER_NUGGETS)
+                .add(RegItems.COPPER_NUGGET.get());
 
         tag(OrevolutionTags.Items.NEGATES_PYRITE_FIRE)
                 .add(
@@ -156,6 +140,9 @@ public class GENItemTags extends BlueprintItemTagsProvider {
                 .add(
                         RegItems.AETHERSTEEL_SHIELD.get(),
                         RegItems.TIN_SHIELD.get(),
+                        RegItems.TUNGSTEN_SHIELD.get(),
+                        RegItems.CASSITERITE_SHIELD.get(),
+                        RegItems.STEEL_HEAVY_SHIELD.get(),
                         RegItems.PLATINUM_SHIELD.get(),
                         RegItems.VERDITE_SHIELD.get(),
                         RegItems.LIVINGSTONE_SHIELD.get()
@@ -165,6 +152,9 @@ public class GENItemTags extends BlueprintItemTagsProvider {
                 .add(
                         RegItems.AETHERSTEEL_SHIELD.get(),
                         RegItems.TIN_SHIELD.get(),
+                        RegItems.TUNGSTEN_SHIELD.get(),
+                        RegItems.CASSITERITE_SHIELD.get(),
+                        RegItems.STEEL_HEAVY_SHIELD.get(),
                         RegItems.PLATINUM_SHIELD.get(),
                         RegItems.VERDITE_SHIELD.get(),
                         RegItems.LIVINGSTONE_SHIELD.get()
@@ -175,6 +165,9 @@ public class GENItemTags extends BlueprintItemTagsProvider {
                 .add(
                         RegItems.AETHERSTEEL_SHIELD.get(),
                         RegItems.TIN_SHIELD.get(),
+                        RegItems.TUNGSTEN_SHIELD.get(),
+                        RegItems.CASSITERITE_SHIELD.get(),
+                        RegItems.STEEL_HEAVY_SHIELD.get(),
                         RegItems.PLATINUM_SHIELD.get(),
                         RegItems.VERDITE_SHIELD.get(),
                         RegItems.LIVINGSTONE_SHIELD.get()
@@ -192,13 +185,16 @@ public class GENItemTags extends BlueprintItemTagsProvider {
 
         tag(TagUtil.itemTag("minecraft", "spears"))
                 .addOptional(lc("tin_spear")).addOptional(lc("platinum_spear")).addOptional(lc("aethersteel_spear"))
-                .addOptional(lc("livingstone_spear")).addOptional(lc("verdite_spear")).addOptional(lc("moonstone_spear"));
+                .addOptional(lc("livingstone_spear")).addOptional(lc("verdite_spear")).addOptional(lc("moonstone_spear"))
+                .addOptional(lc("cassiterite_spear")).addOptional(lc("tungsten_spear"));
 
         tag(OrevolutionTags.Items.KNIFE).addOptional(lc("tin_knife")).addOptional(lc("platinum_knife")).addOptional(lc("moonstone_knife"))
-                .addOptional(lc("aethersteel_knife")).addOptional(lc("livingstone_knife")).addOptional(lc("verdite_knife"));
+                .addOptional(lc("aethersteel_knife")).addOptional(lc("livingstone_knife")).addOptional(lc("verdite_knife"))
+                .addOptional(lc("cassiterite_knife")).addOptional(lc("tungsten_knife"));
 
         tag(OrevolutionTags.Items.KNIVES_FARMERS_DELIGHT).addOptional(lc("tin_knife")).addOptional(lc("platinum_knife")).addOptional(lc("moonstone_knife"))
-                .addOptional(lc("aethersteel_knife")).addOptional(lc("livingstone_knife")).addOptional(lc("verdite_knife"));
+                .addOptional(lc("aethersteel_knife")).addOptional(lc("livingstone_knife")).addOptional(lc("verdite_knife"))
+                .addOptional(lc("cassiterite_knife")).addOptional(lc("tungsten_knife"));
 
         tag(ItemTags.SWORDS)
                 .add(
@@ -264,8 +260,11 @@ public class GENItemTags extends BlueprintItemTagsProvider {
         tag(ItemTags.HEAD_ARMOR)
                 .add(
                         RegItems.PLATINUM_HELMET.get(),
-                        RegItems.MOONSTONE_HELMET.get(),
+                        RegItems.TIN_HELMET.get(),
                         RegItems.BRONZE_HELMET.get(),
+                        RegItems.CASSITERITE_HELMET.get(),
+                        RegItems.MOONSTONE_HELMET.get(),
+                        RegItems.BRONZE_DIVING_HELMET.get(),
                         RegItems.TUNGSTEN_HELMET.get(),
                         RegItems.AETHERSTEEL_HELMET.get(),
                         RegItems.LIVINGSTONE_HELMET.get(),
@@ -274,8 +273,11 @@ public class GENItemTags extends BlueprintItemTagsProvider {
         tag(ItemTags.CHEST_ARMOR)
                 .add(
                         RegItems.PLATINUM_CHESTPLATE.get(),
-                        RegItems.MOONSTONE_CHESTPLATE.get(),
+                        RegItems.CASSITERITE_CHESTPLATE.get(),
+                        RegItems.TIN_CHESTPLATE.get(),
                         RegItems.BRONZE_CHESTPLATE.get(),
+                        RegItems.MOONSTONE_CHESTPLATE.get(),
+                        RegItems.BRONZE_DIVING_CHESTPLATE.get(),
                         RegItems.TUNGSTEN_CHESTPLATE.get(),
                         RegItems.AETHERSTEEL_CHESTPLATE.get(),
                         RegItems.LIVINGSTONE_CHESTPLATE.get(),
@@ -284,8 +286,11 @@ public class GENItemTags extends BlueprintItemTagsProvider {
         tag(ItemTags.LEG_ARMOR)
                 .add(
                         RegItems.PLATINUM_LEGGINGS.get(),
-                        RegItems.MOONSTONE_LEGGINGS.get(),
+                        RegItems.CASSITERITE_LEGGINGS.get(),
+                        RegItems.TIN_LEGGINGS.get(),
                         RegItems.BRONZE_LEGGINGS.get(),
+                        RegItems.MOONSTONE_LEGGINGS.get(),
+                        RegItems.BRONZE_DIVING_LEGGINGS.get(),
                         RegItems.TUNGSTEN_LEGGINGS.get(),
                         RegItems.AETHERSTEEL_LEGGINGS.get(),
                         RegItems.LIVINGSTONE_LEGGINGS.get(),
@@ -294,8 +299,11 @@ public class GENItemTags extends BlueprintItemTagsProvider {
         tag(ItemTags.FOOT_ARMOR)
                 .add(
                         RegItems.PLATINUM_BOOTS.get(),
-                        RegItems.MOONSTONE_BOOTS.get(),
+                        RegItems.CASSITERITE_BOOTS.get(),
+                        RegItems.TIN_BOOTS.get(),
                         RegItems.BRONZE_BOOTS.get(),
+                        RegItems.MOONSTONE_BOOTS.get(),
+                        RegItems.BRONZE_DIVING_BOOTS.get(),
                         RegItems.TUNGSTEN_BOOTS.get(),
                         RegItems.AETHERSTEEL_BOOTS.get(),
                         RegItems.LIVINGSTONE_BOOTS.get(),
@@ -310,7 +318,7 @@ public class GENItemTags extends BlueprintItemTagsProvider {
                 .add(RegItems.PLATINUM_INGOT.get());
         tag(OrevolutionTags.Items.TUNGSTEN_INGOTS)
                 .add(RegItems.TUNGSTEN_INGOT.get());
-        tag(OrevolutionTags.Items.ENDERITE_ADJACENT)
+        tag(OrevolutionTags.Items.AETHERSTEEL_OR_ENDERITE)
                 .add(RegItems.AETHERSTEEL_INGOT.get());
         tag(OrevolutionTags.Items.VERDITE_INGOTS)
                 .add(RegItems.VERDITE_INGOT.get());
@@ -346,12 +354,13 @@ public class GENItemTags extends BlueprintItemTagsProvider {
                 OrevolutionTags.Items.CASSITERITE_INGOTS,
                 OrevolutionTags.Items.PLATINUM_INGOTS,
                 OrevolutionTags.Items.TUNGSTEN_INGOTS,
-                OrevolutionTags.Items.ENDERITE_ADJACENT,
+                OrevolutionTags.Items.AETHERSTEEL_OR_ENDERITE,
                 OrevolutionTags.Items.VERDITE_INGOTS,
                 OrevolutionTags.Items.BRONZE_INGOTS,
                 OrevolutionTags.Items.STEEL_INGOTS
         );
         tag(Tags.Items.NUGGETS).addTags(
+                OrevolutionTags.Items.COPPER_NUGGETS,
                 OrevolutionTags.Items.TIN_NUGGETS,
                 OrevolutionTags.Items.CASSITERITE_NUGGETS,
                 OrevolutionTags.Items.PLATINUM_NUGGETS,

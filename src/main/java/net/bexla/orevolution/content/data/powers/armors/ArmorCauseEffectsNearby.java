@@ -23,8 +23,8 @@ public class ArmorCauseEffectsNearby extends ArmorPowerMobEffects {
         this.range = range;
     }
 
-    public ArmorCauseEffectsNearby(String tooltip_id, IConditional conditional, int baseDuration, int amplifier, Holder<MobEffect> effectAttacker, double range) {
-        this(tooltip_id, conditional, baseDuration, amplifier, effectAttacker != null? List.of(effectAttacker) : List.of(), range);
+    public ArmorCauseEffectsNearby(String tooltip_id, IConditional conditional, int duration, int amplifier, Holder<MobEffect> effectAttacker, double range) {
+        this(tooltip_id, conditional, duration, amplifier, effectAttacker != null? List.of(effectAttacker) : List.of(), range);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class ArmorCauseEffectsNearby extends ArmorPowerMobEffects {
     }
 
     @Override
-    public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
+    public void onTickWhileWorn(ItemStack helmet, LivingEntity wearer, EquipmentSlot slot) {
         if(!(wearer instanceof Player player)) return;
 
         Level level = player.level();
@@ -50,7 +50,7 @@ public class ArmorCauseEffectsNearby extends ArmorPowerMobEffects {
 
         for(LivingEntity entity : entities) {
             if(!entity.isAlive()) continue;
-            if(!condition(stack, wearer.level(), wearer, entity)) continue;
+            if(!condition(helmet, wearer.level(), wearer, entity)) continue;
 
             if(!this.effectsMob.isEmpty()) {
                 for(Holder<MobEffect> p : this.effectsMob) {

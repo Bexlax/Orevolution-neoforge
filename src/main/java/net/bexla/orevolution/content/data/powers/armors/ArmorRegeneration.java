@@ -9,6 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class ArmorRegeneration extends OrevolutionArmorPower {
     private final int regenerationPerTick;
     private final int tickCooldown;
@@ -27,19 +29,24 @@ public class ArmorRegeneration extends OrevolutionArmorPower {
     }
 
     @Override
-    public void onTickWhileWorn(ItemStack stack, LivingEntity wearer, EquipmentSlot slot) {
+    public void onTickWhileWorn(ItemStack helmet, LivingEntity wearer, EquipmentSlot slot) {
         if (!(wearer instanceof Player player)) return;
+
+        List<ItemStack> armor = List.of(
+                helmet,
+                wearer.getItemBySlot(EquipmentSlot.CHEST),
+                wearer.getItemBySlot(EquipmentSlot.LEGS),
+                wearer.getItemBySlot(EquipmentSlot.FEET)
+        );
 
         Level level = player.level();
 
-        if (!condition(stack, level, player, null) || level.isClientSide()) return;
-
+        if (!condition(helmet, level, player, null) || level.isClientSide()) return;
         if (level.getGameTime() % tickCooldown != 0) return;
 
-        if (!stack.isDamaged()) return;
-
-        int newDamage = stack.getDamageValue() - regenerationPerTick;
-
-        stack.setDamageValue(Math.max(0, newDamage));
+        for(ItemStack stack : armor) {
+            int newDamage = stack.getDamageValue() - regenerationPerTick;
+            stack.setDamageValue(Math.max(0, newDamage));
+        }
     }
 }

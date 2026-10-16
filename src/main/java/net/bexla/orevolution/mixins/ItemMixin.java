@@ -8,11 +8,13 @@ import net.bexla.orevolution.init.RegDataComponents;
 import net.bexla.orevolution.init.RegItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,7 +25,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)
 public class ItemMixin {
-
     @Inject(method = "getName", at = @At("RETURN"), cancellable = true)
     private void orevolution$tungstenName(ItemStack stack, CallbackInfoReturnable<Component> cir) {
         boolean isReinforced = stack.getOrDefault(RegDataComponents.REINFORCED.get(), false);
@@ -51,7 +52,7 @@ public class ItemMixin {
     private void orevolution$injectPowerMining(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miningEntity, CallbackInfoReturnable<Boolean> cir) {
         if(stack.getItem() instanceof TieredItem) {
             IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
-            if(power != IToolPower.EMPTY && power.onUseOverride(stack, level, miningEntity))
+            if(power != IToolPower.EMPTY && power.onUse(stack, level, miningEntity))
                 cir.setReturnValue(true);
         }
     }
@@ -60,7 +61,7 @@ public class ItemMixin {
     private void orevolution$injectPowerAttackEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfoReturnable<Boolean> cir) {
         if(stack.getItem() instanceof TieredItem) {
             IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
-            if(!power.equals(IToolPower.EMPTY) && power.onUseOverride(stack, attacker.level(), attacker))
+            if(!power.equals(IToolPower.EMPTY) && power.onUse(stack, attacker.level(), attacker))
                 cir.setReturnValue(true);
         }
     }

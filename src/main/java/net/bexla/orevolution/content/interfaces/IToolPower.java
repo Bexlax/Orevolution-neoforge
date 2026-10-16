@@ -2,6 +2,8 @@ package net.bexla.orevolution.content.interfaces;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -9,8 +11,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.List;
 
@@ -60,20 +64,25 @@ public interface IToolPower {
     }
 
     /** Called when the entity uses the item (mining or attacking).
-     * return true to override the default behavior (like mining speed or damage).
+     * return true to override the default behavior.
      * @param stack The item stack.
      * @param level The level.
      * @param player The player using the item.
-     * @return true to override the default behavior.
      */
-    default boolean onUseOverride(ItemStack stack, Level level, LivingEntity player) {return false;}
+    default boolean onUse(ItemStack stack, Level level, LivingEntity player) {return false;}
+
+    /** Called when the entity uses the item on something (ie axes being used to strip wood).
+     * return true to override the default behavior.
+     * @param context The context in which the item was used.
+     * @param result The original result from the context.
+     */
+    default InteractionResult useOnContext(ItemStack stack, Player player, InteractionHand hand, BlockHitResult hitResult, InteractionResult result) {return result;}
 
     /**
      * Sets the destroy speed of the item.
      * @param stack The item stack.
      * @param state The block state being destroyed.
      * @param defaultSpeed The default destroy speed of the item.
-     * @return The modified destroy speed.
      */
     default float setDestroySpeed(ItemStack stack, BlockState state, float defaultSpeed) {return defaultSpeed;}
 

@@ -18,6 +18,18 @@
     },
     {
       "item": "orevolution:cassiterite_hoe"
+    },
+    {
+      "item": "orevolution:cassiterite_helmet"
+    },
+    {
+      "item": "orevolution:cassiterite_chestplate"
+    },
+    {
+      "item": "orevolution:cassiterite_leggings"
+    },
+    {
+      "item": "orevolution:cassiterite_boots"
     }
   ],
   "result": {

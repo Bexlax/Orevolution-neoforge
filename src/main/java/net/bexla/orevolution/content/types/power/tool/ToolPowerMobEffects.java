@@ -3,7 +3,9 @@ package net.bexla.orevolution.content.types.power.tool;
 import net.bexla.orevolution.content.interfaces.IConditional;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -64,16 +66,22 @@ public class ToolPowerMobEffects extends OrevolutionToolPower {
     @Override
     public List<Component> appendTooltip(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         List<Component> tips = new ArrayList<>();
-        Object condition = conditional.value();
+        MutableComponent condition = conditional.value();
 
         if(this.effectTarget != null) {
             tips.add(Component.translatable("power.orevolution." + tooltip_id, condition != null? condition : "%s").withStyle(ChatFormatting.GREEN));
+            if(condition != null) {
+                tips.add(CommonComponents.space().append(condition.withStyle(ChatFormatting.DARK_GRAY)));
+            }
             for (Holder<MobEffect> p : this.effectTarget) {
                 tips.add(Component.literal(" - " + p.value().getDisplayName().getString() + (this.amplifier > 0 ? " " + Component.translatable("potion.potency." + this.amplifier).getString() : "")).withStyle(ChatFormatting.AQUA));
             }
         }
         if(this.effectAttacker != null) {
             tips.add(Component.translatable("power.orevolution." + tooltip_attacker_id, condition != null? condition : "%s").withStyle(ChatFormatting.GREEN));
+            if(condition != null) {
+                tips.add(CommonComponents.space().append(condition.withStyle(ChatFormatting.DARK_GRAY)));
+            }
             for (Holder<MobEffect> p : this.effectAttacker) {
                 tips.add(Component.literal(" - " + p.value().getDisplayName().getString() + (this.amplifier > 0 ? " " + Component.translatable("potion.potency." + this.amplifier).getString() : "")).withStyle(ChatFormatting.AQUA));
             }

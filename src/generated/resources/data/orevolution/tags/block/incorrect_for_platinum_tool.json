@@ -1,5 +1,9 @@
 {
+  "remove": [
+    "#orevolution:needs_platinum_tool"
+  ],
   "values": [
-    "#minecraft:incorrect_for_diamond_tool"
+    "#minecraft:incorrect_for_diamond_tool",
+    "#minecraft:needs_diamond_tool"
   ]
 }

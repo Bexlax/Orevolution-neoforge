@@ -5,7 +5,6 @@ import net.bexla.orevolution.content.types.power.armor.ArmorPowerMobEffects;
 import net.minecraft.core.Holder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 
 import java.util.List;
@@ -16,10 +15,7 @@ public class ArmorCauseEffectsOnAttacked extends ArmorPowerMobEffects {
     }
 
     public ArmorCauseEffectsOnAttacked(String tooltip_target_id, String tooltip_wearer_id, IConditional conditional, int baseDuration, int amplifier, Holder<MobEffect> effectWearer, Holder<MobEffect> effectAttacker) {
-        super(tooltip_target_id, tooltip_wearer_id, conditional, baseDuration, amplifier,
-                effectAttacker != null? List.of(effectAttacker) : List.of(),
-                effectWearer != null? List.of(effectWearer) : List.of()
-        );
+        super(tooltip_target_id, tooltip_wearer_id, conditional, baseDuration, amplifier, effectAttacker, effectWearer);
     }
 
     @Override
@@ -31,32 +27,8 @@ public class ArmorCauseEffectsOnAttacked extends ArmorPowerMobEffects {
 
         if(!condition(null, wearer.level(), wearer, attacker)) return super.onDamaged(wearer, source, amount);
 
-        if(!this.effectsPlayer.isEmpty()) {
-            for(Holder<MobEffect> p : this.effectsPlayer) {
-                MobEffectInstance instance = wearer.getEffect(p);
+        applyAllEffects(wearer, attacker);
 
-                if(wearer.hasEffect(p) && instance != null) {
-                    instance.update(new MobEffectInstance(p, (int)(amount * 20) + this.duration, this.amplifier));
-                }
-                else {
-                    wearer.addEffect(new MobEffectInstance(p, (int)(amount * 20) + this.duration, this.amplifier));
-                }
-            }
-        }
-
-        if(attacker == null) return super.onDamaged(wearer, source, amount);
-
-        if(!this.effectsMob.isEmpty()) {
-            for(Holder<MobEffect> p : this.effectsMob) {
-                MobEffectInstance instance = attacker.getEffect(p);
-                if(attacker.hasEffect(p) && instance != null) {
-                    instance.update(new MobEffectInstance(p, (int)(amount * 20) + this.duration, this.amplifier));
-                }
-                else {
-                    attacker.addEffect(new MobEffectInstance(p, (int)(amount * 20) + this.duration, this.amplifier));
-                }
-            }
-        }
         return super.onDamaged(wearer, source, amount);
     }
 }

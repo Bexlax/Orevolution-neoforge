@@ -1,10 +1,15 @@
 {
   "values": [
     "minecraft:fall",
+    "minecraft:fly_into_wall",
+    "minecraft:mob_attack",
+    "minecraft:mob_projectile",
+    "minecraft:mob_attack_no_aggro",
     "minecraft:falling_anvil",
     "minecraft:falling_stalactite",
     "minecraft:falling_block",
     "minecraft:explosion",
-    "minecraft:player_explosion"
+    "minecraft:player_explosion",
+    "#minecraft:is_projectile"
   ]
 }

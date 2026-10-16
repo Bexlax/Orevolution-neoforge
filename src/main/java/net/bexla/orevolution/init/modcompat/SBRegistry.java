@@ -26,20 +26,34 @@ public class SBRegistry {
                             12.5F,
                             4.6F
                     ), new Item.Properties()));
-//    public static Supplier<Item> NICKEL_SPEAR = SB_REG.register("nickel_spear",
-//            () -> new SpearItem(
-//                    OrevolutionTiers.ToolTiers.NICKEL,
-//                    new SpearItem.SpearStats(
-//                            0.85F,
-//                            0.88F,
-//                            0.67F,
-//                            4.0F,
-//                            9.0F,
-//                            5.0F,
-//                            5.1F,
-//                            12.5F,
-//                            4.6F
-//                    ), new Item.Properties()));
+    public static Supplier<Item> CASSITERITE_SPEAR = SB_REG.register("cassiterite_spear",
+            () -> new SpearItem(
+                    OrevolutionTiers.ToolTiers.CASSITERITE,
+                    new SpearItem.SpearStats(
+                            1.00F,
+                            1.06F,
+                            0.55F,
+                            2.75F,
+                            7.75F,
+                            4.25F,
+                            5.1F,
+                            10.6F,
+                            4.6F
+                    ), new Item.Properties()));
+    public static Supplier<Item> TUNGSTEN_SPEAR = SB_REG.register("tungsten_spear",
+            () -> new SpearItem(
+                    OrevolutionTiers.ToolTiers.TUNGSTEN,
+                    new SpearItem.SpearStats(
+                            1.00F,
+                            1.06F,
+                            0.55F,
+                            2.75F,
+                            7.75F,
+                            4.25F,
+                            5.1F,
+                            10.6F,
+                            4.6F
+                    ), new Item.Properties()));
     public static Supplier<Item> PLATINUM_SPEAR = SB_REG.register("platinum_spear",
             () -> new SpearItem(
                     OrevolutionTiers.ToolTiers.PLATINUM,

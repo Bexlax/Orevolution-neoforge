@@ -39,7 +39,7 @@ public class OrevolutionTags {
         public static final TagKey<Item> TIN_INGOTS = universalTag("ingots/tin");
         public static final TagKey<Item> PLATINUM_INGOTS = universalTag("ingots/platinum");
         public static final TagKey<Item> TUNGSTEN_INGOTS = universalTag("ingots/tungsten");
-        public static final TagKey<Item> ENDERITE_ADJACENT = universalTag("ingots/enderite");
+        public static final TagKey<Item> AETHERSTEEL_OR_ENDERITE = universalTag("ingots/enderite");
         public static final TagKey<Item> VERDITE_INGOTS = universalTag("ingots/verdite");
 
         public static final TagKey<Item> BRONZE_INGOTS = universalTag("ingots/bronze");
@@ -51,6 +51,8 @@ public class OrevolutionTags {
         public static final TagKey<Item> TUNGSTEN_NUGGETS = universalTag("nuggets/tungsten");
         public static final TagKey<Item> LIVINGSTONE_FRAGMENTS = universalTag("nuggets/livingstone");
         public static final TagKey<Item> VERDITE_NUGGETS = universalTag("nuggets/verdite");
+
+        public static final TagKey<Item> COPPER_NUGGETS = universalTag("nuggets/copper");
 
         public static final TagKey<Item> TIN_RAWS = universalTag("raw_materials/tin");
         public static final TagKey<Item> CASSITERITE_RAWS = universalTag("raw_materials/cassiterite");
@@ -127,12 +129,20 @@ public class OrevolutionTags {
         public static final TagKey<Block> NEEDS_PLATINUM_TOOL = tag("needs_platinum_tool");
         public static final TagKey<Block> NEEDS_AETHERSTEEL_TOOL = tag("needs_aethersteel_tool");
 
-        public static final TagKey<Block> INCORRECT_FOR_TIN_ALT = tag("alt_progress/incorrect_for_tin_tool_copper_progress");
-
         public static final TagKey<Block> INCORRECT_FOR_TIN_TOOL = tag("incorrect_for_tin_tool");
         public static final TagKey<Block> INCORRECT_FOR_PLATINUM_TOOL = tag("incorrect_for_platinum_tool");
         public static final TagKey<Block> INCORRECT_FOR_MOONSTONE_TOOL = tag("incorrect_for_moonstone_tool");
         public static final TagKey<Block> INCORRECT_FOR_AETHERSTEEL_TOOL = tag("incorrect_for_aethersteel_tool");
+
+        public static final TagKey<Block> WOOD_HARVEST_RESTRICTION_DEFAULTS = tag("wood_harvest_restriction_defaults");
+        public static final TagKey<Block> STONE_HARVEST_RESTRICTION_DEFAULTS = tag("stone_harvest_restriction_defaults");
+        public static final TagKey<Block> TIN_HARVEST_RESTRICTION_DEFAULTS = tag("tin_harvest_restriction_defaults");
+        public static final TagKey<Block> IRON_HARVEST_RESTRICTION_DEFAULTS = tag("iron_harvest_restriction_defaults");
+        public static final TagKey<Block> PLATINUM_HARVEST_RESTRICTION_DEFAULTS = tag("platinum_harvest_restriction_defaults");
+        public static final TagKey<Block> DIAMOND_HARVEST_RESTRICTION_DEFAULTS = tag("diamond_harvest_restriction_defaults");
+        public static final TagKey<Block> GOLD_HARVEST_RESTRICTION_DEFAULTS = tag("gold_harvest_restriction_defaults");
+        public static final TagKey<Block> AETHERSTEEL_HARVEST_RESTRICTION_DEFAULTS = tag("aethersteel_harvest_restriction_defaults");
+        public static final TagKey<Block> NETHERITE_HARVEST_RESTRICTION_DEFAULTS = tag("netherite_harvest_restriction_defaults");
 
         private static TagKey<Block> tag(String name) {
             return TagUtil.blockTag(Orevolution.MODID, name);

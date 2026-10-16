@@ -1,6 +1,7 @@
 package net.bexla.orevolution.content.types.recipe;
 
 import com.mojang.serialization.MapCodec;
+import net.bexla.orevolution.content.data.utility.OrevolutionTags;
 import net.bexla.orevolution.init.RegDataComponents;
 import net.bexla.orevolution.init.RegItems;
 import net.bexla.orevolution.init.RegRecipeSerializers;
@@ -25,7 +26,7 @@ public class CoatSmithingRecipe implements SmithingRecipe {
         ItemStack stack = input.base();
 
         return input.template().is(RegItems.COATING_TEMPLATE.get())
-                && input.addition().is(RegItems.TUNGSTEN_INGOT.get())
+                && input.addition().is(OrevolutionTags.Items.TUNGSTEN_INGOTS)
                 && (!stack.getAttributeModifiers().modifiers().isEmpty() || stack.has(DataComponents.ATTRIBUTE_MODIFIERS))
                 && !stack.getOrDefault(RegDataComponents.REINFORCED.get(), false)
                 && !stack.getOrDefault(RegDataComponents.COATED.get(), false);
