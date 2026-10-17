@@ -61,7 +61,16 @@ public class GENBlockTags extends BlockTagsProvider {
                         RegBlocks.CELESTITE_BRICKS_WALL.get(),
                         RegBlocks.POLISHED_CELESTITE_WALL.get(),
                         RegBlocks.AMETHYST_BRICKS_WALL.get(),
-                        RegBlocks.POLISHED_AMETHYST_WALL.get()
+                        RegBlocks.POLISHED_AMETHYST_WALL.get(),
+                        RegBlocks.LIVINGSTONE_WALL.get(),
+                        RegBlocks.AETHERROCK_WALL.get(),
+                        RegBlocks.AETHERROCK_BRICKS_WALL.get(),
+                        RegBlocks.RHYOLITE_WALL.get(),
+                        RegBlocks.RHYOLITE_BRICKS_WALL.get(),
+                        RegBlocks.LIVINGSTONE_BRICKS_WALL.get(),
+                        RegBlocks.POLISHED_LIVINGSTONE_WALL.get(),
+                        RegBlocks.CHERT_WALL.get(),
+                        RegBlocks.CHERT_WALL.get()
                 );
         tag(BlockTags.DOORS).add(RegBlocks.STEEL_DOOR.get());
         tag(BlockTags.TRAPDOORS).add(RegBlocks.STEEL_TRAPDOOR.get());
@@ -170,7 +179,7 @@ public class GENBlockTags extends BlockTagsProvider {
                         Blocks.DISPENSER
                 );
 
-        IntrinsicTagAppender<Block> add = tag(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)
+        tag(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)
                 .addTags(
                         OrevolutionTags.Blocks.ANDESITES,
                         OrevolutionTags.Blocks.GRANITES,
