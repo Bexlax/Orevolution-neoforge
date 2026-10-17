@@ -9,8 +9,7 @@ This mod expands Minecraft's main progression with six new ores, two (optional) 
   - Modrinth: https://modrinth.com/mod/orevolution/versions
   - Curseforge: https://www.curseforge.com/minecraft/mc-mods/orevolution
 - #### Ways to integrate your mod with Orevolution (Compatibility):
-  - You can look at [RegOther.java](https://github.com/Bexlax/Orevolution-neoforge/blob/master/src/main/java/net/bexla/orevolution/init/RegOthers.java) to understand how Powers, Custom Durability and configurable tool tiers can be registered
-    - To modify the required progression of the game, you must use Tags. Search for "NEEDS_STONE_TOOL" and "INCORRECT_FOR_STONE_TOOL" in [GENBlockTags.java](https://github.com/Bexlax/Orevolution-neoforge/blob/master/src/main/java/net/bexla/orevolution/datagen/GENBlockTags.java) to understand how it was done here.
+  - You can look at [RegOther.java](https://github.com/Bexlax/Orevolution-neoforge/blob/master/src/main/java/net/bexla/orevolution/init/RegOthers.java) to understand how Powers, Custom Durability and configurable tiers can be registered
 - #### Where the 1.20.1 Repository is:
   - Due to i don't know what phenomenon, i was unable to commit any changes so i had to make another repository. you can still visit it at https://github.com/Bexlax/Orevolution
 ---

@@ -3,7 +3,6 @@ package net.bexla.orevolution.mixins;
 import net.bexla.orevolution.events.BronzeTotemEvents;
 import net.bexla.orevolution.init.RegDataComponents;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.ItemStack;
@@ -18,18 +17,6 @@ import static net.bexla.orevolution.content.data.utility.OrevolutionUtils.totemI
 
 @Mixin(Player.class)
 public class PlayerMixin {
-    @Inject(method = "blockUsingShield", at = @At("HEAD"), cancellable = true)
-    private void orevolution$injectBronzeShieldBreaking(LivingEntity entity, CallbackInfo ci) {
-        Player player = (Player)(Object)this;
-
-        if(player.getUseItem().getOrDefault(RegDataComponents.REINFORCED.get(), false) && entity.canDisableShield()) {
-            entity.knockback(0.7, player.getX() - entity.getX(), player.getZ() - entity.getZ());
-            player.getUseItem().setDamageValue(player.getUseItem().getDamageValue() + 25);
-            entity.getMainHandItem().setDamageValue(entity.getMainHandItem().getDamageValue() + 5);
-            ci.cancel();
-        }
-    }
-
     @Unique
     private float orevolution$preventedExhaustion;
 
