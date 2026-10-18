@@ -25,7 +25,7 @@ public enum Operator {
         }
     },
 
-    MULTIPLY {
+    MULTIPLY_FORMAT_PERCENT {
         @Override
         public float apply(float value, float modifier) {
             return value * modifier;
@@ -46,6 +46,18 @@ public enum Operator {
         @Override
         public Object format(float modifier) {
             return "-" + (int) ((1 - modifier) * 100) + "%";
+        }
+    },
+
+    MULTIPLY_FORMAT_X {
+        @Override
+        public float apply(float value, float modifier) {
+            return value * modifier;
+        }
+
+        @Override
+        public Object format(float modifier) {
+            return modifier + "x";
         }
     };
 

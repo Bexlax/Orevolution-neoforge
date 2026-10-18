@@ -161,6 +161,10 @@ public class GENBlockTags extends BlockTagsProvider {
                         Blocks.LECTERN,
                         Blocks.CAULDRON,
                         Blocks.DECORATED_POT,
+                        Blocks.BEEHIVE,
+                        Blocks.BEE_NEST,
+                        Blocks.JUKEBOX,
+                        Blocks.NOTE_BLOCK,
                         Blocks.CRAFTER
                 );
         tag(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)
@@ -171,11 +175,14 @@ public class GENBlockTags extends BlockTagsProvider {
                 )
                 .add(
                         RegBlocks.STEEL_ANVIL.get(),
+                        RegBlocks.TUNGSTEN_SPONGE.get(),
+                        RegBlocks.HOT_TUNGSTEN_SPONGE.get(),
                         Blocks.ENCHANTING_TABLE,
                         Blocks.BREWING_STAND,
                         Blocks.LODESTONE,
                         Blocks.HOPPER,
                         Blocks.DROPPER,
+                        Blocks.HEAVY_CORE,
                         Blocks.DISPENSER
                 );
 
@@ -214,14 +221,35 @@ public class GENBlockTags extends BlockTagsProvider {
                         Tags.Blocks.OBSIDIANS,
                         BlockTags.LEAVES,
                         BlockTags.SNOW,
+                        BlockTags.SWORD_EFFICIENT,
                         BlockTags.ICE
                 )
                 .add(
+                        Blocks.ROOTED_DIRT,
+                        Blocks.MUD,
+                        Blocks.PACKED_MUD,
+                        Blocks.MUDDY_MANGROVE_ROOTS,
+                        Blocks.MANGROVE_ROOTS,
                         Blocks.VINE,
                         Blocks.GLOW_LICHEN,
                         Blocks.MOSS_BLOCK,
                         Blocks.MOSS_CARPET,
-                        Blocks.SPORE_BLOSSOM
+                        Blocks.CALCITE,
+                        Blocks.POINTED_DRIPSTONE,
+                        Blocks.MAGMA_BLOCK,
+                        Blocks.DRIPSTONE_BLOCK,
+                        Blocks.GLOWSTONE,
+                        Blocks.END_ROD
+                );
+
+        tag(BlockTags.SWORD_EFFICIENT)
+                .add(
+                        RegBlocks.CORELIO.get(),
+                        RegBlocks.LARGE_CORELIO.get(),
+                        RegBlocks.UNKNOWN_ROOTS.get(),
+                        RegBlocks.UNKNOWN_ROOTS_BLOCK.get(),
+                        RegBlocks.VINNELIO_PLANT.get(),
+                        RegBlocks.VINNELIO.get()
                 );
 
         tag(OrevolutionTags.Blocks.NEVER_DUPLICATE_CHANCE)
@@ -231,7 +259,6 @@ public class GENBlockTags extends BlockTagsProvider {
                         Tags.Blocks.BARRELS
                 )
                 .add(
-                        RegBlocks.AETHERSTEEL_BLOCK.get(),
                         Blocks.BEACON,
                         Blocks.CONDUIT,
                         Blocks.RESPAWN_ANCHOR
@@ -388,7 +415,12 @@ public class GENBlockTags extends BlockTagsProvider {
                 OrevolutionTags.Blocks.RAW_TIN_BLOCKS,
                 OrevolutionTags.Blocks.RAW_CASSITERITE_BLOCKS,
                 OrevolutionTags.Blocks.RAW_TUNGSTEN_BLOCKS
-        ).add(RegBlocks.PYRITE_BLOCK.get());
+        ).add(
+                RegBlocks.PYRITE_BLOCK.get(),
+                RegBlocks.BRONZE_BLOCK.get(),
+                RegBlocks.STEEL_BLOCK.get(),
+                RegBlocks.BRONZE_BLOCK.get()
+        );
 
         tag(OrevolutionTags.Blocks.PLANT_ORES).add(
                 RegBlocks.LIVINGSTONE_CROP.get(),

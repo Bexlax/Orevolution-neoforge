@@ -11,6 +11,9 @@
     "#c:storage_blocks/raw_tin",
     "#c:storage_blocks/raw_cassiterite",
     "#c:storage_blocks/raw_tungsten",
-    "orevolution:pyrite_block"
+    "orevolution:pyrite_block",
+    "orevolution:bronze_block",
+    "orevolution:steel_block",
+    "orevolution:bronze_block"
   ]
 }

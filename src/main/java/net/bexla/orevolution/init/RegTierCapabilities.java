@@ -241,11 +241,11 @@ public class RegTierCapabilities {
         );
         ItemPowerRegistry.register(OrevolutionTiers.ToolTiers.STEEL, OrevolutionConfig.POWERS.steelToolPowers, OrevolutionConfig.POWERS.steelWeaponPowers,
                 new ToolExpandHarvestArea("multi_break", IConditional.always(), OrevolutionConfig.POWERS.steelRadius.get()),
-                new ToolModifyCritDamage("crit_damage", IConditional.always(), Operator.MULTIPLY,  OrevolutionConfig.POWERS.steelCritMult.get().floatValue())
+                new ToolModifyCritDamage("crit_damage", IConditional.always(), Operator.MULTIPLY_FORMAT_PERCENT,  OrevolutionConfig.POWERS.steelCritMult.get().floatValue())
         );
 
         ItemPowerRegistry.register(OrevolutionTiers.ToolTiers.PLATINUM, OrevolutionConfig.POWERS.platinumToolPowers, OrevolutionConfig.POWERS.platinumWeaponPowers,
-                new ToolIncreaseBlockXP("xp_increase", IConditional.always(), OrevolutionConfig.POWERS.platinumXPMult.get()),
+                new ToolIncreaseXP("xp_increase", IConditional.always(), Operator.MULTIPLY_FORMAT_X, OrevolutionConfig.POWERS.platinumXPMult.get()),
                 new ToolCauseEffectOnHit("on_hit_effect", "", IConditional.targetMobType(EntityTypeTags.UNDEAD, "undead"),
                         OrevolutionConfig.POWERS.platinumForceUndeadEffects.get(),
                         OrevolutionConfig.POWERS.platinumUndeadEffectsTime.get(),
@@ -253,7 +253,7 @@ public class RegTierCapabilities {
                         PLATINUM_TOOL_EFFECTS, null)
         );
         ItemPowerRegistry.register(OrevolutionTiers.ToolTiers.MOONSTONE, OrevolutionConfig.POWERS.moonstoneToolPowers, OrevolutionConfig.POWERS.moonstoneWeaponPowers,
-                new ToolIncreaseBlockXP("xp_increase", IConditional.always(), OrevolutionConfig.POWERS.moonstoneXPMult.get()),
+                new ToolIncreaseXP("xp_increase", IConditional.always(), Operator.MULTIPLY_FORMAT_X, OrevolutionConfig.POWERS.moonstoneXPMult.get()),
                 new ToolCauseEffectOnHit("on_hit_effect", "", IConditional.targetIsHostile(),
                         OrevolutionConfig.POWERS.moonstoneForceMonsterEffects.get(),
                         OrevolutionConfig.POWERS.moonstoneMonsterEffectsTime.get(),
@@ -270,7 +270,7 @@ public class RegTierCapabilities {
         ItemPowerRegistry.register(Tiers.NETHERITE, OrevolutionConfig.POWERS.netheriteToolPowers, OrevolutionConfig.POWERS.netheriteWeaponPowers,
                 new ToolAutosmelt("autosmelt", IConditional.oneOf(IConditional.isBlockstateTaggedAs(OrevolutionTags.Blocks.AUTOSMELT))),
                 new ToolModifyDealtDamage("extra_damage_dealt", IConditional.targetHPPercentage(OrevolutionConfig.POWERS.netheritePercentage.get().floatValue(), OrevolutionConfig.POWERS.netheritePercentageLowerThan.get()),
-                        Operator.MULTIPLY, OrevolutionConfig.POWERS.netheriteDamageMult.get().floatValue())
+                        Operator.MULTIPLY_FORMAT_PERCENT, OrevolutionConfig.POWERS.netheriteDamageMult.get().floatValue())
         );
         ItemPowerRegistry.register(OrevolutionTiers.ToolTiers.AETHERSTEEL, OrevolutionConfig.POWERS.aethersteelToolPowers, OrevolutionConfig.POWERS.aethersteelWeaponPowers,
                 new ToolMultiPower(List.of(
@@ -279,7 +279,7 @@ public class RegTierCapabilities {
                 )),
                 new ToolMultiPower(List.of(
                         new ToolModifyDealtDamage("extra_damage_dealt", IConditional.targetHPPercentage(0.65f, true),
-                                Operator.MULTIPLY, OrevolutionConfig.POWERS.aethersteelDamageMult.get().floatValue()),
+                                Operator.MULTIPLY_FORMAT_PERCENT, OrevolutionConfig.POWERS.aethersteelDamageMult.get().floatValue()),
                         new OrevolutionToolPower("aethersteel", IConditional.always()) // Power is handled in net.bexla.orevolution.events.MiscSubscriber
                 ))
         );

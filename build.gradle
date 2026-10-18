@@ -8,6 +8,10 @@ tasks.named('wrapper', Wrapper).configure {
     distributionType = Wrapper.DistributionType.BIN
 }
 
+tasks.named('jar', Jar) {
+    exclude('**/modpage/**')
+}
+
 version = mod_version
 group = mod_group_id
 
@@ -113,6 +117,9 @@ dependencies {
 
     runtimeOnly "maven.modrinth:BVzZfTc1:CfQJbv1u"
     runtimeOnly "maven.modrinth:4I1XuqiY:bRlX1x4e"
+
+    runtimeOnly "curse.maven:ftb-ultimine-forge-386134:8231400"
+    runtimeOnly "curse.maven:ftb-library-forge-404465:9008089"
 
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
     compileOnly("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }

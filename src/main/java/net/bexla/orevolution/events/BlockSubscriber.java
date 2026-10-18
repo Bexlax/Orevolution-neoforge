@@ -5,6 +5,7 @@ import net.bexla.orevolution.OrevolutionConfig;
 import net.bexla.orevolution.content.data.utility.OrevolutionUtils;
 import net.bexla.orevolution.content.interfaces.IToolPower;
 import net.bexla.orevolution.content.types.ItemPowerRegistry;
+import net.bexla.orevolution.content.types.ToolModifiers;
 import net.bexla.orevolution.init.RegItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -12,15 +13,16 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.Containers;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
@@ -29,9 +31,10 @@ public class BlockSubscriber {
     private static final String INCORRECT_TIER = "actionbar.orevolution.cant_harvest_ore";
     private static final String INCORRECT_TOOL = "actionbar.orevolution.cant_harvest_block";
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onHarvestCheck(PlayerEvent.HarvestCheck event) {
         Player player = event.getEntity();
+
         if (player.isCreative() || player.isSpectator()) return;
 
         ItemStack heldItem = player.getMainHandItem();
@@ -39,31 +42,47 @@ public class BlockSubscriber {
 
         BlockState state = event.getTargetBlock();
 
-        if (!state.requiresCorrectToolForDrops()) return;
+        if (OrevolutionConfig.COMMON.modProgression.get()) {
+            TriState progressionResult = ToolModifiers.isCorrectForDrops(heldItem, state);
 
-        TagKey<Block> heldTag = OrevolutionUtils.getToolTag(heldItem);
-        TagKey<Block> requiredTag = OrevolutionUtils.getRequiredToolTag(state);
+            if (progressionResult == TriState.FALSE) {
+                event.setCanHarvest(false);
 
-        if (!event.canHarvest()) {
-            if (heldTag != null && heldTag.equals(requiredTag)) {
                 if (OrevolutionConfig.CLIENT.warnBreak.get()) {
                     player.displayClientMessage(
                             Component.translatable(INCORRECT_TIER, heldItem.getDisplayName()),
                             true
                     );
                 }
-            } else {
-                if (OrevolutionConfig.CLIENT.warnIncorrectToolType.get()) {
-                    player.displayClientMessage(
-                            Component.translatable(
-                                    INCORRECT_TOOL,
-                                    requiredTag != null
-                                            ? OrevolutionUtils.getToolTypeName(requiredTag)
-                                            : Component.translatable("tool.orevolution.unknown_tool")
-                            ),
-                            true
-                    );
-                }
+
+                return;
+            }
+        }
+        else {
+            if (OrevolutionConfig.CLIENT.warnBreak.get() && !heldItem.isCorrectToolForDrops(state)) {
+                player.displayClientMessage(
+                        Component.translatable(INCORRECT_TIER, heldItem.getDisplayName()),
+                        true
+                );
+            }
+        }
+
+        if (!state.requiresCorrectToolForDrops()) return;
+
+        TagKey<Block> heldTag = OrevolutionUtils.getToolTag(heldItem);
+        TagKey<Block> requiredTag = OrevolutionUtils.getRequiredToolTag(state);
+
+        if (requiredTag != null && (heldTag == null || !heldTag.equals(requiredTag))) {
+            event.setCanHarvest(false);
+
+            if (OrevolutionConfig.CLIENT.warnIncorrectToolType.get()) {
+                player.displayClientMessage(
+                        Component.translatable(
+                                INCORRECT_TOOL,
+                                OrevolutionUtils.getToolTypeName(requiredTag)
+                        ),
+                        true
+                );
             }
         }
     }
@@ -92,30 +111,35 @@ public class BlockSubscriber {
         }
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void onBreakSpeed(PlayerEvent.BreakSpeed event) {
         Player player = event.getEntity();
-        if (player.isCreative() || player.isSpectator()) {
-            return;
-        }
+
+        if (player.isCreative() || player.isSpectator()) return;
 
         ItemStack stack = player.getMainHandItem();
-        if (!(stack.getItem() instanceof TieredItem tiered)) {
-            return;
-        }
+        if (!(stack.getItem() instanceof TieredItem)) return;
 
         BlockState state = event.getState();
-        Tier tier = tiered.getTier();
-        boolean isCorrectTier = player.getMainHandItem().isCorrectToolForDrops(state);
-
-        final float originalSpeed = event.getOriginalSpeed();
-        float newSpeed;
+        float originalSpeed = event.getOriginalSpeed();
 
         IToolPower power = ItemPowerRegistry.getPowerForItem(stack);
-        newSpeed = power.setDestroySpeed(stack, state, originalSpeed);
+        float newSpeed = power.setDestroySpeed(stack, state, originalSpeed);
 
-        if (OrevolutionConfig.COMMON.safeOreBreaking.get() && !isCorrectTier && state.is(Tags.Blocks.ORES)) {
-            newSpeed = 0.0F;
+        if (OrevolutionConfig.COMMON.safeOreBreaking.get() && state.is(Tags.Blocks.ORES)) {
+            TriState progressionResult = OrevolutionConfig.COMMON.modProgression.get()? ToolModifiers.isCorrectForDrops(stack, state) : stack.isCorrectToolForDrops(state) ? TriState.TRUE : TriState.FALSE;
+
+            TagKey<Block> heldTag = OrevolutionUtils.getToolTag(stack);
+            TagKey<Block> requiredTag = OrevolutionUtils.getRequiredToolTag(state);
+
+            boolean incorrectToolType = state.requiresCorrectToolForDrops() && requiredTag != null && (heldTag == null || !heldTag.equals(requiredTag));
+
+            boolean incorrectTier = progressionResult == TriState.FALSE;
+
+            if (incorrectTier || incorrectToolType) {
+                event.setNewSpeed(0);
+                return;
+            }
         }
 
         if (newSpeed != originalSpeed) {

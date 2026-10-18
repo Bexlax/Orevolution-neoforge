@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -41,11 +42,18 @@ public class ToolMultiPower extends OrevolutionToolPower {
         return false;
     }
 
-    public boolean onDropXPBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity player, BlockState state, int xpToDrop) {
+    public List<ItemEntity> onMineBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity player, BlockState state, List<ItemEntity> drops) {
         for(IToolPower p : this.powers) {
-            return p.onDropXPBlock(stack, level, pos, player, state, xpToDrop);
+            return p.onMineBlock(stack, level, pos, player, state, drops);
         }
-        return false;
+        return drops;
+    }
+
+    public int onMineBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity player, BlockState state, int xpToDrop) {
+        for(IToolPower p : this.powers) {
+            return p.onMineBlock(stack, level, pos, player, state, xpToDrop);
+        }
+        return xpToDrop;
     }
 
     public void onInventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {

@@ -3,6 +3,7 @@ package net.bexla.orevolution;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.bexla.orevolution.content.data.BiomeFogModifier;
 import net.bexla.orevolution.content.data.powers.tools.ToolExpandHarvestArea;
+import net.bexla.orevolution.content.data.utility.OrevolutionTags;
 import net.bexla.orevolution.content.interfaces.IToolPower;
 import net.bexla.orevolution.content.renders.FieryArrowRender;
 import net.bexla.orevolution.content.renders.RdxRender;
@@ -28,16 +29,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.DyedItemColor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.material.FluidState;
@@ -53,6 +57,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.joml.Matrix4f;
@@ -71,10 +76,44 @@ public class OrevolutionClient {
 
     private static final Component DURABILITY_MULTIPLIER = Component.translatable("item.durability_multiplier");
 
+    private static final MutableComponent DUPLICATION_TAG = Component.translatable("item.block.duplication_type")
+            .withStyle(ChatFormatting.WHITE);
+    private static final MutableComponent DOUBLE_CHANCE = Component.translatable("tag.orevolution.block.double_chance")
+            .withStyle(ChatFormatting.GOLD);
+    private static final MutableComponent NORMAL_CHANCE = Component.translatable("tag.orevolution.block.normal_chance")
+            .withStyle(ChatFormatting.WHITE);
+    private static final MutableComponent UNCOMMON_CHANCE = Component.translatable("tag.orevolution.block.uncommon_chance")
+            .withStyle(ChatFormatting.GREEN);
+    private static final MutableComponent ORE_CHANCE = Component.translatable("tag.orevolution.block.ore_chance")
+            .withStyle(ChatFormatting.AQUA);
+    private static final MutableComponent RARE_CHANCE = Component.translatable("tag.orevolution.block.rare_chance")
+            .withStyle(ChatFormatting.RED);
+    private static final MutableComponent NO_CHANCE = Component.translatable("tag.orevolution.block.no_chance")
+            .withStyle(ChatFormatting.DARK_GRAY);
+
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
         List<Component> tooltip = event.getToolTip();
+
+        if(stack.getItem() instanceof BlockItem item && OrevolutionConfig.CLIENT.displayChanceTypeInBlock.get()) {
+            Block block = item.getBlock();
+            MutableComponent component = NORMAL_CHANCE;
+            if (block.defaultBlockState().is(OrevolutionTags.Blocks.NEVER_DUPLICATE_CHANCE)) {
+                component = NO_CHANCE;
+            } else if (block.defaultBlockState().is(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)) {
+                component = DOUBLE_CHANCE;
+            } else if (block.defaultBlockState().is(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)) {
+                component = RARE_CHANCE;
+            } else if (block.defaultBlockState().is(Tags.Blocks.ORES)) {
+                component = ORE_CHANCE;
+            } else if (block.defaultBlockState().is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {
+                component = UNCOMMON_CHANCE;
+            }
+
+            tooltip.add(1, CommonComponents.space().append(component));
+            tooltip.add(1, DUPLICATION_TAG);
+        }
 
         if (stack.has(RegDataComponents.MAX_DAMAGE_MULTIPLIER.get()) && OrevolutionConfig.CLIENT.displayDurabilityModifier.get()) {
             int modifierIndex = findInsertionPoint(tooltip);

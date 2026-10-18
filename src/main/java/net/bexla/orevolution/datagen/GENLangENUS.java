@@ -253,7 +253,7 @@ public class GENLangENUS extends LanguageProvider {
         addPower("on_hit_effect", "Inflicts the following effect(s) to targeted mobs:");
         addPower("attacker_on_hit_effect", "Grants the following effect(s) when attacking mobs:");
 
-        addPower("xp_increase", "Blocks give %sx the amount of Experience Points");
+        addPower("xp_increase", "Blocks give %s more Experience Points");
         addPower("xp_looting", "Mobs give +%s Experience Points after dying");
 
         addPower("consecutive_hits_damage", "Attacking the same target repeatedly increase damage by 1 up to %s times");
@@ -345,6 +345,14 @@ public class GENLangENUS extends LanguageProvider {
         add("message.orevolution.bronze_radar_selected", "Selected: %s");
 
         add("item.durability_multiplier", "Durability");
+
+        add("item.block.duplication_type", "Duplication Type:");
+        add("tag.orevolution.block.double_chance", "Double Chance");
+        add("tag.orevolution.block.normal_chance", "Common");
+        add("tag.orevolution.block.uncommon_chance", "Uncommon");
+        add("tag.orevolution.block.ore_chance", "Ore");
+        add("tag.orevolution.block.rare_chance", "Rare");
+        add("tag.orevolution.block.no_chance", "Never Duplicated");
 
         add("item.orevolution.totem.socket.empty", "Empty Socket");
         add("item.orevolution.totem.socket.diamond", "Diamond - Beneficial effects last 2x longer (min. time of 3s)");

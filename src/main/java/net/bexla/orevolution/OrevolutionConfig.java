@@ -1629,6 +1629,7 @@ public class OrevolutionConfig {
         public final ConfigValue<Boolean> displayDurabilityModifier;
         public final ConfigValue<Boolean> displayParticleEffectsFromArmor;
         public final ConfigValue<Boolean> displayEffectsFromArmor;
+        public final ConfigValue<Boolean> displayChanceTypeInBlock;
 
         public final ConfigValue<Boolean> steel_outline;
 
@@ -1664,6 +1665,11 @@ public class OrevolutionConfig {
                     .translation("orevolution.config.display_effects_from_armor")
                     .comment("Displays the effects applied by armor sets in your HUD/GUI")
                     .define("display_effects_from_armor", true);
+
+            displayChanceTypeInBlock = builder
+                    .translation("orevolution.config.display_chance_type_in_block")
+                    .comment("Displays the chance type of every block in their tooltips")
+                    .define("display_chance_type_in_block", true);
 
             steel_outline = builder
                     .translation("orevolution.config.steel_outline")

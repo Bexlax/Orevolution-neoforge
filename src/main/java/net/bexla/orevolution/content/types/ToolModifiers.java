@@ -1,6 +1,5 @@
 package net.bexla.orevolution.content.types;
 
-import net.bexla.orevolution.content.data.utility.OrevolutionUtils;
 import net.bexla.orevolution.content.interfaces.IProgressRule;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -10,7 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.util.TriState;
 
@@ -83,17 +81,6 @@ public final class ToolModifiers {
     }
 
     public static TriState isCorrectForDrops(ItemStack stack, BlockState state) {
-        if (!state.requiresCorrectToolForDrops()) {
-            return TriState.DEFAULT;
-        }
-
-        TagKey<Block> heldTag = OrevolutionUtils.getToolTag(stack);
-        TagKey<Block> requiredTag = OrevolutionUtils.getRequiredToolTag(state);
-
-        if (requiredTag != null && (heldTag == null || !heldTag.equals(requiredTag))) {
-            return TriState.FALSE;
-        }
-
         Tier tier = adhereToTier(stack);
 
         if (tier == null) {

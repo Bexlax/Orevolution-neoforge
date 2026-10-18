@@ -1,5 +1,6 @@
 package net.bexla.orevolution.content.interfaces;
 
+import net.bexla.orevolution.content.data.utility.OrevolutionUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +25,6 @@ public interface IProgressRule {
 
     static IProgressRule incorrectList(Supplier<? extends List<? extends String>> entries) {
         return new IProgressRule() {
-
             private List<? extends String> cachedEntries;
             private List<Restriction> restrictions = List.of();
 
@@ -43,10 +43,22 @@ public interface IProgressRule {
                     }
                 }
 
-                return TriState.TRUE;
+                return hasCorrectToolType(stack, state)
+                        ? TriState.TRUE
+                        : TriState.DEFAULT;
             }
-
         };
+    }
+
+    private static boolean hasCorrectToolType(ItemStack stack, BlockState state) {
+        if (!state.requiresCorrectToolForDrops()) {
+            return true;
+        }
+
+        TagKey<Block> heldTag = OrevolutionUtils.getToolTag(stack);
+        TagKey<Block> requiredTag = OrevolutionUtils.getRequiredToolTag(state);
+
+        return requiredTag == null || (heldTag != null && heldTag.equals(requiredTag));
     }
 
     private static List<Restriction> parseRestrictions(List<? extends String> entries) {

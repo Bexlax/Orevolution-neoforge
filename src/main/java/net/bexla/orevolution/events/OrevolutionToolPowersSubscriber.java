@@ -18,7 +18,6 @@ import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
-import net.neoforged.neoforge.event.level.BlockEvent;
 
 import java.util.List;
 
@@ -33,31 +32,29 @@ public class OrevolutionToolPowersSubscriber {
     @SubscribeEvent
     public static void onBlockDrops(BlockDropsEvent evt) {
         if (!(evt.getBreaker() instanceof Player player)) return;
-        if(player.isCreative()) return;
+        if (player.isCreative()) return;
 
         IToolPower power = getPower(player.getMainHandItem());
 
         if (power != IToolPower.EMPTY) {
-            evt.setCanceled(power.onDropXPBlock(
+            int xpToDrop = power.onMineBlock(
                     player.getMainHandItem(),
                     player.level(), evt.getPos(), player,
                     evt.getState(), evt.getDroppedExperience()
-            ));
-        }
-    }
+            );
 
-    @SubscribeEvent
-    public static void onBlockDrops(BlockEvent.BreakEvent evt) {
-        Player player = evt.getPlayer();
-        if(player.isCreative()) return;
+            if(xpToDrop != evt.getDroppedExperience())
+                evt.setDroppedExperience(xpToDrop);
 
-        IToolPower power = getPower(player.getMainHandItem());
+            power.onMineBlock(player.getMainHandItem(),
+                    player.level(), evt.getPos(), player,
+                    evt.getState(), evt.getDrops()
+            );
 
-        if (power != IToolPower.EMPTY) {
             evt.setCanceled(power.onMineBlock(
                     player.getMainHandItem(), player.level(),
-                    evt.getPos(), player, evt.getState()
-            ));
+                    evt.getPos(), player, evt.getState())
+            );
         }
     }
 

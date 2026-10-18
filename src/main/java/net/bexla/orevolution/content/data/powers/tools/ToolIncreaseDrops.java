@@ -7,12 +7,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.Tags;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ToolIncreaseDrops extends OrevolutionToolPower {
@@ -51,30 +52,38 @@ public class ToolIncreaseDrops extends OrevolutionToolPower {
     }
 
     @Override
-    public boolean onMineBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity player, BlockState state) {
-        if(!getCondition(stack, state, level, player, null)) return super.onMineBlock(stack, level, pos, player, state);
-
-        double chance = baseChance;
+    public List<ItemEntity> onMineBlock(ItemStack stack, Level level, BlockPos pos, LivingEntity entity, BlockState state, List<ItemEntity> drops) {
+        if (!getCondition(stack, state, level, entity, null)) return super.onMineBlock(stack, level, pos, entity, state, drops);
 
         if (!state.requiresCorrectToolForDrops() || stack.isCorrectToolForDrops(state)) {
-            if(state.is(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)) {
-                chance = baseChance * 2;
-            } else if(state.is(OrevolutionTags.Blocks.NEVER_DUPLICATE_CHANCE)) {
+            double chance = baseChance;
+
+            if (state.is(OrevolutionTags.Blocks.NEVER_DUPLICATE_CHANCE)) {
                 chance = 0;
-            } else if(state.is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {
-                chance = baseChance / 2;
-            } else if(state.is(Tags.Blocks.ORES)) {
-                chance = baseChance / 5;
-            } else if(state.is(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)) {
+            } else if (state.is(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)) {
+                chance = baseChance * 2;
+            } else if (state.is(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)) {
                 chance = baseChance / 10;
+            } else if (state.is(Tags.Blocks.ORES)) {
+                chance = baseChance / 5;
+            } else if (state.is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {
+                chance = baseChance / 2;
             }
 
-            if(Math.random() < chance) {
-                for(int i = 0; i < extraDrops; i++) {
-                    Block.dropResources(state, level, pos);
+            if (Math.random() < chance && extraDrops > 0) {
+                List<ItemEntity> additionalDrops = new ArrayList<>();
+
+                for (ItemEntity drop : drops) {
+                    for (int i = 0; i < extraDrops; i++) {
+                        ItemEntity duplicate = new ItemEntity(level, drop.getX(), drop.getY(), drop.getZ(), drop.getItem().copy());
+                        additionalDrops.add(duplicate);
+                    }
                 }
+
+                drops.addAll(additionalDrops);
             }
         }
-        return super.onMineBlock(stack, level, pos, player, state);
+
+        return super.onMineBlock(stack, level, pos, entity, state, drops);
     }
 }

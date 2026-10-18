@@ -33,11 +33,21 @@
     "#c:obsidians",
     "#minecraft:leaves",
     "#minecraft:snow",
+    "#minecraft:sword_efficient",
     "#minecraft:ice",
+    "minecraft:rooted_dirt",
+    "minecraft:mud",
+    "minecraft:packed_mud",
+    "minecraft:muddy_mangrove_roots",
+    "minecraft:mangrove_roots",
     "minecraft:vine",
     "minecraft:glow_lichen",
     "minecraft:moss_block",
     "minecraft:moss_carpet",
-    "minecraft:spore_blossom"
+    "minecraft:calcite",
+    "minecraft:pointed_dripstone",
+    "minecraft:magma_block",
+    "minecraft:dripstone_block",
+    "minecraft:glowstone"
   ]
 }

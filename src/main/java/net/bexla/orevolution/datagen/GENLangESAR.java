@@ -115,7 +115,7 @@ public class GENLangESAR extends LangProvider {
         addPower("on_hit_effect", "Inflige los siguientes efecto(s) al atacar:");
         addPower("attacker_on_hit_effect", "Otorga los siguientes efecto(s) al atacar");
 
-        addPower("xp_increase", "Los bloques dan x%s Puntos de Experiencia");
+        addPower("xp_increase", "Los bloques dan %s Puntos de Experiencia");
         addPower("xp_looting", "Los mobs darán %s Puntos de Experiencia al morir");
 
         addPower("consecutive_hits_damage", "Atacar al mismo objetivo repetidamente aumenta el daño en 1 hasta %s veces");
@@ -214,6 +214,14 @@ public class GENLangESAR extends LangProvider {
         add("item.orevolution.tungsten_coated", "Revestido en tungsteno");
 
         add("item.durability_multiplier", "Durabilidad");
+
+        add("item.block.duplication_type", "Tipo de duplicacion:");
+        add("tag.orevolution.block.double_chance", "Doble probabilidad");
+        add("tag.orevolution.block.normal_chance", "Comun");
+        add("tag.orevolution.block.uncommon_chance", "Poco Comun");
+        add("tag.orevolution.block.ore_chance", "Probabilidad de mineral");
+        add("tag.orevolution.block.rare_chance", "Raro");
+        add("tag.orevolution.block.no_chance", "Nunca se duplica");
 
         add("actionbar.orevolution.bronze_radar.normal_mode", "Mis coordenadas: %s");
         add("actionbar.orevolution.bronze_radar.friend_mode", "Coordenadas actuales de %s");

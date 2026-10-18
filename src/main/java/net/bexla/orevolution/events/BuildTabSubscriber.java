@@ -432,7 +432,7 @@ public class BuildTabSubscriber {
             putAfter(event, RegBlocks.DEEPSLATE_TIN_ORE, RegBlocks.CASSITERITE_ORE, RegBlocks.DEEPSLATE_CASSITERITE_ORE, RegBlocks.NETHER_CASSITERITE_ORE);
             putBefore(event, Items.DIAMOND_ORE, RegBlocks.PLATINUM_ORE, RegBlocks.DEEPSLATE_PLATINUM_ORE);
             putBefore(event, Items.COAL_ORE, RegBlocks.NETHER_XP_ORE);
-            putAfter(event, Items.COAL_ORE, RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE, RegBlocks.BASALT_ENCRUSTED_MOONSTONE);
+            putBefore(event, Items.ANCIENT_DEBRIS, RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE, RegBlocks.BASALT_ENCRUSTED_MOONSTONE);
             putAfter(event, RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE, RegBlocks.MOONSTONE);
             putBefore(event, RegBlocks.NETHER_XP_ORE, RegBlocks.END_XP_ORE);
             putAfter(event, Items.NETHER_QUARTZ_ORE, RegBlocks.NETHER_TUNGSTEN_ORE);
