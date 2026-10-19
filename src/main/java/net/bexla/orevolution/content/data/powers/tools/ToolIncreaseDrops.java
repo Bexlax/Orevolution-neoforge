@@ -42,13 +42,13 @@ public class ToolIncreaseDrops extends OrevolutionToolPower {
                 Component.translatable("power.orevolution.explanation.normal_chance", displayChance(1)),
                 Component.translatable("power.orevolution.explanation.uncommon_chance", displayChance(0.5)),
                 Component.translatable("power.orevolution.explanation.ore_chance", displayChance(0.2)),
-                Component.translatable("power.orevolution.explanation.rare_chance", displayChance(0.1)),
+                Component.translatable("power.orevolution.explanation.rare_chance", displayChance(0.66)),
                 Component.translatable("power.orevolution.explanation.no_chance")
         );
     }
 
     private Object displayChance(double op) {
-        return (int)(baseChance * 100 * op) + "%";
+        return Math.round(baseChance * 100.0D * op) + "%";
     }
 
     @Override
@@ -63,7 +63,7 @@ public class ToolIncreaseDrops extends OrevolutionToolPower {
             } else if (state.is(OrevolutionTags.Blocks.DOUBLE_DUPLICATE_CHANCE)) {
                 chance = baseChance * 2;
             } else if (state.is(OrevolutionTags.Blocks.RARE_DUPLICATE_CHANCE)) {
-                chance = baseChance / 10;
+                chance = baseChance / 15;
             } else if (state.is(Tags.Blocks.ORES)) {
                 chance = baseChance / 5;
             } else if (state.is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {

@@ -102,72 +102,224 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.configuration.aethersteel", "Aethersteel Tier options");
         add("orevolution.configuration.livingstone", "Livingstone Tier options");
         add("orevolution.configuration.verdite", "Verdite Tier options");
+        add("orevolution.configuration.bronze", "Bronze Tier options");
+        add("orevolution.configuration.diving_bronze", "Diving Bronze Tier options");
 
         add("orevolution.configuration.tooltips", "Tooltip options");
 
         add("orevolution.configuration.weapons", "Weapon options");
         add("orevolution.configuration.durability", "Durability options");
         add("orevolution.configuration.tools", "Tool options");
-        add("orevolution.configuration.powers", "Power options");
+        add("orevolution.configuration.main", "Main options");
         add("orevolution.configuration.armors", "Armor options");
 
         add("orevolution.config.weapons_powers", "Enable Powers for Weapons");
         add("orevolution.config.tools_powers", "Enable Powers for Tools");
-        add("orevolution.config.armors_powers", "Enable powers for Armor-sets");
+        add("orevolution.config.armors_powers", "Enable Powers for Armor sets");
 
-        add("orevolution.config.verdite_armor_powers", "Verdite armor powers");
-        add("orevolution.config.bronze_armor_powers", "Bronze armor powers");
-        add("orevolution.config.platinum_armor_powers", "Platinum armor powers");
-        add("orevolution.config.diamond_armor_powers", "Diamond armor powers");
-        add("orevolution.config.moonstone_armor_powers", "Moonstone armor powers");
-        add("orevolution.config.iron_armor_powers", "Iron armor powers");
-        add("orevolution.config.aethersteel_armor_powers", "Aethersteel armor powers");
-        add("orevolution.config.netherite_armor_powers", "Netherite armor powers");
-        add("orevolution.config.tungsten_armor_powers", "Tungsten armor powers");
-        add("orevolution.config.copper_armor_powers", "Copper armor powers");
-        add("orevolution.config.reinforced_netherite_armor_powers", "Reinforced Netherite armor powers");
-        add("orevolution.config.electrum_armor_powers", "Electrum armor powers");
+        add("orevolution.config.debug_mode", "Debug mode");
+        
+        add("orevolution.config.tin_tool_powers", "Tin tool powers");
+        add("orevolution.config.tin_dupe_chance", "Duplication Chance (Tin tool)");
+        add("orevolution.config.tin_dupe_drops", "Duplication Amount (Tin tool)");
+
+        add("orevolution.config.tin_weapon_powers", "Tin weapon powers");
+        add("orevolution.config.tin_poison_chance", "Chance to inflict Poison (Tin weapon)");
+        add("orevolution.config.tin_poison_time", "Poison Duration (Tin weapon)");
+        add("orevolution.config.tin_poison_amplifier", "Poison Amplifier (Tin weapon)");
+
+        add("orevolution.config.tin_armor_powers", "Tin armor powers");
+
+        add("orevolution.config.cassiterite_tool_powers", "Cassiterite tool powers");
+        add("orevolution.config.cassiterite_dupe_chance", "Duplication Chance (Cassiterite tool)");
+        add("orevolution.config.cassiterite_dupe_drops", "Duplication Amount (Cassiterite tool)");
+
+        add("orevolution.config.cassiterite_weapon_powers", "Cassiterite weapon powers");
+        add("orevolution.config.cassiterite_poison_time", "Poison Duration (Cassiterite weapon)");
+        add("orevolution.config.cassiterite_poison_amplifier", "Poison Amplifier (Cassiterite weapon)");
+
+        add("orevolution.config.cassiterite_armor_power", "Cassiterite armor powers");
+        add("orevolution.config.cassiterite_armor_attribute", "Armor Attribute Value (Cassiterite armor)");
+
+        add("orevolution.config.gold_tool_powers", "Gold tool powers");
+        add("orevolution.config.gold_damage_chance", "Avoid durability damage Chance (Gold tool)");
+
+        add("orevolution.config.gold_weapon_powers", "Gold weapon powers");
+        add("orevolution.config.gold_xp_amount", "Extra experience from Mobs (Gold weapon)");
+
         add("orevolution.config.gold_armor_powers", "Gold armor powers");
+        add("orevolution.config.gold_residual_damage", "Residual damage from reduction (Gold armor)");
+
+        add("orevolution.config.tungsten_tool_powers", "Tungsten tool powers");
+        add("orevolution.config.tungsten_damage_chance", "Avoid durability damage Chance (Tungsten tool)");
+
+        add("orevolution.config.tungsten_weapon_powers", "Tungsten weapon powers");
+        add("orevolution.config.tungsten_xp_amount", "Extra experience from Mobs (Tungsten weapon)");
+
+        add("orevolution.config.tungsten_armor_powers", "Tungsten armor powers");
+        add("orevolution.config.tungsten_residual_damage", "Residual damage from reduction (Tungsten armor)");
+        add("orevolution.config.tungsten_fire_res_time", "Fire Resistance Time (Tungsten armor)");
+        add("orevolution.config.tungsten_fire_res_amplifier", "Fire Resistance Amplifier (Tungsten armor)");
+
+        add("orevolution.config.iron_tool_powers", "Iron tool powers");
+        add("orevolution.config.iron_min_speed_mult", "Min speed multiplier (Iron tool)");
+        add("orevolution.config.iron_max_speed_mult", "Max speed multiplier (Iron tool)");
+        add("orevolution.config.iron_exponent_speed_mult", "Durability-speed Exponent (Iron tool)");
+
+        add("orevolution.config.iron_weapon_powers", "Iron weapon powers");
+        add("orevolution.config.iron_min_damage_mult", "Min damage multiplier (Iron weapon)");
+        add("orevolution.config.iron_max_damage_mult", "Max damage multiplier (Iron weapon)");
+        add("orevolution.config.iron_exponent_damage_mult", "Durability-damage Exponent (Iron weapon)");
+
+        add("orevolution.config.iron_armor_powers", "Iron armor powers");
+        add("orevolution.config.iron_ignore_chance", "Ignore projectile damage chance (Iron weapon)");
+
+        add("orevolution.config.steel_tool_powers", "Steel tool powers");
+        add("orevolution.config.steel_radius", "Radius per axis (Steel tool)");
+
+        add("orevolution.config.steel_weapon_powers", "Steel weapon powers");
+        add("orevolution.config.steel_crit_mult", "Critical damage Multiplier (Steel weapon)");
+
+        add("orevolution.config.platinum_tool_powers", "Platinum tool powers");
+        add("orevolution.config.platinum_xp_mult", "Experience Multiplier (Platinum tool)");
+
+        add("orevolution.config.platinum_weapon_powers", "Platinum weapon powers");
+        add("orevolution.config.platinum_force_undead_effects", "Force-apply effects (Platinum weapon)");
+        add("orevolution.config.platinum_undead_effects_time", "Undead effects Duration (Platinum weapon)");
+        add("orevolution.config.platinum_undead_effects_amplifier", "Undead effects Ampplifier (Platinum weapon)");
+
+        add("orevolution.config.platinum_armor_powers", "Platinum armor powers");
+        add("orevolution.config.platinum_base_strenght_time", "Base Strength Duration (Platinum armor)");
+        add("orevolution.config.platinum_strenght_amplifier", "Strength Amplifier (Platinum armor)");
+
+        add("orevolution.config.moonstone_tool_powers", "Moonstone tool powers");
+        add("orevolution.config.moonstone_xp_mult", "Experience Multiplier (Moonstone tool)");
+
+        add("orevolution.config.moonstone_weapon_powers", "Moonstone weapon powers");
+        add("orevolution.config.moonstone_force_monster_effects", "Force-apply effects (Moonstone weapon)");
+        add("orevolution.config.moonstone_monster_effects_time", "Monster effects Duration (Moonstone weapon)");
+        add("orevolution.config.moonstone_monster_effects_amplifier", "Monster effects Ampplifier (Moonstone weapon)");
+
+        add("orevolution.config.moonstone_armor_powers", "Moonstone armor powers");
+        add("orevolution.config.moonstone_base_strenght_time", "Base Strength Duration (Moonstone armor)");
+        add("orevolution.config.moonstone_strenght_amplifier", "Strength Amplifier (Moonstone armor)");
+        add("orevolution.config.moonstone_quickness_amplifier", "Quickness Amplifier (Moonstone armor)");
+
+        add("orevolution.config.diamond_tool_powers", "Diamond tool powers");
+        
+        add("orevolution.config.diamond_weapon_powers", "Diamond weapon powers");
+        add("orevolution.config.diamond_armored_damage", "Extra damage against Armored (Diamond weapon)");
+
+        add("orevolution.config.diamond_armor_powers", "Diamond armor powers");
+        add("orevolution.config.diamond_residual_damage", "Residual damage from reduction (Diamond armor)");
+
+        add("orevolution.config.netherite_tool_powers", "Netherite tool powers");
+        
+        add("orevolution.config.netherite_weapon_powers", "Netherite weapon powers");
+        add("orevolution.config.netherite_percentage_lower_than", "Percentage must be lower (Netherite weapon)");
+        add("orevolution.config.netherite_hp_percentage", "Health percentage (Netherite weapon)");
+        add("orevolution.config.netherite_damage_mult", "Damage Multiplier (Netherite weapon)");
+
+        add("orevolution.config.netherite_armor_powers", "Netherite armor powers");
+        add("orevolution.config.netherite_residual_damage", "Residual damage from reduction (Netherite armor)");
+
+        add("orevolution.config.aethersteel_tool_powers", "Aethersteel tool powers");
+
+        add("orevolution.config.aethersteel_weapon_powers", "Aethersteel weapon powers");
+        add("orevolution.config.aethersteel_percentage_lower_than", "Percentage must be lower (Aethersteel weapon)");
+        add("orevolution.config.aethersteel_hp_percentage", "Health percentage (Aethersteel weapon)");
+        add("orevolution.config.aethersteel_damage_mult", "Damage Multiplier (Aethersteel weapon)");
+
+        add("orevolution.config.aethersteel_armor_powers", "Aethersteel armor powers");
+        add("orevolution.config.aethersteel_residual_damage", "Residual damage from reduction (Aethersteel armor)");
+        add("orevolution.config.aethersteel_health_boost_amplifier", "Health Boost Amplifier (Aethersteel armor)");
+
+        add("orevolution.config.aethersteel_keep_on_death", "Keep aethersteel items on death");
+
+        add("orevolution.config.livingstone_tool_powers", "Livingstone tool powers");
+        add("orevolution.config.livingstone_tool_dura_regen_per_tick", "Durability regeneration amount (Livingstone tool)");
+        add("orevolution.config.livingstone_tool_dura_regen_cooldown", "Durability regeneration cooldown (Livingstone tool)");
+        add("orevolution.config.livingstone_crop_chance", "Crop increase chance (Livingstone tool)");
+        add("orevolution.config.livingstone_crop_increase", "Crop increase amount (Livingstone tool)");
+
+        add("orevolution.config.livingstone_weapon_powers", "Livingstone weapon powers");
+        add("orevolution.config.livingstone_weapon_dura_regen_per_tick", "Durability regeneration amount (Livingstone weapon)");
+        add("orevolution.config.livingstone_weapon_dura_regen_cooldown", "Durability regeneration cooldown (Livingstone weapon)");
+        add("orevolution.config.livingstone_petrified_chance", "Chance to inflict Petrified (Livingstone tool)");
+        add("orevolution.config.livingstone_petrified_time", "Petrified Duration (Livingstone tool)");
+        add("orevolution.config.livingstone_petrified_amplifier", "Petrified Amplifier (Livingstone tool)");
+
         add("orevolution.config.livingstone_armor_powers", "Livingstone armor powers");
+        add("orevolution.config.livingstone_armor_dura_regen_per_tick", "Durability regeneration amount (Livingstone armor)");
+        add("orevolution.config.livingstone_armor_dura_regen_cooldown", "Durability regeneration cooldown (Livingstone armor)");
+        add("orevolution.config.livingstone_regeneration_amplifier", "Regeneration amplifier (Livingstone armor)");
 
         add("orevolution.config.verdite_tool_powers", "Verdite tool powers");
-        add("orevolution.config.bronze_tool_powers", "Bronze tool powers");
-        add("orevolution.config.platinum_tool_powers", "Platinum tool powers");
-        add("orevolution.config.diamond_tool_powers", "Diamond tool powers");
-        add("orevolution.config.moonstone_tool_powers", "Moonstone tool powers");
-        add("orevolution.config.iron_tool_powers", "Iron tool powers");
-        add("orevolution.config.steel_tool_powers", "Steel tool powers");
-        add("orevolution.config.aethersteel_tool_powers", "Aethersteel tool powers");
-        add("orevolution.config.netherite_tool_powers", "Netherite tool powers");
-        add("orevolution.config.tin_tool_powers", "Tin tool powers");
-        add("orevolution.config.copper_tool_powers", "Copper tool powers");
-        add("orevolution.config.electrum_tool_powers", "Electrum tool powers");
-        add("orevolution.config.gold_tool_powers", "Gold tool powers");
-        add("orevolution.config.livingstone_tool_powers", "Livingstone tool powers");
-        add("orevolution.config.cassiterite_tool_powers", "Cassiterite tool powers");
-        add("orevolution.config.silver_tool_powers", "Silver tool powers");
-        add("orevolution.config.tungsten_tool_powers", "Tungsten tool powers");
+        add("orevolution.config.verdite_tool_dura_regen_per_tick", "Durability regeneration amount (Verdite tool)");
+        add("orevolution.config.verdite_tool_dura_regen_cooldown", "Durability regeneration cooldown (Verdite tool)");
+        add("orevolution.config.verdite_crop_chance", "Crop increase chance (Verdite tool)");
+        add("orevolution.config.verdite_crop_increase", "Crop increase amount (Verdite tool)");
 
         add("orevolution.config.verdite_weapon_powers", "Verdite weapon powers");
-        add("orevolution.config.iron_weapon_powers", "Iron weapon powers");
-        add("orevolution.config.steel_weapon_powers", "Steel weapon powers");
-        add("orevolution.config.bronze_weapon_powers", "Bronze weapon powers");
-        add("orevolution.config.platinum_weapon_powers", "Platinum weapon powers");
-        add("orevolution.config.diamond_weapon_powers", "Diamond weapon powers");
-        add("orevolution.config.moonstone_weapon_powers", "Moonstone weapon powers");
-        add("orevolution.config.aethersteel_weapon_powers", "Aethersteel weapon powers");
-        add("orevolution.config.netherite_weapon_powers", "Netherite weapon powers");
-        add("orevolution.config.tin_weapon_powers", "Tin weapon powers");
-        add("orevolution.config.copper_weapon_powers", "Copper weapon powers");
-        add("orevolution.config.electrum_weapon_powers", "Electrum weapon powers");
-        add("orevolution.config.gold_weapon_powers", "Gold weapon powers");
-        add("orevolution.config.livingstone_weapon_powers", "Livingstone weapon powers");
-        add("orevolution.config.cassiterite_weapon_powers", "Cassiterite weapon powers");
-        add("orevolution.config.silver_weapon_powers", "Silver weapon powers");
-        add("orevolution.config.tungsten_weapon_powers", "Tungsten weapon powers");
+        add("orevolution.config.verdite_weapon_dura_regen_per_tick", "Durability regeneration amount (Verdite weapon)");
+        add("orevolution.config.verdite_weapon_dura_regen_cooldown", "Durability regeneration cooldown (Verdite weapon)");
+        add("orevolution.config.verdite_saturation_chance", "Chance to inflict Saturation (Verdite tool)");
+        add("orevolution.config.verdite_saturation_time", "Saturation Duration (Verdite tool)");
+        add("orevolution.config.verdite_saturation_amplifier", "Saturation Amplifier (Verdite tool)");
+
+        add("orevolution.config.verdite_armor_powers", "Verdite armor powers");
+        add("orevolution.config.verdite_armor_dura_regen_per_tick", "Durability regeneration amount (Verdite armor)");
+        add("orevolution.config.verdite_armor_dura_regen_cooldown", "Durability regeneration cooldown (Verdite armor)");
+        add("orevolution.config.verdite_regeneration_amplifier", "Regeneration amplifier (Verdite armor)");
+        add("orevolution.config.verdite_regeneration_time", "Regeneration Duration (Verdite armor)");
+
+        add("orevolution.config.bronze_armor_powers", "Bronze armor powers");
+
+        add("orevolution.config.diving_bronze_armor_powers", "Diving Bronze armor powers");
+        add("orevolution.config.diving_bronze_extra_oxygen_attribute", "Extra Oxygen Attribute value (Diving Bronze armor)");
 
         add("orevolution.config.electrum_kinetic_damage", "Enable Kinetic Damage for Electrum");
         add("orevolution.config.electrum_speed_per_armor_piece", "Enable Speed boost per Electrum Armor piece");
+        add("orevolution.config.silver_invincibility_per_armor_piece", "Enable invincibility per Silver Armor piece");
+
+        add("orevolution.config.electrum_tool_powers", "Electrum tool powers");
+        add("orevolution.config.electrum_min_blocks_haste", "Min blocks required for haste (Electrum tool)");
+        add("orevolution.config.electrum_time_haste", "Haste duration (Electrum tool)");
+        add("orevolution.config.electrum_max_haste_amplifier", "Haste amplifier (Electrum tool)");
+
+        add("orevolution.config.electrum_weapon_powers", "Electrum weapon powers");
+        add("orevolution.config.electrum_max_hits_damage", "Max damage accumulation per hit (Electrum weapon)");
+
+        add("orevolution.config.electrum_armor_powers", "Electrum armor powers");
+        add("orevolution.config.electrum_movement_speed_attribute", "Movement Speed Attribute value (Electrum armor)");
+        add("orevolution.config.electrum_step_height_attribute", "Step Height Attribute value (Electrum armor)");
+
+        add("orevolution.config.silver_tool_powers", "Silver tool powers");
+        add("orevolution.config.silver_min_speed_mult", "Min speed multiplier (Silver tool)");
+        add("orevolution.config.silver_max_speed_mult", "Max speed multiplier (Silver tool)");
+        add("orevolution.config.silver_exponent_speed_mult", "Durability-speed Exponent (Silver tool)");
+
+        add("orevolution.config.silver_weapon_powers", "Silver weapon powers");
+        add("orevolution.config.silver_min_damage_mult", "Min damage multiplier (Silver weapon)");
+        add("orevolution.config.silver_max_damage_mult", "Max damage multiplier (Silver weapon)");
+        add("orevolution.config.silver_exponent_damage_mult", "Durability-damage Exponent (Silver weapon)");
+
+        add("orevolution.config.silver_armor_powers", "Silver armor powers");
+        add("orevolution.config.silver_invincibility_frames_attribute", "Invincibility Attribute value (Silver armor)");
+        add("orevolution.config.silver_entity_interaction_range_attribute", "Entity Interaction Range Attribute value (Silver armor)");
+        add("orevolution.config.silver_sweeping_damage_ratio_percent_attribute", "Sweeping Damage Ratio Attribute value (Silver armor)");
+
+        add("orevolution.config.copper_tool_powers", "Copper tool powers");
+        add("orevolution.config.copper_min_blocks_haste", "Min blocks required for haste (Copper tool)");
+        add("orevolution.config.copper_time_haste", "Haste duration (Copper tool)");
+        add("orevolution.config.copper_max_haste_amplifier", "Haste amplifier (Copper tool)");
+
+        add("orevolution.config.copper_weapon_powers", "Copper weapon powers");
+        add("orevolution.config.copper_max_hits_damage", "Max damage accumulation per hit (Copper weapon)");
+
+        add("orevolution.config.copper_armor_powers", "Copper armor powers");
+        add("orevolution.config.copper_extended_pickup_range_attribute", "Pick-up Range Attribute value (Copper armor)");
+        add("orevolution.config.copper_block_interaction_range_attribute", "Block Interaction Range Attribute value (Copper armor)");
 
         add("orevolution.config.wood_max_uses", "Wood max uses");
         add("orevolution.config.stone_max_uses", "Stone max uses");
@@ -181,14 +333,17 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.config.aethersteel_max_uses", "Aethersteel max uses");
         add("orevolution.config.netherite_max_uses", "Netherite max uses");
         add("orevolution.config.tin_max_uses", "tin max uses");
-        add("orevolution.config.copper_max_uses", "Copper max uses");
-        add("orevolution.config.electrum_max_uses", "Electrum max uses");
         add("orevolution.config.gold_max_uses", "Gold max uses");
         add("orevolution.config.tungsten_max_uses", "Tungsten max uses");
         add("orevolution.config.cassiterite_max_uses", "Cassiterite max uses");
         add("orevolution.config.livingstone_max_uses", "Livingstone max uses");
 
+        add("orevolution.config.copper_max_uses", "Copper max uses");
+        add("orevolution.config.silver_max_uses", "Silver max uses");
+        add("orevolution.config.electrum_max_uses", "Electrum max uses");
+
         add("orevolution.configuration.capability", "Capabilities");
+        add("orevolution.configuration.tier_additions", "Additions");
 
         add("orevolution.config.wooden_harvest_restrictions", "Wooden Harvest Restrictions");
         add("orevolution.config.stone_harvest_restrictions", "Stone Harvest Restrictions");
@@ -206,14 +361,50 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.config.livingstone_harvest_restrictions", "Livingstone Harvest Restrictions");
         add("orevolution.config.verdite_harvest_restrictions", "Verdite Harvest Restrictions");
 
-        add("orevolution.config.prioritize_terrablender_over_biolith", "Prioritize TerraBlender over Biolith for Biome Gen.");
-        add("orevolution.config.generate_forgotten_cave_biome", "Enable Forgotten Cave Biomes");
+        add("orevolution.config.electrum_harvest_restrictions", "Electrum Harvest Restrictions");
+        add("orevolution.config.silver_harvest_restrictions", "Silver Harvest Restrictions");
+        add("orevolution.config.copper_harvest_restrictions", "Copper Harvest Restrictions");
 
-        add("orevolution.config.generate_tin_ore", "Enable Tin Ore");
-        add("orevolution.config.generate_platinum_ore", "Enable Platinum Ore");
-        add("orevolution.config.generate_moonstone_pillar", "Enable Moonstone Pillar");
+        add("orevolution.config.wooden_tiered_items", "Wooden Tiered Items");
+        add("orevolution.config.stone_tiered_items", "Stone Tiered Items");
+        add("orevolution.config.tin_tiered_items", "Tin Tiered Items");
+        add("orevolution.config.cassiterite_tiered_items", "Cassiterite Tiered Items");
+        add("orevolution.config.iron_tiered_items", "Iron Tiered Items");
+        add("orevolution.config.gold_tiered_items", "Gold Tiered Items");
+        add("orevolution.config.tungsten_tiered_items", "Tungsten Tiered Items");
+        add("orevolution.config.steel_tiered_items", "Steel Tiered Items");
+        add("orevolution.config.platinum_tiered_items", "Platinum Tiered Items");
+        add("orevolution.config.moonstone_tiered_items", "Moonstone Tiered Items");
+        add("orevolution.config.diamond_tiered_items", "Diamond Tiered Items");
+        add("orevolution.config.netherite_tiered_items", "Netherite Tiered Items");
+        add("orevolution.config.aethersteel_tiered_items", "Aethersteel Tiered Items");
+        add("orevolution.config.livingstone_tiered_items", "Livingstone Tiered Items");
+        add("orevolution.config.verdite_tiered_items", "Verdite Tiered Items");
+
+        add("orevolution.config.electrum_tiered_items", "Electrum Tiered Items");
+        add("orevolution.config.silver_tiered_items", "Silver Tiered Items");
+        add("orevolution.config.copper_tiered_items", "Copper Tiered Items");
+
+        add("orevolution.config.forgotten_cave_min_fog", "Forgotten Caves min. Fog");
+        add("orevolution.config.forgotten_cave_max_fog", "Forgotten Caves max. Fog");
+
+        add("orevolution.config.prioritize_terrablender_over_biolith", "Prioritize TerraBlender over Biolith for Biome Gen.");
+        add("orevolution.config.generate_forgotten_cave_biome", "Enable Forgotten Caves Biome");
+        add("orevolution.config.generate_geode_gardens_biome", "Enable Geode Gardens Biome");
+        add("orevolution.config.enable_modded_biomes", "Enable Modded Biomes");
+
+        add("orevolution.config.bronze_recipes", "Enable Bronze Recipes");
+        add("orevolution.config.steel_recipes", "Enable Steel Recipes");
+        add("orevolution.config.mob_equipment", "Enable Mob Equipment");
+
+        add("orevolution.config.generate_pyrite_ore", "Enable Pyrite Ore(s)");
+        add("orevolution.config.generate_celestite_geode", "Enable Celestite Geode(s)");
+
+        add("orevolution.config.generate_tin_ore", "Enable Tin Ore(s)");
+        add("orevolution.config.generate_platinum_ore", "Enable Platinum Ore(s)");
+        add("orevolution.config.generate_moonstone_pillar", "Enable Moonstone Pillar(s)");
         add("orevolution.config.generate_limestone", "Enable Limestone");
-        add("orevolution.config.generate_tungsten_ore", "Enable Tungsten Ore");
+        add("orevolution.config.generate_tungsten_ore", "Enable Tungsten Ore(s)");
         add("orevolution.config.generate_experience_ore", "Enable Experience Ore(s)");
         add("orevolution.config.generate_livingstone_ore", "Enable Livingstone");
         add("orevolution.config.generate_verdite_ore", "Enable Verdite");
@@ -225,10 +416,13 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.config.equipment_durability", "Equipment Durability");
         add("orevolution.config.steel_efficiency_nerf", "Nerf Efficiency for Steel");
 
-        add("orevolution.config.steel_outline", "3x3 Block Outline");
+        add("orevolution.config.steel_outline", "Display 3x3 Block Outline");
 
         add("orevolution.configuration.section.orevolution.toolstats.toml", "Tool Stat settings");
         add("orevolution.configuration.section.orevolution.toolstats.toml.title", "Tool Stat settings");
+
+        add("orevolution.configuration.section.orevolution.startup.toml", "Debug settings");
+        add("orevolution.configuration.section.orevolution.startup.toml.title", "Debug settings");
 
         add("orevolution.configuration.section.orevolution.powers.toml", "Power settings");
         add("orevolution.configuration.section.orevolution.powers.toml.title", "Power settings");
@@ -236,16 +430,38 @@ public class GENLangENUS extends LanguageProvider {
         add("orevolution.configuration.section.orevolution.modcompat.toml", "Mod Compat settings");
         add("orevolution.configuration.section.orevolution.modcompat.toml.title", "Mod Compat settings");
 
+        add("orevolution.config.display_chance_type_in_block", "Display Chance Type in every block's tooltip");
+        add("orevolution.config.display_common_chance_type", "Display Common Chance Type");
+
+        add("orevolution.config.display_effects_from_armor", "Display effects from armor sets");
+        add("orevolution.config.display_particle_effects_from_armor", "Display particles from effects added by armor sets");
+        add("orevolution.config.display_durability_modifier", "Display durability modifiers");
+        
+        add("orevolution.config.warn_incorrect_tool_type", "Display incorrect tool-type warning");
+        add("orevolution.config.warn_break", "Display harvest warning");
+
+        add("orevolution.config.bronze_radar_interval", "Radar time interval");
+        add("orevolution.config.bronze_radar_player_search_time", "Radar search time per player");
+        
+        add("orevolution.config.motion_detector_range", "Motion Detector range");
+        add("orevolution.config.motion_detector_interval", "Motion Detector time interval");
+        
+        add("orevolution.config.geo_scanner_range", "Geo scanner range");
+        add("orevolution.config.geo_scanner_interval", "Geo scanner time interval");
+
+        add("orevolution.config.entity_loot", "Modified loot for entities");
+        add("orevolution.config.chest_loot", "Modified loot for chests");
+
         addPower("regenerates_daylight", "Heals it's durability every %s second(s) while receiving daylight");
 
         addPower("duplication", "Has a chance (%s-%s) to duplicate most block drops");
         addPower("explanation.duplication", "List of chances depending on block types:");
         addPower("explanation.double_chance", " - Double Chance (E.g. Oak Leaves) -> %s");
-        addPower("explanation.normal_chance", " - Normal Blocks (E.g. Stone Blocks) -> %s");
+        addPower("explanation.normal_chance", " - Common Blocks (E.g. Stone Blocks) -> %s");
         addPower("explanation.uncommon_chance", " - Uncommon blocks (E.g. Anvil) -> %s");
-        addPower("explanation.ore_chance", " - Any Ore (E.g. Coal Ore) -> %s");
+        addPower("explanation.ore_chance", " - Ores (E.g. Coal Ore) -> %s");
         addPower("explanation.rare_chance", " - Rare blocks (E.g. Iron Block) -> %s");
-        addPower("explanation.no_chance", " - 'Never' blocks (E.g. Chests) -> 0%");
+        addPower("explanation.no_chance", " - Never Duplicated (E.g. Chests) -> 0%");
 
         addPower("duplication_crops", "Has a %s chance to duplicate crops");
         addPower("triplication_crops", "Has a %s chance to triplicate crops");

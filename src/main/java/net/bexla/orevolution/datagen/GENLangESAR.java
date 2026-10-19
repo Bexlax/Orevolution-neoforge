@@ -103,11 +103,11 @@ public class GENLangESAR extends LangProvider {
         addPower("duplication", "Tiene una probabilidad (%s-%s) de duplicar los drops de los bloques");
         addPower("explanation.duplication", "Lista de probabilidades dependiendo del bloque:");
         addPower("explanation.double_chance", " - Doble probabilidad (Por ej. Hojas de árbol) -> %s");
-        addPower("explanation.normal_chance", " - Bloques normales (Por ej. Bloques de piedra) -> %s");
-        addPower("explanation.uncommon_chance", " - Uncommon blocks (Por ej. Anvil) -> %s");
+        addPower("explanation.normal_chance", " - Bloques comunes (Por ej. Bloques de piedra) -> %s");
+        addPower("explanation.uncommon_chance", " - Bloques poco comunes (Por ej. Anvil) -> %s");
         addPower("explanation.ore_chance", " - Minerales (ej. Mineral de carbon) -> %s");
-        addPower("explanation.rare_chance", " - Raros (ej. Bloque de hierro) -> %s");
-        addPower("explanation.no_chance", " - Induplicables (ej. Cofres) -> 0%");
+        addPower("explanation.rare_chance", " - Bloques raros (ej. Bloque de hierro) -> %s");
+        addPower("explanation.no_chance", " - No duplicables (ej. Cofres) -> 0%");
 
         addPower("duplication_crops", "Tiene una probabilidad (Maxima de %s porciento) de duplicar los drops de las plantas");
         addPower("triplication_crops", "Tiene una probabilidad (Maxima de %s porciento) de triplicar los drops de las plantas");

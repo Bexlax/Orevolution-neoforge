@@ -19,6 +19,10 @@
     "minecraft:lectern",
     "minecraft:cauldron",
     "minecraft:decorated_pot",
+    "minecraft:beehive",
+    "minecraft:bee_nest",
+    "minecraft:jukebox",
+    "minecraft:note_block",
     "minecraft:crafter"
   ]
 }

@@ -103,7 +103,9 @@ public class GENBlockTags extends BlockTagsProvider {
                 RegBlocks.PLATINUM_BLOCK.get(),
                 RegBlocks.TUNGSTEN_BLOCK.get(),
                 RegBlocks.VERDITE_BLOCK.get(),
-                RegBlocks.MOONSTONE.get()
+                RegBlocks.MOONSTONE.get(),
+                RegBlocks.BASALT_ENCRUSTED_MOONSTONE.get(),
+                RegBlocks.RHYOLITE_ENCRUSTED_MOONSTONE.get()
         );
 
         tag(OrevolutionTags.Blocks.TIN_ORES).add(RegBlocks.TIN_ORE.get(), RegBlocks.DEEPSLATE_TIN_ORE.get());

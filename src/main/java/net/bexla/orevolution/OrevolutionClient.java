@@ -77,7 +77,7 @@ public class OrevolutionClient {
     private static final Component DURABILITY_MULTIPLIER = Component.translatable("item.durability_multiplier");
 
     private static final MutableComponent DUPLICATION_TAG = Component.translatable("item.block.duplication_type")
-            .withStyle(ChatFormatting.WHITE);
+            .withStyle(ChatFormatting.DARK_GRAY);
     private static final MutableComponent DOUBLE_CHANCE = Component.translatable("tag.orevolution.block.double_chance")
             .withStyle(ChatFormatting.GOLD);
     private static final MutableComponent NORMAL_CHANCE = Component.translatable("tag.orevolution.block.normal_chance")
@@ -110,6 +110,8 @@ public class OrevolutionClient {
             } else if (block.defaultBlockState().is(OrevolutionTags.Blocks.UNCOMMON_DUPLICATE_CHANCE)) {
                 component = UNCOMMON_CHANCE;
             }
+
+            if(component.equals(NORMAL_CHANCE) && !OrevolutionConfig.CLIENT.displayCommonChanceInBlock.get()) return;
 
             tooltip.add(1, CommonComponents.space().append(component));
             tooltip.add(1, DUPLICATION_TAG);

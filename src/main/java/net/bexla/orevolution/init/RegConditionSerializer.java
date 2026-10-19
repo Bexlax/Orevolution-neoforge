@@ -39,7 +39,7 @@ public class RegConditionSerializer {
                 config(OrevolutionConfig.COMMON.generateCelestite, "generate_celestite");
 
         public static final ConfigValueCondition GENERATE_PLATINUM =
-                config(OrevolutionConfig.COMMON.generatePlatOre, "generate_platinum");
+                config(OrevolutionConfig.COMMON.generatePlatinumOre, "generate_platinum");
 
         public static final ConfigValueCondition GENERATE_TUNGSTEN =
                 config(OrevolutionConfig.COMMON.generateTungstenOre, "generate_tungsten");

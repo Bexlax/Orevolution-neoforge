@@ -6,26 +6,27 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Mob.class)
 public class MobMixin {
     @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
     private void orevolution$populateAdditionalEquipment(RandomSource random, DifficultyInstance difficulty, CallbackInfo ci) {
+        if(!OrevolutionConfig.COMMON.mobEquipment.get()) return;
+
         Mob mob = (Mob) (Object) this;
 
         float difficultyMultiplier = difficulty.getSpecialMultiplier();
         if (difficultyMultiplier <= 0.0F) return;
 
         if (random.nextFloat() < 0.15F * difficultyMultiplier) {
+            if(!OrevolutionConfig.COMMON.generateTinOre.get()) return;
+
             orevolution$equipIfEmpty(mob, random, EquipmentSlot.HEAD, RegItems.TIN_HELMET.get());
             orevolution$equipIfEmpty(mob, random, EquipmentSlot.CHEST, RegItems.TIN_CHESTPLATE.get());
             orevolution$equipIfEmpty(mob, random, EquipmentSlot.LEGS, RegItems.TIN_LEGGINGS.get());
@@ -33,6 +34,8 @@ public class MobMixin {
         }
 
         if (random.nextFloat() < 0.05F * difficultyMultiplier) {
+            if(!OrevolutionConfig.COMMON.generatePlatinumOre.get()) return;
+
             orevolution$equipIfEmpty(mob, random, EquipmentSlot.HEAD, RegItems.PLATINUM_HELMET.get());
             orevolution$equipIfEmpty(mob, random, EquipmentSlot.CHEST, RegItems.PLATINUM_CHESTPLATE.get());
             orevolution$equipIfEmpty(mob, random, EquipmentSlot.LEGS, RegItems.PLATINUM_LEGGINGS.get());

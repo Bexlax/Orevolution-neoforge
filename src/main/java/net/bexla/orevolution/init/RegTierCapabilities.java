@@ -69,7 +69,7 @@ public class RegTierCapabilities {
         ArmorPowerRegistry.register(OrevolutionConfig.POWERS.tungstenArmorPowers, OrevolutionTiers.ArmorMaterials.TUNGSTEN,
                 new ArmorMultiPower(List.of(
                         new ArmorReduceDamageType("gold_armor", IConditional.always(), DamageTypeTags.BYPASSES_ARMOR, OrevolutionConfig.POWERS.tungstenResidualDamage.get()),
-                        new ArmorGrantEffects("armor_wearer_grants", IConditional.always(), 80, 0, MobEffects.FIRE_RESISTANCE)
+                        new ArmorGrantEffects("armor_wearer_grants", IConditional.always(), OrevolutionConfig.POWERS.tungstenFireResTime.get(), OrevolutionConfig.POWERS.tungstenFireResAmplifier.get(), MobEffects.FIRE_RESISTANCE)
                 ))
         );
         ArmorPowerRegistry.register(OrevolutionConfig.POWERS.bronzeArmorPowers, OrevolutionTiers.ArmorMaterials.BRONZE_HARD,

@@ -19,6 +19,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ZombieMixin {
     @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
     private void orevolution$injectEquipment(RandomSource random, DifficultyInstance difficulty, CallbackInfo ci) {
+        if(!OrevolutionConfig.COMMON.mobEquipment.get()) return;
+
         Zombie zombie = (Zombie)(Object)this;
 
         if (random.nextFloat() < 0.3F) {
@@ -32,7 +34,7 @@ public class ZombieMixin {
 
     @Unique
     private Item orevolution$replaceIronTools(ItemStack replaceable) {
-        if (replaceable.is(Items.IRON_SWORD) && OrevolutionConfig.COMMON.generatePlatOre.get()) return RegItems.PLATINUM_SHOVEL.get();
+        if (replaceable.is(Items.IRON_SWORD) && OrevolutionConfig.COMMON.generatePlatinumOre.get()) return RegItems.PLATINUM_SHOVEL.get();
         if (replaceable.is(Items.IRON_SHOVEL) && OrevolutionConfig.COMMON.generateTinOre.get()) return RegItems.TIN_SWORD.get();
 
         return null;

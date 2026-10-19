@@ -17,6 +17,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class PiglinBruteMixin {
     @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))
     private void orevolution$injectEquipment(RandomSource random, DifficultyInstance difficulty, CallbackInfo ci) {
+        if(!OrevolutionConfig.COMMON.mobEquipment.get()) return;
+
         PiglinBrute brute = (PiglinBrute)(Object)this;
 
         if (random.nextFloat() < 0.1F && OrevolutionConfig.COMMON.generateTungstenOre.get()) {

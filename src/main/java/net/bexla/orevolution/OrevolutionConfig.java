@@ -46,9 +46,6 @@ public class OrevolutionConfig {
 
         public final ConfigValue<Boolean> cassiteriteArmorPowers;
         public final ConfigValue<Double> cassiteriteArmorAttribute;
-        public final ConfigValue<Integer> cassiteriteAOETime;
-        public final ConfigValue<Integer> cassiteriteAOEAmplifier;
-        public final ConfigValue<Double> cassiteriteAOERange;
 
         public final ConfigValue<Boolean> goldToolPowers;
         public final ConfigValue<Double> goldDamageChance;
@@ -67,6 +64,8 @@ public class OrevolutionConfig {
 
         public final ConfigValue<Boolean> tungstenArmorPowers;
         public final ConfigValue<Double> tungstenResidualDamage;
+        public final ConfigValue<Integer> tungstenFireResTime;
+        public final ConfigValue<Integer> tungstenFireResAmplifier;
 
         public final ConfigValue<Boolean> ironToolPowers;
         public final ConfigValue<Double> ironMinSpeedMult;
@@ -276,19 +275,6 @@ public class OrevolutionConfig {
                     .gameRestart()
                     .translation("orevolution.config.cassiterite_armor_attribute")
                     .defineInRange("cassiterite_armor_attribute", 4D, 0D, 30D);
-            cassiteriteAOETime = builder
-                    .gameRestart()
-                    .translation("orevolution.config.cassiterite_aoe_time")
-                    .defineInRange("cassiterite_aoe_time", 100, 1, Integer.MAX_VALUE);
-            cassiteriteAOEAmplifier = builder
-                    .gameRestart()
-                    .translation("orevolution.config.cassiterite_aoe_amplifier")
-                    .defineInRange("cassiterite_aoe_amplifier", 0, 1, Integer.MAX_VALUE);
-            cassiteriteAOERange = builder
-                    .gameRestart()
-                    .translation("orevolution.config.cassiterite_aoe_range")
-                    .defineInRange("cassiterite_aoe_range", 4D, 0D, Double.MAX_VALUE);
-
             builder.pop();
 
             builder.push("gold");
@@ -344,6 +330,14 @@ public class OrevolutionConfig {
                     .gameRestart()
                     .translation("orevolution.config.tungsten_residual_damage")
                     .defineInRange("tungsten_residual_damage", 0.6D, 0D, 1D);
+            tungstenFireResTime = builder
+                    .gameRestart()
+                    .translation("orevolution.config.tungsten_fire_res_time")
+                    .defineInRange("tungsten_fire_res_time", 60, 1, Integer.MAX_VALUE);
+            tungstenFireResAmplifier = builder
+                    .gameRestart()
+                    .translation("orevolution.config.tungsten_fire_res_amplifier")
+                    .defineInRange("tungsten_fire_res_amplifier", 0, 0, 255);
 
             builder.pop();
 
@@ -363,7 +357,7 @@ public class OrevolutionConfig {
             ironExponentSpeedMult = builder
                     .gameRestart()
                     .translation("orevolution.config.iron_exponent_speed_mult")
-                    .defineInRange("iron_exponent_durability", 1.5D, 0D, Double.MAX_VALUE);
+                    .defineInRange("iron_exponent_speed_mult", 1.5D, 0D, Double.MAX_VALUE);
 
             ironWeaponPowers = builder
                     .translation("orevolution.config.iron_weapon_powers")
@@ -643,11 +637,11 @@ public class OrevolutionConfig {
                     .define("livingstone_armor_powers", true);
             livingstoneArmorDuraRegenPerTick = builder
                     .gameRestart()
-                    .translation("orevolution.config.livingstone_dura_regen_per_tick")
+                    .translation("orevolution.config.livingstone_armor_dura_regen_per_tick")
                     .defineInRange("livingstone_dura_regen_per_tick", 2, 1, Integer.MAX_VALUE);
             livingstoneArmorDuraRegenCooldown = builder
                     .gameRestart()
-                    .translation("orevolution.config.livingstone_dura_regen_cooldown")
+                    .translation("orevolution.config.livingstone_armor_dura_regen_cooldown")
                     .defineInRange("livingstone_dura_regen_per_tick", 100, 0, Integer.MAX_VALUE);
             livingstoneRegenerationAmplifier = builder
                     .gameRestart()
@@ -1241,7 +1235,7 @@ public class OrevolutionConfig {
             silverExponentSpeedMult = builder
                     .gameRestart()
                     .translation("orevolution.config.silver_exponent_speed_mult")
-                    .defineInRange("silver_exponent_durability", 1.5D, 0D, Double.MAX_VALUE);
+                    .defineInRange("silver_exponent_speed_mult", 1.5D, 0D, Double.MAX_VALUE);
 
             silverWeaponPowers = builder
                     .translation("orevolution.config.silver_weapon_powers")
@@ -1389,7 +1383,7 @@ public class OrevolutionConfig {
         @ConfigKey("generate_tungsten")
         public final ConfigValue<Boolean> generateTungstenOre;
         @ConfigKey("generate_platinum")
-        public final ConfigValue<Boolean> generatePlatOre;
+        public final ConfigValue<Boolean> generatePlatinumOre;
         public final ConfigValue<Boolean> generateMoonstonePillar;
         public final ConfigValue<Boolean> generateAethersteelOre;
         public final ConfigValue<Boolean> generateAetherrockMeteor;
@@ -1419,20 +1413,25 @@ public class OrevolutionConfig {
         public final ConfigValue<Integer> bronzeRadarPlayerSearchTime;
 
         private Common(ModConfigSpec.Builder builder) {
-            builder.push("powers");
+            builder.push("main");
 
             toolsPowers = builder
                     .translation("orevolution.config.tools_powers")
-                    .comment("Defines if tools will have their special characteristic (aka power), like tin's drop duplication. check client configs to disable the tooltip too")
+                    .comment("Defines if tools will have their special characteristic (aka power), like tin's drop duplication")
                     .define("tools_powers", true);
             weaponsPowers = builder
                     .translation("orevolution.config.weapons_powers")
-                    .comment("Defines if weapons will have their special characteristic (aka power), like tin's drop duplication. check client configs to disable the tooltip too")
+                    .comment("Defines if weapons will have their special characteristic (aka power), like tin's drop duplication")
                     .define("weapons_powers", true);
             armorsPowers = builder
                     .translation("orevolution.config.armors_powers")
-                    .comment("Defines if armors will have their special characteristic (aka power), like platinum's strength II effect. check client configs to disable the tooltip too")
+                    .comment("Defines if armors will have their special characteristic (aka power), like platinum's strength II effect")
                     .define("armors_powers", true);
+
+            modProgression = builder
+                    .translation("orevolution.config.modded_progression")
+                    .comment("Replaces the original ore progression of the game")
+                    .define("modded_progression", true);
 
             builder.pop();
 
@@ -1476,13 +1475,7 @@ public class OrevolutionConfig {
                     .comment("Defines if Tin will keep generating in the Overworld")
                     .define("generate_tin_ore", true);
 
-//            generateNickelOre = builder
-//                    .worldRestart()
-//                    .translation("orevolution.config.generate_nickel_ore")
-//                    .comment("Defines if Nickel will keep generating in the Overworld")
-//                    .define("generate_nickel_ore", false);
-
-            generatePlatOre = builder
+            generatePlatinumOre = builder
                     .worldRestart()
                     .translation("orevolution.config.generate_platinum_ore")
                     .comment("Defines if Platinum will keep generating in the Overworld")
@@ -1538,11 +1531,6 @@ public class OrevolutionConfig {
                     .translation("orevolution.config.safe_ore_breaking")
                     .comment("Ores won't break if mined with the incorrect tool")
                     .define("safe_ore_breaking", true);
-
-            modProgression = builder
-                    .translation("orevolution.config.modded_progression")
-                    .comment("Replaces the original ore progression of the game")
-                    .define("modded_progression", true);
 
             bronzeRecipes = builder
                     .worldRestart()
@@ -1625,11 +1613,11 @@ public class OrevolutionConfig {
         public final ConfigValue<Boolean> warnBreak;
         public final ConfigValue<Boolean> warnIncorrectToolType;
 
-        public final ConfigValue<Boolean> displayReinforcedOrCoated;
         public final ConfigValue<Boolean> displayDurabilityModifier;
         public final ConfigValue<Boolean> displayParticleEffectsFromArmor;
         public final ConfigValue<Boolean> displayEffectsFromArmor;
         public final ConfigValue<Boolean> displayChanceTypeInBlock;
+        public final ConfigValue<Boolean> displayCommonChanceInBlock;
 
         public final ConfigValue<Boolean> steel_outline;
 
@@ -1647,10 +1635,6 @@ public class OrevolutionConfig {
                     .comment("Displays the text 'This block requires a x tool'")
                     .define("warn_incorrect_tool_type", true);
 
-            displayReinforcedOrCoated = builder
-                    .translation("orevolution.config.display_reinforced_or_coated")
-                    .comment("Displays the text 'Tungsten Reinforced/Coated' in the tooltip of the item")
-                    .define("display_reinforced_or_coated", true);
             displayDurabilityModifier = builder
                     .translation("orevolution.config.display_durability_modifier")
                     .comment("Displays the text '+/- % Durability' in the tooltip of the item")
@@ -1670,6 +1654,11 @@ public class OrevolutionConfig {
                     .translation("orevolution.config.display_chance_type_in_block")
                     .comment("Displays the chance type of every block in their tooltips")
                     .define("display_chance_type_in_block", true);
+
+            displayCommonChanceInBlock = builder
+                    .translation("orevolution.config.display_common_chance_type")
+                    .comment("Displays the 'common' type for every non-tagged block in their tooltip")
+                    .define("display_common_chance_type", true);
 
             steel_outline = builder
                     .translation("orevolution.config.steel_outline")
