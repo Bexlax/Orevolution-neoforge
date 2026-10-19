@@ -1614,6 +1614,8 @@ public class OrevolutionConfig {
         public final ConfigValue<Boolean> warnIncorrectToolType;
 
         public final ConfigValue<Boolean> displayDurabilityModifier;
+        public final ConfigValue<Boolean> displayCoatedReinforcedInName;
+
         public final ConfigValue<Boolean> displayParticleEffectsFromArmor;
         public final ConfigValue<Boolean> displayEffectsFromArmor;
         public final ConfigValue<Boolean> displayChanceTypeInBlock;
@@ -1639,6 +1641,11 @@ public class OrevolutionConfig {
                     .translation("orevolution.config.display_durability_modifier")
                     .comment("Displays the text '+/- % Durability' in the tooltip of the item")
                     .define("display_durability_modifier", true);
+
+            displayCoatedReinforcedInName = builder
+                    .translation("orevolution.config.display_coated_or_reinforced_in_name")
+                    .comment("Displays the text 'Tungsten-Reinforced'/'Tungsten-Coated' in the item's name")
+                    .define("display_coated_or_reinforced_in_name", true);
 
             displayParticleEffectsFromArmor = builder
                     .translation("orevolution.config.display_particle_effects_from_armor")

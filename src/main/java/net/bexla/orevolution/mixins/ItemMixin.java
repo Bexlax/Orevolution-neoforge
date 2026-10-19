@@ -8,13 +8,11 @@ import net.bexla.orevolution.init.RegDataComponents;
 import net.bexla.orevolution.init.RegItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TieredItem;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,6 +29,7 @@ public class ItemMixin {
         boolean isCoated = stack.getOrDefault(RegDataComponents.COATED.get(), false);
 
         if (!isReinforced && !isCoated) return;
+        if(!OrevolutionConfig.CLIENT.displayCoatedReinforcedInName.get()) return;
 
         Component og = cir.getReturnValue();
         String key = isReinforced ? "item.orevolution.reinforced" : "item.orevolution.coated";
